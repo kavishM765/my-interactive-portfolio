@@ -4,8 +4,6 @@ This repository contains the source code for my interactive portfolio, built as 
 
 Live Demo URL: `https://kavishm765.github.io/my-interactive-portfolio/`
 
-*(Remember to replace the link above with your actual live GitHub Pages URL!)*
-
 ***
 
 ## ✨ Features
