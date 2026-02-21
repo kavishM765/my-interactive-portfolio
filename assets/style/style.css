@@ -1,87 +1,56 @@
-:root {
-    --bg: #08080a;
-    --card: rgba(18, 18, 22, 0.6);
-    --accent: #3b82f6;
-    --border: rgba(255, 255, 255, 0.08);
+/* --- PROFESSIONAL CUSTOM STYLES --- */
+
+/* 1. Typography & Base */
+.section-title {
+    @apply text-3xl md:text-5xl font-black text-white mb-16 tracking-tight text-center;
 }
 
-body {
-    background-color: var(--bg);
-    color: #efeff1;
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
+/* 2. Components */
+
+/* Tech Tags in Project Cards */
+.tech-tag {
+    @apply text-xs font-medium bg-white/5 text-textGrey px-3 py-1 rounded-md border border-white/5;
 }
 
-.background-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background: radial-gradient(circle at 80% 20%, #161c2d 0%, #08080a 100%);
+/* Skill Badges in Skills Section */
+.skill-badge {
+    @apply text-sm font-bold bg-cardDark px-5 py-3 rounded-xl border border-white/10 text-gray-300 flex-grow text-center whitespace-nowrap;
 }
 
-.nav-blur {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
+
+/* 3. SCROLL ANIMATIONS (The Sophisticated Part) */
+
+/* Base class for all animated elements - hidden state */
+.animate-on-scroll {
+    opacity: 0;
+    /* Use a cubic-bezier for a premium, "heavy" feel to the animation */
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.page {
-    display: none;
-    min-height: 100vh;
-    padding-bottom: 5rem;
-    animation: fadeIn 0.8s ease-out;
+/* Variation: Fade Up (Moves from bottom to top) */
+.fade-up {
+    transform: translateY(40px) scale(0.98);
 }
 
-.page.active { display: block; }
-
-.glass-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+/* Variation: Fade In (Just appears) */
+.fade-in {
+    transform: translateY(0) scale(1);
 }
 
-.glass-card:hover {
-    border-color: rgba(59, 130, 246, 0.5);
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+/* Delays for staggered effects */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+
+/* THE TRIGGER STATE */
+/* When Javascript adds this class, the element transitions to visible */
+.animate-on-scroll.appear {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
-.badge {
-    background: rgba(59, 130, 246, 0.1);
-    color: var(--accent);
-    padding: 4px 12px;
-    border-radius: 99px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.modal-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
-    z-index: 200;
-}
-
-.modal-container {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 201;
-    width: 90%;
-    max-width: 500px;
+/* 4. Smooth Scroll Behavior for the whole page */
+html {
+    scroll-behavior: smooth;
 }
