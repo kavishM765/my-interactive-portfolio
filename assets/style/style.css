@@ -1,31 +1,40 @@
-/* Custom Scroll Animations */
+/* Scroll reveal animations */
 .animate-on-scroll {
     opacity: 0;
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-up {
-    transform: translateY(30px);
+    transform: translateY(40px);
 }
 
 .fade-in {
     transform: scale(0.95);
 }
 
-/* The trigger class added by JavaScript */
 .animate-on-scroll.appear {
     opacity: 1;
     transform: translateY(0) scale(1);
 }
 
 .delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #3b82f6;
+}
 
 html {
     scroll-behavior: smooth;
-}
-
-/* Hide scrollbar for a cleaner look while maintaining scroll functionality */
-::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
 }
