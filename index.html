@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavish M | AI & Automation Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+
+    <nav class="nav-blur">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-blue-600 rounded-md flex items-center justify-center font-bold">K</div>
+                <span class="text-xl font-bold tracking-tighter">KAVISH M.</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+                <button onclick="showPage('page-main')" class="hover:text-white transition">Portfolio</button>
+                <a href="https://www.linkedin.com/in/kavish-m-/" target="_blank" class="hover:text-white transition">LinkedIn</a>
+                <button onclick="openEmailModal()" class="bg-white text-black px-4 py-2 rounded-full hover:bg-blue-500 hover:text-white transition">Hire Me</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="content-root" class="pt-24">
+        <div id="page-main" class="page active"></div>
+        <div id="page-journey" class="page"></div>
+        <div id="page-projects" class="page"></div>
+        <div id="page-experience" class="page"></div>
+        <div id="page-leadership" class="page"></div>
+        <div id="page-hackathons" class="page"></div>
+        <div id="page-certs" class="page"></div>
+        <div id="page-profiles" class="page"></div>
+    </main>
+
+    <div id="modal-overlay" class="modal-overlay" onclick="closeAllModals()"></div>
+    <div id="email-modal" class="modal-container"></div>
+    <div id="phone-modal" class="modal-container"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+    <script src="./assets/script/script.js"></script>
+</body>
+</html>
