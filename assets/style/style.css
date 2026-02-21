@@ -1,56 +1,31 @@
-/* --- PROFESSIONAL CUSTOM STYLES --- */
-
-/* 1. Typography & Base */
-.section-title {
-    @apply text-3xl md:text-5xl font-black text-white mb-16 tracking-tight text-center;
-}
-
-/* 2. Components */
-
-/* Tech Tags in Project Cards */
-.tech-tag {
-    @apply text-xs font-medium bg-white/5 text-textGrey px-3 py-1 rounded-md border border-white/5;
-}
-
-/* Skill Badges in Skills Section */
-.skill-badge {
-    @apply text-sm font-bold bg-cardDark px-5 py-3 rounded-xl border border-white/10 text-gray-300 flex-grow text-center whitespace-nowrap;
-}
-
-
-/* 3. SCROLL ANIMATIONS (The Sophisticated Part) */
-
-/* Base class for all animated elements - hidden state */
+/* Custom Scroll Animations */
 .animate-on-scroll {
     opacity: 0;
-    /* Use a cubic-bezier for a premium, "heavy" feel to the animation */
-    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Variation: Fade Up (Moves from bottom to top) */
 .fade-up {
-    transform: translateY(40px) scale(0.98);
+    transform: translateY(30px);
 }
 
-/* Variation: Fade In (Just appears) */
 .fade-in {
-    transform: translateY(0) scale(1);
+    transform: scale(0.95);
 }
 
-/* Delays for staggered effects */
-.delay-100 { transition-delay: 100ms; }
-.delay-200 { transition-delay: 200ms; }
-.delay-300 { transition-delay: 300ms; }
-
-/* THE TRIGGER STATE */
-/* When Javascript adds this class, the element transitions to visible */
+/* The trigger class added by JavaScript */
 .animate-on-scroll.appear {
     opacity: 1;
     transform: translateY(0) scale(1);
 }
 
-/* 4. Smooth Scroll Behavior for the whole page */
+.delay-100 { transition-delay: 100ms; }
+
 html {
     scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for a cleaner look while maintaining scroll functionality */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
 }
