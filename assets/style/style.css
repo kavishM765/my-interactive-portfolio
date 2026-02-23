@@ -38,3 +38,45 @@
 html {
     scroll-behavior: smooth;
 }
+
+/* Optimized Scroll Reveal - No @apply rules to prevent VS Code Errors */
+.animate-on-scroll {
+    opacity: 0;
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-up {
+    transform: translateY(50px);
+}
+
+.fade-in {
+    transform: scale(0.96);
+}
+
+.animate-on-scroll.appear {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+
+/* Dashboard Scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #0a0a0c;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #3b82f6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
