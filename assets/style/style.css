@@ -80,3 +80,33 @@ html {
 html {
     scroll-behavior: smooth;
 }
+
+/* Premium Micro-interactions */
+.profile-btn {
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.profile-btn:hover {
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), 
+                0 10px 20px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* Custom bounce for the success checkmark */
+@keyframes custom-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-25%); }
+}
+
+.animate-bounce {
+    animation: custom-bounce 1s infinite;
+}
+
+/* Modal Entry Animation */
+#email-modal:not(.hidden), #phone-modal:not(.hidden) {
+    animation: modal-pop 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modal-pop {
+    0% { opacity: 0; transform: translate(-50%, -45%) scale(0.95); }
+    100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}

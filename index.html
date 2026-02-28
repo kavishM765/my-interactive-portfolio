@@ -21,7 +21,7 @@
                 <a href="#experience" class="hover:text-white transition">Experience</a>
                 <a href="#hackathons" class="hover:text-white transition">Hackathons</a>
                 <a href="#projects" class="hover:text-white transition">Work</a>
-                <a href="#contact" class="text-white bg-white/5 px-4 py-2 rounded-full border border-white/10 hover:bg-blue-600 transition">Contact</a>
+                <button onclick="openPhoneModal()" class="text-white bg-white/5 px-4 py-2 rounded-full border border-white/10 hover:bg-blue-600 transition">Contact</button>
             </div>
         </div>
     </nav>
@@ -39,11 +39,27 @@
                     <p class="text-lg text-gray-400 max-w-lg mb-10 leading-relaxed">
                         B.Tech IT student at SNSCT specializing in n8n automation, AI-driven systems, and Java Backend development. Passionate about engineering scalable architectures and intelligent workflows.
                     </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#projects" class="bg-blue-600 text-white px-6 py-3 rounded-2xl font-bold hover:bg-blue-700 transition transform hover:-translate-y-1">Explore Projects</a>
-                        <a href="https://www.linkedin.com/in/kavish-m-" target="_blank" class="bg-white/5 border border-white/10 px-6 py-3 rounded-2xl font-bold hover:bg-white/10 transition">LinkedIn ↗</a>
-                        <a href="https://github.com/kavishM765" target="_blank" class="bg-white/5 border border-white/10 px-6 py-3 rounded-2xl font-bold hover:bg-white/10 transition">GitHub ↗</a>
-                        <a href="https://leetcode.com/u/Kavish230905/" target="_blank" class="bg-white/5 border border-white/10 px-6 py-3 rounded-2xl font-bold hover:bg-white/10 transition">LeetCode ↗</a>
+                    
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <a href="#projects" class="group relative px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(37,99,235,0.5)]">
+                            <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
+                            <span class="relative z-10">Explore Projects</span>
+                        </a>
+                        
+                        <a href="https://www.linkedin.com/in/kavish-m-" target="_blank" class="profile-btn group relative px-6 py-4 bg-[#121216] border border-white/10 rounded-2xl font-bold text-gray-300 hover:text-white transition-all hover:-translate-y-1">
+                            <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-600/20 to-cyan-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+                            <span class="relative z-10 flex items-center gap-2">LinkedIn <span class="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">↗</span></span>
+                        </a>
+
+                        <a href="https://github.com/kavishM765" target="_blank" class="profile-btn group relative px-6 py-4 bg-[#121216] border border-white/10 rounded-2xl font-bold text-gray-300 hover:text-white transition-all hover:-translate-y-1">
+                            <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-600/20 to-pink-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+                            <span class="relative z-10 flex items-center gap-2">GitHub <span class="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">↗</span></span>
+                        </a>
+
+                        <a href="https://leetcode.com/u/Kavish230905/" target="_blank" class="profile-btn group relative px-6 py-4 bg-[#121216] border border-white/10 rounded-2xl font-bold text-gray-300 hover:text-white transition-all hover:-translate-y-1">
+                            <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-600/20 to-orange-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+                            <span class="relative z-10 flex items-center gap-2">LeetCode <span class="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">↗</span></span>
+                        </a>
                     </div>
                 </div>
                 <div class="relative animate-on-scroll fade-in">
@@ -193,49 +209,49 @@
                 </div>
 
                 <div class="mt-24 mb-10">
-    <h4 class="text-center text-gray-500 text-sm font-bold uppercase tracking-widest mb-10 animate-on-scroll fade-up">Core Engineering Pillars</h4>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-on-scroll fade-up delay-100">
-        
-        <div class="group relative p-8 bg-[#121216] rounded-[2rem] border border-white/5 hover:border-blue-500/40 transition-all duration-500 overflow-hidden hover:-translate-y-2 shadow-lg hover:shadow-blue-500/10">
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="relative z-10">
-                <span class="text-blue-500 text-xs font-bold uppercase tracking-widest block mb-4">AI & Workflows</span>
-                <h3 class="text-2xl font-black text-white mb-3">n8n Automation</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Architecting autonomous agentic workflows, integrating LLMs (Gemini), and building enterprise-grade process automations.</p>
-            </div>
-        </div>
+                    <h4 class="text-center text-gray-500 text-sm font-bold uppercase tracking-widest mb-10 animate-on-scroll fade-up">Core Engineering Pillars</h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-on-scroll fade-up delay-100">
+                        
+                        <div class="group relative p-8 bg-[#121216] rounded-[2rem] border border-white/5 hover:border-blue-500/40 transition-all duration-500 overflow-hidden hover:-translate-y-2 shadow-lg hover:shadow-blue-500/10">
+                            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="relative z-10">
+                                <span class="text-blue-500 text-xs font-bold uppercase tracking-widest block mb-4">AI & Workflows</span>
+                                <h3 class="text-2xl font-black text-white mb-3">n8n Automation</h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">Architecting autonomous agentic workflows, integrating LLMs, and building enterprise-grade process automations.</p>
+                            </div>
+                        </div>
 
-        <div class="group relative p-8 bg-[#121216] rounded-[2rem] border border-white/5 hover:border-purple-500/40 transition-all duration-500 overflow-hidden hover:-translate-y-2 shadow-lg hover:shadow-purple-500/10">
-            <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="relative z-10">
-                <span class="text-purple-500 text-xs font-bold uppercase tracking-widest block mb-4">Architecture</span>
-                <h3 class="text-2xl font-black text-white mb-3">Java Backend</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Engineering robust server-side logic using Core Java and Spring Boot, supported by optimized MySQL database structures.</p>
-            </div>
-        </div>
+                        <div class="group relative p-8 bg-[#121216] rounded-[2rem] border border-white/5 hover:border-purple-500/40 transition-all duration-500 overflow-hidden hover:-translate-y-2 shadow-lg hover:shadow-purple-500/10">
+                            <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="relative z-10">
+                                <span class="text-purple-500 text-xs font-bold uppercase tracking-widest block mb-4">Architecture</span>
+                                <h3 class="text-2xl font-black text-white mb-3">Java Backend</h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">Engineering robust server-side logic using Core Java and Spring Boot, supported by optimized MySQL database structures.</p>
+                            </div>
+                        </div>
 
-        <div class="group relative p-8 bg-[#121216] rounded-[2rem] border border-white/5 hover:border-emerald-500/40 transition-all duration-500 overflow-hidden hover:-translate-y-2 shadow-lg hover:shadow-emerald-500/10">
-            <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="relative z-10">
-                <span class="text-emerald-500 text-xs font-bold uppercase tracking-widest block mb-4">Client-Side</span>
-                <h3 class="text-2xl font-black text-white mb-3">Front End Dev</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Developing highly responsive, interactive web applications using modern HTML, CSS, JavaScript, and Tailwind frameworks.</p>
-            </div>
-        </div>
+                        <div class="group relative p-8 bg-[#121216] rounded-[2rem] border border-white/5 hover:border-emerald-500/40 transition-all duration-500 overflow-hidden hover:-translate-y-2 shadow-lg hover:shadow-emerald-500/10">
+                            <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="relative z-10">
+                                <span class="text-emerald-500 text-xs font-bold uppercase tracking-widest block mb-4">Client-Side</span>
+                                <h3 class="text-2xl font-black text-white mb-3">Front End Dev</h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">Developing highly responsive, interactive web applications using modern HTML, CSS, JavaScript, and Tailwind frameworks.</p>
+                            </div>
+                        </div>
 
-        <div class="group relative p-8 bg-[#121216] rounded-[2rem] border border-white/5 hover:border-rose-500/40 transition-all duration-500 overflow-hidden hover:-translate-y-2 shadow-lg hover:shadow-rose-500/10">
-            <div class="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="relative z-10">
-                <span class="text-rose-500 text-xs font-bold uppercase tracking-widest block mb-4">User Experience</span>
-                <h3 class="text-2xl font-black text-white mb-3">UI/UX Design</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Applying a strong, intuitive design mindset to craft user-first interfaces.</p>
-            </div>
-        </div>
-        </div>
+                        <div class="group relative p-8 bg-[#121216] rounded-[2rem] border border-white/5 hover:border-rose-500/40 transition-all duration-500 overflow-hidden hover:-translate-y-2 shadow-lg hover:shadow-rose-500/10">
+                            <div class="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="relative z-10">
+                                <span class="text-rose-500 text-xs font-bold uppercase tracking-widest block mb-4">User Experience</span>
+                                <h3 class="text-2xl font-black text-white mb-3">UI/UX Design</h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">Applying a strong, intuitive design mindset to craft user-first interfaces. I focus on aesthetic precision and human-centered experiences, enhanced by 3D and AR/VR concepts.</p>
+                            </div>
+                        </div>
 
-    </div>
-</div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -244,7 +260,7 @@
                 <h2 class="text-4xl font-black mb-6 animate-on-scroll fade-up">Let's Connect.</h2>
                 <p class="text-gray-400 mb-12 animate-on-scroll fade-up delay-100">Seeking opportunities in Agentic AI and Full-Stack Engineering.</p>
                 <div class="flex flex-wrap justify-center gap-6 animate-on-scroll fade-up delay-200">
-                    <button onclick="openEmailModal()" class="bg-white text-black px-10 py-5 rounded-2xl font-bold hover:bg-blue-600 hover:text-white transition">Email Feedback</button>
+                    <button onclick="openEmailModal()" class="bg-blue-600 text-white px-10 py-5 rounded-2xl font-bold hover:bg-blue-700 transition">Email Feedback</button>
                     <button onclick="openPhoneModal()" class="border border-white/10 px-10 py-5 rounded-2xl font-bold hover:bg-white/5 transition">View Contact</button>
                 </div>
             </div>
@@ -252,8 +268,8 @@
     </main>
 
     <div id="modal-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] hidden" onclick="closeAllModals()"></div>
-    <div id="email-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[90%] max-w-lg hidden bg-[#121216] border border-white/10 rounded-3xl p-8"></div>
-    <div id="phone-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[90%] max-w-lg hidden bg-[#121216] border border-white/10 rounded-3xl p-8"></div>
+    <div id="email-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[90%] max-w-lg hidden bg-[#121216] border border-white/10 rounded-3xl p-8 shadow-2xl"></div>
+    <div id="phone-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[90%] max-w-lg hidden bg-[#121216] border border-white/10 rounded-3xl p-8 shadow-2xl"></div>
 
     <script src="./assets/script/script.js"></script>
 </body>
