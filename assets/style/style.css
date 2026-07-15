@@ -1,45 +1,6 @@
-/* Scroll reveal animations */
-.animate-on-scroll {
-    opacity: 0;
-    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-}
+/* Cleaned & Enhanced Styling for Kavish M's Portfolio */
 
-.fade-up {
-    transform: translateY(40px);
-}
-
-.fade-in {
-    transform: scale(0.95);
-}
-
-.animate-on-scroll.appear {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-}
-
-.delay-100 { transition-delay: 100ms; }
-.delay-200 { transition-delay: 200ms; }
-
-/* Scrollbar styling */
-::-webkit-scrollbar {
-    width: 6px;
-}
-::-webkit-scrollbar-track {
-    background: transparent;
-}
-::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #3b82f6;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-/* Optimized Scroll Reveal - No @apply rules to prevent VS Code Errors */
+/* Optimized Scroll Reveal */
 .animate-on-scroll {
     opacity: 0;
     transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
@@ -47,7 +8,7 @@ html {
 }
 
 .fade-up {
-    transform: translateY(50px);
+    transform: translateY(40px);
 }
 
 .fade-in {
@@ -61,16 +22,17 @@ html {
 
 .delay-100 { transition-delay: 100ms; }
 .delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
 
-/* Dashboard Scrollbar */
+/* Custom Premium Scrollbar */
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 6px;
 }
 ::-webkit-scrollbar-track {
     background: #0a0a0c;
 }
 ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -81,7 +43,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Premium Micro-interactions */
+/* Premium Card & Button Micro-interactions */
 .profile-btn {
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
@@ -89,6 +51,56 @@ html {
 .profile-btn:hover {
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), 
                 0 10px 20px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* Glow Card Effects */
+.tech-card {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px -10px rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Certification Timeline Line */
+.timeline-item {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    bottom: -24px;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.timeline-item:last-child::before {
+    display: none;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #1e293b;
+    border: 3px solid #3b82f6;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+    background: #3b82f6;
+    box-shadow: 0 0 12px #3b82f6;
+    transform: scale(1.2);
 }
 
 /* Custom bounce for the success checkmark */
