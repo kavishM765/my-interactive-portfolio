@@ -37,7 +37,7 @@ To view this portfolio locally on your machine:
 ### 6. Technical Profiles & Contact
 - __LinkedIn__: https://www.linkedin.com/in/kavish-m-
 - __GitHub__: https://github.com/kavishM765
-- __LeetCode__: https://leetcode.com/u/Kavish230905/
+
 
 ---
 __Designed and Engineered by Kavish M__

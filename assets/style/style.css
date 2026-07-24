@@ -122,3 +122,22 @@ html {
     0% { opacity: 0; transform: translate(-50%, -45%) scale(0.95); }
     100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
+
+/* AI Cyber HUD Floating Badges Keyframes */
+@keyframes float-slow {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-7px); }
+}
+
+@keyframes float-delayed {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(7px); }
+}
+
+.animate-float-slow {
+    animation: float-slow 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+    animation: float-delayed 4.5s ease-in-out 1s infinite;
+}
