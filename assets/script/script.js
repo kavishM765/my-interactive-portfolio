@@ -16,7 +16,7 @@ const templates = {
                     Send Inquiry
                 </button>
             </div>
-        </form>`,StartLine:4,TargetContent:`,
+        </form>`,
     phone: `
         <div class="text-center">
             <h2 class="text-2xl font-bold mb-2 text-white">Direct Contact</h2>
