@@ -122,20 +122,39 @@ async function handleFormSubmit(event) {
     }
 }
 
-// --- Senior Interaction Observer (High Performance) ---
-const observerOptions = {
-    threshold: 0.15,
-    rootMargin: '0px'
-};
+// --- Fail-Safe Scroll Observer (Guarantees content is never hidden) ---
+function initScrollObserver() {
+    const els = document.querySelectorAll('.animate-on-scroll');
+    
+    if (!('IntersectionObserver' in window)) {
+        els.forEach(el => el.classList.add('appear'));
+        return;
+    }
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('appear');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('appear');
+            }
+        });
+    }, { threshold: 0.05, rootMargin: '50px' });
+
+    els.forEach(el => {
+        observer.observe(el);
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+            el.classList.add('appear');
         }
     });
-}, observerOptions);
+}
 
-window.onload = () => {
-    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-};
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initScrollObserver);
+} else {
+    initScrollObserver();
+}
+
+// Safety Fallback: Ensure all elements are visible after 500ms no matter what
+setTimeout(() => {
+    document.querySelectorAll('.animate-on-scroll').forEach(el => el.classList.add('appear'));
+}, 500);
