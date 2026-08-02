@@ -3,6 +3,8 @@ const templates = {
     email: `
         <h2 class="text-2xl font-bold mb-6 text-white">Direct Engagement</h2>
         <form id="contact-form" action="https://formspree.io/f/xeozngwn" method="POST" class="space-y-4">
+            <!-- Anti-Spam Honeypot Field (Hidden from humans, traps bots) -->
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none !important">
             <input type="email" name="email" placeholder="Hiring Manager Email" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white focus:border-blue-500 outline-none transition" required>
             <textarea name="message" placeholder="I saw your Telemedicine Platform from BUGSLAYER '26..." class="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white h-32 focus:border-blue-500 outline-none transition" required></textarea>
             
@@ -14,7 +16,7 @@ const templates = {
                     Send Inquiry
                 </button>
             </div>
-        </form>`,
+        </form>`,StartLine:4,TargetContent:`,
     phone: `
         <div class="text-center">
             <h2 class="text-2xl font-bold mb-2 text-white">Direct Contact</h2>
