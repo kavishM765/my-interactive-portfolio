@@ -503,25 +503,40 @@
         </section>
     </main>
 
-    <!-- Semantic Footer -->
-    <footer class="border-t border-white/5 bg-[#0a0a0c] py-12 px-6 text-center text-sm text-gray-500">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2">
-                <div class="h-8 w-8 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-white shadow-md shadow-blue-500/10 text-xs">KM</div>
-                <span class="font-bold tracking-tight text-gray-300">KAVISH M.</span>
+    <!-- Semantic Footer with Legal & DPDP Compliance Links -->
+    <footer class="border-t border-white/5 bg-[#0a0a0c] py-10 px-6 text-center text-sm text-gray-500">
+        <div class="max-w-7xl mx-auto flex flex-col gap-6">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <div class="h-8 w-8 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-white shadow-md shadow-blue-500/10 text-xs">KM</div>
+                    <span class="font-bold tracking-tight text-gray-300">KAVISH M.</span>
+                </div>
+                <p>&copy; 2026 Kavish M. Designed & Engineered for Intelligent Workflows.</p>
+                <div class="flex gap-6">
+                    <a href="https://www.linkedin.com/in/kavish-m-" target="_blank" class="hover:text-white transition">LinkedIn</a>
+                    <a href="https://github.com/kavishM765" target="_blank" class="hover:text-white transition">GitHub</a>
+                    <a href="https://leetcode.com/u/Kavish230905/" target="_blank" class="hover:text-white transition">LeetCode</a>
+                </div>
             </div>
-            <p>&copy; 2026 Kavish M. Designed & Engineered for Intelligent Workflows.</p>
-            <div class="flex gap-6">
-                <a href="https://www.linkedin.com/in/kavish-m-" target="_blank" class="hover:text-white transition">LinkedIn</a>
-                <a href="https://github.com/kavishM765" target="_blank" class="hover:text-white transition">GitHub</a>
-                <a href="https://leetcode.com/u/Kavish230905/" target="_blank" class="hover:text-white transition">LeetCode</a>
+            
+            <!-- DPDP Act 2023 & FTC Compliance Footer Bar -->
+            <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-6 text-xs text-gray-400 pt-6 border-t border-white/5 w-full">
+                <button onclick="openPrivacyModal()" class="hover:text-blue-400 transition">Privacy Policy & DPDP</button>
+                <span class="text-gray-600">•</span>
+                <button onclick="openTermsModal()" class="hover:text-blue-400 transition">Terms of Service</button>
+                <span class="text-gray-600">•</span>
+                <a href="mailto:kavishm100@gmail.com?subject=DPDP%20Grievance%20Redressal" class="hover:text-blue-400 transition">Grievance Redressal</a>
+                <span class="text-gray-600">•</span>
+                <a href="mailto:kavishm100@gmail.com?subject=Data%20Deletion%20Request" class="hover:text-blue-400 transition">Data Deletion Request</a>
             </div>
         </div>
     </footer>
 
     <div id="modal-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] hidden" onclick="closeAllModals()"></div>
-    <div id="email-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[90%] max-w-lg hidden bg-[#121216] border border-white/10 rounded-3xl p-8 shadow-2xl"></div>
-    <div id="phone-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[90%] max-w-lg hidden bg-[#121216] border border-white/10 rounded-3xl p-8 shadow-2xl"></div>
+    <div id="email-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[90%] max-w-lg hidden bg-[#121216] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl"></div>
+    <div id="phone-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[90%] max-w-lg hidden bg-[#121216] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl"></div>
+    <div id="privacy-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[90%] max-w-lg hidden bg-[#121216] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl"></div>
+    <div id="terms-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[90%] max-w-lg hidden bg-[#121216] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl"></div>
 
     <script src="./assets/script/script.js"></script>
 </body>
