@@ -49,7 +49,7 @@ const templates = {
                 <p><strong class="text-white">5. Your Rights (DPDP Act 2023 & FTC):</strong> You have the right to request access, correction, or permanent deletion of your submitted messages at any time.</p>
             </div>
             <div class="pt-3 border-t border-white/10 flex flex-wrap justify-between items-center gap-3">
-                <a href="mailto:kavishm100@gmail.com?subject=DPDP%20Data%20Deletion%20Request" class="text-xs text-red-400 hover:underline font-semibold">Request Message Deletion ↗</a>
+                <button type="button" onclick="openDeletionModal()" class="text-xs text-red-400 hover:underline font-semibold">Request Message Deletion ↗</button>
                 <button type="button" onclick="closeAllModals()" class="bg-blue-600 text-white px-5 py-2 rounded-xl text-xs font-bold hover:bg-blue-700 transition">Understood</button>
             </div>
         </div>`,
@@ -67,6 +67,37 @@ const templates = {
             </div>
             <div class="pt-3 border-t border-white/10 flex justify-end">
                 <button type="button" onclick="closeAllModals()" class="bg-blue-600 text-white px-5 py-2 rounded-xl text-xs font-bold hover:bg-blue-700 transition">Close</button>
+            </div>
+        </div>`,
+    grievance: `
+        <div class="text-left space-y-4 max-h-[75vh] overflow-y-auto pr-2">
+            <div class="flex justify-between items-center border-b border-white/10 pb-3">
+                <h2 class="text-xl font-bold text-white">Grievance Redressal Mechanism</h2>
+                <span class="text-[10px] uppercase font-bold tracking-widest text-purple-400 bg-purple-500/10 px-2 py-1 rounded border border-purple-500/20">DPDP Act 2023 Sec 13</span>
+            </div>
+            <div class="text-xs text-gray-300 space-y-3 leading-relaxed">
+                <p><strong class="text-white">Grievance Officer:</strong> Kavish M</p>
+                <p><strong class="text-white">Official Email:</strong> <code class="text-blue-400 bg-white/5 px-2 py-1 rounded select-all">kavishm100@gmail.com</code></p>
+                <p><strong class="text-white">Redressal Process:</strong> Under Section 13 of the Digital Personal Data Protection (DPDP) Act 2023, you have the right to register grievances regarding personal data processing. Inquiries are acknowledged within 24 hours and addressed within 7 business days.</p>
+            </div>
+            <div class="pt-3 border-t border-white/10 flex justify-between items-center gap-3">
+                <button type="button" onclick="openEmailModal()" class="bg-blue-600 text-white px-5 py-2 rounded-xl text-xs font-bold hover:bg-blue-700 transition">Send Direct Message</button>
+                <button type="button" onclick="closeAllModals()" class="text-gray-400 hover:text-white text-xs font-medium px-3">Close</button>
+            </div>
+        </div>`,
+    deletion: `
+        <div class="text-left space-y-4 max-h-[75vh] overflow-y-auto pr-2">
+            <div class="flex justify-between items-center border-b border-white/10 pb-3">
+                <h2 class="text-xl font-bold text-white">Data Deletion / Right to Erasure</h2>
+                <span class="text-[10px] uppercase font-bold tracking-widest text-red-400 bg-red-500/10 px-2 py-1 rounded border border-red-500/20">DPDP Act 2023 Sec 12</span>
+            </div>
+            <div class="text-xs text-gray-300 space-y-3 leading-relaxed">
+                <p><strong class="text-white">Right to Erasure:</strong> Under Section 12 of the DPDP Act 2023, you have the right to demand the erasure of personal data that is no longer necessary for the purpose for which it was processed.</p>
+                <p><strong class="text-white">How to Request:</strong> Send a deletion request to <code class="text-blue-400 bg-white/5 px-2 py-1 rounded select-all">kavishm100@gmail.com</code> specifying the email address used in the contact form. All corresponding logs will be purged permanently.</p>
+            </div>
+            <div class="pt-3 border-t border-white/10 flex justify-between items-center gap-3">
+                <button type="button" onclick="openEmailModal()" class="bg-blue-600 text-white px-5 py-2 rounded-xl text-xs font-bold hover:bg-blue-700 transition">Send Deletion Request</button>
+                <button type="button" onclick="closeAllModals()" class="text-gray-400 hover:text-white text-xs font-medium px-3">Close</button>
             </div>
         </div>`
 };
@@ -102,6 +133,22 @@ function openTermsModal() {
     closeAllModals();
     const modal = document.getElementById('terms-modal');
     modal.innerHTML = templates.terms;
+    document.getElementById('modal-overlay').classList.remove('hidden');
+    modal.classList.remove('hidden');
+}
+
+function openGrievanceModal() {
+    closeAllModals();
+    const modal = document.getElementById('privacy-modal');
+    modal.innerHTML = templates.grievance;
+    document.getElementById('modal-overlay').classList.remove('hidden');
+    modal.classList.remove('hidden');
+}
+
+function openDeletionModal() {
+    closeAllModals();
+    const modal = document.getElementById('privacy-modal');
+    modal.innerHTML = templates.deletion;
     document.getElementById('modal-overlay').classList.remove('hidden');
     modal.classList.remove('hidden');
 }
