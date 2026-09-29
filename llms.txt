@@ -23,5 +23,4 @@ Kavish M is an AI Developer and Automation Engineer specializing in building aut
 - **Portfolio**: https://kavishmportfolio.vercel.app/
 - **LinkedIn**: https://www.linkedin.com/in/kavish-m-
 - **GitHub**: https://github.com/kavishM765
-- **LeetCode**: https://leetcode.com/u/Kavish230905/
 - **Email**: kavishm100@gmail.com
