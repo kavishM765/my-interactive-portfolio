@@ -287,6 +287,98 @@ setTimeout(() => {
 }, 500);
 
 // ════════════════════════════════════════════════════════════════════
+// Auto-Moving 3D Deck Controller (Side -> Down -> Forward)
+// ════════════════════════════════════════════════════════════════════
+let currentDeckIndex = 0;
+let isMovingDeck = false;
+let deckAutoTimer = null;
+const AUTO_MOVE_INTERVAL = 3800; // Cycles every 3.8s smoothly
+
+function cycleDeckCard(direction = 1) {
+    if (isMovingDeck) return;
+    const cards = document.querySelectorAll('.deck-card');
+    if (!cards.length) return;
+
+    isMovingDeck = true;
+    const total = cards.length;
+    const currentCard = cards[currentDeckIndex];
+    
+    const nextIndex = (currentDeckIndex + direction + total) % total;
+    const nextCard = cards[nextIndex];
+
+    // Trigger Side -> Down exit animation
+    currentCard.classList.remove('card-active');
+    currentCard.classList.add('card-exiting');
+
+    // Trigger Come Forward entrance animation
+    nextCard.classList.remove('card-next', 'card-queue');
+    nextCard.classList.add('card-entering');
+
+    // Update Counter (01 / 06)
+    const counter = document.getElementById('deck-counter');
+    if (counter) {
+        counter.textContent = `${String(nextIndex + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
+    }
+
+    setTimeout(() => {
+        currentCard.classList.remove('card-exiting');
+        currentCard.classList.add('card-queue');
+        
+        nextCard.classList.remove('card-entering');
+        nextCard.classList.add('card-active');
+
+        // Setup third card peeking behind
+        const queueIndex = (nextIndex + 1) % total;
+        cards[queueIndex].classList.remove('card-active');
+        cards[queueIndex].classList.add('card-next');
+
+        currentDeckIndex = nextIndex;
+        isMovingDeck = false;
+    }, 700);
+}
+
+function startDeckAutoCycle() {
+    stopDeckAutoCycle();
+    deckAutoTimer = setInterval(() => {
+        cycleDeckCard(1);
+    }, AUTO_MOVE_INTERVAL);
+}
+
+function stopDeckAutoCycle() {
+    if (deckAutoTimer) {
+        clearInterval(deckAutoTimer);
+        deckAutoTimer = null;
+    }
+}
+
+// Initialize Deck Auto-Move & Hover-Pause
+function initDeckControls() {
+    const viewport = document.querySelector('.deck-viewport');
+    if (!viewport) return;
+
+    // Start auto cycle
+    startDeckAutoCycle();
+
+    // Pause when user hovers (so they can inspect the 3D flip card comfortably!)
+    viewport.addEventListener('mouseenter', stopDeckAutoCycle);
+    viewport.addEventListener('mouseleave', startDeckAutoCycle);
+}
+
+// ════════════════════════════════════════════════════════════════════
+// Kinetic Accordion Controller
+// ════════════════════════════════════════════════════════════════════
+function selectAccordionPanel(panelElement) {
+    document.querySelectorAll('.accordion-panel').forEach(p => p.classList.remove('active'));
+    panelElement.classList.add('active');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initDeckControls();
+});
+setTimeout(initDeckControls, 300);
+
+
+// ════════════════════════════════════════════════════════════════════
 // Embedded Direct Quick-Form Handler
 // ════════════════════════════════════════════════════════════════════
 async function handleEmbeddedFormSubmit(event) {
