@@ -20,7 +20,7 @@ const templates = {
 
             <div class="flex justify-end gap-3 pt-2">
                 <button type="button" onclick="closeAllModals()" class="text-gray-400 font-medium px-4 hover:text-white transition text-sm">Close</button>
-                <button type="submit" id="submit-btn" class="bg-blue-600 text-white px-7 py-3 rounded-xl font-bold hover:bg-blue-700 transition flex items-center justify-center min-w-[150px] text-sm">
+                <button type="submit" id="submit-btn" class="bg-limeSpark text-obsidian px-7 py-3 rounded-xl font-bold hover:brightness-110 transition flex items-center justify-center min-w-[150px] text-sm">
                     Send Inquiry
                 </button>
             </div>
@@ -28,11 +28,11 @@ const templates = {
     phone: `
         <div class="text-center">
             <h2 class="text-2xl font-bold mb-2 text-white">Direct Contact</h2>
-            <p class="text-blue-500 font-bold mb-8">+91 9865824929</p>
+            <p class="text-limeSpark font-bold mb-8">+91 9865824929</p>
             <div class="grid grid-cols-1 gap-3">
-                <a href="tel:+919865824929" class="bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition">Call for Opportunity</a>
+                <a href="tel:+919865824929" class="bg-limeSpark text-obsidian py-4 rounded-xl font-bold hover:brightness-110 transition">Call for Opportunity</a>
                 <a href="https://www.linkedin.com/in/kavish-m-" target="_blank" class="bg-white/5 border border-white/10 text-white py-4 rounded-xl font-bold hover:bg-white/10 transition">LinkedIn Message</a>
-                <button onclick="closeAllModals()" class="text-gray-500 pt-4 text-xs font-semibold uppercase tracking-widest hover:text-white transition">Back to Portfolio</button>
+                <button onclick="closeAllModals()" class="text-gray-500 pt-4 text-xs font-semibold uppercase tracking-widest hover:text-white transition">Back</button>
             </div>
         </div>`,
     privacy: `
@@ -50,7 +50,7 @@ const templates = {
             </div>
             <div class="pt-3 border-t border-white/10 flex flex-wrap justify-between items-center gap-3">
                 <button type="button" onclick="openDeletionModal()" class="text-xs text-red-400 hover:underline font-semibold">Request Message Deletion ↗</button>
-                <button type="button" onclick="closeAllModals()" class="bg-blue-600 text-white px-5 py-2 rounded-xl text-xs font-bold hover:bg-blue-700 transition">Understood</button>
+                <button type="button" onclick="closeAllModals()" class="bg-limeSpark text-obsidian px-5 py-2 rounded-xl text-xs font-bold hover:brightness-110 transition">Understood</button>
             </div>
         </div>`,
     terms: `
@@ -66,22 +66,22 @@ const templates = {
                 <p><strong class="text-white">4. Disclaimer:</strong> Projects displayed are for portfolio demonstration, educational, and professional recruitment evaluation purposes.</p>
             </div>
             <div class="pt-3 border-t border-white/10 flex justify-end">
-                <button type="button" onclick="closeAllModals()" class="bg-blue-600 text-white px-5 py-2 rounded-xl text-xs font-bold hover:bg-blue-700 transition">Close</button>
+                <button type="button" onclick="closeAllModals()" class="bg-limeSpark text-obsidian px-5 py-2 rounded-xl text-xs font-bold hover:brightness-110 transition">Close</button>
             </div>
         </div>`,
     grievance: `
         <div class="text-left space-y-4 max-h-[75vh] overflow-y-auto pr-2">
             <div class="flex justify-between items-center border-b border-white/10 pb-3">
                 <h2 class="text-xl font-bold text-white">Grievance Redressal Mechanism</h2>
-                <span class="text-[10px] uppercase font-bold tracking-widest text-purple-400 bg-purple-500/10 px-2 py-1 rounded border border-purple-500/20">DPDP Act 2023 Sec 13</span>
+                <span class="text-[10px] uppercase font-bold tracking-widest text-limeSpark bg-limeSpark/10 px-2 py-1 rounded border border-limeSpark/20">DPDP Act 2023 Sec 13</span>
             </div>
             <div class="text-xs text-gray-300 space-y-3 leading-relaxed">
                 <p><strong class="text-white">Grievance Officer:</strong> Kavish M</p>
-                <p><strong class="text-white">Official Email:</strong> <code class="text-blue-400 bg-white/5 px-2 py-1 rounded select-all">kavishm100@gmail.com</code></p>
+                <p><strong class="text-white">Official Email:</strong> <code class="text-limeSpark bg-white/5 px-2 py-1 rounded select-all">kavishm100@gmail.com</code></p>
                 <p><strong class="text-white">Redressal Process:</strong> Under Section 13 of the Digital Personal Data Protection (DPDP) Act 2023, you have the right to register grievances regarding personal data processing. Inquiries are acknowledged within 24 hours and addressed within 7 business days.</p>
             </div>
             <div class="pt-3 border-t border-white/10 flex justify-between items-center gap-3">
-                <button type="button" onclick="openEmailModal()" class="bg-blue-600 text-white px-5 py-2 rounded-xl text-xs font-bold hover:bg-blue-700 transition">Send Direct Message</button>
+                <button type="button" onclick="openEmailModal()" class="bg-limeSpark text-obsidian px-5 py-2 rounded-xl text-xs font-bold hover:brightness-110 transition">Send Direct Message</button>
                 <button type="button" onclick="closeAllModals()" class="text-gray-400 hover:text-white text-xs font-medium px-3">Close</button>
             </div>
         </div>`,
@@ -93,10 +93,10 @@ const templates = {
             </div>
             <div class="text-xs text-gray-300 space-y-3 leading-relaxed">
                 <p><strong class="text-white">Right to Erasure:</strong> Under Section 12 of the DPDP Act 2023, you have the right to demand the erasure of personal data that is no longer necessary for the purpose for which it was processed.</p>
-                <p><strong class="text-white">How to Request:</strong> Send a deletion request to <code class="text-blue-400 bg-white/5 px-2 py-1 rounded select-all">kavishm100@gmail.com</code> specifying the email address used in the contact form. All corresponding logs will be purged permanently.</p>
+                <p><strong class="text-white">How to Request:</strong> Send a deletion request to <code class="text-limeSpark bg-white/5 px-2 py-1 rounded select-all">kavishm100@gmail.com</code> specifying the email address used in the contact form. All corresponding logs will be purged permanently.</p>
             </div>
             <div class="pt-3 border-t border-white/10 flex justify-between items-center gap-3">
-                <button type="button" onclick="openEmailModal()" class="bg-blue-600 text-white px-5 py-2 rounded-xl text-xs font-bold hover:bg-blue-700 transition">Send Deletion Request</button>
+                <button type="button" onclick="openEmailModal()" class="bg-limeSpark text-obsidian px-5 py-2 rounded-xl text-xs font-bold hover:brightness-110 transition">Send Deletion Request</button>
                 <button type="button" onclick="closeAllModals()" class="text-gray-400 hover:text-white text-xs font-medium px-3">Close</button>
             </div>
         </div>`

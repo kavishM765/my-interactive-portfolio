@@ -1,18 +1,33 @@
-/* Cleaned & Enhanced Styling for Kavish M's Portfolio */
+/* Editorial & Cinematic Luxury Styling for Kavish M */
+
+:root {
+    --bg-canvas: #0C0D11;
+    --bg-card: #14161E;
+    --border-subtle: rgba(255, 255, 255, 0.07);
+    --border-hover: rgba(182, 255, 46, 0.35);
+    --accent-lime: #B6FF2E;
+    --text-porcelain: #F8F7F4;
+    --text-muted: #8E929E;
+}
+
+body {
+    background-color: var(--bg-canvas);
+    color: var(--text-porcelain);
+}
 
 /* Optimized Scroll Reveal */
 .animate-on-scroll {
     opacity: 0;
-    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-up {
-    transform: translateY(40px);
+    transform: translateY(30px);
 }
 
 .fade-in {
-    transform: scale(0.96);
+    transform: scale(0.98);
 }
 
 .animate-on-scroll.appear {
@@ -24,120 +39,44 @@
 .delay-200 { transition-delay: 200ms; }
 .delay-300 { transition-delay: 300ms; }
 
-/* Custom Premium Scrollbar */
+/* Custom Luxury Scrollbar */
 ::-webkit-scrollbar {
-    width: 6px;
+    width: 5px;
 }
 ::-webkit-scrollbar-track {
-    background: #0a0a0c;
+    background: #0C0D11;
 }
 ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #3b82f6;
+    background: var(--accent-lime);
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-/* Premium Card & Button Micro-interactions */
-.profile-btn {
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+/* Architectural Chapter Card */
+.chapter-card {
+    background: #14161E;
+    border: 1px solid var(--border-subtle);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.profile-btn:hover {
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), 
-                0 10px 20px -10px rgba(0, 0, 0, 0.5);
-}
-
-/* Glow Card Effects */
-.tech-card {
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.tech-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 35px -10px rgba(59, 130, 246, 0.15);
-    border-color: rgba(59, 130, 246, 0.3);
-}
-
-/* Certification Timeline Line */
-.timeline-item {
-    position: relative;
-    padding-left: 2rem;
-}
-
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: 6px;
-    top: 8px;
-    bottom: -24px;
-    width: 2px;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.timeline-item:last-child::before {
-    display: none;
-}
-
-.timeline-dot {
-    position: absolute;
-    left: 0;
-    top: 6px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: #1e293b;
-    border: 3px solid #3b82f6;
-    z-index: 10;
-    transition: all 0.3s ease;
-}
-
-.timeline-item:hover .timeline-dot {
-    background: #3b82f6;
-    box-shadow: 0 0 12px #3b82f6;
-    transform: scale(1.2);
-}
-
-/* Custom bounce for the success checkmark */
-@keyframes custom-bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-25%); }
-}
-
-.animate-bounce {
-    animation: custom-bounce 1s infinite;
+.chapter-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 30px -10px rgba(182, 255, 46, 0.08);
 }
 
 /* Modal Entry Animation */
-#email-modal:not(.hidden), #phone-modal:not(.hidden) {
-    animation: modal-pop 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+#email-modal:not(.hidden), #phone-modal:not(.hidden), #privacy-modal:not(.hidden), #terms-modal:not(.hidden) {
+    animation: modal-pop 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes modal-pop {
-    0% { opacity: 0; transform: translate(-50%, -45%) scale(0.95); }
+    0% { opacity: 0; transform: translate(-50%, -46%) scale(0.96); }
     100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-}
-
-/* AI Cyber HUD Floating Badges Keyframes */
-@keyframes float-slow {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-7px); }
-}
-
-@keyframes float-delayed {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(7px); }
-}
-
-.animate-float-slow {
-    animation: float-slow 4s ease-in-out infinite;
-}
-
-.animate-float-delayed {
-    animation: float-delayed 4.5s ease-in-out 1s infinite;
 }
