@@ -47,6 +47,8 @@
 </head>
 <body class="bg-[#0a0a0c] text-gray-100 antialiased selection:bg-blue-500/30 relative">
 
+    <!-- Ambient Floating Particles Canvas -->
+    <canvas id="living-canvas"></canvas>
     <!-- Tactile Film Grain Overlay (Removes Artificial AI Look) -->
     <div class="texture-overlay"></div>
 
@@ -451,83 +453,71 @@
 
         <section id="projects" class="py-12 md:py-20 px-6">
             <div class="max-w-7xl mx-auto">
-                <h2 class="font-heading text-3xl md:text-4xl font-black mb-8 md:mb-12 animate-on-scroll fade-up">Technical Work</h2>
-                <!-- View Controls: Kinetic Deck vs All Grid -->
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-10 pb-6 border-b border-white/5">
                     <div>
-                        <span class="text-xs font-mono uppercase tracking-[0.2em] text-blue-400 block mb-1">Interactive Project Showcase</span>
-                        <h2 class="font-heading text-3xl md:text-4xl font-black text-white">Technical Work & Capabilities</h2>
+                        <span class="text-xs font-mono uppercase tracking-[0.2em] text-blue-400 block mb-2">[ TECHNICAL PORTFOLIO ]</span>
+                        <h2 class="font-heading text-3xl md:text-5xl font-black text-white">Technical Work & Capabilities</h2>
                     </div>
-
-                    <!-- Kinetic Deck Controls -->
-                    <div class="flex items-center gap-3">
-                        <button onclick="cycleKineticCard(-1)" aria-label="Previous Project" class="h-10 w-10 rounded-xl bg-white/5 border border-white/10 hover:border-blue-500/50 hover:bg-white/10 flex items-center justify-center text-sm text-gray-300 hover:text-white transition">
-                            ←
-                        </button>
-                        <span id="card-counter" class="font-mono text-xs text-blue-400 font-bold px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20">
-                            1 / 6
-                        </span>
-                        <button onclick="cycleKineticCard(1)" aria-label="Next Project" class="h-10 w-10 rounded-xl bg-white/5 border border-white/10 hover:border-blue-500/50 hover:bg-white/10 flex items-center justify-center text-sm text-gray-300 hover:text-white transition">
-                            →
-                        </button>
-                    </div>
+                    <p class="text-xs font-mono text-gray-400 max-w-xs">
+                        Hover over any card to reveal direct deliverables and client capabilities.
+                    </p>
                 </div>
 
-                <!-- Kinetic Deck Showcase Track (Moving Card Side -> Down -> Forward) -->
-                <div class="kinetic-card-container relative mb-16">
+                <!-- User-Friendly 3-Column Project Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                     
-                    <!-- Card 1: AI Admission Enquiry System -->
-                    <div class="kinetic-card card-active absolute inset-0 tech-card bg-[#121216] rounded-[2rem] p-8 sm:p-10 border border-white/10 shadow-2xl flex flex-col justify-between cursor-pointer" onclick="cycleKineticCard(1)">
+                    <!-- Project 1: AI Admission Enquiry System -->
+                    <div class="tech-card p-8 flex flex-col justify-between animate-on-scroll fade-up">
                         <div>
                             <div class="flex justify-between items-start mb-6">
                                 <div class="h-12 w-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 font-mono text-sm font-bold border border-blue-500/20">
                                     01
                                 </div>
-                                <span class="text-[11px] font-mono uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">
+                                <span class="text-[10px] font-mono uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded-full border border-cyan-500/20">
                                     n8n Workflow
                                 </span>
                             </div>
-                            <h3 class="font-heading text-2xl font-bold mb-3 text-white">AI Admission Enquiry System</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            <h3 class="font-heading text-xl font-bold mb-3 text-white">AI Admission Enquiry System</h3>
+                            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
                                 Web-based intake portal bound to an autonomous n8n automation pipeline that processes applicant data, routes leads, and sends instant personalized confirmations.
                             </p>
                             
-                            <!-- What We Can Do Hover Drawer -->
+                            <!-- What We Can Do Hover Capability Drawer -->
                             <div class="capability-drawer bg-white/[0.02] rounded-xl p-4 border border-white/5">
-                                <p class="text-xs font-mono uppercase tracking-wider text-blue-400 font-bold mb-2">What We Can Do:</p>
+                                <p class="text-[11px] font-mono uppercase tracking-wider text-blue-400 font-bold mb-2">What We Can Do:</p>
                                 <ul class="text-xs text-gray-300 space-y-1.5 font-light">
                                     <li>• Automate lead intake with zero manual data entry</li>
-                                    <li>• Trigger sub-second custom email confirmations with dynamic fields</li>
+                                    <li>• Trigger sub-second custom email confirmations</li>
                                     <li>• Sync candidate records to CRM / databases in real time</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="flex items-center justify-between pt-6 border-t border-white/5 mt-6 text-xs text-gray-400">
-                            <span class="font-mono">Hover to see capabilities · Click to cycle next →</span>
-                            <span class="text-blue-400 font-bold">Explore →</span>
+                        <div class="flex gap-2 flex-wrap mt-6 pt-4 border-t border-white/5 text-[10px] font-mono uppercase text-gray-400">
+                            <span class="bg-white/5 px-2.5 py-1 rounded">n8n Automation</span>
+                            <span class="bg-white/5 px-2.5 py-1 rounded">Webhook API</span>
                         </div>
                     </div>
 
-                    <!-- Card 2: Full-Stack AI Admission Chatbot -->
-                    <div class="kinetic-card card-next absolute inset-0 tech-card bg-[#121216] rounded-[2rem] p-8 sm:p-10 border border-white/10 shadow-2xl flex flex-col justify-between cursor-pointer" onclick="cycleKineticCard(1)">
+                    <!-- Project 2: Full-Stack AI Admission Chatbot -->
+                    <div class="tech-card p-8 flex flex-col justify-between animate-on-scroll fade-up delay-100">
                         <div>
                             <div class="flex justify-between items-start mb-6">
                                 <div class="h-12 w-12 bg-indigo-500/10 rounded-2xl flex items-center justify-center text-indigo-400 font-mono text-sm font-bold border border-indigo-500/20">
                                     02
                                 </div>
-                                <a href="https://www.linkedin.com/in/kavish-m-" target="_blank" onclick="event.stopPropagation()" class="text-[11px] font-mono text-indigo-400 hover:underline">
+                                <a href="https://www.linkedin.com/in/kavish-m-" target="_blank" class="text-[10px] font-mono text-indigo-400 hover:underline">
                                     LinkedIn Post ↗
                                 </a>
                             </div>
-                            <h3 class="font-heading text-2xl font-bold mb-3 text-white">Full-Stack AI Admission Chatbot</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                                Interactive conversational agent delivering institutional admissions information, answering complex curriculum queries, and qualifying student leads.
+                            <h3 class="font-heading text-xl font-bold mb-3 text-white">Full-Stack AI Admission Chatbot</h3>
+                            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
+                                Interactive conversational agent delivering institutional admissions information, answering complex queries, and qualifying student leads.
                             </p>
 
-                            <!-- What We Can Do Hover Drawer -->
+                            <!-- What We Can Do Hover Capability Drawer -->
                             <div class="capability-drawer bg-white/[0.02] rounded-xl p-4 border border-white/5">
-                                <p class="text-xs font-mono uppercase tracking-wider text-indigo-400 font-bold mb-2">What We Can Do:</p>
+                                <p class="text-[11px] font-mono uppercase tracking-wider text-indigo-400 font-bold mb-2">What We Can Do:</p>
                                 <ul class="text-xs text-gray-300 space-y-1.5 font-light">
                                     <li>• Deploy customized conversational AI agents for 24/7 web inquiries</li>
                                     <li>• Integrate LLM context memory with institutional FAQs</li>
@@ -536,31 +526,31 @@
                             </div>
                         </div>
 
-                        <div class="flex items-center justify-between pt-6 border-t border-white/5 mt-6 text-xs text-gray-400">
-                            <span class="font-mono">Hover to see capabilities · Click to cycle next →</span>
-                            <span class="text-indigo-400 font-bold">Explore →</span>
+                        <div class="flex gap-2 flex-wrap mt-6 pt-4 border-t border-white/5 text-[10px] font-mono uppercase text-gray-400">
+                            <span class="bg-white/5 px-2.5 py-1 rounded">Full-Stack</span>
+                            <span class="bg-white/5 px-2.5 py-1 rounded">AI Chatbot</span>
                         </div>
                     </div>
 
-                    <!-- Card 3: AI Assistant for Farmer -->
-                    <div class="kinetic-card card-queue absolute inset-0 tech-card bg-[#121216] rounded-[2rem] p-8 sm:p-10 border border-white/10 shadow-2xl flex flex-col justify-between cursor-pointer" onclick="cycleKineticCard(1)">
+                    <!-- Project 3: AI Assistant for Farmer -->
+                    <div class="tech-card p-8 flex flex-col justify-between animate-on-scroll fade-up delay-200">
                         <div>
                             <div class="flex justify-between items-start mb-6">
                                 <div class="h-12 w-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 font-mono text-sm font-bold border border-emerald-500/20">
                                     03
                                 </div>
-                                <span class="text-[11px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
-                                    Agentic Advisory
+                                <span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
+                                    Agentic AI
                                 </span>
                             </div>
-                            <h3 class="font-heading text-2xl font-bold mb-3 text-white">AI Assistant for Farmers</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            <h3 class="font-heading text-xl font-bold mb-3 text-white">AI Assistant for Farmers</h3>
+                            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
                                 Agentic workflow engine delivering crop intelligence, meteorological alerts, and soil management tips through automated messaging channels.
                             </p>
 
-                            <!-- What We Can Do Hover Drawer -->
+                            <!-- What We Can Do Hover Capability Drawer -->
                             <div class="capability-drawer bg-white/[0.02] rounded-xl p-4 border border-white/5">
-                                <p class="text-xs font-mono uppercase tracking-wider text-emerald-400 font-bold mb-2">What We Can Do:</p>
+                                <p class="text-[11px] font-mono uppercase tracking-wider text-emerald-400 font-bold mb-2">What We Can Do:</p>
                                 <ul class="text-xs text-gray-300 space-y-1.5 font-light">
                                     <li>• Build multi-step decision workflows combining weather APIs with AI</li>
                                     <li>• Send scheduled alerts and localized guidance via messaging webhooks</li>
@@ -569,31 +559,31 @@
                             </div>
                         </div>
 
-                        <div class="flex items-center justify-between pt-6 border-t border-white/5 mt-6 text-xs text-gray-400">
-                            <span class="font-mono">Hover to see capabilities · Click to cycle next →</span>
-                            <span class="text-emerald-400 font-bold">Explore →</span>
+                        <div class="flex gap-2 flex-wrap mt-6 pt-4 border-t border-white/5 text-[10px] font-mono uppercase text-gray-400">
+                            <span class="bg-white/5 px-2.5 py-1 rounded">n8n Engine</span>
+                            <span class="bg-white/5 px-2.5 py-1 rounded">Agri-Tech</span>
                         </div>
                     </div>
 
-                    <!-- Card 4: Agentic n8n Automation Chatbot -->
-                    <div class="kinetic-card card-queue absolute inset-0 tech-card bg-[#121216] rounded-[2rem] p-8 sm:p-10 border border-white/10 shadow-2xl flex flex-col justify-between cursor-pointer" onclick="cycleKineticCard(1)">
+                    <!-- Project 4: Agentic n8n Automation Chatbot -->
+                    <div class="tech-card p-8 flex flex-col justify-between animate-on-scroll fade-up">
                         <div>
                             <div class="flex justify-between items-start mb-6">
                                 <div class="h-12 w-12 bg-cyan-500/10 rounded-2xl flex items-center justify-center text-cyan-400 font-mono text-sm font-bold border border-cyan-500/20">
                                     04
                                 </div>
-                                <span class="text-[11px] font-mono uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">
-                                    Autonomous Logic
+                                <span class="text-[10px] font-mono uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded-full border border-cyan-500/20">
+                                    Multi-Tool
                                 </span>
                             </div>
-                            <h3 class="font-heading text-2xl font-bold mb-3 text-white">Agentic n8n Automation Chatbot</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            <h3 class="font-heading text-xl font-bold mb-3 text-white">Agentic n8n Automation Chatbot</h3>
+                            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
                                 Multi-node AI execution flow leveraging custom webhook routers, structured memory buffers, and tool calling for automated business operations.
                             </p>
 
-                            <!-- What We Can Do Hover Drawer -->
+                            <!-- What We Can Do Hover Capability Drawer -->
                             <div class="capability-drawer bg-white/[0.02] rounded-xl p-4 border border-white/5">
-                                <p class="text-xs font-mono uppercase tracking-wider text-cyan-400 font-bold mb-2">What We Can Do:</p>
+                                <p class="text-[11px] font-mono uppercase tracking-wider text-cyan-400 font-bold mb-2">What We Can Do:</p>
                                 <ul class="text-xs text-gray-300 space-y-1.5 font-light">
                                     <li>• Chain multiple LLM calls with conditional fallback rules</li>
                                     <li>• Route dynamic user payloads to third-party endpoints automatically</li>
@@ -602,31 +592,31 @@
                             </div>
                         </div>
 
-                        <div class="flex items-center justify-between pt-6 border-t border-white/5 mt-6 text-xs text-gray-400">
-                            <span class="font-mono">Hover to see capabilities · Click to cycle next →</span>
-                            <span class="text-cyan-400 font-bold">Explore →</span>
+                        <div class="flex gap-2 flex-wrap mt-6 pt-4 border-t border-white/5 text-[10px] font-mono uppercase text-gray-400">
+                            <span class="bg-white/5 px-2.5 py-1 rounded">n8n Automation</span>
+                            <span class="bg-white/5 px-2.5 py-1 rounded">Tool Calling</span>
                         </div>
                     </div>
 
-                    <!-- Card 5: Library Management System -->
-                    <div class="kinetic-card card-queue absolute inset-0 tech-card bg-[#121216] rounded-[2rem] p-8 sm:p-10 border border-white/10 shadow-2xl flex flex-col justify-between cursor-pointer" onclick="cycleKineticCard(1)">
+                    <!-- Project 5: Library Management System -->
+                    <div class="tech-card p-8 flex flex-col justify-between animate-on-scroll fade-up delay-100">
                         <div>
                             <div class="flex justify-between items-start mb-6">
                                 <div class="h-12 w-12 bg-yellow-500/10 rounded-2xl flex items-center justify-center text-yellow-400 font-mono text-sm font-bold border border-yellow-500/20">
                                     05
                                 </div>
-                                <span class="text-[11px] font-mono uppercase tracking-widest text-yellow-400 bg-yellow-500/10 px-3 py-1 rounded-full border border-yellow-500/20">
-                                    Full-Stack Web
+                                <span class="text-[10px] font-mono uppercase tracking-widest text-yellow-400 bg-yellow-500/10 px-2.5 py-1 rounded-full border border-yellow-500/20">
+                                    Full-Stack
                                 </span>
                             </div>
-                            <h3 class="font-heading text-2xl font-bold mb-3 text-white">Library Management System</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            <h3 class="font-heading text-xl font-bold mb-3 text-white">Library Management System</h3>
+                            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
                                 Full-stack database web platform featuring administrative catalog controls, student membership lookup, and real-time inventory tracking.
                             </p>
 
-                            <!-- What We Can Do Hover Drawer -->
+                            <!-- What We Can Do Hover Capability Drawer -->
                             <div class="capability-drawer bg-white/[0.02] rounded-xl p-4 border border-white/5">
-                                <p class="text-xs font-mono uppercase tracking-wider text-yellow-400 font-bold mb-2">What We Can Do:</p>
+                                <p class="text-[11px] font-mono uppercase tracking-wider text-yellow-400 font-bold mb-2">What We Can Do:</p>
                                 <ul class="text-xs text-gray-300 space-y-1.5 font-light">
                                     <li>• Design secure relational database schemas (MySQL / PostgreSQL)</li>
                                     <li>• Build role-based dashboards (Admin, Staff, Student)</li>
@@ -635,31 +625,31 @@
                             </div>
                         </div>
 
-                        <div class="flex items-center justify-between pt-6 border-t border-white/5 mt-6 text-xs text-gray-400">
-                            <span class="font-mono">Hover to see capabilities · Click to cycle next →</span>
-                            <span class="text-yellow-400 font-bold">Explore →</span>
+                        <div class="flex gap-2 flex-wrap mt-6 pt-4 border-t border-white/5 text-[10px] font-mono uppercase text-gray-400">
+                            <span class="bg-white/5 px-2.5 py-1 rounded">Full-Stack</span>
+                            <span class="bg-white/5 px-2.5 py-1 rounded">Database</span>
                         </div>
                     </div>
 
-                    <!-- Card 6: Emergency SOS Website -->
-                    <div class="kinetic-card card-queue absolute inset-0 tech-card bg-[#121216] rounded-[2rem] p-8 sm:p-10 border border-white/10 shadow-2xl flex flex-col justify-between cursor-pointer" onclick="cycleKineticCard(1)">
+                    <!-- Project 6: Emergency SOS Website -->
+                    <div class="tech-card p-8 flex flex-col justify-between animate-on-scroll fade-up delay-200">
                         <div>
                             <div class="flex justify-between items-start mb-6">
                                 <div class="h-12 w-12 bg-red-500/10 rounded-2xl flex items-center justify-center text-red-400 font-mono text-sm font-bold border border-red-500/20">
                                     06
                                 </div>
-                                <span class="text-[11px] font-mono uppercase tracking-widest text-red-400 bg-red-500/10 px-3 py-1 rounded-full border border-red-500/20">
-                                    Critical Response
+                                <span class="text-[10px] font-mono uppercase tracking-widest text-red-400 bg-red-500/10 px-2.5 py-1 rounded-full border border-red-500/20">
+                                    Emergency
                                 </span>
                             </div>
-                            <h3 class="font-heading text-2xl font-bold mb-3 text-white">Emergency SOS Dispatch Platform</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            <h3 class="font-heading text-xl font-bold mb-3 text-white">Emergency SOS Dispatch Platform</h3>
+                            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
                                 Rapid responder web portal connecting distressed users with emergency drivers, featuring live status streaming and automated dispatch notifications.
                             </p>
 
-                            <!-- What We Can Do Hover Drawer -->
+                            <!-- What We Can Do Hover Capability Drawer -->
                             <div class="capability-drawer bg-white/[0.02] rounded-xl p-4 border border-white/5">
-                                <p class="text-xs font-mono uppercase tracking-wider text-red-400 font-bold mb-2">What We Can Do:</p>
+                                <p class="text-[11px] font-mono uppercase tracking-wider text-red-400 font-bold mb-2">What We Can Do:</p>
                                 <ul class="text-xs text-gray-300 space-y-1.5 font-light">
                                     <li>• Develop high-reliability, low-latency emergency user interfaces</li>
                                     <li>• Implement real-time geographic status and responder assignment</li>
@@ -668,236 +658,176 @@
                             </div>
                         </div>
 
-                        <div class="flex items-center justify-between pt-6 border-t border-white/5 mt-6 text-xs text-gray-400">
-                            <span class="font-mono">Hover to see capabilities · Click to cycle next →</span>
-                            <span class="text-red-400 font-bold">Explore →</span>
+                        <div class="flex gap-2 flex-wrap mt-6 pt-4 border-t border-white/5 text-[10px] font-mono uppercase text-gray-400">
+                            <span class="bg-white/5 px-2.5 py-1 rounded">Live Dispatch</span>
+                            <span class="bg-white/5 px-2.5 py-1 rounded">Frontend</span>
                         </div>
                     </div>
 
                 </div>
 
                 <!-- ════════════════════════════════════════════════════════════════════
-                     INTERACTIVE CAPABILITY WORKBENCH (Unique Studio Architecture)
+                     AESTHETIC MODERN BENTO GRID ("WHAT I DO BEST")
                      ════════════════════════════════════════════════════════════════════ -->
                 <div class="mt-28 mb-12 animate-on-scroll fade-up">
-                    
-                    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-10 pb-6 border-b border-white/5">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-10 pb-6 border-b border-white/5">
                         <div>
-                            <span class="text-xs font-mono uppercase tracking-[0.25em] text-blue-400 block mb-2">[ SYSTEM CAPABILITIES ]</span>
-                            <h3 class="font-heading text-3xl sm:text-4xl font-black text-white">Interactive Capability Workbench</h3>
+                            <span class="text-xs font-mono uppercase tracking-[0.2em] text-blue-400 block mb-2">[ CORE EXPERTISE ]</span>
+                            <h3 class="font-heading text-3xl sm:text-4xl font-black text-white">Engineering Disciplines</h3>
                         </div>
                         <p class="text-xs font-mono text-gray-400 max-w-xs">
-                            Select any discipline on the left to inspect live architectural specifications and workflow pipelines.
+                            Architected for high throughput, seamless API integration, and clean responsive motion.
                         </p>
                     </div>
 
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <!-- Asymmetrical Modern Bento Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         
-                        <!-- Left Selector Column -->
-                        <div class="lg:col-span-5 space-y-3">
-                            
-                            <!-- Tab 1: Automation -->
-                            <div onclick="selectWorkbenchDomain('automation')" data-domain="automation" class="workbench-tab active p-5 rounded-2xl bg-[#121218] border border-blue-500/50 cursor-pointer group">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-3">
-                                        <span class="font-mono text-xs font-bold text-blue-400">01</span>
-                                        <h4 class="font-heading text-lg font-bold text-white group-hover:text-blue-300 transition-colors">
-                                            Workflow Automation
-                                        </h4>
-                                    </div>
-                                    <span class="text-xs font-mono text-blue-400">n8n Engine →</span>
+                        <!-- Bento 1: Featured Automation (Spans 2 columns on lg) -->
+                        <div class="bento-card lg:col-span-2 p-8 sm:p-10 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-6">
+                                    <span class="text-xs font-mono uppercase tracking-widest text-blue-400 font-bold">
+                                        AUTOMATION & AGENTIC AI
+                                    </span>
+                                    <span class="text-[10px] font-mono px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                                        Core Practice
+                                    </span>
                                 </div>
-                                <div class="tab-indicator h-0.5 w-full bg-blue-500 mt-3 rounded-full"></div>
-                                <p class="text-xs text-gray-400 mt-2 font-light">Autonomous logic, webhook routing, error handling & CRM sync.</p>
+                                <h4 class="font-heading text-2xl sm:text-3xl font-black text-white mb-4">
+                                    n8n Workflows & Agentic Pipelines
+                                </h4>
+                                <p class="text-gray-400 text-sm leading-relaxed mb-8 max-w-xl font-light">
+                                    Architecting autonomous multi-step pipelines that connect webhooks, trigger AI reasoning models, and execute complex business logic without human intervention.
+                                </p>
+
+                                <!-- Visual Pipeline Node Flow -->
+                                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center text-xs font-mono mb-4">
+                                    <div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5">
+                                        <span class="text-[10px] text-gray-500 block mb-1">01 / TRIGGER</span>
+                                        <span class="text-white font-bold block">Webhook Ingest</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5">
+                                        <span class="text-[10px] text-gray-500 block mb-1">02 / REASONING</span>
+                                        <span class="text-cyan-400 font-bold block">Agent Parser</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5">
+                                        <span class="text-[10px] text-gray-500 block mb-1">03 / FILTER</span>
+                                        <span class="text-purple-400 font-bold block">Logic Branch</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-xl bg-blue-500/10 border border-blue-500/30">
+                                        <span class="text-[10px] text-blue-400 block mb-1">04 / DISPATCH</span>
+                                        <span class="text-emerald-400 font-bold block">Auto-Sync</span>
+                                    </div>
+                                </div>
                             </div>
 
-                            <!-- Tab 2: Integrations -->
-                            <div onclick="selectWorkbenchDomain('integrations')" data-domain="integrations" class="workbench-tab p-5 rounded-2xl bg-[#121218] border border-white/5 cursor-pointer group">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-3">
-                                        <span class="font-mono text-xs font-bold text-purple-400">02</span>
-                                        <h4 class="font-heading text-lg font-bold text-white group-hover:text-purple-300 transition-colors">
-                                            APIs & Webhooks
-                                        </h4>
-                                    </div>
-                                    <span class="text-xs font-mono text-purple-400">REST / JSON →</span>
-                                </div>
-                                <div class="tab-indicator h-0.5 w-full bg-purple-500 mt-3 rounded-full"></div>
-                                <p class="text-xs text-gray-400 mt-2 font-light">Custom endpoint handlers, token auth & event dispatchers.</p>
+                            <div class="flex items-center gap-4 text-xs font-mono text-gray-400 pt-6 border-t border-white/5">
+                                <span class="text-blue-400 font-bold">Latency: &lt; 250ms</span>
+                                <span>•</span>
+                                <span>Fault-Tolerant Retries</span>
+                                <span>•</span>
+                                <span>Custom Node Development</span>
                             </div>
-
-                            <!-- Tab 3: Full-Stack -->
-                            <div onclick="selectWorkbenchDomain('fullstack')" data-domain="fullstack" class="workbench-tab p-5 rounded-2xl bg-[#121218] border border-white/5 cursor-pointer group">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-3">
-                                        <span class="font-mono text-xs font-bold text-emerald-400">03</span>
-                                        <h4 class="font-heading text-lg font-bold text-white group-hover:text-emerald-300 transition-colors">
-                                            Full-Stack & Streamlit
-                                        </h4>
-                                    </div>
-                                    <span class="text-xs font-mono text-emerald-400">Java / Web →</span>
-                                </div>
-                                <div class="tab-indicator h-0.5 w-full bg-emerald-500 mt-3 rounded-full"></div>
-                                <p class="text-xs text-gray-400 mt-2 font-light">Responsive client frontends with Java and cloud database backends.</p>
-                            </div>
-
-                            <!-- Tab 4: UI/UX -->
-                            <div onclick="selectWorkbenchDomain('uiux')" data-domain="uiux" class="workbench-tab p-5 rounded-2xl bg-[#121218] border border-white/5 cursor-pointer group">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-3">
-                                        <span class="font-mono text-xs font-bold text-rose-400">04</span>
-                                        <h4 class="font-heading text-lg font-bold text-white group-hover:text-rose-300 transition-colors">
-                                            UI/UX & Kinetic Motion
-                                        </h4>
-                                    </div>
-                                    <span class="text-xs font-mono text-rose-400">Design Systems →</span>
-                                </div>
-                                <div class="tab-indicator h-0.5 w-full bg-rose-500 mt-3 rounded-full"></div>
-                                <p class="text-xs text-gray-400 mt-2 font-light">Human-centered visual hierarchies, 60fps animations & accessible UX.</p>
-                            </div>
-
                         </div>
 
-                        <!-- Right Live Dynamic Stage -->
-                        <div class="lg:col-span-7 bg-[#121218] rounded-3xl p-6 sm:p-8 border border-white/10 shadow-2xl relative min-h-[380px]">
-                            
-                            <!-- Panel 1: Automation Flow Visualizer -->
-                            <div id="panel-automation" class="workbench-panel space-y-6">
-                                <div class="flex justify-between items-center border-b border-white/5 pb-4">
-                                    <span class="text-xs font-mono uppercase tracking-wider text-blue-400 font-bold">
-                                        [ LIVE ARCHITECTURE: n8n AGENTIC PIPELINE ]
-                                    </span>
-                                    <span class="text-[10px] font-mono px-2.5 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
-                                        Status: Production-Grade
-                                    </span>
-                                </div>
-
-                                <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 text-center text-xs font-mono">
-                                    <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5">
-                                        <span class="text-[10px] text-gray-500 block mb-1">STAGE 01</span>
-                                        <span class="text-white font-bold block">Webhook Ingest</span>
-                                        <span class="text-[10px] text-gray-400">POST /api/lead</span>
-                                    </div>
-                                    <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5">
-                                        <span class="text-[10px] text-gray-500 block mb-1">STAGE 02</span>
-                                        <span class="text-white font-bold block">Agent Parser</span>
-                                        <span class="text-[10px] text-cyan-400">LLM Reasoning</span>
-                                    </div>
-                                    <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5">
-                                        <span class="text-[10px] text-gray-500 block mb-1">STAGE 03</span>
-                                        <span class="text-white font-bold block">Filter & Branch</span>
-                                        <span class="text-[10px] text-purple-400">Conditional Node</span>
-                                    </div>
-                                    <div class="p-3 rounded-xl bg-white/[0.03] border border-blue-500/30 bg-blue-500/5">
-                                        <span class="text-[10px] text-gray-500 block mb-1">STAGE 04</span>
-                                        <span class="text-blue-400 font-bold block">Auto-Dispatch</span>
-                                        <span class="text-[10px] text-emerald-400">SMTP + CRM</span>
-                                    </div>
-                                </div>
-
-                                <div class="p-4 rounded-2xl bg-black/40 border border-white/5 font-mono text-xs text-gray-300 space-y-2">
-                                    <p class="text-gray-400">// Pipeline Performance Metrics:</p>
-                                    <p><span class="text-blue-400">Execution Speed:</span> ~240ms end-to-end</p>
-                                    <p><span class="text-blue-400">Error Handling:</span> Automatic exponential backoff retry</p>
-                                    <p><span class="text-blue-400">Security:</span> Signature-verified webhook headers</p>
-                                </div>
-                            </div>
-
-                            <!-- Panel 2: Integrations (JSON payload inspector) -->
-                            <div id="panel-integrations" class="workbench-panel hidden space-y-6">
-                                <div class="flex justify-between items-center border-b border-white/5 pb-4">
-                                    <span class="text-xs font-mono uppercase tracking-wider text-purple-400 font-bold">
-                                        [ LIVE PAYLOAD: API & WEBHOOK BUS ]
-                                    </span>
-                                    <span class="text-[10px] font-mono px-2.5 py-1 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">
-                                        HTTP/2 200 OK
-                                    </span>
-                                </div>
-
-                                <div class="p-4 rounded-2xl bg-black/50 border border-white/5 font-mono text-xs text-gray-300 overflow-x-auto">
-                                    <pre class="text-purple-300">{
-  <span class="text-gray-400">"event":</span> <span class="text-green-300">"lead.inquiry_created"</span>,
-  <span class="text-gray-400">"timestamp":</span> <span class="text-yellow-300">"2026-09-30T11:20:00Z"</span>,
-  <span class="text-gray-400">"payload":</span> {
-    <span class="text-gray-400">"client_type":</span> <span class="text-green-300">"Enterprise Automation"</span>,
-    <span class="text-gray-400">"workflow_target":</span> <span class="text-green-300">"n8n Webhook Dispatcher"</span>,
-    <span class="text-gray-400">"status":</span> <span class="text-green-300">"validated_and_queued"</span>
-  },
-  <span class="text-gray-400">"response_sla":</span> <span class="text-green-300">"&lt; 24h"</span>
-}</pre>
-                                </div>
-
-                                <p class="text-xs text-gray-400 leading-relaxed font-light">
-                                    Structured, clean data serialization with complete schema validation, preventing malformed payload crashes and ensuring rock-solid service uptime.
+                        <!-- Bento 2: Full-Stack Web & Streamlit -->
+                        <div class="bento-card p-8 flex flex-col justify-between">
+                            <div>
+                                <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 font-bold block mb-4">
+                                    FULL-STACK
+                                </span>
+                                <h4 class="font-heading text-xl font-bold text-white mb-3">
+                                    Web & Streamlit Applications
+                                </h4>
+                                <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-6 font-light">
+                                    Building responsive web apps and interactive data platforms with modern HTML/CSS, Java, and Streamlit.
                                 </p>
+
+                                <!-- Mini Browser Mockup Frame -->
+                                <div class="rounded-xl bg-black/40 border border-white/5 p-3 space-y-2">
+                                    <div class="flex gap-1.5 items-center pb-2 border-b border-white/5">
+                                        <span class="h-2 w-2 rounded-full bg-white/10"></span>
+                                        <span class="h-2 w-2 rounded-full bg-white/10"></span>
+                                        <span class="h-2 w-2 rounded-full bg-white/10"></span>
+                                        <span class="text-[9px] font-mono text-gray-500 ml-2">app.local:3000</span>
+                                    </div>
+                                    <div class="h-2 bg-emerald-500/20 rounded w-3/4"></div>
+                                    <div class="h-2 bg-white/5 rounded w-1/2"></div>
+                                </div>
                             </div>
 
-                            <!-- Panel 3: Full-Stack (System tier preview) -->
-                            <div id="panel-fullstack" class="workbench-panel hidden space-y-6">
-                                <div class="flex justify-between items-center border-b border-white/5 pb-4">
-                                    <span class="text-xs font-mono uppercase tracking-wider text-emerald-400 font-bold">
-                                        [ FULL-STACK TIER: MULTI-LAYER ARCHITECTURE ]
-                                    </span>
-                                    <span class="text-[10px] font-mono px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                                        Tier 3 Production
-                                    </span>
-                                </div>
+                            <div class="pt-6 border-t border-white/5 text-[11px] font-mono text-emerald-400">
+                                Clean State Management →
+                            </div>
+                        </div>
 
-                                <div class="space-y-3 font-mono text-xs">
-                                    <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex justify-between items-center">
-                                        <span class="text-gray-400">Layer 1: Frontend Client</span>
-                                        <span class="text-white font-bold">Semantic HTML5 / Tailwind / Kinetic Vanilla JS</span>
-                                    </div>
-                                    <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex justify-between items-center">
-                                        <span class="text-gray-400">Layer 2: Edge Services</span>
-                                        <span class="text-emerald-400 font-bold">Node.js Serverless Gateway + Java Core</span>
-                                    </div>
-                                    <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex justify-between items-center">
-                                        <span class="text-gray-400">Layer 3: Data Persistence</span>
-                                        <span class="text-cyan-400 font-bold">PostgreSQL / Supabase with Row Level Security</span>
-                                    </div>
-                                </div>
-
-                                <p class="text-xs text-gray-400 leading-relaxed font-light">
-                                    Zero bloated runtimes. Engineered for fast initial paint, atomic zero-downtime rollouts on Vercel, and scalable database boundaries.
+                        <!-- Bento 3: APIs & Webhooks -->
+                        <div class="bento-card p-8 flex flex-col justify-between">
+                            <div>
+                                <span class="text-xs font-mono uppercase tracking-widest text-purple-400 font-bold block mb-4">
+                                    INTEGRATIONS
+                                </span>
+                                <h4 class="font-heading text-xl font-bold text-white mb-3">
+                                    APIs & Custom Webhooks
+                                </h4>
+                                <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-6 font-light">
+                                    Connecting client frontends with backend microservices, handling JSON payloads, and token-based event dispatch.
                                 </p>
+
+                                <div class="space-y-2 font-mono text-[11px]">
+                                    <div class="p-2.5 rounded-lg bg-white/[0.02] border border-white/5 flex justify-between">
+                                        <span class="text-gray-400">RESTful Endpoints</span>
+                                        <span class="text-purple-300">JSON Ingest</span>
+                                    </div>
+                                    <div class="p-2.5 rounded-lg bg-white/[0.02] border border-white/5 flex justify-between">
+                                        <span class="text-gray-400">Authentication</span>
+                                        <span class="text-green-400">HMAC Verified</span>
+                                    </div>
+                                </div>
                             </div>
 
-                            <!-- Panel 4: UI/UX (Kinetic specs) -->
-                            <div id="panel-uiux" class="workbench-panel hidden space-y-6">
-                                <div class="flex justify-between items-center border-b border-white/5 pb-4">
-                                    <span class="text-xs font-mono uppercase tracking-wider text-rose-400 font-bold">
-                                        [ UI/UX ENGINEERING: KINETIC DESIGN SPEC ]
-                                    </span>
-                                    <span class="text-[10px] font-mono px-2.5 py-1 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">
-                                        60 FPS Hardware-Accelerated
-                                    </span>
-                                </div>
+                            <div class="pt-6 border-t border-white/5 text-[11px] font-mono text-purple-400">
+                                100% Validated Schemas →
+                            </div>
+                        </div>
 
-                                <div class="grid grid-cols-2 gap-3 text-xs font-mono">
+                        <!-- Bento 4: UI/UX & Kinetic Motion (Spans 2 columns on lg) -->
+                        <div class="bento-card lg:col-span-2 p-8 sm:p-10 flex flex-col justify-between">
+                            <div>
+                                <span class="text-xs font-mono uppercase tracking-widest text-rose-400 font-bold block mb-4">
+                                    USER EXPERIENCE
+                                </span>
+                                <h4 class="font-heading text-2xl font-black text-white mb-3">
+                                    UI/UX & Kinetic Motion Engineering
+                                </h4>
+                                <p class="text-gray-400 text-sm leading-relaxed mb-6 font-light">
+                                    Designing bespoke, human-centered interfaces with tactile micro-interactions and hardware-accelerated 60 FPS CSS transitions.
+                                </p>
+
+                                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono">
                                     <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
-                                        <span class="text-gray-400 block text-[10px]">Easing Function</span>
-                                        <span class="text-rose-300 font-bold">cubic-bezier(0.16, 1, 0.3, 1)</span>
-                                    </div>
-                                    <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
-                                        <span class="text-gray-400 block text-[10px]">Color Hierarchy</span>
-                                        <span class="text-white font-bold">High-Contrast Matte Surface</span>
+                                        <span class="text-gray-400 block text-[10px]">Frame Rate</span>
+                                        <span class="text-rose-300 font-bold">60 FPS Smooth</span>
                                     </div>
                                     <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
                                         <span class="text-gray-400 block text-[10px]">Accessibility</span>
-                                        <span class="text-emerald-400 font-bold">WCAG AA Compliant</span>
+                                        <span class="text-emerald-400 font-bold">WCAG AA Ratio</span>
                                     </div>
                                     <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
-                                        <span class="text-gray-400 block text-[10px]">Responsive Logic</span>
-                                        <span class="text-blue-400 font-bold">Mobile-First Fluid Breakpoints</span>
+                                        <span class="text-gray-400 block text-[10px]">Responsive</span>
+                                        <span class="text-blue-400 font-bold">Mobile-First</span>
+                                    </div>
+                                    <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                                        <span class="text-gray-400 block text-[10px]">Typography</span>
+                                        <span class="text-white font-bold">Editorial Sans</span>
                                     </div>
                                 </div>
-
-                                <p class="text-xs text-gray-400 leading-relaxed font-light">
-                                    Every interaction is purposeful. We replace generic template gimmicks with tactile animations that guide visitor attention and communicate craft.
-                                </p>
                             </div>
 
+                            <div class="pt-6 border-t border-white/5 text-xs font-mono text-gray-400">
+                                Built to leave an impression on recruiters and enterprise clients.
+                            </div>
                         </div>
 
                     </div>
@@ -907,29 +837,29 @@
         </section>
 
         <!-- ════════════════════════════════════════════════════════════════════
-             REDESIGNED "LET'S CONNECT" SECTION (Clean, Modern Studio Split Layout)
+             CLEAN LUXURY EDITORIAL "LET'S CONNECT" SECTION
              ════════════════════════════════════════════════════════════════════ -->
         <section id="contact" class="py-16 md:py-24 px-6 border-t border-white/5 relative">
             <div class="max-w-7xl mx-auto">
                 
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
                     
-                    <!-- Left Column: Direct Invitation & Contact Badges -->
+                    <!-- Left Column: Editorial Invitation & 1-Click Action Buttons -->
                     <div class="lg:col-span-5 space-y-6 animate-on-scroll fade-up">
                         <span class="text-xs font-mono uppercase tracking-[0.25em] text-blue-400 block font-bold">
                             [ DIRECT INQUIRY ]
                         </span>
                         
                         <h2 class="font-heading text-3xl sm:text-5xl font-black text-white leading-tight">
-                            Let's Build Something <br>
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-400">Intelligent.</span>
+                            Have a Project <br>
+                            In Mind? <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-400">Let's Connect.</span>
                         </h2>
 
                         <p class="text-gray-400 text-sm sm:text-base leading-relaxed font-light">
                             Available for freelance engineering, full-stack web applications, and autonomous n8n automation pipelines.
                         </p>
 
-                        <!-- Direct Contact Pills -->
+                        <!-- Direct 1-Click Action Badges -->
                         <div class="space-y-3 pt-2">
                             <a href="mailto:kavishm100@gmail.com" class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-blue-500/40 hover:bg-white/[0.05] transition flex items-center justify-between group">
                                 <div class="flex items-center gap-3">
@@ -941,7 +871,7 @@
                                         <p class="text-sm font-semibold text-white group-hover:text-blue-400 transition-colors">kavishm100@gmail.com</p>
                                     </div>
                                 </div>
-                                <span class="text-xs font-mono text-gray-500 group-hover:text-white transition">Write ↗</span>
+                                <span class="text-xs font-mono text-gray-500 group-hover:text-white transition">Copy / Write ↗</span>
                             </a>
 
                             <a href="tel:+919865824929" class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-blue-500/40 hover:bg-white/[0.05] transition flex items-center justify-between group">
@@ -950,7 +880,7 @@
                                         📞
                                     </div>
                                     <div>
-                                        <p class="text-[10px] font-mono uppercase tracking-wider text-gray-400">Phone</p>
+                                        <p class="text-[10px] font-mono uppercase tracking-wider text-gray-400">Direct Line / WhatsApp</p>
                                         <p class="text-sm font-semibold text-white group-hover:text-emerald-400 transition-colors">+91 9865824929</p>
                                     </div>
                                 </div>
@@ -962,24 +892,24 @@
                         <div class="pt-4 border-t border-white/5 flex flex-wrap items-center gap-4 text-xs font-mono text-gray-400">
                             <span>SLA: Response within 24h</span>
                             <span>•</span>
-                            <span>DPDP Act 2023 Protected</span>
+                            <span>Protected under DPDP Act 2023</span>
                         </div>
                     </div>
 
-                    <!-- Right Column: Embedded Quick-Inquiry Form -->
+                    <!-- Right Column: Clean Compact Direct Note Box -->
                     <div class="lg:col-span-7 bg-[#121218] border border-white/10 rounded-3xl p-8 sm:p-10 shadow-2xl animate-on-scroll fade-up delay-100">
                         <div class="flex items-center justify-between border-b border-white/5 pb-4 mb-6">
                             <div>
-                                <h3 class="font-heading text-xl font-bold text-white">Send Direct Message</h3>
-                                <p class="text-xs text-gray-400">No external apps required — submit directly from this page.</p>
+                                <h3 class="font-heading text-xl font-bold text-white">Send Direct Note</h3>
+                                <p class="text-xs text-gray-400">Directly delivered to my personal inbox.</p>
                             </div>
                             <span class="text-[10px] font-mono uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded border border-cyan-500/20">
-                                Encrypted
+                                Instant
                             </span>
                         </div>
 
                         <form id="embedded-contact-form" action="https://formspree.io/f/xeozngwn" method="POST" onsubmit="handleEmbeddedFormSubmit(event)" class="space-y-4">
-                            <!-- Anti-Spam Bot Trap Field -->
+                            <!-- Anti-Spam Honeypot -->
                             <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none !important">
 
                             <div>
@@ -989,7 +919,7 @@
 
                             <div>
                                 <label for="embedded-message" class="block text-xs font-mono text-gray-400 mb-1.5 uppercase tracking-wider">Project Scope / Inquiries</label>
-                                <textarea id="embedded-message" name="message" placeholder="Hi Kavish, I would like to discuss building an n8n workflow / full-stack web project..." class="w-full bg-white/[0.03] border border-white/10 p-4 rounded-xl text-white h-32 focus:border-blue-500 outline-none transition text-sm leading-relaxed" minlength="10" maxlength="1000" required></textarea>
+                                <textarea id="embedded-message" name="message" placeholder="Hi Kavish, I would like to discuss building an n8n workflow / full-stack web project..." class="w-full bg-white/[0.03] border border-white/10 p-4 rounded-xl text-white h-28 focus:border-blue-500 outline-none transition text-sm leading-relaxed" minlength="10" maxlength="1000" required></textarea>
                             </div>
 
                             <!-- DPDP Act 2023 Explicit Consent -->
@@ -1050,6 +980,7 @@
     <div id="privacy-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[90%] max-w-lg hidden bg-[#121216] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl"></div>
     <div id="terms-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[90%] max-w-lg hidden bg-[#121216] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl"></div>
 
+    <script src="./assets/script/living-canvas.js"></script>
     <script src="./assets/script/script.js"></script>
 </body>
 </html>

@@ -43,21 +43,39 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Premium Card & Button Micro-interactions */
-.profile-btn {
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+/* Ambient Floating Particles Canvas */
+#living-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.8;
 }
 
-.profile-btn:hover {
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), 
-                0 10px 20px -10px rgba(0, 0, 0, 0.5);
+/* Tactile Film Grain Texture Overlay */
+.texture-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* Glow Card Effects */
+/* Premium Project Cards & Hover Capability Drawer */
 .tech-card {
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
+    background: #121216;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 2rem;
 }
 
 .tech-card:hover {
@@ -76,7 +94,7 @@ html {
 }
 
 .tech-card:hover .capability-drawer {
-    max-height: 220px;
+    max-height: 200px;
     opacity: 1;
     transform: translateY(0);
     margin-top: 1rem;
@@ -84,93 +102,20 @@ html {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Kinetic Project Showcase Deck */
-.kinetic-card-container {
-    perspective: 1200px;
+/* Aesthetic Modern Bento Grid */
+.bento-card {
+    background: #121218;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 2rem;
     position: relative;
-    min-height: 480px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.kinetic-card {
-    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), 
-                opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), 
-                box-shadow 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform, opacity;
-}
-
-/* Active Front Card */
-.kinetic-card.card-active {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
-    z-index: 30;
-    pointer-events: auto;
-}
-
-/* Second Card (Peeking Behind) */
-.kinetic-card.card-next {
-    opacity: 0.65;
-    transform: translate3d(24px, 20px, -60px) scale(0.95);
-    z-index: 20;
-    pointer-events: none;
-}
-
-/* Third Card (Deep in Queue) */
-.kinetic-card.card-queue {
-    opacity: 0.35;
-    transform: translate3d(48px, 40px, -120px) scale(0.9);
-    z-index: 10;
-    pointer-events: none;
-}
-
-/* Card Moving to Side and Down (Exit Animation) */
-.kinetic-card.card-exiting {
-    animation: cardSideDown 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    z-index: 25;
-}
-
-@keyframes cardSideDown {
-    0% {
-        transform: translate3d(0, 0, 0) scale(1);
-        opacity: 1;
-    }
-    45% {
-        transform: translate3d(-105%, 15px, -30px) scale(0.95) rotate(-3deg);
-        opacity: 0.85;
-    }
-    100% {
-        transform: translate3d(48px, 40px, -120px) scale(0.9) rotate(0deg);
-        opacity: 0.35;
-    }
-}
-
-/* Card Coming Forward (Entrance Animation) */
-.kinetic-card.card-entering {
-    animation: cardComeForward 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    z-index: 30;
-}
-
-@keyframes cardComeForward {
-    0% {
-        transform: translate3d(24px, 20px, -60px) scale(0.95);
-        opacity: 0.65;
-    }
-    100% {
-        transform: translate3d(0, 0, 0) scale(1);
-        opacity: 1;
-    }
-}
-
-/* Tactile Film Grain Texture Overlay (No glowing dots) */
-.texture-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0.035;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+.bento-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(59, 130, 246, 0.35);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 25px -5px rgba(59, 130, 246, 0.15);
 }
 
 /* Tree Branch Path Drawing Animation */
@@ -216,27 +161,43 @@ html {
     border-color: rgba(56, 189, 248, 0.5);
 }
 
-/* Interactive Capability Workbench Active Tab */
-.workbench-tab {
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+/* Certification Timeline Line */
+.timeline-item {
+    position: relative;
+    padding-left: 2rem;
 }
 
-.workbench-tab.active {
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    bottom: -24px;
+    width: 2px;
     background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(59, 130, 246, 0.5);
-    box-shadow: 0 10px 25px -10px rgba(59, 130, 246, 0.2);
 }
 
-.workbench-tab.active .tab-indicator {
-    opacity: 1;
-    transform: scaleX(1);
+.timeline-item:last-child::before {
+    display: none;
 }
 
-.tab-indicator {
-    opacity: 0;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+.timeline-dot {
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #1e293b;
+    border: 3px solid #3b82f6;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+    background: #3b82f6;
+    box-shadow: 0 0 12px #3b82f6;
+    transform: scale(1.2);
 }
 
 /* Modal Entry Animation */
