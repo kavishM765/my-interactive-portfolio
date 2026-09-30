@@ -69,6 +69,48 @@ html {
 }
 
 /* ════════════════════════════════════════════════════════════════════
+   PROFILE IMAGE: CONTINUOUS GLOWING BORDER BEAM (Muted Subtle Palette)
+   ════════════════════════════════════════════════════════════════════ */
+.glowing-beam-frame {
+    position: relative;
+    padding: 2px;
+    border-radius: 2.5rem;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.8);
+}
+
+.glowing-beam-frame::before {
+    content: '';
+    position: absolute;
+    inset: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg at 50% 50%,
+        transparent 0deg,
+        transparent 280deg,
+        rgba(147, 197, 253, 0.25) 310deg,
+        rgba(186, 230, 253, 0.8) 338deg,
+        #ffffff 352deg,
+        rgba(186, 230, 253, 0.8) 356deg,
+        transparent 360deg
+    );
+    animation: rotateBeam 4.5s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes rotateBeam {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ════════════════════════════════════════════════════════════════════
    3D FLIP CARD & AUTO-MOVING DECK (Side -> Down -> Forward)
    ════════════════════════════════════════════════════════════════════ */
 .deck-viewport {
