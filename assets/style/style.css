@@ -32,7 +32,7 @@
     background: #0a0a0c;
 }
 ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.12);
     border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -114,7 +114,7 @@ html {
 }
 
 /* Modal Entry Animation */
-#email-modal:not(.hidden), #phone-modal:not(.hidden) {
+#email-modal:not(.hidden), #phone-modal:not(.hidden), #privacy-modal:not(.hidden), #terms-modal:not(.hidden) {
     animation: modal-pop 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
@@ -123,21 +123,103 @@ html {
     100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
 
-/* AI Cyber HUD Floating Badges Keyframes */
-@keyframes float-slow {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-7px); }
+/* ════════════════════════════════════════════════════════════════════
+   ORGANIC LIVING TREE BRANCHES & SPROUTING SKILL NODES
+   ════════════════════════════════════════════════════════════════════ */
+
+/* The Canvas for Living Spores & Ethereal Particle Drift */
+#living-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.75;
 }
 
-@keyframes float-delayed {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(7px); }
+/* Analog Texture Overlay - Removes Sterile AI Look */
+.texture-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-.animate-float-slow {
-    animation: float-slow 4s ease-in-out infinite;
+/* Tree Branch Path Drawing Animations */
+.branch-path {
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
+    animation: drawBranch 2.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transition: stroke 0.4s ease, stroke-width 0.4s ease, filter 0.4s ease;
 }
 
-.animate-float-delayed {
-    animation: float-delayed 4.5s ease-in-out 1s infinite;
+.branch-path.delay-1 { animation-delay: 0.2s; }
+.branch-path.delay-2 { animation-delay: 0.5s; }
+.branch-path.delay-3 { animation-delay: 0.8s; }
+
+@keyframes drawBranch {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Organic Sprouting Tags */
+.sprout-tag {
+    opacity: 0;
+    transform: scale(0.85) translateY(10px);
+    animation: blossomIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sprout-tag.tag-root { animation-delay: 0.3s; }
+.sprout-tag.tag-1 { animation-delay: 0.9s; }
+.sprout-tag.tag-2 { animation-delay: 1.2s; }
+.sprout-tag.tag-3 { animation-delay: 1.5s; }
+
+@keyframes blossomIn {
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.sprout-tag:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 25px -8px rgba(59, 130, 246, 0.4), 0 0 20px rgba(56, 189, 248, 0.25);
+    border-color: rgba(56, 189, 248, 0.6);
+}
+
+/* Tree Branch Breathing / Gentle Sway */
+@keyframes branchBreeze {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(0.6deg) translateY(-2px); }
+}
+
+.animate-breeze {
+    transform-origin: bottom left;
+    animation: branchBreeze 7s ease-in-out infinite;
+}
+
+/* Pulsing Leaf Buds */
+@keyframes budGlow {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 2px rgba(56, 189, 248, 0.6));
+    }
+    50% {
+        transform: scale(1.35);
+        filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.9));
+    }
+}
+
+.leaf-bud {
+    transform-origin: center;
+    animation: budGlow 3s ease-in-out infinite;
 }
