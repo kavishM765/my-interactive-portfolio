@@ -72,12 +72,19 @@ html {
    3D FLIP CARD & AUTO-MOVING DECK (Side -> Down -> Forward)
    ════════════════════════════════════════════════════════════════════ */
 .deck-viewport {
-    perspective: 1400px;
+    perspective: 1200px;
     position: relative;
     width: 100%;
-    max-width: 620px;
-    height: 420px;
+    max-width: 480px;
+    height: 310px;
     margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+    .deck-viewport {
+        max-width: 100%;
+        height: 330px;
+    }
 }
 
 .deck-card {
@@ -100,8 +107,8 @@ html {
 
 /* Second Card (Peeking Behind) */
 .deck-card.card-next {
-    opacity: 0.65;
-    transform: translate3d(24px, 20px, -60px) scale(0.95);
+    opacity: 0.6;
+    transform: translate3d(16px, 14px, -45px) scale(0.96);
     z-index: 20;
     pointer-events: none;
 }
@@ -109,7 +116,7 @@ html {
 /* Hidden in Queue */
 .deck-card.card-queue {
     opacity: 0;
-    transform: translate3d(48px, 40px, -120px) scale(0.9);
+    transform: translate3d(32px, 28px, -90px) scale(0.92);
     z-index: 10;
     pointer-events: none;
 }
@@ -126,12 +133,12 @@ html {
         opacity: 1;
     }
     45% {
-        transform: translate3d(-105%, 25px, -40px) scale(0.94) rotate(-4deg);
+        transform: translate3d(-105%, 16px, -30px) scale(0.94) rotate(-3deg);
         opacity: 0.85;
     }
     100% {
-        transform: translate3d(24px, 20px, -60px) scale(0.95) rotate(0deg);
-        opacity: 0.65;
+        transform: translate3d(16px, 14px, -45px) scale(0.96) rotate(0deg);
+        opacity: 0.6;
     }
 }
 
@@ -143,8 +150,8 @@ html {
 
 @keyframes moveForward {
     0% {
-        transform: translate3d(24px, 20px, -60px) scale(0.95);
-        opacity: 0.65;
+        transform: translate3d(16px, 14px, -45px) scale(0.96);
+        opacity: 0.6;
     }
     100% {
         transform: translate3d(0, 0, 0) scale(1);
@@ -157,7 +164,7 @@ html {
     width: 100%;
     height: 100%;
     perspective: 1200px;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
 }
 
 .flip-card-inner {
@@ -166,7 +173,7 @@ html {
     height: 100%;
     transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
     transform-style: preserve-3d;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
 }
 
 /* Flip on Hover */
@@ -181,8 +188,8 @@ html {
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    border-radius: 2rem;
-    padding: 2rem sm:p-2.5rem;
+    border-radius: 1.5rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -192,7 +199,7 @@ html {
 .flip-face-front {
     background: #121218;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.8), 0 0 30px -10px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 25px -10px rgba(59, 130, 246, 0.2);
     transform: rotateY(0deg);
 }
 
@@ -200,7 +207,7 @@ html {
 .flip-face-back {
     background: #151620;
     border: 1px solid rgba(59, 130, 246, 0.4);
-    box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.8), 0 0 35px -5px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 25px -5px rgba(59, 130, 246, 0.3);
     transform: rotateY(180deg);
 }
 
