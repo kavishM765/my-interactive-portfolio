@@ -7,7 +7,7 @@ Welcome to the repository for my professional engineering portfolio. This single
 ---
 
 ### 1. Executive Summary
-I am a B.Tech IT student at SNS College of Technology specializing in n8n automation, AI-driven systems, and Java Backend development. This portfolio reflects my technical discipline and software engineering excellence, highlighting my ability to deliver scalable code under pressure in national hackathons and corporate IT environments.
+I am a B.Tech IT student at SNS College of Technology specializing in n8n automation, AI-driven systems, and Java Backend development. This portfolio reflects my transition from martial arts discipline (Black Belt in Karate) to software engineering excellence, highlighting my ability to deliver scalable code under pressure in national hackathons and corporate IT environments.
 
 ### 2. Core Engineering Pillars
 - __AI & Workflows__: Architecting autonomous agentic workflows, integrating LLMs (Google Gemini), and building enterprise-grade process automations using n8n.
