@@ -56,90 +56,111 @@ html {
 /* Glow Card Effects */
 .tech-card {
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
 }
 
 .tech-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 15px 35px -10px rgba(59, 130, 246, 0.15);
-    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 30px -10px rgba(59, 130, 246, 0.25);
+    border-color: rgba(59, 130, 246, 0.4);
 }
 
-/* Certification Timeline Line */
-.timeline-item {
+/* "What We Can Do" Hover Capability Drawer */
+.capability-drawer {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+
+.tech-card:hover .capability-drawer {
+    max-height: 220px;
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Kinetic Project Showcase Deck */
+.kinetic-card-container {
+    perspective: 1200px;
     position: relative;
-    padding-left: 2rem;
+    min-height: 480px;
 }
 
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: 6px;
-    top: 8px;
-    bottom: -24px;
-    width: 2px;
-    background: rgba(255, 255, 255, 0.05);
+.kinetic-card {
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
 }
 
-.timeline-item:last-child::before {
-    display: none;
+/* Active Front Card */
+.kinetic-card.card-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    z-index: 30;
+    pointer-events: auto;
 }
 
-.timeline-dot {
-    position: absolute;
-    left: 0;
-    top: 6px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: #1e293b;
-    border: 3px solid #3b82f6;
-    z-index: 10;
-    transition: all 0.3s ease;
-}
-
-.timeline-item:hover .timeline-dot {
-    background: #3b82f6;
-    box-shadow: 0 0 12px #3b82f6;
-    transform: scale(1.2);
-}
-
-/* Custom bounce for the success checkmark */
-@keyframes custom-bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-25%); }
-}
-
-.animate-bounce {
-    animation: custom-bounce 1s infinite;
-}
-
-/* Modal Entry Animation */
-#email-modal:not(.hidden), #phone-modal:not(.hidden), #privacy-modal:not(.hidden), #terms-modal:not(.hidden) {
-    animation: modal-pop 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes modal-pop {
-    0% { opacity: 0; transform: translate(-50%, -45%) scale(0.95); }
-    100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-}
-
-/* ════════════════════════════════════════════════════════════════════
-   ORGANIC LIVING TREE BRANCHES & SPROUTING SKILL NODES
-   ════════════════════════════════════════════════════════════════════ */
-
-/* The Canvas for Living Spores & Ethereal Particle Drift */
-#living-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+/* Second Card (Peeking Behind) */
+.kinetic-card.card-next {
+    opacity: 0.65;
+    transform: translate3d(24px, 20px, -60px) scale(0.95);
+    z-index: 20;
     pointer-events: none;
-    z-index: 0;
-    opacity: 0.75;
 }
 
-/* Analog Texture Overlay - Removes Sterile AI Look */
+/* Third Card (Deep in Queue) */
+.kinetic-card.card-queue {
+    opacity: 0.35;
+    transform: translate3d(48px, 40px, -120px) scale(0.9);
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Card Moving to Side and Down (Exit Animation) */
+.kinetic-card.card-exiting {
+    animation: cardSideDown 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    z-index: 25;
+}
+
+@keyframes cardSideDown {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+        opacity: 1;
+    }
+    45% {
+        transform: translate3d(-105%, 15px, -30px) scale(0.95) rotate(-3deg);
+        opacity: 0.85;
+    }
+    100% {
+        transform: translate3d(48px, 40px, -120px) scale(0.9) rotate(0deg);
+        opacity: 0.35;
+    }
+}
+
+/* Card Coming Forward (Entrance Animation) */
+.kinetic-card.card-entering {
+    animation: cardComeForward 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    z-index: 30;
+}
+
+@keyframes cardComeForward {
+    0% {
+        transform: translate3d(24px, 20px, -60px) scale(0.95);
+        opacity: 0.65;
+    }
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Tactile Film Grain Texture Overlay (No glowing dots) */
 .texture-overlay {
     position: fixed;
     top: 0;
@@ -152,12 +173,11 @@ html {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* Tree Branch Path Drawing Animations */
+/* Tree Branch Path Drawing Animation */
 .branch-path {
     stroke-dasharray: 800;
     stroke-dashoffset: 800;
     animation: drawBranch 2.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    transition: stroke 0.4s ease, stroke-width 0.4s ease, filter 0.4s ease;
 }
 
 .branch-path.delay-1 { animation-delay: 0.2s; }
@@ -170,10 +190,10 @@ html {
     }
 }
 
-/* Organic Sprouting Tags */
+/* Sprouting Tag Card */
 .sprout-tag {
     opacity: 0;
-    transform: scale(0.85) translateY(10px);
+    transform: scale(0.9) translateY(8px);
     animation: blossomIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -191,35 +211,40 @@ html {
 }
 
 .sprout-tag:hover {
-    transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 12px 25px -8px rgba(59, 130, 246, 0.4), 0 0 20px rgba(56, 189, 248, 0.25);
-    border-color: rgba(56, 189, 248, 0.6);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 25px -8px rgba(59, 130, 246, 0.35);
+    border-color: rgba(56, 189, 248, 0.5);
 }
 
-/* Tree Branch Breathing / Gentle Sway */
-@keyframes branchBreeze {
-    0%, 100% { transform: rotate(0deg); }
-    50% { transform: rotate(0.6deg) translateY(-2px); }
+/* Interactive Capability Workbench Active Tab */
+.workbench-tab {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.animate-breeze {
-    transform-origin: bottom left;
-    animation: branchBreeze 7s ease-in-out infinite;
+.workbench-tab.active {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(59, 130, 246, 0.5);
+    box-shadow: 0 10px 25px -10px rgba(59, 130, 246, 0.2);
 }
 
-/* Pulsing Leaf Buds */
-@keyframes budGlow {
-    0%, 100% {
-        transform: scale(1);
-        filter: drop-shadow(0 0 2px rgba(56, 189, 248, 0.6));
-    }
-    50% {
-        transform: scale(1.35);
-        filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.9));
-    }
+.workbench-tab.active .tab-indicator {
+    opacity: 1;
+    transform: scaleX(1);
 }
 
-.leaf-bud {
-    transform-origin: center;
-    animation: budGlow 3s ease-in-out infinite;
+.tab-indicator {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Modal Entry Animation */
+#email-modal:not(.hidden), #phone-modal:not(.hidden), #privacy-modal:not(.hidden), #terms-modal:not(.hidden) {
+    animation: modal-pop 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modal-pop {
+    0% { opacity: 0; transform: translate(-50%, -45%) scale(0.95); }
+    100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }

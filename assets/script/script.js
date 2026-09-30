@@ -285,3 +285,156 @@ if (document.readyState === 'loading') {
 setTimeout(() => {
     document.querySelectorAll('.animate-on-scroll').forEach(el => el.classList.add('appear'));
 }, 500);
+
+// ════════════════════════════════════════════════════════════════════
+// Kinetic Project Card Deck Controller (Side -> Down -> Forward)
+// ════════════════════════════════════════════════════════════════════
+let currentCardIndex = 0;
+let isAnimatingCard = false;
+
+function cycleKineticCard(direction = 1) {
+    if (isAnimatingCard) return;
+    const cards = document.querySelectorAll('.kinetic-card');
+    if (!cards.length) return;
+
+    isAnimatingCard = true;
+    const total = cards.length;
+    const currentCard = cards[currentCardIndex];
+    
+    // Calculate next index
+    const nextIndex = (currentCardIndex + direction + total) % total;
+    const nextCard = cards[nextIndex];
+
+    // Trigger kinetic exit (moves to the side, then down/behind)
+    currentCard.classList.remove('card-active');
+    currentCard.classList.add('card-exiting');
+
+    // Trigger kinetic entrance (comes forward from behind)
+    nextCard.classList.remove('card-next', 'card-queue');
+    nextCard.classList.add('card-entering');
+
+    // Update Indicators
+    const indicator = document.getElementById('card-counter');
+    if (indicator) {
+        indicator.textContent = `${nextIndex + 1} / ${total}`;
+    }
+
+    // Normalize state after animation duration
+    setTimeout(() => {
+        currentCard.classList.remove('card-exiting');
+        currentCard.classList.add('card-queue');
+        
+        nextCard.classList.remove('card-entering');
+        nextCard.classList.add('card-active');
+
+        // Set third card preview in queue
+        const queueIndex = (nextIndex + 1) % total;
+        cards[queueIndex].classList.remove('card-active');
+        cards[queueIndex].classList.add('card-next');
+
+        currentCardIndex = nextIndex;
+        isAnimatingCard = false;
+    }, 650);
+}
+
+// ════════════════════════════════════════════════════════════════════
+// Interactive Capability Workbench Controller
+// ════════════════════════════════════════════════════════════════════
+function selectWorkbenchDomain(domainKey) {
+    // Update active tab styles
+    document.querySelectorAll('.workbench-tab').forEach(tab => {
+        if (tab.dataset.domain === domainKey) {
+            tab.classList.add('active', 'border-blue-500/50');
+            tab.classList.remove('border-white/5');
+        } else {
+            tab.classList.remove('active', 'border-blue-500/50');
+            tab.classList.add('border-white/5');
+        }
+    });
+
+    // Update active stage panel
+    document.querySelectorAll('.workbench-panel').forEach(panel => {
+        if (panel.id === `panel-${domainKey}`) {
+            panel.classList.remove('hidden');
+            panel.classList.add('animate-on-scroll', 'fade-in', 'appear');
+        } else {
+            panel.classList.add('hidden');
+            panel.classList.remove('appear');
+        }
+    });
+}
+
+// ════════════════════════════════════════════════════════════════════
+// Embedded Direct Quick-Form Handler
+// ════════════════════════════════════════════════════════════════════
+async function handleEmbeddedFormSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const status = document.getElementById('embedded-form-status');
+    const submitBtn = document.getElementById('embedded-submit-btn');
+    const messageInput = document.getElementById('embedded-message');
+
+    // Security Guard: Cooldown
+    const lastSubmission = localStorage.getItem('last_submission_time');
+    const now = Date.now();
+    const COOLDOWN_MS = 60000;
+
+    if (lastSubmission && (now - lastSubmission < COOLDOWN_MS)) {
+        const remainingSec = Math.ceil((COOLDOWN_MS - (now - lastSubmission)) / 1000);
+        status.innerHTML = `⚠️ Cooldown: Please wait ${remainingSec}s before sending another message.`;
+        status.className = "text-yellow-400 text-xs font-semibold block mt-3 p-3 bg-yellow-500/10 rounded-xl border border-yellow-500/20";
+        status.classList.remove('hidden');
+        return;
+    }
+
+    if (messageInput && messageInput.value.trim().length < 10) {
+        status.innerHTML = `⚠️ Message too short: Please type at least 10 characters.`;
+        status.className = "text-yellow-400 text-xs font-semibold block mt-3 p-3 bg-yellow-500/10 rounded-xl border border-yellow-500/20";
+        status.classList.remove('hidden');
+        return;
+    }
+
+    const data = new FormData(form);
+    const originalBtnText = "Send Message Now";
+
+    submitBtn.innerHTML = `
+        <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        Sending...
+    `;
+    submitBtn.disabled = true;
+
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+            localStorage.setItem('last_submission_time', Date.now());
+            status.innerHTML = `✅ Message received! I will get back to you within 24 hours.`;
+            status.className = "text-green-400 text-xs font-semibold block mt-3 p-3 bg-green-500/10 rounded-xl border border-green-500/20";
+            status.classList.remove('hidden');
+            form.reset();
+            submitBtn.innerHTML = "Delivered!";
+            submitBtn.classList.replace('bg-blue-600', 'bg-green-600');
+
+            setTimeout(() => {
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.classList.replace('bg-green-600', 'bg-blue-600');
+                submitBtn.disabled = false;
+            }, 4000);
+        } else {
+            throw new Error("Formspree rejected submission");
+        }
+    } catch (err) {
+        status.innerHTML = `❌ Network issue. Please email directly to kavishm100@gmail.com`;
+        status.className = "text-red-400 text-xs font-semibold block mt-3 p-3 bg-red-500/10 rounded-xl border border-red-500/20";
+        status.classList.remove('hidden');
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+    }
+}
