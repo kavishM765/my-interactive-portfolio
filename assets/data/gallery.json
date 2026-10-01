@@ -1,0 +1,209 @@
+[
+  {
+    "id": "ai-agents-hackathon-top5",
+    "title": "National AI Agents Hackathon",
+    "badge": "HACKATHON \u00b7 TOP 5 FINISH",
+    "category": "Hackathons",
+    "caption": "Ranked 5th out of 2,300+ teams nationwide building an autonomous multi-agent prototype.",
+    "image": "assets/images/gallery/ai-agents-hackathon-top5.jpg",
+    "date": "You uploaded a feed photo on August 22, 2025 at 10:29 AM (GMT)"
+  },
+  {
+    "id": "bugslayer-24h-hackathon",
+    "title": "BUGSLAYER '26 24h Hackathon",
+    "badge": "HACKATHON \u00b7 24-HOUR SPRINT",
+    "category": "Hackathons",
+    "caption": "Engineered a low-bandwidth Telemedicine Access Platform across 5 intense review rounds.",
+    "image": "assets/images/gallery/bugslayer-24h-hackathon.jpg",
+    "date": "You uploaded a feed photo on February 4, 2026 at 4:29 AM (GMT)"
+  },
+  {
+    "id": "devforge-hackathon-final",
+    "title": "DevForge Hackathon \u2014 Final Review",
+    "badge": "HACKATHON \u00b7 KPR INSTITUTE",
+    "category": "Hackathons",
+    "caption": "Built the full frontend and connected n8n backend workflows in an overnight sprint.",
+    "image": "assets/images/gallery/devforge-hackathon-kpr.jpg",
+    "date": "You uploaded a feed photo on September 16, 2025 at 2:06 AM (GMT)"
+  },
+  {
+    "id": "devforge-hackathon-day1",
+    "title": "DevForge Hackathon \u2014 AI Sprint",
+    "badge": "HACKATHON \u00b7 24H SPRINT",
+    "category": "Hackathons",
+    "caption": "Brainstormed and cleared initial technical reviews for rapid AI system delivery.",
+    "image": "assets/images/gallery/devforge-hackathon-day1.jpg",
+    "date": "You uploaded a feed photo on September 13, 2025 at 3:42 AM (GMT)"
+  },
+  {
+    "id": "msme-hackathon-round1",
+    "title": "MSME Hackathon 2025 \u2014 Round 1",
+    "badge": "HACKATHON \u00b7 QUALIFIED",
+    "category": "Hackathons",
+    "caption": "Successfully qualified through the national Idea Submission stage.",
+    "image": "assets/images/gallery/msme-hackathon-round1.jpg",
+    "date": "You uploaded a feed photo on August 11, 2025 at 3:53 AM (GMT)"
+  },
+  {
+    "id": "intern2innovate-hackathon",
+    "title": "Intern2Innovate Internal Hackathon",
+    "badge": "HACKATHON \u00b7 INNOVATION",
+    "category": "Hackathons",
+    "caption": "Prototyped creative problem-solving applications during the internal college hackathon.",
+    "image": "assets/images/gallery/intern2innovate-hackathon.jpg",
+    "date": "You uploaded a feed photo on January 19, 2026 at 4:29 AM (GMT)"
+  },
+  {
+    "id": "college-ideathon",
+    "title": "College Ideathon Prototyping",
+    "badge": "COMPETITION \u00b7 IDEATHON",
+    "category": "Hackathons",
+    "caption": "Collaborated with teammates to design and present innovative tech product ideas.",
+    "image": "assets/images/gallery/college-ideathon.jpg",
+    "date": "You uploaded a feed photo on November 20, 2024 at 3:48 AM (GMT)"
+  },
+  {
+    "id": "lets-gametech-internship",
+    "title": "Java Backend Development Internship",
+    "badge": "INTERNSHIP \u00b7 LET'S GAMETECH",
+    "category": "Internships",
+    "caption": "Completed 1-month intensive backend training building robust Core Java applications.",
+    "image": "assets/images/gallery/lets-gametech-internship.jpg",
+    "date": "You uploaded a feed photo on January 7, 2026 at 3:33 AM (GMT)"
+  },
+  {
+    "id": "dsignz-media-internship",
+    "title": "Frontend Web Development Internship",
+    "badge": "INTERNSHIP \u00b7 DSIGNZ MEDIA",
+    "category": "Internships",
+    "caption": "21-day frontend sprint mastering responsive design, HTML, CSS, JavaScript, and rapid execution.",
+    "image": "assets/images/gallery/dsignz-media-internship.jpg",
+    "date": "You uploaded a feed photo on July 4, 2025 at 3:11 AM (GMT)"
+  },
+  {
+    "id": "circor-internship",
+    "title": "Website Development Internship",
+    "badge": "INTERNSHIP \u00b7 CIRCOR INTL",
+    "category": "Internships",
+    "caption": "Gained real-world IT web development experience at CIRCOR Flow Technologies.",
+    "image": "assets/images/gallery/circor-web-internship.jpg",
+    "date": "You uploaded a feed photo on August 18, 2024 at 2:37 PM (GMT)"
+  },
+  {
+    "id": "agentic-ai-bootcamp-day2",
+    "title": "Agentic AI Bootcamp \u2014 Day 2",
+    "badge": "BOOTCAMP \u00b7 AGENTIC AI",
+    "category": "Bootcamps",
+    "caption": "Built production-ready AI agents and automated real-time workflows at SNS College of Technology.",
+    "image": "assets/images/gallery/agentic-ai-bootcamp.jpg",
+    "date": "You uploaded a feed photo on February 24, 2026 at 9:39 AM (GMT)"
+  },
+  {
+    "id": "agentic-ai-bootcamp-day1",
+    "title": "Agentic AI Bootcamp \u2014 Day 1",
+    "badge": "BOOTCAMP \u00b7 AGENTIC AI",
+    "category": "Bootcamps",
+    "caption": "Configured autonomous agent environments and orchestrated pipelines using n8n.",
+    "image": "assets/images/gallery/agentic-ai-bootcamp-day1.jpg",
+    "date": "You uploaded a feed photo on January 31, 2026 at 6:19 PM (GMT)"
+  },
+  {
+    "id": "sns-ihub-bootcamp",
+    "title": "SNS iHub Innovation Bootcamp",
+    "badge": "BOOTCAMP \u00b7 SNS IHUB",
+    "category": "Bootcamps",
+    "caption": "Built working n8n workflows and learned design thinking from Prof. Ulrich Weinberg (HPI Germany).",
+    "image": "assets/images/gallery/sns-ihub-bootcamp.jpg",
+    "date": "You uploaded a feed photo on July 8, 2025 at 12:06 PM (GMT)"
+  },
+  {
+    "id": "all-round-performer-nominee",
+    "title": "All-Round Performer Nominee",
+    "badge": "HONOR \u00b7 SNS COLLEGE",
+    "category": "Leadership",
+    "caption": "Nominated for the college-wide award honoring excellence in academics, hackathons, and leadership.",
+    "image": "assets/images/gallery/all-round-performer-nominee.jpg",
+    "date": "You uploaded a feed photo on June 16, 2025 at 9:02 AM (GMT)"
+  },
+  {
+    "id": "unstop-talent-awards",
+    "title": "Unstop Talent Awards 2026",
+    "badge": "RECOGNITION \u00b7 UNSTOP",
+    "category": "Leadership",
+    "caption": "Recognized in the national Unstoppable Leaders cohort for competitive hackathon performance.",
+    "image": "assets/images/gallery/unstop-talent-awards.jpg",
+    "date": "You uploaded a feed photo on January 29, 2026 at 12:53 PM (GMT)"
+  },
+  {
+    "id": "texperia-paper-coordinator",
+    "title": "Texperia Symposium Coordinator",
+    "badge": "LEADERSHIP \u00b7 COORDINATOR",
+    "category": "Leadership",
+    "caption": "Coordinated student research papers and facilitated technical presentations across domains.",
+    "image": "assets/images/gallery/texperia-paper-coordinator.jpg",
+    "date": "You uploaded a feed photo on March 21, 2025 at 5:51 AM (GMT)"
+  },
+  {
+    "id": "leetcode-training",
+    "title": "LeetCode 1-Month Daily Coding Program",
+    "badge": "GROWTH \u00b7 30-DAY SPRINT",
+    "category": "Leadership",
+    "caption": "Completed 30 days of continuous data structures practice, meditation sessions, and technical reviews.",
+    "image": "assets/images/gallery/leetcode-training-program.jpg",
+    "date": "You uploaded a feed photo on April 30, 2025 at 3:17 AM (GMT)"
+  },
+  {
+    "id": "agentic-ai-discussion",
+    "title": "Agentic AI Group Discussion",
+    "badge": "LEADERSHIP \u00b7 COLLABORATION",
+    "category": "Leadership",
+    "caption": "Led classroom debates analyzing autonomous agent decision-making and practical business automation.",
+    "image": "assets/images/gallery/agentic-ai-group-discussion.jpg",
+    "date": "You uploaded a feed photo on February 24, 2026 at 9:45 AM (GMT)"
+  },
+  {
+    "id": "goventures-bootcamp",
+    "title": "GoVentures Software Demonstration",
+    "badge": "SPEAKER \u00b7 BOOTCAMP",
+    "category": "Leadership",
+    "caption": "Delivered a comprehensive software demonstration for participants at Sri Ramakrishna College.",
+    "image": "assets/images/gallery/goventures-bootcamp-demo.jpg",
+    "date": "You uploaded a video on March 13, 2026 at 3:57 PM (GMT)"
+  },
+  {
+    "id": "microsoft-deloitte-meeting",
+    "title": "Microsoft & Deloitte Industry Exchange",
+    "badge": "NETWORKING \u00b7 INDUSTRY LEADERS",
+    "category": "Leadership",
+    "caption": "Gained industry insights on software architecture from senior leaders at Microsoft and Deloitte.",
+    "image": "assets/images/gallery/microsoft-deloitte-meeting.jpg",
+    "date": "You uploaded a feed photo on November 23, 2024 at 2:17 AM (GMT)"
+  },
+  {
+    "id": "chennai-japan-expo",
+    "title": "Chennai Japan Expo 2026",
+    "badge": "CULTURE \u00b7 EXPO",
+    "category": "Leadership",
+    "caption": "Represented and experienced international cultural exchange, technology showcases, and global networking.",
+    "image": "assets/images/gallery/chennai-japan-expo.jpg",
+    "date": "You uploaded a feed photo on February 3, 2026 at 3:32 AM (GMT)"
+  },
+  {
+    "id": "communication-journey",
+    "title": "Communication & Public Speaking Journey",
+    "badge": "GROWTH \u00b7 MILESTONE",
+    "category": "Leadership",
+    "caption": "Evolving from classroom stage fear to presenting confidently across national hackathons.",
+    "image": "assets/images/gallery/communication-journey-it.jpg",
+    "date": "You uploaded a feed photo on August 2, 2026 at 5:48 PM (GMT)"
+  },
+  {
+    "id": "data-analytics-seminar",
+    "title": "Data Analytics Seminar",
+    "badge": "PRESENTATION \u00b7 SEMINAR",
+    "category": "Leadership",
+    "caption": "Stepped onto the stage to deliver a technical seminar, conquering public speaking barriers.",
+    "image": "assets/images/gallery/data-analytics-seminar.jpg",
+    "date": "You uploaded a feed photo on March 30, 2026 at 4:57 AM (GMT)"
+  }
+]

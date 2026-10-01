@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moments & Proof | Kavish M. — AI Developer & Automation Engineer</title>
+    
+    <!-- Meta SEO -->
+    <meta name="description" content="Visual vault and authentic proof of work: national hackathons, full-stack internships, and technical milestones by Kavish M.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CDN & Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Shared & Gallery Styles -->
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="./assets/style/gallery.css">
+</head>
+<body class="bg-[#0a0a0c] text-gray-100 antialiased selection:bg-blue-500/30 relative min-h-screen flex flex-col justify-between">
+
+    <!-- Living Atmosphere: Subtle Floating Particles Background -->
+    <canvas id="living-canvas"></canvas>
+    <!-- Tactile Film Grain Overlay -->
+    <div class="texture-overlay"></div>
+
+    <!-- Top Navigation -->
+    <nav class="sticky top-0 w-full z-50 bg-[#0a0a0c]/85 backdrop-blur-lg border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="h-9 w-9 sm:h-10 sm:w-10 bg-blue-600 rounded-xl flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/20 text-sm sm:text-base group-hover:scale-105 transition-transform">KM</div>
+                <div class="flex flex-col">
+                    <span class="text-lg sm:text-xl font-bold tracking-tighter text-white">KAVISH M.</span>
+                    <span class="text-[10px] text-cyan-400 font-mono tracking-widest uppercase">Visual Proof & Moments</span>
+                </div>
+            </a>
+            
+            <div class="flex items-center gap-3 sm:gap-4">
+                <a href="index.html" class="flex items-center gap-2 text-xs sm:text-sm font-semibold text-gray-300 hover:text-white bg-white/5 hover:bg-white/10 px-4 py-2 rounded-full border border-white/10 transition-all">
+                    <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                    <span>Back to Portfolio</span>
+                </a>
+                <a href="index.html#projects" class="hidden sm:flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-gray-400 hover:text-white transition">
+                    Projects
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow pb-24">
+        
+        <!-- Hero Header -->
+        <header class="pt-10 sm:pt-14 pb-4 px-6 text-center max-w-4xl mx-auto">
+            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-bold uppercase tracking-widest mb-4">
+                [ PROOF OF WORK & LIFE ]
+            </span>
+            <h1 class="font-heading text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white mb-4">
+                Moments, Hackathons & <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-400">Milestones</span>
+            </h1>
+            <p class="text-gray-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-light">
+                An authentic visual record of national hackathons, intense engineering sprints, full-stack internships, and continuous growth.
+            </p>
+        </header>
+
+        <!-- ════════════════════════════════════════════════════════════
+             HERO: REALISTIC METALLIC CHAIN WITH CONVEYOR (Right to Left)
+             ════════════════════════════════════════════════════════════ -->
+        <section class="chain-wrapper chain-entrance mt-4 mb-16">
+            <!-- Steel Chain Overhead Beam -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="chain-beam"></div>
+            </div>
+
+            <!-- Conveyor Track Moving Smoothly Right to Left -->
+            <div class="conveyor-container mt-2">
+                <div class="conveyor-track" id="conveyor-track">
+                    <!-- Populated dynamically via assets/script/gallery.js -->
+                </div>
+            </div>
+
+            <!-- Subtle Instruction Hint -->
+            <div class="text-center mt-1">
+                <span class="text-[11px] font-mono text-gray-400 tracking-wider flex items-center justify-center gap-2">
+                    <span class="inline-block w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                    Auto-gliding along the chain · Hover over any photo to pause & inspect
+                </span>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════════════════════
+             SECTION: ARRANGED PHOTO BENTO GRID WITH 1-LINE CAPTIONS
+             ════════════════════════════════════════════════════════════ -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6">
+            
+            <!-- Section Header & Filter Controls -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-white/10 mb-10">
+                <div>
+                    <span class="text-cyan-400 font-mono text-xs uppercase tracking-widest block mb-2 font-bold">
+                        [ CURATED SHOWCASE ]
+                    </span>
+                    <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-white">
+                        All Milestones & Documentation
+                    </h2>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                    <button class="filter-btn active px-4 py-2 rounded-full bg-white/5 text-gray-300 border border-white/10 hover:border-blue-500" data-category="all">
+                        All Moments
+                    </button>
+                    <button class="filter-btn px-4 py-2 rounded-full bg-white/5 text-gray-300 border border-white/10 hover:border-blue-500" data-category="hackathons">
+                        Hackathons
+                    </button>
+                    <button class="filter-btn px-4 py-2 rounded-full bg-white/5 text-gray-300 border border-white/10 hover:border-blue-500" data-category="internships">
+                        Internships
+                    </button>
+                    <button class="filter-btn px-4 py-2 rounded-full bg-white/5 text-gray-300 border border-white/10 hover:border-blue-500" data-category="bootcamps">
+                        Bootcamps & AI
+                    </button>
+                    <button class="filter-btn px-4 py-2 rounded-full bg-white/5 text-gray-300 border border-white/10 hover:border-blue-500" data-category="leadership">
+                        Leadership & Growth
+                    </button>
+                </div>
+            </div>
+
+            <!-- Responsive 3-Column Milestone Grid -->
+            <div id="milestone-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+                <!-- Dynamically loaded via assets/script/gallery.js -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ════════════════════════════════════════════════════════════
+         LIGHTBOX MODAL (Click-to-Zoom High Resolution Preview)
+         ════════════════════════════════════════════════════════════ -->
+    <div id="gallery-lightbox" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-xl">
+        <div class="lightbox-backdrop absolute inset-0"></div>
+
+        <div class="lightbox-content relative z-10 max-w-4xl w-full bg-[#12131a] border border-white/15 rounded-2xl overflow-hidden shadow-2xl flex flex-col">
+            <!-- Modal Header -->
+            <div class="p-4 sm:p-5 flex justify-between items-center border-b border-white/10 bg-[#0f1016]">
+                <div class="flex items-center gap-3">
+                    <span id="lightbox-badge" class="px-3 py-1 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                        TAG
+                    </span>
+                    <span id="lightbox-counter" class="text-xs font-mono text-gray-400">
+                        1 / 23
+                    </span>
+                </div>
+                
+                <button onclick="closeLightbox()" class="text-gray-400 hover:text-white p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+
+            <!-- Modal Image Container -->
+            <div class="relative bg-black flex items-center justify-center max-h-[65vh] overflow-hidden">
+                <img id="lightbox-img" src="" alt="Milestone Photo" class="max-h-[65vh] w-auto object-contain">
+                
+                <!-- Prev / Next Arrow Buttons -->
+                <button onclick="prevLightbox()" class="absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/60 hover:bg-blue-600 text-white transition backdrop-blur-sm border border-white/10">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button onclick="nextLightbox()" class="absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/60 hover:bg-blue-600 text-white transition backdrop-blur-sm border border-white/10">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+
+            <!-- Modal Caption Footer -->
+            <div class="p-5 sm:p-6 bg-[#0f1016] border-t border-white/10">
+                <h3 id="lightbox-title" class="text-lg sm:text-xl font-bold text-white mb-2">
+                    Title
+                </h3>
+                <p id="lightbox-caption" class="text-gray-300 text-sm font-light leading-relaxed">
+                    Caption
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-8 text-center text-xs text-gray-500 font-light">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <span>© 2026 Kavish M. · Built with authentic LinkedIn proof of work.</span>
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="hover:text-gray-300 transition">Portfolio Home</a>
+                <a href="index.html#projects" class="hover:text-gray-300 transition">Projects</a>
+                <a href="https://www.linkedin.com/in/kavish-m-" target="_blank" class="hover:text-gray-300 transition">LinkedIn ↗</a>
+                <a href="https://github.com/kavishM765" target="_blank" class="hover:text-gray-300 transition">GitHub ↗</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Background Particle Canvas & Gallery Controller Scripts -->
+    <script src="./assets/script/living-canvas.js"></script>
+    <script src="./assets/script/gallery.js"></script>
+</body>
+</html>

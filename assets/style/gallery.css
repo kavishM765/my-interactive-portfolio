@@ -1,0 +1,251 @@
+/* ════════════════════════════════════════════════════════════════════
+   GALLERY & CHAIN VISUAL ARCHITECTURE
+   ════════════════════════════════════════════════════════════════════ */
+
+/* Realistic Metallic Chain Links */
+.chain-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 30px 0 20px 0;
+}
+
+/* Chain entrance animation: Unrolls smoothly from left to right */
+.chain-entrance {
+    animation: chainUnrollLeftToRight 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes chainUnrollLeftToRight {
+    0% {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+        opacity: 0.2;
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        opacity: 1;
+    }
+}
+
+/* Heavy Steel Chain Track */
+.chain-beam {
+    position: relative;
+    height: 18px;
+    background: repeating-linear-gradient(
+        90deg,
+        #1c1d24 0px,
+        #2e303d 10px,
+        #71717a 16px,
+        #e4e4e7 20px,
+        #71717a 24px,
+        #2e303d 30px,
+        #18181b 40px
+    );
+    border-radius: 9px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8), inset 0 2px 4px rgba(255, 255, 255, 0.3), inset 0 -2px 4px rgba(0, 0, 0, 0.8);
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.9);
+}
+
+/* Metallic Chain Link Rings across the beam */
+.chain-beam::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background-image: radial-gradient(ellipse at center, rgba(255,255,255,0.4) 0%, transparent 60%);
+    background-size: 40px 30px;
+    pointer-events: none;
+}
+
+/* Conveyor Track for smooth Right-to-Left Infinite Motion */
+.conveyor-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.conveyor-track {
+    display: flex;
+    gap: 28px;
+    width: max-content;
+    animation: conveyorRightToLeft 55s linear infinite;
+    will-change: transform;
+}
+
+.conveyor-container:hover .conveyor-track {
+    animation-play-state: paused !important;
+}
+
+@keyframes conveyorRightToLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Hanging Photo Frame Attachment */
+.hanging-card-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform-origin: top center;
+}
+
+/* Alternating natural pendulum sways */
+.hanging-card-wrapper.sway-1 {
+    animation: pendulumSway1 4.5s ease-in-out infinite alternate;
+}
+
+.hanging-card-wrapper.sway-2 {
+    animation: pendulumSway2 3.8s ease-in-out infinite alternate;
+    animation-delay: -1.2s;
+}
+
+.hanging-card-wrapper.sway-3 {
+    animation: pendulumSway3 5.2s ease-in-out infinite alternate;
+    animation-delay: -2.4s;
+}
+
+@keyframes pendulumSway1 {
+    0% { transform: rotate(-1.5deg); }
+    100% { transform: rotate(1.5deg); }
+}
+
+@keyframes pendulumSway2 {
+    0% { transform: rotate(1.8deg); }
+    100% { transform: rotate(-1.8deg); }
+}
+
+@keyframes pendulumSway3 {
+    0% { transform: rotate(-2deg); }
+    100% { transform: rotate(1.4deg); }
+}
+
+/* Metallic Hook / Ring Link connecting the card to the beam */
+.metal-hanger {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    height: 38px;
+    position: relative;
+}
+
+.hanger-link {
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(90deg, #3f3f46 0%, #d4d4d8 50%, #27272a 100%);
+    border-radius: 3px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), inset 0 1px 2px rgba(255, 255, 255, 0.5);
+    position: relative;
+}
+
+.hanger-link::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -3px;
+    width: 12px;
+    height: 12px;
+    border: 2.5px solid #a1a1aa;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hanger-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: -2px;
+    width: 10px;
+    height: 8px;
+    background: #e4e4e7;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Hanging Photo Card */
+.hanging-card {
+    width: 290px;
+    background: #111218;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.8), 0 0 15px -3px rgba(59, 130, 246, 0.1);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.hanging-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: rgba(59, 130, 246, 0.6);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9), 0 0 30px -4px rgba(59, 130, 246, 0.35);
+}
+
+/* Grid Milestone Card */
+.milestone-grid-card {
+    background: #0f1016;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+}
+
+.milestone-grid-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.5);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.9), 0 0 25px -4px rgba(56, 189, 248, 0.25);
+}
+
+.milestone-grid-card:hover .milestone-img {
+    transform: scale(1.05);
+}
+
+.milestone-img {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Active Category Filter Button */
+.filter-btn {
+    transition: all 0.25s ease;
+}
+
+.filter-btn.active {
+    background: #2563eb !important;
+    color: #ffffff !important;
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 20px -3px rgba(37, 99, 235, 0.5);
+}
+
+/* Lightbox Modal Animation */
+#gallery-lightbox {
+    transition: opacity 0.3s ease;
+}
+
+#gallery-lightbox.hidden {
+    display: none;
+    opacity: 0;
+}
+
+#gallery-lightbox:not(.hidden) {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-content {
+    animation: lightboxPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes lightboxPop {
+    0% { transform: scale(0.92); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
