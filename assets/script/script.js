@@ -365,6 +365,56 @@ function initDeckControls() {
 }
 
 // ════════════════════════════════════════════════════════════════════
+// Tech Stack & Tools: Circulating Light Sequence with Hover Pause
+// ════════════════════════════════════════════════════════════════════
+let techStackLightTimer = null;
+let currentTechCardIndex = 0;
+const TECH_CYCLE_INTERVAL = 1300; // 1.3s per card
+
+function stepTechStackLight() {
+    const cards = document.querySelectorAll('.tech-stack-card');
+    if (!cards.length) return;
+
+    cards.forEach(c => c.classList.remove('active-light'));
+    currentTechCardIndex = (currentTechCardIndex + 1) % cards.length;
+    cards[currentTechCardIndex].classList.add('active-light');
+}
+
+function startTechStackCycle() {
+    stopTechStackCycle();
+    techStackLightTimer = setInterval(stepTechStackLight, TECH_CYCLE_INTERVAL);
+}
+
+function stopTechStackCycle() {
+    if (techStackLightTimer) {
+        clearInterval(techStackLightTimer);
+        techStackLightTimer = null;
+    }
+}
+
+function initTechStackLightCycle() {
+    const cards = document.querySelectorAll('.tech-stack-card');
+    if (!cards.length) return;
+
+    // Activate initial card
+    cards[currentTechCardIndex].classList.add('active-light');
+    startTechStackCycle();
+
+    cards.forEach((card, index) => {
+        card.addEventListener('mouseenter', () => {
+            stopTechStackCycle();
+            cards.forEach(c => c.classList.remove('active-light'));
+            card.classList.add('active-light');
+            currentTechCardIndex = index;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            startTechStackCycle();
+        });
+    });
+}
+
+// ════════════════════════════════════════════════════════════════════
 // Kinetic Accordion Controller
 // ════════════════════════════════════════════════════════════════════
 function selectAccordionPanel(panelElement) {
@@ -374,8 +424,12 @@ function selectAccordionPanel(panelElement) {
 
 document.addEventListener('DOMContentLoaded', () => {
     initDeckControls();
+    initTechStackLightCycle();
 });
-setTimeout(initDeckControls, 300);
+setTimeout(() => {
+    initDeckControls();
+    initTechStackLightCycle();
+}, 300);
 
 
 // ════════════════════════════════════════════════════════════════════
