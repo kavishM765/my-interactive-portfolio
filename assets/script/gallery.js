@@ -1,5 +1,5 @@
 // ════════════════════════════════════════════════════════════════════
-// Gallery Controller: Realistic Interlocking Chain Conveyor & Lightbox
+// Gallery Controller: 3D Chain Dynamics & Dual-Point Suspension Conveyor
 // ════════════════════════════════════════════════════════════════════
 
 let galleryData = window.EMBEDDED_GALLERY_DATA || [];
@@ -18,18 +18,18 @@ async function initGallery() {
     }
 
     filteredItems = [...galleryData];
-    renderConveyor();
+    render3DConveyor();
     renderGrid();
     setupFilters();
     setupLightboxControls();
 }
 
-// Render Realistic Interlocking Chain Conveyor (Flows smoothly Right to Left)
-function renderConveyor() {
+// Render 3D Interlocking Oblong Chains with Dual-Point Suspension (Right to Left)
+function render3DConveyor() {
     const track = document.getElementById('conveyor-track');
     if (!track || !galleryData.length) return;
 
-    // Pick 12 top highlight cards for the hanging chain
+    // Pick top highlight cards for the moving chain
     const highlights = galleryData.slice(0, 12);
     // Duplicate for seamless infinite loop
     const loopItems = [...highlights, ...highlights];
@@ -40,71 +40,100 @@ function renderConveyor() {
         const loadingAttr = isPriority ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"';
 
         return `
-            <div class="chain-unit">
-                <!-- Overhead Interlocking Chain Segment Moving In Unison with the Card -->
-                <div class="horizontal-chain-segment">
-                    <svg class="svg-link-horiz" viewBox="0 0 38 18">
-                        <rect x="1.5" y="1.5" width="35" height="15" rx="7.5" fill="url(#steelGradH)" stroke="#18181b" stroke-width="1.5"/>
-                        <rect x="9" y="5.5" width="20" height="7" rx="3.5" fill="#0a0a0c" stroke="#27272a" stroke-width="1"/>
-                        <path d="M6 4.5 Q19 2.5 32 4.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.2" stroke-linecap="round"/>
+            <div class="chain-rig-unit ${swayClass}">
+                
+                <!-- Overhead Interlocking Chain Segment with Industrial Trolley Slider Blocks -->
+                <svg class="top-chain-svg" viewBox="0 0 320 32">
+                    <!-- Slider Trolley Mounts directly on rail -->
+                    <rect x="34" y="0" width="22" height="12" rx="2" fill="#2d4253" stroke="#5f7a90" stroke-width="1.5" />
+                    <rect x="264" y="0" width="22" height="12" rx="2" fill="#2d4253" stroke="#5f7a90" stroke-width="1.5" />
+
+                    <!-- Oblong Chain Links Interlocking Horizontally Across Rail -->
+                    <g filter="url(#chainShadow)">
+                        <!-- Link 1 (Face) -->
+                        <rect x="2" y="6" width="38" height="20" rx="10" fill="none" stroke="url(#metal3D_Horiz)" stroke-width="5"/>
+                        <!-- Link 2 (Side Profile) -->
+                        <rect x="32" y="5" width="13" height="22" rx="6.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.8"/>
+                        <!-- Link 3 (Face - Left Drop Anchor) -->
+                        <rect x="38" y="6" width="38" height="20" rx="10" fill="none" stroke="url(#metal3D_Horiz)" stroke-width="5"/>
+                        <!-- Link 4 (Side Profile) -->
+                        <rect x="68" y="5" width="13" height="22" rx="6.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.8"/>
+                        <!-- Link 5 (Face) -->
+                        <rect x="74" y="6" width="38" height="20" rx="10" fill="none" stroke="url(#metal3D_Horiz)" stroke-width="5"/>
+                        <!-- Link 6 (Side Profile) -->
+                        <rect x="104" y="5" width="13" height="22" rx="6.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.8"/>
+                        <!-- Link 7 (Face) -->
+                        <rect x="110" y="6" width="38" height="20" rx="10" fill="none" stroke="url(#metal3D_Horiz)" stroke-width="5"/>
+                        <!-- Link 8 (Side Profile) -->
+                        <rect x="140" y="5" width="13" height="22" rx="6.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.8"/>
+                        <!-- Link 9 (Face) -->
+                        <rect x="146" y="6" width="38" height="20" rx="10" fill="none" stroke="url(#metal3D_Horiz)" stroke-width="5"/>
+                        <!-- Link 10 (Side Profile) -->
+                        <rect x="176" y="5" width="13" height="22" rx="6.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.8"/>
+                        <!-- Link 11 (Face) -->
+                        <rect x="182" y="6" width="38" height="20" rx="10" fill="none" stroke="url(#metal3D_Horiz)" stroke-width="5"/>
+                        <!-- Link 12 (Side Profile) -->
+                        <rect x="212" y="5" width="13" height="22" rx="6.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.8"/>
+                        <!-- Link 13 (Face) -->
+                        <rect x="218" y="6" width="38" height="20" rx="10" fill="none" stroke="url(#metal3D_Horiz)" stroke-width="5"/>
+                        <!-- Link 14 (Side Profile) -->
+                        <rect x="248" y="5" width="13" height="22" rx="6.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.8"/>
+                        <!-- Link 15 (Face - Right Drop Anchor) -->
+                        <rect x="254" y="6" width="38" height="20" rx="10" fill="none" stroke="url(#metal3D_Horiz)" stroke-width="5"/>
+                        <!-- Link 16 (Side Profile) -->
+                        <rect x="284" y="5" width="13" height="22" rx="6.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.8"/>
+                    </g>
+                </svg>
+
+                <!-- Dual-Point Suspension Drop Chains (Left & Right) -->
+                <div class="dual-drop-chains">
+                    <!-- Left Vertical Drop Chain (6 Interlocking Links) -->
+                    <svg class="drop-chain-svg" viewBox="0 0 24 96" filter="url(#chainShadow)">
+                        <rect x="2" y="2" width="20" height="24" rx="10" fill="none" stroke="url(#metal3D_Face)" stroke-width="5"/>
+                        <rect x="7.5" y="14" width="9" height="24" rx="4.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.5"/>
+                        <rect x="2" y="26" width="20" height="24" rx="10" fill="none" stroke="url(#metal3D_Face)" stroke-width="5"/>
+                        <rect x="7.5" y="38" width="9" height="24" rx="4.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.5"/>
+                        <rect x="2" y="50" width="20" height="24" rx="10" fill="none" stroke="url(#metal3D_Face)" stroke-width="5"/>
+                        <rect x="7.5" y="62" width="9" height="26" rx="4.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.5"/>
                     </svg>
-                    <svg class="svg-link-vert" viewBox="0 0 12 24">
-                        <rect x="1.5" y="1.5" width="9" height="21" rx="4.5" fill="url(#steelGradV)" stroke="#18181b" stroke-width="1.5"/>
-                        <path d="M4 3 L4 21" stroke="rgba(255,255,255,0.65)" stroke-width="1.2"/>
-                    </svg>
-                    <svg class="svg-link-horiz" viewBox="0 0 38 18">
-                        <rect x="1.5" y="1.5" width="35" height="15" rx="7.5" fill="url(#steelGradH)" stroke="#18181b" stroke-width="1.5"/>
-                        <rect x="9" y="5.5" width="20" height="7" rx="3.5" fill="#0a0a0c" stroke="#27272a" stroke-width="1"/>
-                        <path d="M6 4.5 Q19 2.5 32 4.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.2" stroke-linecap="round"/>
-                    </svg>
-                    <svg class="svg-link-vert" viewBox="0 0 12 24">
-                        <rect x="1.5" y="1.5" width="9" height="21" rx="4.5" fill="url(#steelGradV)" stroke="#18181b" stroke-width="1.5"/>
-                        <path d="M4 3 L4 21" stroke="rgba(255,255,255,0.65)" stroke-width="1.2"/>
-                    </svg>
-                    <svg class="svg-link-horiz" viewBox="0 0 38 18">
-                        <rect x="1.5" y="1.5" width="35" height="15" rx="7.5" fill="url(#steelGradH)" stroke="#18181b" stroke-width="1.5"/>
-                        <rect x="9" y="5.5" width="20" height="7" rx="3.5" fill="#0a0a0c" stroke="#27272a" stroke-width="1"/>
-                        <path d="M6 4.5 Q19 2.5 32 4.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.2" stroke-linecap="round"/>
+
+                    <!-- Right Vertical Drop Chain (6 Interlocking Links) -->
+                    <svg class="drop-chain-svg" viewBox="0 0 24 96" filter="url(#chainShadow)">
+                        <rect x="2" y="2" width="20" height="24" rx="10" fill="none" stroke="url(#metal3D_Face)" stroke-width="5"/>
+                        <rect x="7.5" y="14" width="9" height="24" rx="4.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.5"/>
+                        <rect x="2" y="26" width="20" height="24" rx="10" fill="none" stroke="url(#metal3D_Face)" stroke-width="5"/>
+                        <rect x="7.5" y="38" width="9" height="24" rx="4.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.5"/>
+                        <rect x="2" y="50" width="20" height="24" rx="10" fill="none" stroke="url(#metal3D_Face)" stroke-width="5"/>
+                        <rect x="7.5" y="62" width="9" height="26" rx="4.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.5"/>
                     </svg>
                 </div>
 
-                <!-- Hanging Card Assembly with Pendulum Sway -->
-                <div class="hanging-card-wrapper ${swayClass}" onclick="openLightboxById('${item.id}')">
-                    <!-- Twin Vertical Dropper Chains Hooked to Card -->
-                    <div class="vertical-dropper-system">
-                        <div class="drop-chain">
-                            <svg class="drop-link-v" viewBox="0 0 10 18"><rect x="1" y="1" width="8" height="16" rx="4" fill="url(#steelGradV)" stroke="#18181b" stroke-width="1"/><path d="M3.5 2.5 L3.5 15.5" stroke="rgba(255,255,255,0.6)" stroke-width="0.8"/></svg>
-                            <svg class="drop-link-h" viewBox="0 0 16 10"><rect x="1" y="1" width="14" height="8" rx="4" fill="url(#steelGradH)" stroke="#18181b" stroke-width="1"/><rect x="4.5" y="3" width="7" height="4" rx="2" fill="#0a0a0c"/></svg>
-                            <svg class="drop-link-v" viewBox="0 0 10 18"><rect x="1" y="1" width="8" height="16" rx="4" fill="url(#steelGradV)" stroke="#18181b" stroke-width="1"/><path d="M3.5 2.5 L3.5 15.5" stroke="rgba(255,255,255,0.6)" stroke-width="0.8"/></svg>
-                            <svg class="steel-carabiner" viewBox="0 0 14 12"><path d="M2 1 H12 V11 H2 Z" fill="#71717a" stroke="#18181b" stroke-width="1"/><circle cx="7" cy="6" r="2.2" fill="#f4f4f5"/></svg>
-                        </div>
-                        <div class="drop-chain">
-                            <svg class="drop-link-v" viewBox="0 0 10 18"><rect x="1" y="1" width="8" height="16" rx="4" fill="url(#steelGradV)" stroke="#18181b" stroke-width="1"/><path d="M3.5 2.5 L3.5 15.5" stroke="rgba(255,255,255,0.6)" stroke-width="0.8"/></svg>
-                            <svg class="drop-link-h" viewBox="0 0 16 10"><rect x="1" y="1" width="14" height="8" rx="4" fill="url(#steelGradH)" stroke="#18181b" stroke-width="1"/><rect x="4.5" y="3" width="7" height="4" rx="2" fill="#0a0a0c"/></svg>
-                            <svg class="drop-link-v" viewBox="0 0 10 18"><rect x="1" y="1" width="8" height="16" rx="4" fill="url(#steelGradV)" stroke="#18181b" stroke-width="1"/><path d="M3.5 2.5 L3.5 15.5" stroke="rgba(255,255,255,0.6)" stroke-width="0.8"/></svg>
-                            <svg class="steel-carabiner" viewBox="0 0 14 12"><path d="M2 1 H12 V11 H2 Z" fill="#71717a" stroke="#18181b" stroke-width="1"/><circle cx="7" cy="6" r="2.2" fill="#f4f4f5"/></svg>
-                        </div>
+                <!-- Suspended Photo Card with Dual Metal Grommets -->
+                <div class="suspended-photo-card group" onclick="openLightboxById('${item.id}')">
+                    <!-- Metal Eyelet Grommets where chains feed into the card -->
+                    <div class="card-grommet-left"></div>
+                    <div class="card-grommet-right"></div>
+
+                    <!-- Photo Container -->
+                    <div class="relative h-44 overflow-hidden bg-[#161822]">
+                        <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" ${loadingAttr}>
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#10121a] via-transparent to-transparent"></div>
+                        <span class="absolute top-2.5 left-14 px-2.5 py-1 rounded-md text-[9px] font-mono font-bold tracking-wider uppercase bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 backdrop-blur-md">
+                            ${item.badge}
+                        </span>
                     </div>
 
-                    <!-- Photo Card -->
-                    <div class="hanging-card group">
-                        <div class="relative h-44 overflow-hidden bg-[#161822]">
-                            <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" ${loadingAttr}>
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#111218] via-transparent to-transparent"></div>
-                            <span class="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-md text-[9px] font-mono font-bold tracking-wider uppercase bg-blue-500/20 text-blue-300 border border-blue-500/30 backdrop-blur-md">
-                                ${item.badge}
-                            </span>
-                        </div>
-                        <div class="p-3.5 bg-[#111218]">
-                            <h4 class="text-white font-bold text-sm leading-snug line-clamp-1 mb-1 group-hover:text-blue-400 transition-colors">
-                                ${item.title}
-                            </h4>
-                            <p class="text-gray-300 text-xs font-light leading-relaxed line-clamp-2">
-                                ${item.caption}
-                            </p>
-                        </div>
+                    <!-- Details: Title & Simple One-Line Description -->
+                    <div class="p-3.5 bg-[#10121a]">
+                        <h4 class="text-white font-bold text-sm leading-snug line-clamp-1 mb-1 group-hover:text-cyan-400 transition-colors">
+                            ${item.title}
+                        </h4>
+                        <p class="text-gray-300 text-xs font-light leading-relaxed line-clamp-2">
+                            ${item.caption}
+                        </p>
                     </div>
                 </div>
+
             </div>
         `;
     }).join('');

@@ -37,26 +37,38 @@
 </head>
 <body class="bg-[#0a0a0c] text-gray-100 antialiased selection:bg-blue-500/30 relative min-h-screen flex flex-col justify-between">
 
-    <!-- Global SVG Metallic Gradients & Shading Filters -->
+    <!-- 3D Cylindrical Chrome/Steel Metallic Shaders & Shadows -->
     <svg width="0" height="0" class="absolute">
         <defs>
-            <!-- Horizontal Link Metallic Gradient -->
-            <linearGradient id="steelGradH" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#71717a"/>
-                <stop offset="25%" stop-color="#ffffff"/>
-                <stop offset="50%" stop-color="#a1a1aa"/>
-                <stop offset="80%" stop-color="#3f3f46"/>
-                <stop offset="100%" stop-color="#18181b"/>
+            <linearGradient id="metal3D_Face" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="18%" stop-color="#dce6ef"/>
+                <stop offset="40%" stop-color="#8ba3b8"/>
+                <stop offset="65%" stop-color="#465c6e"/>
+                <stop offset="85%" stop-color="#24333e"/>
+                <stop offset="100%" stop-color="#121b22"/>
             </linearGradient>
 
-            <!-- Vertical Link Metallic Gradient -->
-            <linearGradient id="steelGradV" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#71717a"/>
-                <stop offset="30%" stop-color="#ffffff"/>
-                <stop offset="60%" stop-color="#a1a1aa"/>
-                <stop offset="85%" stop-color="#3f3f46"/>
-                <stop offset="100%" stop-color="#18181b"/>
+            <linearGradient id="metal3D_Profile" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="25%" stop-color="#dce6ef"/>
+                <stop offset="50%" stop-color="#8ba3b8"/>
+                <stop offset="75%" stop-color="#465c6e"/>
+                <stop offset="100%" stop-color="#18232c"/>
             </linearGradient>
+
+            <linearGradient id="metal3D_Horiz" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="20%" stop-color="#e0ebf5"/>
+                <stop offset="42%" stop-color="#8ba3b8"/>
+                <stop offset="68%" stop-color="#465c6e"/>
+                <stop offset="90%" stop-color="#22303b"/>
+                <stop offset="100%" stop-color="#121b22"/>
+            </linearGradient>
+
+            <filter id="chainShadow" x="-25%" y="-25%" width="150%" height="150%">
+                <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.85"/>
+            </filter>
         </defs>
     </svg>
 
@@ -105,16 +117,16 @@
         </header>
 
         <!-- ════════════════════════════════════════════════════════════
-             HERO: REALISTIC INTERLOCKING METALLIC CHAIN CONVEYOR (Right to Left)
+             HERO: REALISTIC 3D CHAIN DYNAMICS & DUAL-POINT SUSPENSION CONVEYOR
              ════════════════════════════════════════════════════════════ -->
-        <section class="chain-wrapper chain-entrance mt-2 mb-14">
-            <!-- Steel Overhead Girder Beam -->
-            <div class="max-w-7xl mx-auto px-4 sm:px-6">
-                <div class="chain-girder"></div>
+        <section class="chain-wrapper chain-entrance mt-2 mb-16">
+            <!-- Overhead Heavy Industrial Conveyor Rail -->
+            <div class="w-full px-2 sm:px-6">
+                <div class="industrial-rail"></div>
             </div>
 
-            <!-- Interlocking Chain Conveyor Track Moving Smoothly Right to Left -->
-            <div class="conveyor-container mt-2">
+            <!-- Interlocking 3D Chain Conveyor Track Moving Smoothly Right to Left -->
+            <div class="conveyor-container mt-0">
                 <div class="conveyor-track" id="conveyor-track">
                     <!-- Populated dynamically via assets/script/gallery.js -->
                 </div>
