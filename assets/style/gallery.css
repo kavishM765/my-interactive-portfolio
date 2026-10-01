@@ -1,24 +1,52 @@
 /* ════════════════════════════════════════════════════════════════════
-   GALLERY & CHAIN VISUAL ARCHITECTURE
+   REALISTIC INTERLOCKING INDUSTRIAL CHAIN & SUSPENDED CONVEYOR
    ════════════════════════════════════════════════════════════════════ */
 
-/* Realistic Metallic Chain Links */
+/* Overhead Heavy Industrial Steel Girder / Mount */
+.chain-girder {
+    position: relative;
+    width: 100%;
+    height: 14px;
+    background: linear-gradient(180deg, #3f3f46 0%, #18181b 60%, #09090b 100%);
+    border-radius: 4px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.9), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+    border-bottom: 2px solid #000;
+}
+
+.chain-girder::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: repeating-linear-gradient(
+        90deg,
+        #52525b 0px,
+        #52525b 12px,
+        transparent 12px,
+        transparent 28px
+    );
+}
+
+/* Chain Section Container */
 .chain-wrapper {
     position: relative;
     width: 100%;
     overflow: hidden;
-    padding: 30px 0 20px 0;
+    padding-top: 15px;
+    padding-bottom: 35px;
 }
 
-/* Chain entrance animation: Unrolls smoothly from left to right */
+/* Chain entrance animation: Slides/unrolls smoothly from left to right on load */
 .chain-entrance {
-    animation: chainUnrollLeftToRight 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: chainUnroll 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-@keyframes chainUnrollLeftToRight {
+@keyframes chainUnroll {
     0% {
         clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-        opacity: 0.2;
+        opacity: 0.3;
     }
     100% {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
@@ -26,63 +54,30 @@
     }
 }
 
-/* Heavy Steel Chain Track */
-.chain-beam {
-    position: relative;
-    height: 18px;
-    background: repeating-linear-gradient(
-        90deg,
-        #1c1d24 0px,
-        #2e303d 10px,
-        #71717a 16px,
-        #e4e4e7 20px,
-        #71717a 24px,
-        #2e303d 30px,
-        #18181b 40px
-    );
-    border-radius: 9px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8), inset 0 2px 4px rgba(255, 255, 255, 0.3), inset 0 -2px 4px rgba(0, 0, 0, 0.8);
-    border-top: 1px solid rgba(255, 255, 255, 0.35);
-    border-bottom: 2px solid rgba(0, 0, 0, 0.9);
-}
-
-/* Metallic Chain Link Rings across the beam */
-.chain-beam::before {
-    content: '';
-    position: absolute;
-    top: -6px;
-    left: 0;
-    right: 0;
-    height: 30px;
-    background-image: radial-gradient(ellipse at center, rgba(255,255,255,0.4) 0%, transparent 60%);
-    background-size: 40px 30px;
-    pointer-events: none;
-}
-
-/* Conveyor Track for smooth Right-to-Left Infinite Motion */
+/* Smooth Infinite Conveyor Track (Right to Left) */
 .conveyor-container {
     width: 100%;
     overflow: hidden;
     position: relative;
-    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
-    padding-top: 10px;
-    padding-bottom: 30px;
+    mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+    padding-top: 4px;
 }
 
 .conveyor-track {
     display: flex;
-    gap: 28px;
+    gap: 32px;
     width: max-content;
-    animation: conveyorRightToLeft 55s linear infinite;
+    animation: conveyorScrollLeft 60s linear infinite;
     will-change: transform;
 }
 
+/* Hover over any photo: Smoothly pauses the entire chain conveyor */
 .conveyor-container:hover .conveyor-track {
     animation-play-state: paused !important;
 }
 
-@keyframes conveyorRightToLeft {
+@keyframes conveyorScrollLeft {
     0% {
         transform: translateX(0);
     }
@@ -91,7 +86,78 @@
     }
 }
 
-/* Hanging Photo Frame Attachment */
+/* ════════════════════════════════════════════════════════════════════
+   REALISTIC INTERLOCKING SVG CHAIN SEGMENT (Continuous Flow)
+   ════════════════════════════════════════════════════════════════════ */
+.chain-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Top Horizontal Chain Runner that travels WITH the card */
+.horizontal-chain-segment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 22px;
+    margin-bottom: 2px;
+}
+
+.svg-link-horiz {
+    width: 38px;
+    height: 18px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.7));
+}
+
+.svg-link-vert {
+    width: 12px;
+    height: 24px;
+    margin: 0 -3px;
+    z-index: 2;
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.8));
+}
+
+/* Vertical Dropper Chains connecting down to the Photo Frame */
+.vertical-dropper-system {
+    display: flex;
+    justify-content: space-between;
+    width: 78%;
+    height: 44px;
+    position: relative;
+}
+
+.drop-chain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.drop-link-v {
+    width: 9px;
+    height: 18px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+}
+
+.drop-link-h {
+    width: 16px;
+    height: 10px;
+    margin: -3px 0;
+    z-index: 2;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+}
+
+/* Heavy Steel Clasp / Ring holding the top edge of the card */
+.steel-carabiner {
+    width: 14px;
+    height: 12px;
+    margin-top: -2px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+}
+
+/* Hanging Photo Frame Wrapper with Physics Sway */
 .hanging-card-wrapper {
     position: relative;
     display: flex;
@@ -100,7 +166,6 @@
     transform-origin: top center;
 }
 
-/* Alternating natural pendulum sways */
 .hanging-card-wrapper.sway-1 {
     animation: pendulumSway1 4.5s ease-in-out infinite alternate;
 }
@@ -130,64 +195,22 @@
     100% { transform: rotate(1.4deg); }
 }
 
-/* Metallic Hook / Ring Link connecting the card to the beam */
-.metal-hanger {
-    display: flex;
-    justify-content: space-between;
-    width: 75%;
-    height: 38px;
-    position: relative;
-}
-
-.hanger-link {
-    width: 6px;
-    height: 100%;
-    background: linear-gradient(90deg, #3f3f46 0%, #d4d4d8 50%, #27272a 100%);
-    border-radius: 3px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), inset 0 1px 2px rgba(255, 255, 255, 0.5);
-    position: relative;
-}
-
-.hanger-link::before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -3px;
-    width: 12px;
-    height: 12px;
-    border: 2.5px solid #a1a1aa;
-    border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-}
-
-.hanger-link::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: -2px;
-    width: 10px;
-    height: 8px;
-    background: #e4e4e7;
-    border-radius: 2px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-}
-
 /* Hanging Photo Card */
 .hanging-card {
     width: 290px;
     background: #111218;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.8), 0 0 15px -3px rgba(59, 130, 246, 0.1);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.85), 0 0 15px -3px rgba(59, 130, 246, 0.15);
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
 .hanging-card:hover {
     transform: translateY(-4px) scale(1.02);
-    border-color: rgba(59, 130, 246, 0.6);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9), 0 0 30px -4px rgba(59, 130, 246, 0.35);
+    border-color: rgba(59, 130, 246, 0.65);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.95), 0 0 30px -4px rgba(59, 130, 246, 0.4);
 }
 
 /* Grid Milestone Card */

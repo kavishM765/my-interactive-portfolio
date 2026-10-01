@@ -31,8 +31,34 @@
     <!-- Shared & Gallery Styles -->
     <link rel="stylesheet" href="./assets/style/style.css">
     <link rel="stylesheet" href="./assets/style/gallery.css">
+    
+    <!-- Instant Prefetch for Portfolio Home -->
+    <link rel="prefetch" href="index.html">
 </head>
 <body class="bg-[#0a0a0c] text-gray-100 antialiased selection:bg-blue-500/30 relative min-h-screen flex flex-col justify-between">
+
+    <!-- Global SVG Metallic Gradients & Shading Filters -->
+    <svg width="0" height="0" class="absolute">
+        <defs>
+            <!-- Horizontal Link Metallic Gradient -->
+            <linearGradient id="steelGradH" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#71717a"/>
+                <stop offset="25%" stop-color="#ffffff"/>
+                <stop offset="50%" stop-color="#a1a1aa"/>
+                <stop offset="80%" stop-color="#3f3f46"/>
+                <stop offset="100%" stop-color="#18181b"/>
+            </linearGradient>
+
+            <!-- Vertical Link Metallic Gradient -->
+            <linearGradient id="steelGradV" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#71717a"/>
+                <stop offset="30%" stop-color="#ffffff"/>
+                <stop offset="60%" stop-color="#a1a1aa"/>
+                <stop offset="85%" stop-color="#3f3f46"/>
+                <stop offset="100%" stop-color="#18181b"/>
+            </linearGradient>
+        </defs>
+    </svg>
 
     <!-- Living Atmosphere: Subtle Floating Particles Background -->
     <canvas id="living-canvas"></canvas>
@@ -79,27 +105,19 @@
         </header>
 
         <!-- ════════════════════════════════════════════════════════════
-             HERO: REALISTIC METALLIC CHAIN WITH CONVEYOR (Right to Left)
+             HERO: REALISTIC INTERLOCKING METALLIC CHAIN CONVEYOR (Right to Left)
              ════════════════════════════════════════════════════════════ -->
-        <section class="chain-wrapper chain-entrance mt-4 mb-16">
-            <!-- Steel Chain Overhead Beam -->
+        <section class="chain-wrapper chain-entrance mt-2 mb-14">
+            <!-- Steel Overhead Girder Beam -->
             <div class="max-w-7xl mx-auto px-4 sm:px-6">
-                <div class="chain-beam"></div>
+                <div class="chain-girder"></div>
             </div>
 
-            <!-- Conveyor Track Moving Smoothly Right to Left -->
+            <!-- Interlocking Chain Conveyor Track Moving Smoothly Right to Left -->
             <div class="conveyor-container mt-2">
                 <div class="conveyor-track" id="conveyor-track">
                     <!-- Populated dynamically via assets/script/gallery.js -->
                 </div>
-            </div>
-
-            <!-- Subtle Instruction Hint -->
-            <div class="text-center mt-1">
-                <span class="text-[11px] font-mono text-gray-400 tracking-wider flex items-center justify-center gap-2">
-                    <span class="inline-block w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-                    Auto-gliding along the chain · Hover over any photo to pause & inspect
-                </span>
             </div>
         </section>
 
@@ -161,7 +179,7 @@
                         TAG
                     </span>
                     <span id="lightbox-counter" class="text-xs font-mono text-gray-400">
-                        1 / 23
+                        1 / 22
                     </span>
                 </div>
                 
@@ -207,6 +225,188 @@
             </div>
         </div>
     </footer>
+
+    <!-- Instant Embedded Gallery Dataset (Eliminates Async Network Wait for 0ms Render) -->
+    <script>
+        window.EMBEDDED_GALLERY_DATA = [
+          {
+            "id": "ai-agents-hackathon-top5",
+            "title": "National AI Agents Hackathon",
+            "badge": "HACKATHON · TOP 5 FINISH",
+            "category": "Hackathons",
+            "caption": "Ranked 5th out of 2,300+ teams nationwide building an autonomous multi-agent prototype.",
+            "image": "assets/images/gallery/ai-agents-hackathon-top5.jpg"
+          },
+          {
+            "id": "bugslayer-24h-hackathon",
+            "title": "BUGSLAYER '26 24h Hackathon",
+            "badge": "HACKATHON · 24-HOUR SPRINT",
+            "category": "Hackathons",
+            "caption": "Engineered a low-bandwidth Telemedicine Access Platform across 5 intense review rounds.",
+            "image": "assets/images/gallery/bugslayer-24h-hackathon.jpg"
+          },
+          {
+            "id": "devforge-hackathon-final",
+            "title": "DevForge Hackathon — Final Review",
+            "badge": "HACKATHON · KPR INSTITUTE",
+            "category": "Hackathons",
+            "caption": "Built the full frontend and connected n8n backend workflows in an overnight sprint.",
+            "image": "assets/images/gallery/devforge-hackathon-kpr.jpg"
+          },
+          {
+            "id": "devforge-hackathon-day1",
+            "title": "DevForge Hackathon — AI Sprint",
+            "badge": "HACKATHON · 24H SPRINT",
+            "category": "Hackathons",
+            "caption": "Brainstormed and cleared initial technical reviews for rapid AI system delivery.",
+            "image": "assets/images/gallery/devforge-hackathon-day1.jpg"
+          },
+          {
+            "id": "msme-hackathon-round1",
+            "title": "MSME Hackathon 2025 — Round 1",
+            "badge": "HACKATHON · QUALIFIED",
+            "category": "Hackathons",
+            "caption": "Successfully qualified through the national Idea Submission stage.",
+            "image": "assets/images/gallery/msme-hackathon-round1.jpg"
+          },
+          {
+            "id": "intern2innovate-hackathon",
+            "title": "Intern2Innovate Internal Hackathon",
+            "badge": "HACKATHON · INNOVATION",
+            "category": "Hackathons",
+            "caption": "Prototyped creative problem-solving applications during the internal college hackathon.",
+            "image": "assets/images/gallery/intern2innovate-hackathon.jpg"
+          },
+          {
+            "id": "college-ideathon",
+            "title": "College Ideathon Prototyping",
+            "badge": "COMPETITION · IDEATHON",
+            "category": "Hackathons",
+            "caption": "Collaborated with teammates to design and present innovative tech product ideas.",
+            "image": "assets/images/gallery/college-ideathon.jpg"
+          },
+          {
+            "id": "lets-gametech-internship",
+            "title": "Java Backend Development Internship",
+            "badge": "INTERNSHIP · LET'S GAMETECH",
+            "category": "Internships",
+            "caption": "Completed 1-month intensive backend training building robust Core Java applications.",
+            "image": "assets/images/gallery/lets-gametech-internship.jpg"
+          },
+          {
+            "id": "dsignz-media-internship",
+            "title": "Frontend Web Development Internship",
+            "badge": "INTERNSHIP · DSIGNZ MEDIA",
+            "category": "Internships",
+            "caption": "21-day frontend sprint mastering responsive design, HTML, CSS, JavaScript, and rapid execution.",
+            "image": "assets/images/gallery/dsignz-media-internship.jpg"
+          },
+          {
+            "id": "circor-internship",
+            "title": "Website Development Internship",
+            "badge": "INTERNSHIP · CIRCOR INTL",
+            "category": "Internships",
+            "caption": "Gained real-world IT web development experience at CIRCOR Flow Technologies.",
+            "image": "assets/images/gallery/circor-web-internship.jpg"
+          },
+          {
+            "id": "agentic-ai-bootcamp-day2",
+            "title": "Agentic AI Bootcamp — Day 2",
+            "badge": "BOOTCAMP · AGENTIC AI",
+            "category": "Bootcamps",
+            "caption": "Built production-ready AI agents and automated real-time workflows at SNS College of Technology.",
+            "image": "assets/images/gallery/agentic-ai-bootcamp.jpg"
+          },
+          {
+            "id": "agentic-ai-bootcamp-day1",
+            "title": "Agentic AI Bootcamp — Day 1",
+            "badge": "BOOTCAMP · AGENTIC AI",
+            "category": "Bootcamps",
+            "caption": "Configured autonomous agent environments and orchestrated pipelines using n8n.",
+            "image": "assets/images/gallery/agentic-ai-bootcamp-day1.jpg"
+          },
+          {
+            "id": "sns-ihub-bootcamp",
+            "title": "SNS iHub Innovation Bootcamp",
+            "badge": "BOOTCAMP · SNS IHUB",
+            "category": "Bootcamps",
+            "caption": "Built working n8n workflows and learned design thinking from Prof. Ulrich Weinberg (HPI Germany).",
+            "image": "assets/images/gallery/sns-ihub-bootcamp.jpg"
+          },
+          {
+            "id": "all-round-performer-nominee",
+            "title": "All-Round Performer Nominee",
+            "badge": "HONOR · SNS COLLEGE",
+            "category": "Leadership",
+            "caption": "Nominated for the college-wide award honoring excellence in academics, hackathons, and leadership.",
+            "image": "assets/images/gallery/all-round-performer-nominee.jpg"
+          },
+          {
+            "id": "unstop-talent-awards",
+            "title": "Unstop Talent Awards 2026",
+            "badge": "RECOGNITION · UNSTOP",
+            "category": "Leadership",
+            "caption": "Recognized in the national Unstoppable Leaders cohort for competitive hackathon performance.",
+            "image": "assets/images/gallery/unstop-talent-awards.jpg"
+          },
+          {
+            "id": "texperia-paper-coordinator",
+            "title": "Texperia Symposium Coordinator",
+            "badge": "LEADERSHIP · COORDINATOR",
+            "category": "Leadership",
+            "caption": "Coordinated student research papers and facilitated technical presentations across domains.",
+            "image": "assets/images/gallery/texperia-paper-coordinator.jpg"
+          },
+          {
+            "id": "leetcode-training",
+            "title": "LeetCode 1-Month Daily Coding Program",
+            "badge": "GROWTH · 30-DAY SPRINT",
+            "category": "Leadership",
+            "caption": "Completed 30 days of continuous data structures practice, meditation sessions, and technical reviews.",
+            "image": "assets/images/gallery/leetcode-training-program.jpg"
+          },
+          {
+            "id": "agentic-ai-discussion",
+            "title": "Agentic AI Group Discussion",
+            "badge": "LEADERSHIP · COLLABORATION",
+            "category": "Leadership",
+            "caption": "Led classroom debates analyzing autonomous agent decision-making and practical business automation.",
+            "image": "assets/images/gallery/agentic-ai-group-discussion.jpg"
+          },
+          {
+            "id": "microsoft-deloitte-meeting",
+            "title": "Microsoft & Deloitte Industry Exchange",
+            "badge": "NETWORKING · INDUSTRY LEADERS",
+            "category": "Leadership",
+            "caption": "Gained industry insights on software architecture from senior leaders at Microsoft and Deloitte.",
+            "image": "assets/images/gallery/microsoft-deloitte-meeting.jpg"
+          },
+          {
+            "id": "chennai-japan-expo",
+            "title": "Chennai Japan Expo 2026",
+            "badge": "CULTURE · EXPO",
+            "category": "Leadership",
+            "caption": "Represented and experienced international cultural exchange, technology showcases, and global networking.",
+            "image": "assets/images/gallery/chennai-japan-expo.jpg"
+          },
+          {
+            "id": "communication-journey",
+            "title": "Communication & Public Speaking Journey",
+            "badge": "GROWTH · MILESTONE",
+            "category": "Leadership",
+            "caption": "Evolving from classroom stage fear to presenting confidently across national hackathons.",
+            "image": "assets/images/gallery/communication-journey-it.jpg"
+          },
+          {
+            "id": "data-analytics-seminar",
+            "title": "Data Analytics Seminar",
+            "badge": "PRESENTATION · SEMINAR",
+            "category": "Leadership",
+            "caption": "Stepped onto the stage to deliver a technical seminar, conquering public speaking barriers.",
+            "image": "assets/images/gallery/data-analytics-seminar.jpg"
+          }
+        ];
+    </script>
 
     <!-- Background Particle Canvas & Gallery Controller Scripts -->
     <script src="./assets/script/living-canvas.js"></script>
