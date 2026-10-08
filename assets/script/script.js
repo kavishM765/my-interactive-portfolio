@@ -1,25 +1,25 @@
 // --- Modal Templates ---
 const templates = {
     email: `
-        <h2 class="text-2xl font-bold mb-4 text-white">Direct Engagement</h2>
+        <h2 class="text-2xl font-bold mb-4 text-slate-900">Direct Engagement</h2>
         <form id="contact-form" action="https://formspree.io/f/xeozngwn" method="POST" class="space-y-4">
             <!-- Anti-Spam Honeypot Field (Hidden from humans, traps bots) -->
             <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none !important">
-            <input type="email" name="email" id="user-email" placeholder="Hiring Manager Email" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white focus:border-blue-500 outline-none transition" required>
-            <textarea name="message" id="user-message" placeholder="I saw your Telemedicine Platform from BUGSLAYER '26..." class="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white h-28 focus:border-blue-500 outline-none transition" minlength="10" maxlength="1000" required></textarea>
+            <input type="email" name="email" id="user-email" placeholder="Hiring Manager Email" class="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl text-slate-900 focus:border-blue-500 outline-none transition" required>
+            <textarea name="message" id="user-message" placeholder="I saw your Telemedicine Platform from BUGSLAYER '26..." class="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl text-slate-900 h-28 focus:border-blue-500 outline-none transition" minlength="10" maxlength="1000" required></textarea>
             
             <!-- DPDP Act 2023 Explicit Consent Checkbox -->
             <div class="flex items-start gap-2.5 pt-1 text-left">
-                <input type="checkbox" id="dpdp-consent" name="dpdp_consent" class="mt-1 rounded bg-white/5 border-white/20 text-blue-600 focus:ring-blue-500" required>
-                <label for="dpdp-consent" class="text-[11px] text-gray-400 leading-snug">
-                    I consent to Kavish M processing my email & message solely to respond to this inquiry, under the <button type="button" onclick="openPrivacyModal()" class="text-blue-400 hover:underline">DPDP Act 2023</button>.
+                <input type="checkbox" id="dpdp-consent" name="dpdp_consent" class="mt-1 rounded bg-slate-50 border-white/20 text-blue-600 focus:ring-blue-500" required>
+                <label for="dpdp-consent" class="text-[11px] text-slate-500 leading-snug">
+                    I consent to Kavish M processing my email & message solely to respond to this inquiry, under the <button type="button" onclick="openPrivacyModal()" class="text-blue-600 hover:underline">DPDP Act 2023</button>.
                 </label>
             </div>
 
             <p id="form-status" class="text-sm font-semibold hidden"></p>
 
             <div class="flex justify-end gap-3 pt-2">
-                <button type="button" onclick="closeAllModals()" class="text-gray-400 font-medium px-4 hover:text-white transition text-sm">Close</button>
+                <button type="button" onclick="closeAllModals()" class="text-slate-500 font-medium px-4 hover:text-slate-900 transition text-sm">Close</button>
                 <button type="submit" id="submit-btn" class="bg-blue-600 text-white px-7 py-3 rounded-xl font-bold hover:bg-blue-700 transition flex items-center justify-center min-w-[150px] text-sm">
                     Send Inquiry
                 </button>
@@ -27,77 +27,77 @@ const templates = {
         </form>`,
     phone: `
         <div class="text-center">
-            <h2 class="text-2xl font-bold mb-2 text-white">Direct Contact</h2>
+            <h2 class="text-2xl font-bold mb-2 text-slate-900">Direct Contact</h2>
             <p class="text-blue-500 font-bold mb-8">+91 9865824929</p>
             <div class="grid grid-cols-1 gap-3">
                 <a href="tel:+919865824929" class="bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition">Call for Opportunity</a>
-                <a href="https://www.linkedin.com/in/kavish-m-" target="_blank" class="bg-white/5 border border-white/10 text-white py-4 rounded-xl font-bold hover:bg-white/10 transition">LinkedIn Message</a>
-                <button onclick="closeAllModals()" class="text-gray-500 pt-4 text-xs font-semibold uppercase tracking-widest hover:text-white transition">Back to Portfolio</button>
+                <a href="https://www.linkedin.com/in/kavish-m-" target="_blank" class="bg-slate-50 border border-slate-200 text-slate-900 py-4 rounded-xl font-bold hover:bg-slate-100 transition">LinkedIn Message</a>
+                <button onclick="closeAllModals()" class="text-slate-400 pt-4 text-xs font-semibold uppercase tracking-widest hover:text-slate-900 transition">Back to Portfolio</button>
             </div>
         </div>`,
     privacy: `
         <div class="text-left space-y-4 max-h-[75vh] overflow-y-auto pr-2">
-            <div class="flex justify-between items-center border-b border-white/10 pb-3">
-                <h2 class="text-xl font-bold text-white">Privacy Policy & DPDP Compliance</h2>
-                <span class="text-[10px] uppercase font-bold tracking-widest text-blue-400 bg-blue-500/10 px-2 py-1 rounded border border-blue-500/20">DPDP Act 2023 Compliant</span>
+            <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+                <h2 class="text-xl font-bold text-slate-900">Privacy Policy & DPDP Compliance</h2>
+                <span class="text-[10px] uppercase font-bold tracking-widest text-blue-600 bg-blue-50 px-2 py-1 rounded border border-blue-200">DPDP Act 2023 Compliant</span>
             </div>
-            <div class="text-xs text-gray-300 space-y-3 leading-relaxed">
-                <p><strong class="text-white">1. Data Fiduciary & Officer:</strong> Kavish M (Contact: <a href="mailto:kavishm100@gmail.com" class="text-blue-400 underline">kavishm100@gmail.com</a>).</p>
-                <p><strong class="text-white">2. Data Collected:</strong> Name, Email address, and message content submitted voluntarily via the contact modal.</p>
-                <p><strong class="text-white">3. Purpose of Processing:</strong> Information is used exclusively for professional recruitment communications, business inquiries, and technical collaboration. Your data is **never sold, shared, or leased** to third parties.</p>
-                <p><strong class="text-white">4. Transmission & Security:</strong> Messages are transmitted securely via HTTPS encrypted POST requests directly to Formspree edge handlers. No cookies or user tracking databases are maintained locally.</p>
-                <p><strong class="text-white">5. Your Rights (DPDP Act 2023 & FTC):</strong> You have the right to request access, correction, or permanent deletion of your submitted messages at any time.</p>
+            <div class="text-xs text-slate-600 space-y-3 leading-relaxed">
+                <p><strong class="text-slate-900">1. Data Fiduciary & Officer:</strong> Kavish M (Contact: <a href="mailto:kavishm100@gmail.com" class="text-blue-600 underline">kavishm100@gmail.com</a>).</p>
+                <p><strong class="text-slate-900">2. Data Collected:</strong> Name, Email address, and message content submitted voluntarily via the contact modal.</p>
+                <p><strong class="text-slate-900">3. Purpose of Processing:</strong> Information is used exclusively for professional recruitment communications, business inquiries, and technical collaboration. Your data is **never sold, shared, or leased** to third parties.</p>
+                <p><strong class="text-slate-900">4. Transmission & Security:</strong> Messages are transmitted securely via HTTPS encrypted POST requests directly to Formspree edge handlers. No cookies or user tracking databases are maintained locally.</p>
+                <p><strong class="text-slate-900">5. Your Rights (DPDP Act 2023 & FTC):</strong> You have the right to request access, correction, or permanent deletion of your submitted messages at any time.</p>
             </div>
-            <div class="pt-3 border-t border-white/10 flex flex-wrap justify-between items-center gap-3">
-                <button type="button" onclick="openDeletionModal()" class="text-xs text-red-400 hover:underline font-semibold">Request Message Deletion ↗</button>
+            <div class="pt-3 border-t border-slate-200 flex flex-wrap justify-between items-center gap-3">
+                <button type="button" onclick="openDeletionModal()" class="text-xs text-red-600 hover:underline font-semibold">Request Message Deletion ↗</button>
                 <button type="button" onclick="closeAllModals()" class="bg-blue-600 text-white px-5 py-2 rounded-xl text-xs font-bold hover:bg-blue-700 transition">Understood</button>
             </div>
         </div>`,
     terms: `
         <div class="text-left space-y-4 max-h-[75vh] overflow-y-auto pr-2">
-            <div class="flex justify-between items-center border-b border-white/10 pb-3">
-                <h2 class="text-xl font-bold text-white">Terms of Service</h2>
-                <span class="text-[10px] uppercase font-bold tracking-widest text-gray-400">Effective 2026</span>
+            <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+                <h2 class="text-xl font-bold text-slate-900">Terms of Service</h2>
+                <span class="text-[10px] uppercase font-bold tracking-widest text-slate-500">Effective 2026</span>
             </div>
-            <div class="text-xs text-gray-300 space-y-3 leading-relaxed">
-                <p><strong class="text-white">1. Acceptance:</strong> By accessing kavishmportfolio.vercel.app, you agree to these Terms of Service and applicable privacy regulations.</p>
-                <p><strong class="text-white">2. Intellectual Property:</strong> All project showcases, custom n8n workflow diagrams, text copy, and interactive components belong to Kavish M unless otherwise attributed.</p>
-                <p><strong class="text-white">3. Acceptable Use:</strong> You agree not to spam contact forms, attempt automated script scraping, or inject malicious payloads.</p>
-                <p><strong class="text-white">4. Disclaimer:</strong> Projects displayed are for portfolio demonstration, educational, and professional recruitment evaluation purposes.</p>
+            <div class="text-xs text-slate-600 space-y-3 leading-relaxed">
+                <p><strong class="text-slate-900">1. Acceptance:</strong> By accessing kavishmportfolio.vercel.app, you agree to these Terms of Service and applicable privacy regulations.</p>
+                <p><strong class="text-slate-900">2. Intellectual Property:</strong> All project showcases, custom n8n workflow diagrams, text copy, and interactive components belong to Kavish M unless otherwise attributed.</p>
+                <p><strong class="text-slate-900">3. Acceptable Use:</strong> You agree not to spam contact forms, attempt automated script scraping, or inject malicious payloads.</p>
+                <p><strong class="text-slate-900">4. Disclaimer:</strong> Projects displayed are for portfolio demonstration, educational, and professional recruitment evaluation purposes.</p>
             </div>
-            <div class="pt-3 border-t border-white/10 flex justify-end">
+            <div class="pt-3 border-t border-slate-200 flex justify-end">
                 <button type="button" onclick="closeAllModals()" class="bg-blue-600 text-white px-5 py-2 rounded-xl text-xs font-bold hover:bg-blue-700 transition">Close</button>
             </div>
         </div>`,
     grievance: `
         <div class="text-left space-y-4 max-h-[75vh] overflow-y-auto pr-2">
-            <div class="flex justify-between items-center border-b border-white/10 pb-3">
-                <h2 class="text-xl font-bold text-white">Grievance Redressal Mechanism</h2>
-                <span class="text-[10px] uppercase font-bold tracking-widest text-purple-400 bg-purple-500/10 px-2 py-1 rounded border border-purple-500/20">DPDP Act 2023 Sec 13</span>
+            <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+                <h2 class="text-xl font-bold text-slate-900">Grievance Redressal Mechanism</h2>
+                <span class="text-[10px] uppercase font-bold tracking-widest text-purple-600 bg-purple-50 px-2 py-1 rounded border border-purple-200">DPDP Act 2023 Sec 13</span>
             </div>
-            <div class="text-xs text-gray-300 space-y-3 leading-relaxed">
-                <p><strong class="text-white">Grievance Officer:</strong> Kavish M</p>
-                <p><strong class="text-white">Official Email:</strong> <code class="text-blue-400 bg-white/5 px-2 py-1 rounded select-all">kavishm100@gmail.com</code></p>
-                <p><strong class="text-white">Redressal Process:</strong> Under Section 13 of the Digital Personal Data Protection (DPDP) Act 2023, you have the right to register grievances regarding personal data processing. Inquiries are acknowledged within 24 hours and addressed within 7 business days.</p>
+            <div class="text-xs text-slate-600 space-y-3 leading-relaxed">
+                <p><strong class="text-slate-900">Grievance Officer:</strong> Kavish M</p>
+                <p><strong class="text-slate-900">Official Email:</strong> <code class="text-blue-600 bg-slate-50 px-2 py-1 rounded select-all">kavishm100@gmail.com</code></p>
+                <p><strong class="text-slate-900">Redressal Process:</strong> Under Section 13 of the Digital Personal Data Protection (DPDP) Act 2023, you have the right to register grievances regarding personal data processing. Inquiries are acknowledged within 24 hours and addressed within 7 business days.</p>
             </div>
-            <div class="pt-3 border-t border-white/10 flex justify-between items-center gap-3">
+            <div class="pt-3 border-t border-slate-200 flex justify-between items-center gap-3">
                 <button type="button" onclick="openEmailModal()" class="bg-blue-600 text-white px-5 py-2 rounded-xl text-xs font-bold hover:bg-blue-700 transition">Send Direct Message</button>
-                <button type="button" onclick="closeAllModals()" class="text-gray-400 hover:text-white text-xs font-medium px-3">Close</button>
+                <button type="button" onclick="closeAllModals()" class="text-slate-500 hover:text-slate-900 text-xs font-medium px-3">Close</button>
             </div>
         </div>`,
     deletion: `
         <div class="text-left space-y-4 max-h-[75vh] overflow-y-auto pr-2">
-            <div class="flex justify-between items-center border-b border-white/10 pb-3">
-                <h2 class="text-xl font-bold text-white">Data Deletion / Right to Erasure</h2>
-                <span class="text-[10px] uppercase font-bold tracking-widest text-red-400 bg-red-500/10 px-2 py-1 rounded border border-red-500/20">DPDP Act 2023 Sec 12</span>
+            <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+                <h2 class="text-xl font-bold text-slate-900">Data Deletion / Right to Erasure</h2>
+                <span class="text-[10px] uppercase font-bold tracking-widest text-red-600 bg-red-50 px-2 py-1 rounded border border-red-200">DPDP Act 2023 Sec 12</span>
             </div>
-            <div class="text-xs text-gray-300 space-y-3 leading-relaxed">
-                <p><strong class="text-white">Right to Erasure:</strong> Under Section 12 of the DPDP Act 2023, you have the right to demand the erasure of personal data that is no longer necessary for the purpose for which it was processed.</p>
-                <p><strong class="text-white">How to Request:</strong> Send a deletion request to <code class="text-blue-400 bg-white/5 px-2 py-1 rounded select-all">kavishm100@gmail.com</code> specifying the email address used in the contact form. All corresponding logs will be purged permanently.</p>
+            <div class="text-xs text-slate-600 space-y-3 leading-relaxed">
+                <p><strong class="text-slate-900">Right to Erasure:</strong> Under Section 12 of the DPDP Act 2023, you have the right to demand the erasure of personal data that is no longer necessary for the purpose for which it was processed.</p>
+                <p><strong class="text-slate-900">How to Request:</strong> Send a deletion request to <code class="text-blue-600 bg-slate-50 px-2 py-1 rounded select-all">kavishm100@gmail.com</code> specifying the email address used in the contact form. All corresponding logs will be purged permanently.</p>
             </div>
-            <div class="pt-3 border-t border-white/10 flex justify-between items-center gap-3">
+            <div class="pt-3 border-t border-slate-200 flex justify-between items-center gap-3">
                 <button type="button" onclick="openEmailModal()" class="bg-blue-600 text-white px-5 py-2 rounded-xl text-xs font-bold hover:bg-blue-700 transition">Send Deletion Request</button>
-                <button type="button" onclick="closeAllModals()" class="text-gray-400 hover:text-white text-xs font-medium px-3">Close</button>
+                <button type="button" onclick="closeAllModals()" class="text-slate-500 hover:text-slate-900 text-xs font-medium px-3">Close</button>
             </div>
         </div>`
 };
@@ -180,14 +180,14 @@ async function handleFormSubmit(event) {
     if (lastSubmission && (now - lastSubmission < COOLDOWN_MS)) {
         const remainingSec = Math.ceil((COOLDOWN_MS - (now - lastSubmission)) / 1000);
         status.innerHTML = `⚠️ Security Cooldown: Please wait ${remainingSec} seconds before sending another inquiry.`;
-        status.className = "text-yellow-400 text-xs font-bold block mt-3 p-3 bg-yellow-500/10 rounded-lg border border-yellow-500/20";
+        status.className = "text-yellow-600 text-xs font-bold block mt-3 p-3 bg-yellow-50 rounded-lg border border-yellow-200";
         return;
     }
 
     // Security Guard 2: Input Sanitization & Length Check
     if (messageInput && messageInput.value.trim().length < 10) {
         status.innerHTML = `⚠️ Message too short: Please type at least 10 characters.`;
-        status.className = "text-yellow-400 text-xs font-bold block mt-3 p-3 bg-yellow-500/10 rounded-lg border border-yellow-500/20";
+        status.className = "text-yellow-600 text-xs font-bold block mt-3 p-3 bg-yellow-50 rounded-lg border border-yellow-200";
         return;
     }
 
@@ -220,7 +220,7 @@ async function handleFormSubmit(event) {
             localStorage.setItem('last_submission_time', Date.now());
 
             status.innerHTML = `<span class="inline-block animate-bounce mr-1">✅</span> Message sent successfully! I will get back to you soon.`;
-            status.className = "text-green-400 text-xs font-bold block mt-3 p-3 bg-green-500/10 rounded-lg border border-green-500/20";
+            status.className = "text-green-600 text-xs font-bold block mt-3 p-3 bg-green-50 rounded-lg border border-green-200";
             form.reset();
             submitBtn.innerHTML = "Delivered!";
             submitBtn.classList.replace('bg-blue-600', 'bg-green-600');
@@ -242,7 +242,7 @@ async function handleFormSubmit(event) {
         }
     } catch (error) {
         status.innerHTML = `❌ Network error. Please try again or email directly to kavishm100@gmail.com`;
-        status.className = "text-red-400 text-xs font-bold block mt-3 p-3 bg-red-500/10 rounded-lg border border-red-500/20";
+        status.className = "text-red-600 text-xs font-bold block mt-3 p-3 bg-red-50 rounded-lg border border-red-200";
         submitBtn.innerHTML = originalBtnText;
         submitBtn.disabled = false;
         submitBtn.classList.remove('cursor-wait', 'opacity-90');
@@ -285,84 +285,6 @@ if (document.readyState === 'loading') {
 setTimeout(() => {
     document.querySelectorAll('.animate-on-scroll').forEach(el => el.classList.add('appear'));
 }, 500);
-
-// ════════════════════════════════════════════════════════════════════
-// Auto-Moving 3D Deck Controller (Side -> Down -> Forward)
-// ════════════════════════════════════════════════════════════════════
-let currentDeckIndex = 0;
-let isMovingDeck = false;
-let deckAutoTimer = null;
-const AUTO_MOVE_INTERVAL = 3800; // Cycles every 3.8s smoothly
-
-function cycleDeckCard(direction = 1) {
-    if (isMovingDeck) return;
-    const cards = document.querySelectorAll('.deck-card');
-    if (!cards.length) return;
-
-    isMovingDeck = true;
-    const total = cards.length;
-    const currentCard = cards[currentDeckIndex];
-    
-    const nextIndex = (currentDeckIndex + direction + total) % total;
-    const nextCard = cards[nextIndex];
-
-    // Trigger Side -> Down exit animation
-    currentCard.classList.remove('card-active');
-    currentCard.classList.add('card-exiting');
-
-    // Trigger Come Forward entrance animation
-    nextCard.classList.remove('card-next', 'card-queue');
-    nextCard.classList.add('card-entering');
-
-    // Update Counter (01 / 06)
-    const counter = document.getElementById('deck-counter');
-    if (counter) {
-        counter.textContent = `${String(nextIndex + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
-    }
-
-    setTimeout(() => {
-        currentCard.classList.remove('card-exiting');
-        currentCard.classList.add('card-queue');
-        
-        nextCard.classList.remove('card-entering');
-        nextCard.classList.add('card-active');
-
-        // Setup third card peeking behind
-        const queueIndex = (nextIndex + 1) % total;
-        cards[queueIndex].classList.remove('card-active');
-        cards[queueIndex].classList.add('card-next');
-
-        currentDeckIndex = nextIndex;
-        isMovingDeck = false;
-    }, 700);
-}
-
-function startDeckAutoCycle() {
-    stopDeckAutoCycle();
-    deckAutoTimer = setInterval(() => {
-        cycleDeckCard(1);
-    }, AUTO_MOVE_INTERVAL);
-}
-
-function stopDeckAutoCycle() {
-    if (deckAutoTimer) {
-        clearInterval(deckAutoTimer);
-        deckAutoTimer = null;
-    }
-}
-
-// Initialize Deck Auto-Move & Hover-Pause
-function initDeckControls() {
-    const viewport = document.querySelector('.deck-viewport');
-    if (!viewport) return;
-
-    // Start auto cycle
-    startDeckAutoCycle();
-
-    // Pause when user hovers (so they can inspect the 3D flip card comfortably!)
-    viewport.addEventListener('mouseenter', stopDeckAutoCycle);
-    viewport.addEventListener('mouseleave', startDeckAutoCycle);
-}
 
 // ════════════════════════════════════════════════════════════════════
 // Tech Stack & Tools: Circulating Light Sequence with Hover Pause
@@ -414,20 +336,10 @@ function initTechStackLightCycle() {
     });
 }
 
-// ════════════════════════════════════════════════════════════════════
-// Kinetic Accordion Controller
-// ════════════════════════════════════════════════════════════════════
-function selectAccordionPanel(panelElement) {
-    document.querySelectorAll('.accordion-panel').forEach(p => p.classList.remove('active'));
-    panelElement.classList.add('active');
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-    initDeckControls();
     initTechStackLightCycle();
 });
 setTimeout(() => {
-    initDeckControls();
     initTechStackLightCycle();
 }, 300);
 
@@ -450,14 +362,14 @@ async function handleEmbeddedFormSubmit(event) {
     if (lastSubmission && (now - lastSubmission < COOLDOWN_MS)) {
         const remainingSec = Math.ceil((COOLDOWN_MS - (now - lastSubmission)) / 1000);
         status.innerHTML = `⚠️ Cooldown: Please wait ${remainingSec}s before sending another message.`;
-        status.className = "text-yellow-400 text-xs font-semibold block mt-3 p-3 bg-yellow-500/10 rounded-xl border border-yellow-500/20";
+        status.className = "text-yellow-700 text-xs font-semibold block mt-3 p-3 bg-yellow-50 rounded-xl border border-yellow-200";
         status.classList.remove('hidden');
         return;
     }
 
     if (messageInput && messageInput.value.trim().length < 10) {
         status.innerHTML = `⚠️ Message too short: Please type at least 10 characters.`;
-        status.className = "text-yellow-400 text-xs font-semibold block mt-3 p-3 bg-yellow-500/10 rounded-xl border border-yellow-500/20";
+        status.className = "text-yellow-700 text-xs font-semibold block mt-3 p-3 bg-yellow-50 rounded-xl border border-yellow-200";
         status.classList.remove('hidden');
         return;
     }
@@ -484,7 +396,7 @@ async function handleEmbeddedFormSubmit(event) {
         if (response.ok) {
             localStorage.setItem('last_submission_time', Date.now());
             status.innerHTML = `✅ Message received! I will get back to you within 24 hours.`;
-            status.className = "text-green-400 text-xs font-semibold block mt-3 p-3 bg-green-500/10 rounded-xl border border-green-500/20";
+            status.className = "text-green-700 text-xs font-semibold block mt-3 p-3 bg-green-50 rounded-xl border border-green-200";
             status.classList.remove('hidden');
             form.reset();
             submitBtn.innerHTML = "Delivered!";
@@ -500,7 +412,7 @@ async function handleEmbeddedFormSubmit(event) {
         }
     } catch (err) {
         status.innerHTML = `❌ Network issue. Please email directly to kavishm100@gmail.com`;
-        status.className = "text-red-400 text-xs font-semibold block mt-3 p-3 bg-red-500/10 rounded-xl border border-red-500/20";
+        status.className = "text-red-700 text-xs font-semibold block mt-3 p-3 bg-red-50 rounded-xl border border-red-200";
         status.classList.remove('hidden');
         submitBtn.innerHTML = originalBtnText;
         submitBtn.disabled = false;

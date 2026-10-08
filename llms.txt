@@ -1,26 +1,24 @@
 # Kavish M - AI & Automation Developer
-> Agentic AI | n8n Workflow Automation | Full-Stack Web Development | Streamlit
 
-## Overview
-Kavish M is an AI Developer and Automation Engineer specializing in building autonomous agentic workflows, custom n8n integration pipelines, full-stack web applications, and data-driven Streamlit interfaces.
+> AI Developer and Automation Engineer specializing in building autonomous agentic workflows, custom n8n integration pipelines, full-stack web applications, and data-driven Streamlit interfaces.
+
+## Core Navigation & Links
+- [Portfolio Home](https://kavishmportfolio.vercel.app/): Main interactive developer portfolio and featured projects.
+- [Moments & Proof Gallery](https://kavishmportfolio.vercel.app/gallery.html): Authentic proof of work, hackathons, internships, and verified milestones.
+- [GitHub Profile](https://github.com/kavishM765): Open-source repositories, automation scripts, and full-stack codebases.
+- [LinkedIn Profile](https://www.linkedin.com/in/kavish-m-): Verified professional network, credentials, and achievements.
+- [Direct Contact Email](mailto:kavishm100@gmail.com): Direct professional engagement and collaboration inquiries.
 
 ## Key Skills & Technical Stack
-- **AI & Automation**: Agentic AI, n8n Workflows, API Integration, Webhooks
-- **Frontend & Web**: HTML5, CSS3, JavaScript (ES6+), Streamlit UI
+- **AI & Automation**: Agentic AI, n8n Workflows, API Integration, Webhooks, LLM Tool Calling
+- **Frontend & Web**: HTML5, CSS3, JavaScript (ES6+), Tailwind CSS, Streamlit UI
 - **Backend & Tools**: Java, Python, Firebase, Git, GitHub, Vercel, VS Code
 
 ## Key Achievements & Honors
-- **AI Agents Hackathon (Swafinix Tech)**: Rank 5 Nationally (August 2025)
-- **BUGSLAYER 26 National Hackathon**: Cleared 5 review rounds building low-bandwidth rural Telemedicine platform (January 2026)
-- **MSME Hackathon 2025**: National Finalist
-- **Academic Excellence**: Centum in CS Foundations & Paper Presentation Coordinator for Texperia 25
+- **AI Agents Hackathon (Swafinix Tech)**: Rank 5 Nationally among 2,300+ teams (August 2025)
+- **BUGSLAYER '26 National Hackathon**: Cleared 5 review rounds building low-bandwidth rural Telemedicine platform (February 2026)
+- **MSME Hackathon 2025**: National Finalist & Idea Submission qualifier
+- **Academic & Leadership**: All-Round Performer Nominee & Paper Presentation Coordinator for Texperia symposium
 
 ## Education
-- **B.Tech Information Technology**: SNS College of Technology, Coimbatore
-- **HSC**: Noble Matriculation Higher Secondary School, Virudhunagar (Dec 2023)
-
-## Contact & Links
-- **Portfolio**: https://kavishmportfolio.vercel.app/
-- **LinkedIn**: https://www.linkedin.com/in/kavish-m-
-- **GitHub**: https://github.com/kavishM765
-- **Email**: kavishm100@gmail.com
+- **B.Tech Information Technology**: [SNS Institutions](https://snsinstitutions.com), Coimbatore (2023 - 2027)

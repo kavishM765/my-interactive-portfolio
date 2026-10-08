@@ -7,14 +7,16 @@
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
-    let width = canvas.width = window.innerWidth;
-    let height = canvas.height = window.innerHeight;
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
 
-    let mouse = { x: -1000, y: -1000, radius: 120 };
+    let mouse = { x: -1000, y: -1000, radius: 100 };
     let isVisible = true;
 
-    // Gentle particle density
-    const particleCount = Math.min(Math.floor((width * height) / 24000), 45);
+    // Gentle particle density for clean atmospheric background
+    const particleCount = Math.min(Math.floor((width * height) / 32000), 30);
     const particles = [];
 
     class Particle {
@@ -26,18 +28,18 @@
             this.x = Math.random() * width;
             this.y = initial ? Math.random() * height : height + 15;
             this.size = Math.random() * 2 + 0.8;
-            this.baseAlpha = Math.random() * 0.4 + 0.15;
+            this.baseAlpha = Math.random() * 0.2 + 0.08;
             this.alpha = this.baseAlpha;
-            this.vx = (Math.random() - 0.5) * 0.4;
-            this.vy = -(Math.random() * 0.5 + 0.2); // Gentle upward drift
+            this.vx = (Math.random() - 0.5) * 0.3;
+            this.vy = -(Math.random() * 0.35 + 0.15); // Very gentle upward drift
             this.pulseSpeed = Math.random() * 0.02 + 0.01;
             this.pulseOffset = Math.random() * Math.PI * 2;
             
-            // Soft luminescence: cyan, blue, emerald tones
+            // Soft slate & sapphire micro-tones for light background
             const colors = [
-                'rgba(96, 165, 250, ',   // Blue
-                'rgba(56, 189, 248, ',   // Cyan
-                'rgba(52, 211, 153, '    // Emerald
+                'rgba(59, 130, 246, ',   // Subtle Sapphire
+                'rgba(100, 116, 139, ',  // Soft Slate
+                'rgba(99, 102, 241, '    // Subtle Indigo
             ];
             this.color = colors[Math.floor(Math.random() * colors.length)];
         }

@@ -18,122 +18,46 @@ async function initGallery() {
     }
 
     filteredItems = [...galleryData];
-    render3DConveyor();
+    renderMomentsStream();
     renderGrid();
     setupFilters();
     setupLightboxControls();
 }
 
-// Render 3D Interlocking Oblong Chains with Dual-Point Suspension (Right to Left)
-function render3DConveyor() {
-    const track = document.getElementById('conveyor-track');
+// Render Clean Horizontal Moving Stream of Pictures with Attached Bottom Cards
+function renderMomentsStream() {
+    const track = document.getElementById('moments-stream-track');
     if (!track || !galleryData.length) return;
 
-    // Pick top highlight cards for the moving chain
+    // Pick top milestone photos for the continuous moving stream
     const highlights = galleryData.slice(0, 12);
-    // Duplicate for seamless infinite loop
+    // Duplicate for seamless, uninterrupted infinite glide
     const loopItems = [...highlights, ...highlights];
 
     track.innerHTML = loopItems.map((item, index) => {
-        const swayClass = `sway-${(index % 3) + 1}`;
         const isPriority = index < 4;
         const loadingAttr = isPriority ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"';
 
         return `
-            <div class="chain-rig-unit ${swayClass}">
-                
-                <!-- Overhead Interlocking Chain Segment with Industrial Trolley Slider Blocks -->
-                <svg class="top-chain-svg" viewBox="0 0 320 32">
-                    <!-- Slider Trolley Mounts directly on rail -->
-                    <rect x="34" y="0" width="22" height="12" rx="2" fill="#2d4253" stroke="#5f7a90" stroke-width="1.5" />
-                    <rect x="264" y="0" width="22" height="12" rx="2" fill="#2d4253" stroke="#5f7a90" stroke-width="1.5" />
-
-                    <!-- Oblong Chain Links Interlocking Horizontally Across Rail -->
-                    <g filter="url(#chainShadow)">
-                        <!-- Link 1 (Face) -->
-                        <rect x="2" y="6" width="38" height="20" rx="10" fill="none" stroke="url(#metal3D_Horiz)" stroke-width="5"/>
-                        <!-- Link 2 (Side Profile) -->
-                        <rect x="32" y="5" width="13" height="22" rx="6.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.8"/>
-                        <!-- Link 3 (Face - Left Drop Anchor) -->
-                        <rect x="38" y="6" width="38" height="20" rx="10" fill="none" stroke="url(#metal3D_Horiz)" stroke-width="5"/>
-                        <!-- Link 4 (Side Profile) -->
-                        <rect x="68" y="5" width="13" height="22" rx="6.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.8"/>
-                        <!-- Link 5 (Face) -->
-                        <rect x="74" y="6" width="38" height="20" rx="10" fill="none" stroke="url(#metal3D_Horiz)" stroke-width="5"/>
-                        <!-- Link 6 (Side Profile) -->
-                        <rect x="104" y="5" width="13" height="22" rx="6.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.8"/>
-                        <!-- Link 7 (Face) -->
-                        <rect x="110" y="6" width="38" height="20" rx="10" fill="none" stroke="url(#metal3D_Horiz)" stroke-width="5"/>
-                        <!-- Link 8 (Side Profile) -->
-                        <rect x="140" y="5" width="13" height="22" rx="6.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.8"/>
-                        <!-- Link 9 (Face) -->
-                        <rect x="146" y="6" width="38" height="20" rx="10" fill="none" stroke="url(#metal3D_Horiz)" stroke-width="5"/>
-                        <!-- Link 10 (Side Profile) -->
-                        <rect x="176" y="5" width="13" height="22" rx="6.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.8"/>
-                        <!-- Link 11 (Face) -->
-                        <rect x="182" y="6" width="38" height="20" rx="10" fill="none" stroke="url(#metal3D_Horiz)" stroke-width="5"/>
-                        <!-- Link 12 (Side Profile) -->
-                        <rect x="212" y="5" width="13" height="22" rx="6.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.8"/>
-                        <!-- Link 13 (Face) -->
-                        <rect x="218" y="6" width="38" height="20" rx="10" fill="none" stroke="url(#metal3D_Horiz)" stroke-width="5"/>
-                        <!-- Link 14 (Side Profile) -->
-                        <rect x="248" y="5" width="13" height="22" rx="6.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.8"/>
-                        <!-- Link 15 (Face - Right Drop Anchor) -->
-                        <rect x="254" y="6" width="38" height="20" rx="10" fill="none" stroke="url(#metal3D_Horiz)" stroke-width="5"/>
-                        <!-- Link 16 (Side Profile) -->
-                        <rect x="284" y="5" width="13" height="22" rx="6.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.8"/>
-                    </g>
-                </svg>
-
-                <!-- Dual-Point Suspension Drop Chains (Left & Right) -->
-                <div class="dual-drop-chains">
-                    <!-- Left Vertical Drop Chain (6 Interlocking Links) -->
-                    <svg class="drop-chain-svg" viewBox="0 0 24 96" filter="url(#chainShadow)">
-                        <rect x="2" y="2" width="20" height="24" rx="10" fill="none" stroke="url(#metal3D_Face)" stroke-width="5"/>
-                        <rect x="7.5" y="14" width="9" height="24" rx="4.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.5"/>
-                        <rect x="2" y="26" width="20" height="24" rx="10" fill="none" stroke="url(#metal3D_Face)" stroke-width="5"/>
-                        <rect x="7.5" y="38" width="9" height="24" rx="4.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.5"/>
-                        <rect x="2" y="50" width="20" height="24" rx="10" fill="none" stroke="url(#metal3D_Face)" stroke-width="5"/>
-                        <rect x="7.5" y="62" width="9" height="26" rx="4.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.5"/>
-                    </svg>
-
-                    <!-- Right Vertical Drop Chain (6 Interlocking Links) -->
-                    <svg class="drop-chain-svg" viewBox="0 0 24 96" filter="url(#chainShadow)">
-                        <rect x="2" y="2" width="20" height="24" rx="10" fill="none" stroke="url(#metal3D_Face)" stroke-width="5"/>
-                        <rect x="7.5" y="14" width="9" height="24" rx="4.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.5"/>
-                        <rect x="2" y="26" width="20" height="24" rx="10" fill="none" stroke="url(#metal3D_Face)" stroke-width="5"/>
-                        <rect x="7.5" y="38" width="9" height="24" rx="4.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.5"/>
-                        <rect x="2" y="50" width="20" height="24" rx="10" fill="none" stroke="url(#metal3D_Face)" stroke-width="5"/>
-                        <rect x="7.5" y="62" width="9" height="26" rx="4.5" fill="none" stroke="url(#metal3D_Profile)" stroke-width="4.5"/>
-                    </svg>
+            <div class="moment-card-unit" onclick="openLightboxById('${item.id}')">
+                <!-- Photo Container -->
+                <div class="moment-photo-box">
+                    <img src="${item.image}" alt="${item.title}" ${loadingAttr}>
+                    <span class="moment-overlay-badge">
+                        ${item.badge}
+                    </span>
                 </div>
 
-                <!-- Suspended Photo Card with Dual Metal Grommets -->
-                <div class="suspended-photo-card group" onclick="openLightboxById('${item.id}')">
-                    <!-- Metal Eyelet Grommets where chains feed into the card -->
-                    <div class="card-grommet-left"></div>
-                    <div class="card-grommet-right"></div>
-
-                    <!-- Photo Container -->
-                    <div class="relative h-44 overflow-hidden bg-[#161822]">
-                        <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" ${loadingAttr}>
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#10121a] via-transparent to-transparent"></div>
-                        <span class="absolute top-2.5 left-14 px-2.5 py-1 rounded-md text-[9px] font-mono font-bold tracking-wider uppercase bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 backdrop-blur-md">
-                            ${item.badge}
-                        </span>
-                    </div>
-
-                    <!-- Details: Title & Simple One-Line Description -->
-                    <div class="p-3.5 bg-[#10121a]">
-                        <h4 class="text-white font-bold text-sm leading-snug line-clamp-1 mb-1 group-hover:text-cyan-400 transition-colors">
-                            ${item.title}
-                        </h4>
-                        <p class="text-gray-300 text-xs font-light leading-relaxed line-clamp-2">
-                            ${item.caption}
-                        </p>
-                    </div>
+                <!-- Attached Info Card Below -->
+                <div class="moment-attached-info">
+                    <span class="moment-category-pill">${item.category}</span>
+                    <h4 class="moment-title" title="${item.title}">
+                        ${item.title}
+                    </h4>
+                    <p class="moment-caption">
+                        ${item.caption}
+                    </p>
                 </div>
-
             </div>
         `;
     }).join('');
@@ -151,7 +75,7 @@ function renderGrid() {
 
     if (!filteredItems.length) {
         grid.innerHTML = `
-            <div class="col-span-full py-16 text-center text-gray-400 font-light">
+            <div class="col-span-full py-16 text-center text-slate-400 font-light">
                 No milestones found in this category.
             </div>
         `;
@@ -161,11 +85,11 @@ function renderGrid() {
     grid.innerHTML = filteredItems.map((item, index) => {
         return `
             <div class="milestone-grid-card group cursor-pointer" onclick="openLightboxById('${item.id}')">
-                <div class="relative h-56 overflow-hidden bg-[#14151e]">
+                <div class="relative h-56 overflow-hidden bg-slate-100">
                     <img src="${item.image}" alt="${item.title}" class="milestone-img w-full h-full object-cover" loading="lazy" decoding="async">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0f1016] via-transparent to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
                     <div class="absolute top-3 left-3 flex items-center gap-2">
-                        <span class="px-2.5 py-1 rounded-lg text-[10px] font-mono font-bold tracking-wider uppercase bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 backdrop-blur-md">
+                        <span class="px-2.5 py-1 rounded-lg text-[10px] font-mono font-bold tracking-wider uppercase bg-slate-900/75 text-white border border-white/20 backdrop-blur-md">
                             ${item.badge}
                         </span>
                     </div>
@@ -176,10 +100,10 @@ function renderGrid() {
                     </div>
                 </div>
                 <div class="p-5">
-                    <h3 class="text-white font-bold text-base mb-2 group-hover:text-cyan-400 transition-colors">
+                    <h3 class="text-slate-900 font-bold text-base mb-2 group-hover:text-blue-600 transition-colors">
                         ${item.title}
                     </h3>
-                    <p class="text-gray-300 text-xs sm:text-sm font-light leading-relaxed">
+                    <p class="text-slate-600 text-xs sm:text-sm font-light leading-relaxed">
                         ${item.caption}
                     </p>
                 </div>

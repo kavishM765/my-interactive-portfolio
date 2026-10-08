@@ -1,79 +1,34 @@
 /* ════════════════════════════════════════════════════════════════════
-   REALISTIC 3D CHAIN DYNAMICS & INDUSTRIAL CONVEYOR RAIL
-   Modeled after dual-point suspension conveyor systems
+   MOMENTS & PROOF: CLEAN HORIZONTAL MOVING STREAM (NO CHAINS)
+   Features: Edge fades, attached bottom cards, pause on hover
    ════════════════════════════════════════════════════════════════════ */
 
-/* Overhead Heavy Industrial Conveyor Rail Beam */
-.industrial-rail {
-    position: relative;
-    width: 100%;
-    height: 18px;
-    background: linear-gradient(180deg, #8faec5 0%, #5f7a90 45%, #2a3c4a 85%, #18232c 100%);
-    border-radius: 4px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.9), inset 0 2px 2px rgba(255, 255, 255, 0.65);
-    border-bottom: 2px solid #0f161d;
-    z-index: 20;
-}
-
-.industrial-rail::before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
-}
-
-/* Chain Section Container */
-.chain-wrapper {
+/* Outer Marquee Wrapper with soft edge fades on both sides */
+.moments-stream-wrapper {
     position: relative;
     width: 100%;
     overflow: hidden;
-    padding-top: 15px;
-    padding-bottom: 40px;
+    padding: 24px 0 36px;
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1) 8%, rgba(0, 0, 0, 1) 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1) 8%, rgba(0, 0, 0, 1) 92%, transparent 100%);
 }
 
-/* Entrance animation: Unrolls smoothly from left to right on page load */
-.chain-entrance {
-    animation: chainUnroll 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes chainUnroll {
-    0% {
-        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-        opacity: 0.2;
-    }
-    100% {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-        opacity: 1;
-    }
-}
-
-/* Smooth Infinite Conveyor Track (Right to Left) */
-.conveyor-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
-    padding-top: 2px;
-}
-
-.conveyor-track {
+/* Continuous Horizontal Sliding Track */
+.moments-stream-track {
     display: flex;
-    gap: 36px;
+    gap: 28px;
     width: max-content;
-    animation: conveyorScrollLeft 65s linear infinite;
+    animation: streamScrollLeft 55s linear infinite;
     will-change: transform;
+    padding: 8px 12px;
 }
 
-/* Hover over any card: Smoothly pauses the entire conveyor */
-.conveyor-container:hover .conveyor-track {
+/* Pause smoothly when user hovers to inspect any photo */
+.moments-stream-wrapper:hover .moments-stream-track {
     animation-play-state: paused !important;
 }
 
-@keyframes conveyorScrollLeft {
+@keyframes streamScrollLeft {
     0% {
         transform: translateX(0);
     }
@@ -83,165 +38,202 @@
 }
 
 /* ════════════════════════════════════════════════════════════════════
-   INDIVIDUAL CONVEYOR RIG UNIT (Chain + Dual Drop Chains + Card)
+   ATTACHED PHOTO & CAPTION CARD UNIT
+   Clean editorial aesthetic: photo with attached pill/card below
    ════════════════════════════════════════════════════════════════════ */
-.chain-rig-unit {
-    position: relative;
+.moment-card-unit {
     width: 320px;
+    flex-shrink: 0;
+    cursor: pointer;
+    border-radius: 18px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px -3px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    transform-origin: top center;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease;
 }
 
-/* Subtle Natural Mechanical Vibrations & Pendulum Sway */
-.chain-rig-unit.sway-1 {
-    animation: mechanicalSway1 5s ease-in-out infinite alternate;
+.moment-card-unit:hover {
+    transform: translateY(-4px);
+    border-color: #cbd5e1;
+    box-shadow: 0 16px 32px -6px rgba(15, 23, 42, 0.12), 0 4px 10px -2px rgba(15, 23, 42, 0.06);
 }
 
-.chain-rig-unit.sway-2 {
-    animation: mechanicalSway2 4.2s ease-in-out infinite alternate;
-    animation-delay: -1.5s;
-}
-
-.chain-rig-unit.sway-3 {
-    animation: mechanicalSway3 5.8s ease-in-out infinite alternate;
-    animation-delay: -2.8s;
-}
-
-@keyframes mechanicalSway1 {
-    0% { transform: rotate(-1.4deg); }
-    100% { transform: rotate(1.4deg); }
-}
-
-@keyframes mechanicalSway2 {
-    0% { transform: rotate(1.6deg); }
-    100% { transform: rotate(-1.6deg); }
-}
-
-@keyframes mechanicalSway3 {
-    0% { transform: rotate(-1.8deg); }
-    100% { transform: rotate(1.2deg); }
-}
-
-/* Top Horizontal Chain SVG running along rail */
-.top-chain-svg {
+/* Image Container */
+.moment-photo-box {
+    position: relative;
     width: 100%;
-    height: 32px;
-    overflow: visible;
-    z-index: 10;
-}
-
-/* Dual-Point Drop Chains Container */
-.dual-drop-chains {
-    width: 250px;
-    display: flex;
-    justify-content: space-between;
-    margin-top: -10px;
-    position: relative;
-    z-index: 5;
-}
-
-.drop-chain-svg {
-    width: 26px;
-    height: 96px;
-    overflow: visible;
-}
-
-/* Suspended Photo Card */
-.suspended-photo-card {
-    width: 284px;
-    background: #10121a;
-    border: 1px solid rgba(56, 189, 248, 0.35);
-    border-radius: 16px;
+    height: 195px;
     overflow: hidden;
-    margin-top: -18px;
-    position: relative;
-    z-index: 12;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9), 0 0 20px -3px rgba(56, 189, 248, 0.2);
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+    background: #f1f5f9;
 }
 
-.suspended-photo-card:hover {
-    transform: translateY(-4px) scale(1.02);
-    border-color: rgba(56, 189, 248, 0.7);
-    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.95), 0 0 35px -2px rgba(56, 189, 248, 0.4);
+.moment-photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Metallic Eyelet Grommets (Where Drop Chains Hook In) */
-.card-grommet-left, .card-grommet-right {
+.moment-card-unit:hover .moment-photo-box img {
+    transform: scale(1.04);
+}
+
+/* Attached Info Card Below */
+.moment-attached-info {
+    padding: 14px 16px 16px;
+    background: #ffffff;
+    border-top: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.moment-overlay-badge {
     position: absolute;
-    top: 8px;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: #08090e;
-    border: 3.5px solid #8faec5;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.9), 0 2px 4px rgba(0,0,0,0.8);
-    z-index: 20;
+    top: 10px;
+    left: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 9px;
+    border-radius: 9999px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: rgba(15, 23, 42, 0.75);
+    color: #ffffff;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
-.card-grommet-left { left: 24px; }
-.card-grommet-right { right: 24px; }
+
+.moment-category-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #dbeafe;
+    width: fit-content;
+}
+
+.moment-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 9px;
+    border-radius: 9999px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #dbeafe;
+    width: fit-content;
+}
+
+.moment-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.35;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.2s ease;
+}
+
+.moment-card-unit:hover .moment-title {
+    color: #2563eb;
+}
+
+.moment-caption {
+    font-size: 12px;
+    color: #64748b;
+    line-height: 1.45;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
 /* ════════════════════════════════════════════════════════════════════
-   STRUCTURED GRID MILESTONE CARDS (Below Chain)
+   GRID CARDS (LOWER SECTION)
    ════════════════════════════════════════════════════════════════════ */
 .milestone-grid-card {
-    background: #0f1016;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 18px -2px rgba(15, 23, 42, 0.05);
     overflow: hidden;
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
 }
 
 .milestone-grid-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(56, 189, 248, 0.5);
-    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.9), 0 0 25px -4px rgba(56, 189, 248, 0.25);
+    transform: translateY(-4px);
+    border-color: #cbd5e1;
+    box-shadow: 0 16px 32px -6px rgba(15, 23, 42, 0.1);
 }
 
-.milestone-grid-card:hover .milestone-img {
-    transform: scale(1.05);
+.milestone-grid-photo {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    background: #f1f5f9;
 }
 
-.milestone-img {
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+.milestone-grid-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-/* Active Category Filter Button */
+.milestone-grid-card:hover .milestone-grid-photo img {
+    transform: scale(1.04);
+}
+
+/* Filter Buttons */
 .filter-btn {
-    transition: all 0.25s ease;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 7px 16px;
+    border-radius: 9999px;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    color: #64748b;
+}
+
+.filter-btn:hover {
+    border-color: #cbd5e1;
+    color: #0f172a;
+    background: #f8fafc;
 }
 
 .filter-btn.active {
-    background: #2563eb !important;
+    background: #0f172a !important;
     color: #ffffff !important;
-    border-color: #3b82f6 !important;
-    box-shadow: 0 0 20px -3px rgba(37, 99, 235, 0.5);
-}
-
-/* Lightbox Modal Animation */
-#gallery-lightbox {
-    transition: opacity 0.3s ease;
-}
-
-#gallery-lightbox.hidden {
-    display: none;
-    opacity: 0;
-}
-
-#gallery-lightbox:not(.hidden) {
-    display: flex;
-    opacity: 1;
-}
-
-.lightbox-content {
-    animation: lightboxPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@keyframes lightboxPop {
-    0% { transform: scale(0.92); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
+    border-color: #0f172a !important;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.15);
 }
