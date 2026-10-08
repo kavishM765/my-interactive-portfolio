@@ -3,32 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Primary Meta Tags -->
     <title>Kavish M | AI & Automation Developer</title>
-    <meta name="title" content="Kavish M | AI & Automation Developer">
-    <meta name="description" content="I build robust, intelligent systems by integrating AI workflows, creating full-stack web applications, and designing autonomous data pipelines.">
     
-    <!-- Open Graph / Facebook -->
+    <!-- Meta SEO -->
+    <meta name="description" content="Portfolio of Kavish M, an AI Developer specializing in Agentic AI, n8n automation pipelines, and modern full-stack web applications.">
+    <meta name="keywords" content="Kavish M, AI Developer, Agentic AI, n8n Automation, Full Stack Developer, SNSCT">
+    <meta name="author" content="Kavish M">
+    <link rel="icon" type="image/jpeg" href="./assets/image/kavish-hero-opt.jpg">
+
+    <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kavishm.com/">
     <meta property="og:title" content="Kavish M | AI & Automation Developer">
-    <meta property="og:description" content="I build robust, intelligent systems by integrating AI workflows, creating full-stack web applications, and designing autonomous data pipelines.">
+    <meta property="og:description" content="AI Developer specializing in Agentic AI, n8n automation pipelines, and modern web systems.">
     <meta property="og:image" content="./assets/image/kavish-hero-opt.jpg">
-
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://kavishm.com/">
-    <meta property="twitter:title" content="Kavish M | AI & Automation Developer">
-    <meta property="twitter:description" content="I build robust, intelligent systems by integrating AI workflows, creating full-stack web applications, and designing autonomous data pipelines.">
-    <meta property="twitter:image" content="./assets/image/kavish-hero-opt.jpg">
 
-    <!-- Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -38,634 +33,722 @@
                         sans: ['Inter', 'sans-serif'],
                         heading: ['Outfit', 'sans-serif'],
                     },
+                    colors: {
+                        warm: {
+                            base: '#F5F4F0',
+                            card: '#FAF9F6',
+                            dock: '#F2EFE9',
+                            border: '#D8D7D2',
+                            gold: '#C5A880',
+                            goldDark: '#8C6A3C',
+                            goldLight: '#F3EFE8',
+                            silver: '#A8A69E',
+                            text: '#1C1B1A',
+                            muted: '#635F5A'
+                        }
+                    }
                 }
             }
         }
     </script>
     
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/style/style.css">
     
-    <!-- Prefetch -->
-    <link rel="prefetch" href="./assets/image/kavish-hero-opt.jpg">
-    <link rel="prefetch" href="./assets/image/kavish-hero.webp">
+    <!-- Prefetch for 0ms transitions -->
+    <link rel="prefetch" href="gallery.html">
+    <link rel="prefetch" href="./assets/style/gallery.css">
 </head>
-<body class="bg-[#f8f9fb] text-slate-900 font-sans antialiased selection:bg-blue-200 selection:text-blue-900 overflow-x-hidden min-h-screen">
-    
-    <canvas id="living-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+<body class="bg-[#F5F4F0] text-[#1C1B1A] font-sans antialiased selection:bg-[#EADBCE] selection:text-[#1C1B1A] relative min-h-screen">
 
-    <!-- NAVIGATION -->
-    <nav class="fixed w-full z-50 top-0 bg-white/85 backdrop-blur-md border-b border-slate-200/80 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16 sm:h-20">
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-heading font-black text-xl shadow-sm group-hover:shadow-md transition">KM</div>
-                    <span class="font-heading font-bold text-lg hidden sm:block text-slate-900">Kavish M.</span>
+    <!-- Subtle Ambient Gold & Silver Particles -->
+    <canvas id="living-canvas"></canvas>
+
+    <!-- ════════════════════════════════════════════════════════════
+         TOP NAVIGATION (Clean warm oyster header, non-glaring)
+         ════════════════════════════════════════════════════════════ -->
+    <nav class="sticky top-0 w-full z-50 bg-[#FAF9F6]/90 backdrop-blur-md border-b border-[#D8D7D2]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-18 sm:h-20 flex justify-between items-center">
+            
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="h-9 w-9 sm:h-10 sm:w-10 bg-[#1C1B1A] rounded-xl flex items-center justify-center font-bold text-[#FAF9F6] shadow-sm text-sm sm:text-base group-hover:scale-105 transition-transform">
+                    KM
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-base sm:text-lg font-black tracking-tight text-[#1C1B1A]">KAVISH M.</span>
+                    <span class="text-[11px] text-[#8C6A3C] font-semibold tracking-wide">AI & Automation Developer</span>
+                </div>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-6 text-xs lg:text-sm font-semibold text-[#635F5A]">
+                <a href="#about" class="hover:text-[#1C1B1A] transition">About</a>
+                <a href="#practice" class="hover:text-[#1C1B1A] transition">Focus</a>
+                <a href="#projects" class="hover:text-[#1C1B1A] transition">Projects</a>
+                <a href="#hackathons" class="hover:text-[#1C1B1A] transition">Hackathons</a>
+                <a href="#experience" class="hover:text-[#1C1B1A] transition">Experience</a>
+                <a href="#process" class="hover:text-[#1C1B1A] transition">Process</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="gallery.html" class="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#8C6A3C] bg-[#F3EFE8] hover:bg-[#EAE4D9] px-3.5 py-1.5 rounded-full border border-[#D8D7D2] transition">
+                    <span>Moments & Proof</span>
+                    <span class="text-xs">↗</span>
                 </a>
-                
-                <div class="hidden md:flex space-x-8">
-                    <a href="#about" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">About</a>
-                    <a href="#projects" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">Projects</a>
-                    <a href="#experience" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">Experience</a>
-                </div>
-
-                <div class="flex items-center gap-3 sm:gap-4">
-                    <a href="gallery.html" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg text-blue-600 bg-blue-50 border border-blue-200 hover:bg-blue-100 transition">
-                        Moments & Proof ↗
-                    </a>
-                    <a href="#contact" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold rounded-xl bg-slate-900 text-white hover:bg-blue-600 shadow-sm transition">
-                        Let's Talk
-                    </a>
-                </div>
+                <a href="#contact" class="text-xs sm:text-sm font-semibold text-[#FAF9F6] bg-[#1C1B1A] hover:bg-[#343230] px-4 py-2 rounded-full shadow-sm transition">
+                    Contact
+                </a>
             </div>
         </div>
     </nav>
 
-    <main class="relative z-10 pt-24 sm:pt-32 pb-16">
-        
-        <!-- HERO SECTION -->
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative mb-24">
-            <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16 mt-8 sm:mt-16">
+    <main class="relative z-10">
+
+        <!-- ════════════════════════════════════════════════════════════
+             SECTION 1: HERO & IDENTITY
+             (Clean, natural photography, zero AI overlay, calm tones)
+             ════════════════════════════════════════════════════════════ -->
+        <section id="hero" class="pt-10 sm:pt-16 pb-16 px-4 sm:px-6">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
                 
-                <!-- Hero Content -->
-                <div class="w-full lg:w-3/5 text-center lg:text-left">
-                    <div class="inline-flex items-center px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-6 sm:mb-8 shadow-sm">
-                        <span class="w-2 h-2 rounded-full bg-blue-600 mr-2 animate-pulse"></span> Available for Projects
-                    </div>
+                <!-- Left Column: Clear Human Headline & Context -->
+                <div class="lg:col-span-7 flex flex-col justify-center animate-on-scroll fade-up">
+                    <span class="text-xs font-semibold tracking-wider uppercase text-[#8C6A3C] mb-4">
+                        AI Developer & Automation Engineer · Coimbatore, India
+                    </span>
                     
-                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.1] mb-6">
-                        I build <br class="hidden lg:block" />
-                        <span class="text-blue-600">Autonomous Systems</span> <br class="hidden lg:block" />
-                        & Intelligent Apps.
+                    <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl font-black text-[#1C1B1A] tracking-tight mb-5 leading-[1.15]">
+                        Hi, I'm Kavish. <br>
+                        I build <span class="text-[#8C6A3C]">autonomous AI workflows</span> & full-stack web applications.
                     </h1>
                     
-                    <p class="text-base sm:text-lg text-slate-600 mb-8 sm:mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                        I am an Independent AI & Automation Developer. I engineer end-to-end full-stack applications, intelligent agentic workflows, and hands-free data pipelines that scale operations and solve real business problems.
+                    <p class="text-sm sm:text-base text-[#635F5A] max-w-xl mb-8 leading-relaxed font-normal">
+                        Independent developer specializing in practical Agentic AI pipelines, n8n automations, and modern web applications. From national hackathon prototypes to production business pipelines — solving real problems with clean code.
                     </p>
-                    
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                        <a href="#projects" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-blue-600 text-white font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
-                            View My Work
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+
+                    <div class="flex flex-wrap items-center gap-3">
+                        <a href="#projects" class="px-6 py-3 bg-[#1C1B1A] text-[#FAF9F6] rounded-xl font-bold text-xs sm:text-sm hover:bg-[#343230] transition shadow-sm">
+                            Explore Projects
                         </a>
-                        <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-white border border-slate-200 text-slate-700 font-semibold shadow-sm hover:border-blue-300 hover:text-blue-600 transition-all flex items-center justify-center">
-                            Contact Me
+                        <a href="gallery.html" class="px-5 py-3 bg-[#FAF9F6] border border-[#D8D7D2] text-[#1C1B1A] rounded-xl font-semibold text-xs sm:text-sm hover:border-[#C5A880] hover:text-[#8C6A3C] transition flex items-center gap-1.5 shadow-sm">
+                            <span>Moments & Proof</span>
+                            <span class="text-xs">↗</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/kavish-m-" target="_blank" rel="noopener noreferrer" class="px-4 py-3 bg-[#FAF9F6] border border-[#D8D7D2] text-[#635F5A] hover:text-[#1C1B1A] rounded-xl font-semibold text-xs sm:text-sm hover:border-[#C5A880] transition">
+                            LinkedIn ↗
+                        </a>
+                        <a href="https://github.com/kavishM765" target="_blank" rel="noopener noreferrer" class="px-4 py-3 bg-[#FAF9F6] border border-[#D8D7D2] text-[#635F5A] hover:text-[#1C1B1A] rounded-xl font-semibold text-xs sm:text-sm hover:border-[#C5A880] transition">
+                            GitHub ↗
                         </a>
                     </div>
                 </div>
-                
-                <!-- Hero Image -->
-                <div class="w-full lg:w-2/5 max-w-md mx-auto">
-                    <div class="editorial-portrait-frame relative overflow-hidden rounded-[2rem] shadow-xl border-4 border-white bg-slate-100 group">
+
+                <!-- Right Column: Real Headshot (Clean, Zero White Mask, Warm Silver Rim) -->
+                <div class="lg:col-span-5 flex justify-center animate-on-scroll fade-in">
+                    <div class="editorial-portrait-frame w-full max-w-xs sm:max-w-sm">
                         <picture>
                             <source srcset="./assets/image/kavish-hero.webp" type="image/webp">
-                            <img src="./assets/image/kavish-hero-opt.jpg" alt="Kavish M - AI & Automation Developer" width="316" height="253" fetchpriority="high" class="w-full h-auto max-h-[420px] object-cover object-top group-hover:scale-105 transition-transform duration-700">
+                            <img src="./assets/image/kavish-hero-opt.jpg" alt="Kavish M - AI & Automation Developer" class="hero-photo-natural">
                         </picture>
-                        <div class="absolute inset-0 bg-gradient-to-t from-white via-white/85 to-transparent opacity-90 flex flex-col justify-end p-6 pointer-events-none">
-                            <div class="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                                <h3 class="font-heading font-black text-xl text-slate-900 leading-tight">Kavish M.</h3>
-                                <p class="text-sm font-semibold text-blue-600 uppercase tracking-wide">Developer</p>
+                        <!-- Clean unobtrusive bottom name bar -->
+                        <div class="pt-3 px-1 flex justify-between items-center text-xs">
+                            <div>
+                                <span class="font-bold text-[#1C1B1A] block">Kavish M.</span>
+                                <span class="text-[11px] text-[#8C6A3C] font-semibold">AI Developer</span>
                             </div>
+                            <span class="px-2.5 py-0.5 rounded-full bg-[#F3EFE8] border border-[#D8D7D2] text-[10px] font-semibold text-[#8C6A3C]">
+                                SNS College of Tech
+                            </span>
                         </div>
                     </div>
                 </div>
 
             </div>
+        </section>
 
-            <!-- Skills Grid -->
-            <div class="mt-12 pt-8 border-t border-slate-200">
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-200 transition">
-                        <span class="text-blue-600 font-semibold text-xs uppercase tracking-wider block mb-1">Focus Area</span>
-                        <h3 class="font-heading text-base font-bold text-slate-900 mb-1">Full Stack Development</h3>
-                        <p class="text-xs text-slate-500 leading-relaxed">Responsive web apps, robust backend logic & clean cloud integrations.</p>
+
+        <!-- ════════════════════════════════════════════════════════════
+             SECTION 2: CORE PRACTICE & FOCUS AREAS
+             (Sprouting branches: Full Stack, n8n Automation, UI/UX)
+             ════════════════════════════════════════════════════════════ -->
+        <section id="practice" class="py-14 px-4 sm:px-6 border-t border-[#D8D7D2]">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-8">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-[#8C6A3C] block mb-1">
+                        Core Disciplines
+                    </span>
+                    <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-[#1C1B1A]">
+                        Areas of Technical Focus
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    
+                    <div class="warm-card p-6 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wider uppercase bg-[#F3EFE8] text-[#8C6A3C] border border-[#D8D7D2] mb-3">
+                                Discipline 01
+                            </span>
+                            <h3 class="font-heading text-lg font-bold text-[#1C1B1A] mb-2">
+                                Full-Stack Web Development
+                            </h3>
+                            <p class="text-xs sm:text-sm text-[#635F5A] leading-relaxed">
+                                Modern, responsive web applications engineered with clean component architectures, robust backend logic, and scalable database connections.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-[#EAE8E2] text-[11px] text-[#8C6A3C] font-medium">
+                            HTML · CSS · JavaScript · Databases · Cloud
+                        </div>
                     </div>
-                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-200 transition">
-                        <span class="text-blue-600 font-semibold text-xs uppercase tracking-wider block mb-1">Focus Area</span>
-                        <h3 class="font-heading text-base font-bold text-slate-900 mb-1">Automation using n8n & code</h3>
-                        <p class="text-xs text-slate-500 leading-relaxed">Agentic workflows, API stitching, and hands-free business process engines.</p>
+
+                    <div class="warm-card p-6 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wider uppercase bg-[#F3EFE8] text-[#8C6A3C] border border-[#D8D7D2] mb-3">
+                                Discipline 02
+                            </span>
+                            <h3 class="font-heading text-lg font-bold text-[#1C1B1A] mb-2">
+                                Automation using n8n & Code
+                            </h3>
+                            <p class="text-xs sm:text-sm text-[#635F5A] leading-relaxed">
+                                Autonomous AI agent pipelines, custom webhooks, tool-calling nodes, and multi-service workflows that automate repetitive business processes 24/7.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-[#EAE8E2] text-[11px] text-[#8C6A3C] font-medium">
+                            n8n · Agentic AI · Custom Webhooks · API Stitching
+                        </div>
                     </div>
-                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-200 transition">
-                        <span class="text-blue-600 font-semibold text-xs uppercase tracking-wider block mb-1">Focus Area</span>
-                        <h3 class="font-heading text-base font-bold text-slate-900 mb-1">UI & UX Design</h3>
-                        <p class="text-xs text-slate-500 leading-relaxed">Clean, editorial interfaces engineered for clarity and user conversion.</p>
+
+                    <div class="warm-card p-6 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wider uppercase bg-[#F3EFE8] text-[#8C6A3C] border border-[#D8D7D2] mb-3">
+                                Discipline 03
+                            </span>
+                            <h3 class="font-heading text-lg font-bold text-[#1C1B1A] mb-2">
+                                UI & UX Interface Design
+                            </h3>
+                            <p class="text-xs sm:text-sm text-[#635F5A] leading-relaxed">
+                                Distraction-free, human-crafted layouts with kinetic micro-interactions, editorial styling, and accessible responsive structures across all viewports.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-[#EAE8E2] text-[11px] text-[#8C6A3C] font-medium">
+                            Editorial Layouts · Responsive UX · Motion Controls
+                        </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
 
-        <!-- ABOUT & EXPERTISE SECTION -->
-        <section id="about" class="py-20 relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- ════════════════════════════════════════════════════════════
+             SECTION 3: ABOUT ME & TECH STACK TICKER
+             (Authentic nomination, coordinator role, moving tool stream)
+             ════════════════════════════════════════════════════════════ -->
+        <section id="about" class="py-14 px-4 sm:px-6 border-t border-[#D8D7D2] bg-[#FAF9F6]/60">
+            <div class="max-w-7xl mx-auto">
                 
-                <div class="text-center max-w-2xl mx-auto mb-16">
-                    <span class="text-blue-600 font-semibold text-xs uppercase tracking-wider block mb-2">Technical Arsenal</span>
-                    <h2 class="font-heading text-3xl sm:text-4xl font-black text-slate-900 mb-4">Core Capabilities</h2>
-                    <p class="text-slate-600 text-sm sm:text-base">I leverage modern frameworks and automation engines to ship reliable, high-performance applications.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
+                    <div class="lg:col-span-5">
+                        <span class="text-xs font-semibold uppercase tracking-wider text-[#8C6A3C] block mb-1">
+                            Discipline & Roles
+                        </span>
+                        <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-[#1C1B1A]">
+                            About Me & Work Ethic
+                        </h2>
+                    </div>
+                    <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 text-xs sm:text-sm text-[#635F5A] leading-relaxed">
+                        <div class="p-4 rounded-xl bg-[#FAF9F6] border border-[#D8D7D2]">
+                            <h4 class="font-bold text-[#1C1B1A] mb-1.5 flex items-center gap-1.5">
+                                <span>🏆</span> All-Rounder Performer Nominee
+                            </h4>
+                            <p>
+                                Nominated for the college-wide All Rounder Performer Award 2025 at SNS College of Technology. Driven by resilience under pressure in rapid 24-hour hackathons.
+                            </p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[#FAF9F6] border border-[#D8D7D2]">
+                            <h4 class="font-bold text-[#1C1B1A] mb-1.5 flex items-center gap-1.5">
+                                <span>📋</span> Academic & Coordinator Roles
+                            </h4>
+                            <p>
+                                Centum in Computer Science foundations. Served as Paper Presentation Coordinator for Texperia '25, managing peer teams, submissions, and research presentations.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Moving Tech Ticker -->
-                <div class="mb-12 overflow-hidden relative">
-                    <!-- Left gradient fade -->
-                    <div class="absolute top-0 left-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-[#f8f9fb] to-transparent z-10"></div>
-                    <!-- Right gradient fade -->
-                    <div class="absolute top-0 right-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[#f8f9fb] to-transparent z-10"></div>
-                    
+                <!-- Moving Tech Ticker with Side Fades -->
+                <div class="mt-8 pt-8 border-t border-[#EAE8E2]">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-heading text-sm font-bold uppercase tracking-wider text-[#1C1B1A]">
+                            Tech Stack & Production Tools
+                        </h3>
+                        <span class="text-[11px] text-[#8C6A3C] font-semibold">Hover to pause</span>
+                    </div>
+
+                    <!-- Row 1: Leftward Ticker -->
                     <div class="tech-ticker-wrapper">
-                        <div class="tech-ticker-track flex gap-4 w-max">
-                            <!-- First set -->
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">🤖</span><span class="tech-name font-semibold text-sm text-slate-800">Agentic AI</span></div>
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">⚡</span><span class="tech-name font-semibold text-sm text-slate-800">n8n Automation</span></div>
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">☕</span><span class="tech-name font-semibold text-sm text-slate-800">Java</span></div>
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">🕸️</span><span class="tech-name font-semibold text-sm text-slate-800">Web Development</span></div>
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">🔌</span><span class="tech-name font-semibold text-sm text-slate-800">API Integration</span></div>
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">📊</span><span class="tech-name font-semibold text-sm text-slate-800">Streamlit</span></div>
-                            <!-- Duplicate set for seamless loop -->
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">🤖</span><span class="tech-name font-semibold text-sm text-slate-800">Agentic AI</span></div>
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">⚡</span><span class="tech-name font-semibold text-sm text-slate-800">n8n Automation</span></div>
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">☕</span><span class="tech-name font-semibold text-sm text-slate-800">Java</span></div>
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">🕸️</span><span class="tech-name font-semibold text-sm text-slate-800">Web Development</span></div>
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">🔌</span><span class="tech-name font-semibold text-sm text-slate-800">API Integration</span></div>
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">📊</span><span class="tech-name font-semibold text-sm text-slate-800">Streamlit</span></div>
+                        <div class="tech-ticker-track">
+                            <div class="tech-stack-card"><span class="text-lg">🤖</span><span class="tech-name">Agentic AI</span></div>
+                            <div class="tech-stack-card"><span class="text-lg">⚡</span><span class="tech-name">n8n Automation</span></div>
+                            <div class="tech-stack-card"><span class="text-lg">☕</span><span class="tech-name">Java</span></div>
+                            <div class="tech-stack-card"><span class="text-lg">🕸️</span><span class="tech-name">Web Development</span></div>
+                            <div class="tech-stack-card"><span class="text-lg">🔌</span><span class="tech-name">API Integration</span></div>
+                            <div class="tech-stack-card"><span class="text-lg">📊</span><span class="tech-name">Streamlit</span></div>
+                            <!-- Duplicate for seamless loop -->
+                            <div class="tech-stack-card"><span class="text-lg">🤖</span><span class="tech-name">Agentic AI</span></div>
+                            <div class="tech-stack-card"><span class="text-lg">⚡</span><span class="tech-name">n8n Automation</span></div>
+                            <div class="tech-stack-card"><span class="text-lg">☕</span><span class="tech-name">Java</span></div>
+                            <div class="tech-stack-card"><span class="text-lg">🕸️</span><span class="tech-name">Web Development</span></div>
+                            <div class="tech-stack-card"><span class="text-lg">🔌</span><span class="tech-name">API Integration</span></div>
+                            <div class="tech-stack-card"><span class="text-lg">📊</span><span class="tech-name">Streamlit</span></div>
                         </div>
                     </div>
-                    <div class="tech-ticker-wrapper mt-4">
-                        <div class="tech-ticker-track reverse flex gap-4 w-max">
-                            <!-- Firebase, Vercel, VS Code, Git & GitHub, Team Work, Communication + duplicate -->
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">🔥</span><span class="tech-name font-semibold text-sm text-slate-800">Firebase</span></div>
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">🚀</span><span class="tech-name font-semibold text-sm text-slate-800">Vercel</span></div>
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">💻</span><span class="tech-name font-semibold text-sm text-slate-800">VS Code</span></div>
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">🐙</span><span class="tech-name font-semibold text-sm text-slate-800">Git & GitHub</span></div>
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">👥</span><span class="tech-name font-semibold text-sm text-slate-800">Team Work</span></div>
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">🗣️</span><span class="tech-name font-semibold text-sm text-slate-800">Communication</span></div>
+
+                    <!-- Row 2: Rightward Ticker -->
+                    <div class="tech-ticker-wrapper mt-3">
+                        <div class="tech-ticker-track reverse">
+                            <div class="tech-stack-card"><span class="text-lg">🔥</span><span class="tech-name">Firebase</span></div>
+                            <div class="tech-stack-card"><span class="text-lg">🚀</span><span class="tech-name">Vercel</span></div>
+                            <div class="tech-stack-card"><span class="text-lg">💻</span><span class="tech-name">VS Code</span></div>
+                            <div class="tech-stack-card"><span class="text-lg">🐙</span><span class="tech-name">Git & GitHub</span></div>
+                            <div class="tech-stack-card"><span class="text-lg">👥</span><span class="tech-name">Team Work</span></div>
+                            <div class="tech-stack-card"><span class="text-lg">🗣️</span><span class="tech-name">Communication</span></div>
                             <!-- Duplicate -->
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">🔥</span><span class="tech-name font-semibold text-sm text-slate-800">Firebase</span></div>
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">🚀</span><span class="tech-name font-semibold text-sm text-slate-800">Vercel</span></div>
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">💻</span><span class="tech-name font-semibold text-sm text-slate-800">VS Code</span></div>
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">🐙</span><span class="tech-name font-semibold text-sm text-slate-800">Git & GitHub</span></div>
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">👥</span><span class="tech-name font-semibold text-sm text-slate-800">Team Work</span></div>
-                            <div class="tech-stack-card bg-white border border-slate-200 shadow-sm rounded-xl px-5 py-3 flex items-center gap-3"><span class="text-xl">🗣️</span><span class="tech-name font-semibold text-sm text-slate-800">Communication</span></div>
+                            <div class="tech-stack-card"><span class="text-lg">🔥</span><span class="tech-name">Firebase</span></div>
+                            <div class="tech-stack-card"><span class="text-lg">🚀</span><span class="tech-name">Vercel</span></div>
+                            <div class="tech-stack-card"><span class="text-lg">💻</span><span class="tech-name">VS Code</span></div>
+                            <div class="tech-stack-card"><span class="text-lg">🐙</span><span class="tech-name">Git & GitHub</span></div>
+                            <div class="tech-stack-card"><span class="text-lg">👥</span><span class="tech-name">Team Work</span></div>
+                            <div class="tech-stack-card"><span class="text-lg">🗣️</span><span class="tech-name">Communication</span></div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Soft Skills Pill Bar -->
-                <div class="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto">
-                    <span class="px-3 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-slate-600 text-[11px] font-semibold uppercase tracking-wider">Problem Solving</span>
-                    <span class="px-3 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-slate-600 text-[11px] font-semibold uppercase tracking-wider">System Architecture</span>
-                    <span class="px-3 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-slate-600 text-[11px] font-semibold uppercase tracking-wider">UX Driven</span>
-                    <span class="px-3 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-slate-600 text-[11px] font-semibold uppercase tracking-wider">Agile Execution</span>
+                    <!-- Soft Skills Bar -->
+                    <div class="mt-6 flex flex-wrap justify-center gap-2">
+                        <span class="px-3 py-1 rounded-full bg-[#FAF9F6] border border-[#D8D7D2] text-[11px] font-semibold text-[#635F5A]">💡 Problem Solving</span>
+                        <span class="px-3 py-1 rounded-full bg-[#FAF9F6] border border-[#D8D7D2] text-[11px] font-semibold text-[#635F5A]">⚡ Quick Learning</span>
+                        <span class="px-3 py-1 rounded-full bg-[#FAF9F6] border border-[#D8D7D2] text-[11px] font-semibold text-[#635F5A]">🔄 Adaptability</span>
+                        <span class="px-3 py-1 rounded-full bg-[#FAF9F6] border border-[#D8D7D2] text-[11px] font-semibold text-[#635F5A]">🤝 Team Collaboration</span>
+                    </div>
                 </div>
 
             </div>
         </section>
 
 
-        <!-- TIMELINES: EDUCATION, EXPERIENCE, HACKATHONS -->
-        <section id="experience" class="py-20 bg-white border-y border-slate-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- ════════════════════════════════════════════════════════════
+             SECTION 4: TECHNICAL WORK & CAPABILITIES
+             (ALL 6 REAL PROJECTS: Fixed Flagship + Side-to-Side Stream)
+             ════════════════════════════════════════════════════════════ -->
+        <section id="projects" class="py-16 px-4 sm:px-6 border-t border-[#D8D7D2]">
+            <div class="max-w-7xl mx-auto">
                 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                    
-                    <!-- Left Column: Education & Hackathons -->
-                    <div class="space-y-12">
-                        
-                        <!-- Education -->
-                        <div>
-                            <div class="flex items-center gap-3 mb-8">
-                                <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl font-bold text-slate-900">Education</h3>
-                            </div>
-                            
-                            <div class="space-y-5">
-                                <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm relative overflow-hidden group hover:border-blue-300 transition">
-                                    <div class="absolute top-0 left-0 w-1 h-full bg-blue-600"></div>
-                                    <span class="text-xs font-bold text-blue-600 mb-1 block">2021 - 2025</span>
-                                    <h4 class="font-heading text-lg font-bold text-slate-900 mb-1">B.E in Information Science and Engineering</h4>
-                                    <p class="text-sm font-medium text-slate-600 mb-2">Presidency University</p>
-                                    <p class="text-xs text-slate-500">CGPA: 8.44</p>
-                                </div>
-                                <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm relative overflow-hidden group hover:border-blue-300 transition">
-                                    <div class="absolute top-0 left-0 w-1 h-full bg-blue-400"></div>
-                                    <span class="text-xs font-bold text-blue-600 mb-1 block">2020 - 2021</span>
-                                    <h4 class="font-heading text-lg font-bold text-slate-900 mb-1">12th Grade (Class XII)</h4>
-                                    <p class="text-sm font-medium text-slate-600 mb-2">Al Ameen Pu College</p>
-                                    <p class="text-xs text-slate-500">Percentage: 86.8%</p>
-                                </div>
-                                <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm relative overflow-hidden group hover:border-blue-300 transition">
-                                    <div class="absolute top-0 left-0 w-1 h-full bg-blue-300"></div>
-                                    <span class="text-xs font-bold text-blue-600 mb-1 block">2018 - 2019</span>
-                                    <h4 class="font-heading text-lg font-bold text-slate-900 mb-1">10th Grade (Class X)</h4>
-                                    <p class="text-sm font-medium text-slate-600 mb-2">Vidyavardhaka Sangha</p>
-                                    <p class="text-xs text-slate-500">Percentage: 88.64%</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Hackathons -->
-                        <div>
-                            <div class="flex items-center gap-3 mb-8">
-                                <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center border border-purple-100">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl font-bold text-slate-900">Hackathons & Achievements</h3>
-                            </div>
-                            
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm border-l-4 border-l-blue-500 hover:shadow-md transition">
-                                    <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-600 mb-2">Finalist</span>
-                                    <h4 class="font-heading text-sm font-bold text-slate-900 mb-1">Smart India Hackathon (SIH) 2024</h4>
-                                    <p class="text-xs text-slate-500">Internal Hackathon final selection.</p>
-                                </div>
-                                <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm border-l-4 border-l-purple-500 hover:shadow-md transition">
-                                    <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-600 mb-2">Finalist</span>
-                                    <h4 class="font-heading text-sm font-bold text-slate-900 mb-1">Unfold 2023 - Devfolio</h4>
-                                    <p class="text-xs text-slate-500">Reached the final rounds.</p>
-                                </div>
-                                <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm border-l-4 border-l-teal-500 hover:shadow-md transition">
-                                    <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-600 mb-2">Participant</span>
-                                    <h4 class="font-heading text-sm font-bold text-slate-900 mb-1">Web3Conf India 2023</h4>
-                                    <p class="text-xs text-slate-500">Engaged in Web3 development challenges.</p>
-                                </div>
-                                <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm border-l-4 border-l-amber-500 hover:shadow-md transition">
-                                    <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-600 mb-2">Active Coder</span>
-                                    <h4 class="font-heading text-sm font-bold text-slate-900 mb-1">LeetCode</h4>
-                                    <p class="text-xs text-slate-500">100+ Data Structure and Algorithm problems solved.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    
-                    <!-- Right Column: Experience -->
+                <div class="mb-10 pb-5 border-b border-[#D8D7D2] flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3">
                     <div>
-                        <div class="flex items-center gap-3 mb-8">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-100">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            </div>
-                            <h3 class="font-heading text-2xl font-bold text-slate-900">Experience</h3>
-                        </div>
-                        
-                        <div class="relative pl-6 sm:pl-8 border-l-2 border-slate-200 space-y-10">
-                            
-                            <!-- Role 1 -->
-                            <div class="relative">
-                                <div class="absolute -left-[35px] sm:-left-[43px] top-1 w-5 h-5 rounded-full bg-white border-4 border-blue-600"></div>
-                                <span class="text-xs font-bold text-slate-400 mb-1 block">Oct 2024 - Dec 2024</span>
-                                <h4 class="font-heading text-lg font-bold text-slate-900 mb-1">Full-Stack Web Developer Intern</h4>
-                                <p class="text-sm font-semibold text-blue-600 mb-3">Dlithe Consultancy Services Pvt Ltd</p>
-                                <div class="text-sm text-slate-600 space-y-2 leading-relaxed">
-                                    <p>• Enhanced UI/UX across key modules, ensuring responsive design and seamless user interactions.</p>
-                                    <p>• Conducted debugging and optimization, significantly improving page load speed and system reliability.</p>
-                                    <p>• Engineered efficient state management and optimized data fetching strategies in React applications.</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Role 2 -->
-                            <div class="relative">
-                                <div class="absolute -left-[35px] sm:-left-[43px] top-1 w-5 h-5 rounded-full bg-white border-4 border-blue-600"></div>
-                                <span class="text-xs font-bold text-slate-400 mb-1 block">Aug 2024 - Oct 2024</span>
-                                <h4 class="font-heading text-lg font-bold text-slate-900 mb-1">Java Full-Stack Developer Trainee</h4>
-                                <p class="text-sm font-semibold text-blue-600 mb-3">TechByHeart, Kerala</p>
-                                <div class="text-sm text-slate-600 space-y-2 leading-relaxed">
-                                    <p>• Delivered practical projects encompassing backend REST API development and structured SQL database management.</p>
-                                    <p>• Authored robust, maintainable backend code and implemented stringent API security standards.</p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Certifications mini-timeline -->
-                        <div class="mt-16">
-                            <h4 class="font-heading text-lg font-bold text-slate-900 mb-6">Certifications</h4>
-                            <div class="space-y-4">
-                                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-4">
-                                    <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                    </div>
-                                    <div>
-                                        <h5 class="text-sm font-bold text-slate-900 mb-1">Infosys Springboard</h5>
-                                        <p class="text-xs text-slate-600">Basics of Python, Java, CSS3, Data Structures & Algorithms, Artificial Intelligence.</p>
-                                    </div>
-                                </div>
-                                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-4">
-                                    <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                    </div>
-                                    <div>
-                                        <h5 class="text-sm font-bold text-slate-900 mb-1">Cisco Networking Academy</h5>
-                                        <p class="text-xs text-slate-600">Introduction to IoT, Cyber Security, Packet Tracer.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                        <span class="text-xs font-semibold uppercase tracking-wider text-[#8C6A3C] block mb-1">
+                            Technical Portfolio
+                        </span>
+                        <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-[#1C1B1A]">
+                            Technical Work & Capabilities
+                        </h2>
                     </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- PROJECTS SECTION (THE BIG REWRITE) -->
-        <section id="projects" class="py-24 relative overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <!-- Section Header -->
-                <div class="mb-10 pb-6 border-b border-slate-200">
-                    <span class="text-blue-600 font-semibold text-xs uppercase tracking-wider block mb-2">Technical Portfolio</span>
-                    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900">Technical Work & Capabilities</h2>
-                    <p class="mt-3 text-slate-600 max-w-2xl text-sm sm:text-base leading-relaxed">
-                        A selection of high-impact systems I have engineered, ranging from automated CRM pipelines and agentic AI tools to comprehensive full-stack portals.
-                    </p>
+                    <span class="text-xs text-[#635F5A] font-medium">6 Built & Prototyped Systems</span>
                 </div>
 
-                <!-- 2 Flagship Bento Cards -->
+                <!-- Part A: 2 Fixed Flagship Projects (Bento Cards) -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
                     
-                    <!-- Flagship 1 -->
-                    <div class="flagship-bento-card bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col justify-between h-full group">
-                        <div class="p-6 sm:p-8 flex-grow">
-                            <span class="inline-block px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-blue-50 text-blue-700 border border-blue-200 mb-4">n8n Workflow</span>
-                            <h3 class="font-heading text-xl sm:text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">AI Admission Enquiry System</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                    <!-- Flagship 1: AI Admission Enquiry System -->
+                    <div class="flagship-bento-card">
+                        <div class="p-6 sm:p-7 flex-grow">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-[#F3EFE8] text-[#8C6A3C] border border-[#D8D7D2]">
+                                    Project 01 · n8n Workflow
+                                </span>
+                            </div>
+                            <h3 class="font-heading text-xl font-bold text-[#1C1B1A] mb-2">
+                                AI Admission Enquiry System
+                            </h3>
+                            <p class="text-xs sm:text-sm text-[#635F5A] leading-relaxed mb-4">
                                 Web-based intake portal bound to an autonomous n8n automation pipeline that processes applicant data, routes leads, and sends instant personalized confirmations.
                             </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 border border-slate-200">n8n Automation</span>
-                                <span class="text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 border border-slate-200">Webhook API</span>
-                                <span class="text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 border border-slate-200">Email Pipeline</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="text-[10px] font-semibold px-2.5 py-1 rounded bg-[#F2EFE9] text-[#635F5A]">n8n Automation</span>
+                                <span class="text-[10px] font-semibold px-2.5 py-1 rounded bg-[#F2EFE9] text-[#635F5A]">Webhook API</span>
+                                <span class="text-[10px] font-semibold px-2.5 py-1 rounded bg-[#F2EFE9] text-[#635F5A]">Email Pipeline</span>
                             </div>
                         </div>
-                        <div class="project-attached-dock bg-slate-50 border-t border-slate-200 p-6 sm:px-8 sm:py-5">
-                            <h4 class="text-xs font-bold uppercase tracking-wider text-blue-600 mb-3">What I Deliver</h4>
-                            <ul class="text-xs text-slate-600 space-y-2 font-medium">
-                                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Zero-Maintenance Intake with schema validation</li>
-                                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Sub-Second Auto-Responders on submission</li>
-                                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Real-Time CRM Sync to Google Sheets or Airtable</li>
+                        <div class="project-attached-dock">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-[#8C6A3C] block mb-1.5">
+                                What I Deliver:
+                            </span>
+                            <ul class="text-xs text-[#635F5A] space-y-1">
+                                <li>✓ <strong>Zero-Maintenance Intake:</strong> Automatically capture applicant queries with schema validation.</li>
+                                <li>✓ <strong>Sub-Second Auto-Responders:</strong> Send personalized dynamic confirmations upon submission.</li>
+                                <li>✓ <strong>Real-Time CRM Sync:</strong> Stream clean data records directly into Google Sheets or SQL.</li>
                             </ul>
                         </div>
                     </div>
-                    
-                    <!-- Flagship 2 -->
-                    <div class="flagship-bento-card bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col justify-between h-full group">
-                        <div class="p-6 sm:p-8 flex-grow">
-                            <span class="inline-block px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-emerald-50 text-emerald-700 border border-emerald-200 mb-4">Full-Stack App</span>
-                            <h3 class="font-heading text-xl sm:text-2xl font-bold text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors">Full-Stack AI Admission Chatbot</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-5">
-                                Intelligent conversational agent integrated seamlessly into a React frontend, powered by an orchestrated n8n backend that manages context, RAG queries, and real-time state.
+
+                    <!-- Flagship 2: Full-Stack AI Admission Chatbot -->
+                    <div class="flagship-bento-card">
+                        <div class="p-6 sm:p-7 flex-grow">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-[#F3EFE8] text-[#8C6A3C] border border-[#D8D7D2]">
+                                    Project 02 · Full-Stack AI
+                                </span>
+                                <a href="https://www.linkedin.com/in/kavish-m-" target="_blank" rel="noopener noreferrer" class="text-[10px] font-semibold text-[#8C6A3C] hover:underline">
+                                    LinkedIn ↗
+                                </a>
+                            </div>
+                            <h3 class="font-heading text-xl font-bold text-[#1C1B1A] mb-2">
+                                Full-Stack AI Admission Chatbot
+                            </h3>
+                            <p class="text-xs sm:text-sm text-[#635F5A] leading-relaxed mb-4">
+                                Interactive conversational agent delivering institutional admissions information, answering complex curriculum queries, and qualifying student leads.
                             </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 border border-slate-200">React Frontend</span>
-                                <span class="text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 border border-slate-200">n8n Workflow</span>
-                                <span class="text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 border border-slate-200">Conversational AI</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="text-[10px] font-semibold px-2.5 py-1 rounded bg-[#F2EFE9] text-[#635F5A]">Full-Stack</span>
+                                <span class="text-[10px] font-semibold px-2.5 py-1 rounded bg-[#F2EFE9] text-[#635F5A]">AI Chatbot</span>
+                                <span class="text-[10px] font-semibold px-2.5 py-1 rounded bg-[#F2EFE9] text-[#635F5A]">Lead Scoring</span>
                             </div>
                         </div>
-                        <div class="project-attached-dock bg-slate-50 border-t border-slate-200 p-6 sm:px-8 sm:py-5">
-                            <h4 class="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-3">What I Deliver</h4>
-                            <ul class="text-xs text-slate-600 space-y-2 font-medium">
-                                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Natural Language Interactions mapped to structured data</li>
-                                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Scalable Webhook Bridging between UI and AI logic</li>
-                                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 24/7 Context-Aware Lead Generation</li>
+                        <div class="project-attached-dock">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-[#8C6A3C] block mb-1.5">
+                                What I Deliver:
+                            </span>
+                            <ul class="text-xs text-[#635F5A] space-y-1">
+                                <li>✓ <strong>24/7 Smart Advisory:</strong> Conversational agent understanding institutional context.</li>
+                                <li>✓ <strong>Intent Qualification:</strong> Identify candidate leads through natural dialogue without rigid forms.</li>
+                                <li>✓ <strong>Frictionless Integration:</strong> Embed cleanly into any existing website with responsive styling.</li>
                             </ul>
                         </div>
                     </div>
 
                 </div>
 
-                <!-- Moving Projects Track for remaining 4 -->
-                <div class="projects-moving-wrapper relative overflow-hidden -mx-4 sm:mx-0 px-4 sm:px-0 mb-20">
-                     <!-- Gradient masking -->
-                    <div class="absolute top-0 left-0 bottom-0 w-8 sm:w-16 bg-gradient-to-r from-[#f8f9fb] to-transparent z-10"></div>
-                    <div class="absolute top-0 right-0 bottom-0 w-8 sm:w-16 bg-gradient-to-l from-[#f8f9fb] to-transparent z-10"></div>
-                    
-                    <div class="projects-moving-track flex gap-5 w-max py-2">
-                        
-                        <!-- Unit 1 -->
-                        <div class="project-card-unit w-[280px] sm:w-[320px] bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col h-full flex-shrink-0">
-                            <div class="project-card-body p-5 flex-grow">
-                                <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-purple-50 text-purple-700 border border-purple-200 mb-3">Agentic AI</span>
-                                <h3 class="font-heading text-base font-bold text-slate-900 mb-2">AI Assistant for Farmers</h3>
-                                <p class="text-slate-500 text-xs leading-relaxed mb-4">Agentic workflow engine delivering crop intelligence and meteorological alerts.</p>
-                                <div class="flex gap-1.5 flex-wrap">
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">n8n Engine</span>
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">Weather API</span>
-                                </div>
-                            </div>
-                            <div class="project-attached-dock bg-slate-50 border-t border-slate-200 p-4">
-                                <ul class="text-[11px] text-slate-600 space-y-1.5 font-medium">
-                                    <li>✓ Multi-Source Intelligence</li>
-                                    <li>✓ Automated Dispatch</li>
-                                    <li>✓ Accessible UX</li>
-                                </ul>
-                            </div>
-                        </div>
+                <!-- Part B: Remaining 4 Projects (Side-to-Side Moving Stream) -->
+                <div class="pt-2">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-heading text-sm font-bold uppercase tracking-wider text-[#1C1B1A]">
+                            Additional Projects & Engineering Toolsets
+                        </h3>
+                        <span class="text-[11px] text-[#8C6A3C] font-semibold">Continuous side-to-side feed · Hover to inspect</span>
+                    </div>
 
-                        <!-- Unit 2 -->
-                        <div class="project-card-unit w-[280px] sm:w-[320px] bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col h-full flex-shrink-0">
-                            <div class="project-card-body p-5 flex-grow">
-                                <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-amber-50 text-amber-700 border border-amber-200 mb-3">AI Integration</span>
-                                <h3 class="font-heading text-base font-bold text-slate-900 mb-2">Virtual Sales Avatar</h3>
-                                <p class="text-slate-500 text-xs leading-relaxed mb-4">A video synthesis automation that dynamically creates personalized sales pitches using HeyGen integration.</p>
-                                <div class="flex gap-1.5 flex-wrap">
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">HeyGen API</span>
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">Prompt Eng</span>
+                    <div class="projects-moving-wrapper">
+                        <div class="projects-moving-track">
+                            
+                            <!-- Project 3: AI Assistant for Farmers -->
+                            <div class="project-card-unit">
+                                <div class="project-card-body">
+                                    <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-[#F3EFE8] text-[#8C6A3C] border border-[#D8D7D2] mb-2">
+                                        03 · Agentic AI
+                                    </span>
+                                    <h4 class="font-heading text-base font-bold text-[#1C1B1A] mb-1.5">AI Assistant for Farmers</h4>
+                                    <p class="text-xs text-[#635F5A] leading-relaxed mb-3">
+                                        Workflow engine delivering crop intelligence, meteorological alerts, and soil management tips through messaging channels.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">n8n Engine</span>
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">Agri-Tech</span>
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">Weather API</span>
+                                    </div>
+                                </div>
+                                <div class="project-attached-dock text-[11px] text-[#635F5A] space-y-1">
+                                    <p>• Multi-source weather & crop prompt aggregation</p>
+                                    <p>• Automated frost & drought warning dispatch</p>
+                                    <p>• Engineered for low-bandwidth mobile UX</p>
                                 </div>
                             </div>
-                            <div class="project-attached-dock bg-slate-50 border-t border-slate-200 p-4">
-                                <ul class="text-[11px] text-slate-600 space-y-1.5 font-medium">
-                                    <li>✓ Dynamic Video Generation</li>
-                                    <li>✓ Personalized Scripting</li>
-                                    <li>✓ Seamless API Orchestration</li>
-                                </ul>
-                            </div>
-                        </div>
 
-                        <!-- Unit 3 -->
-                        <div class="project-card-unit w-[280px] sm:w-[320px] bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col h-full flex-shrink-0">
-                            <div class="project-card-body p-5 flex-grow">
-                                <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-blue-50 text-blue-700 border border-blue-200 mb-3">Full-Stack CRM</span>
-                                <h3 class="font-heading text-base font-bold text-slate-900 mb-2">Comprehensive Admission Funnel</h3>
-                                <p class="text-slate-500 text-xs leading-relaxed mb-4">End-to-end recruitment funnel combining a polished UI, rigorous validation, and structured database syncing.</p>
-                                <div class="flex gap-1.5 flex-wrap">
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">Web Portal</span>
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">Data Validation</span>
+                            <!-- Project 4: Agentic n8n Automation Chatbot -->
+                            <div class="project-card-unit">
+                                <div class="project-card-body">
+                                    <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-[#F3EFE8] text-[#8C6A3C] border border-[#D8D7D2] mb-2">
+                                        04 · Autonomous Logic
+                                    </span>
+                                    <h4 class="font-heading text-base font-bold text-[#1C1B1A] mb-1.5">Agentic n8n Automation Chatbot</h4>
+                                    <p class="text-xs text-[#635F5A] leading-relaxed mb-3">
+                                        Multi-node execution flow leveraging custom webhook routers, structured memory buffers, and tool calling for automated business operations.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">Tool Calling</span>
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">Router Nodes</span>
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">n8n Pipeline</span>
+                                    </div>
+                                </div>
+                                <div class="project-attached-dock text-[11px] text-[#635F5A] space-y-1">
+                                    <p>• Models trigger databases and invoke external APIs</p>
+                                    <p>• Automatic retry routing when external API is down</p>
+                                    <p>• Stateful context retained across inquiries</p>
                                 </div>
                             </div>
-                            <div class="project-attached-dock bg-slate-50 border-t border-slate-200 p-4">
-                                <ul class="text-[11px] text-slate-600 space-y-1.5 font-medium">
-                                    <li>✓ High-Conversion Form UX</li>
-                                    <li>✓ Bulletproof Data Integrity</li>
-                                    <li>✓ Centralized Dashboard</li>
-                                </ul>
-                            </div>
-                        </div>
 
-                        <!-- Unit 4 -->
-                        <div class="project-card-unit w-[280px] sm:w-[320px] bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col h-full flex-shrink-0">
-                            <div class="project-card-body p-5 flex-grow">
-                                <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-teal-50 text-teal-700 border border-teal-200 mb-3">Voice AI</span>
-                                <h3 class="font-heading text-base font-bold text-slate-900 mb-2">AI Voice Caller System</h3>
-                                <p class="text-slate-500 text-xs leading-relaxed mb-4">Automated outbound voice agent using Vapi to conduct human-like interviews and screening calls.</p>
-                                <div class="flex gap-1.5 flex-wrap">
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">Vapi.ai</span>
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">Voice Synth</span>
+                            <!-- Project 5: Library Management System -->
+                            <div class="project-card-unit">
+                                <div class="project-card-body">
+                                    <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-[#F3EFE8] text-[#8C6A3C] border border-[#D8D7D2] mb-2">
+                                        05 · Full-Stack Web
+                                    </span>
+                                    <h4 class="font-heading text-base font-bold text-[#1C1B1A] mb-1.5">Library Management System</h4>
+                                    <p class="text-xs text-[#635F5A] leading-relaxed mb-3">
+                                        Full-stack database web platform featuring administrative catalog controls, student membership lookup, and real-time inventory tracking.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">Database</span>
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">Role Auth</span>
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">Full-Stack</span>
+                                    </div>
+                                </div>
+                                <div class="project-attached-dock text-[11px] text-[#635F5A] space-y-1">
+                                    <p>• Normalized relational database schemas</p>
+                                    <p>• Role-based access for admins & student members</p>
+                                    <p>• Real-time indexed search across large catalogs</p>
                                 </div>
                             </div>
-                            <div class="project-attached-dock bg-slate-50 border-t border-slate-200 p-4">
-                                <ul class="text-[11px] text-slate-600 space-y-1.5 font-medium">
-                                    <li>✓ Low-Latency Conversational Engine</li>
-                                    <li>✓ Call Transcription & Logging</li>
-                                    <li>✓ Hands-Free Outreach</li>
-                                </ul>
-                            </div>
-                        </div>
 
-                        <!-- DUPLICATE SET FOR LOOP -->
-                        <!-- Unit 1 -->
-                        <div class="project-card-unit w-[280px] sm:w-[320px] bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col h-full flex-shrink-0">
-                            <div class="project-card-body p-5 flex-grow">
-                                <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-purple-50 text-purple-700 border border-purple-200 mb-3">Agentic AI</span>
-                                <h3 class="font-heading text-base font-bold text-slate-900 mb-2">AI Assistant for Farmers</h3>
-                                <p class="text-slate-500 text-xs leading-relaxed mb-4">Agentic workflow engine delivering crop intelligence and meteorological alerts.</p>
-                                <div class="flex gap-1.5 flex-wrap">
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">n8n Engine</span>
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">Weather API</span>
+                            <!-- Project 6: Emergency SOS Dispatch Platform -->
+                            <div class="project-card-unit">
+                                <div class="project-card-body">
+                                    <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-[#F3EFE8] text-[#8C6A3C] border border-[#D8D7D2] mb-2">
+                                        06 · Critical Dispatch
+                                    </span>
+                                    <h4 class="font-heading text-base font-bold text-[#1C1B1A] mb-1.5">Emergency SOS Dispatch Platform</h4>
+                                    <p class="text-xs text-[#635F5A] leading-relaxed mb-3">
+                                        Rapid responder web portal connecting distressed users with emergency drivers, featuring live status streaming and automated notifications.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">Live Dispatch</span>
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">Frontend UI</span>
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">Real-Time</span>
+                                    </div>
+                                </div>
+                                <div class="project-attached-dock text-[11px] text-[#635F5A] space-y-1">
+                                    <p>• Low-latency triggers that fire instantly with zero bloat</p>
+                                    <p>• Real-time status feedback displaying driver ETA</p>
+                                    <p>• High-contrast visual hierarchy for rapid action</p>
                                 </div>
                             </div>
-                            <div class="project-attached-dock bg-slate-50 border-t border-slate-200 p-4">
-                                <ul class="text-[11px] text-slate-600 space-y-1.5 font-medium">
-                                    <li>✓ Multi-Source Intelligence</li>
-                                    <li>✓ Automated Dispatch</li>
-                                    <li>✓ Accessible UX</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Unit 2 -->
-                        <div class="project-card-unit w-[280px] sm:w-[320px] bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col h-full flex-shrink-0">
-                            <div class="project-card-body p-5 flex-grow">
-                                <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-amber-50 text-amber-700 border border-amber-200 mb-3">AI Integration</span>
-                                <h3 class="font-heading text-base font-bold text-slate-900 mb-2">Virtual Sales Avatar</h3>
-                                <p class="text-slate-500 text-xs leading-relaxed mb-4">A video synthesis automation that dynamically creates personalized sales pitches using HeyGen integration.</p>
-                                <div class="flex gap-1.5 flex-wrap">
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">HeyGen API</span>
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">Prompt Eng</span>
-                                </div>
-                            </div>
-                            <div class="project-attached-dock bg-slate-50 border-t border-slate-200 p-4">
-                                <ul class="text-[11px] text-slate-600 space-y-1.5 font-medium">
-                                    <li>✓ Dynamic Video Generation</li>
-                                    <li>✓ Personalized Scripting</li>
-                                    <li>✓ Seamless API Orchestration</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Unit 3 -->
-                        <div class="project-card-unit w-[280px] sm:w-[320px] bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col h-full flex-shrink-0">
-                            <div class="project-card-body p-5 flex-grow">
-                                <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-blue-50 text-blue-700 border border-blue-200 mb-3">Full-Stack CRM</span>
-                                <h3 class="font-heading text-base font-bold text-slate-900 mb-2">Comprehensive Admission Funnel</h3>
-                                <p class="text-slate-500 text-xs leading-relaxed mb-4">End-to-end recruitment funnel combining a polished UI, rigorous validation, and structured database syncing.</p>
-                                <div class="flex gap-1.5 flex-wrap">
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">Web Portal</span>
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">Data Validation</span>
-                                </div>
-                            </div>
-                            <div class="project-attached-dock bg-slate-50 border-t border-slate-200 p-4">
-                                <ul class="text-[11px] text-slate-600 space-y-1.5 font-medium">
-                                    <li>✓ High-Conversion Form UX</li>
-                                    <li>✓ Bulletproof Data Integrity</li>
-                                    <li>✓ Centralized Dashboard</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Unit 4 -->
-                        <div class="project-card-unit w-[280px] sm:w-[320px] bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col h-full flex-shrink-0">
-                            <div class="project-card-body p-5 flex-grow">
-                                <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-teal-50 text-teal-700 border border-teal-200 mb-3">Voice AI</span>
-                                <h3 class="font-heading text-base font-bold text-slate-900 mb-2">AI Voice Caller System</h3>
-                                <p class="text-slate-500 text-xs leading-relaxed mb-4">Automated outbound voice agent using Vapi to conduct human-like interviews and screening calls.</p>
-                                <div class="flex gap-1.5 flex-wrap">
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">Vapi.ai</span>
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">Voice Synth</span>
-                                </div>
-                            </div>
-                            <div class="project-attached-dock bg-slate-50 border-t border-slate-200 p-4">
-                                <ul class="text-[11px] text-slate-600 space-y-1.5 font-medium">
-                                    <li>✓ Low-Latency Conversational Engine</li>
-                                    <li>✓ Call Transcription & Logging</li>
-                                    <li>✓ Hands-Free Outreach</li>
-                                </ul>
-                            </div>
-                        </div>
 
+                            <!-- DUPLICATE SET FOR SMOOTH INFINITE LOOP -->
+                            <div class="project-card-unit">
+                                <div class="project-card-body">
+                                    <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-[#F3EFE8] text-[#8C6A3C] border border-[#D8D7D2] mb-2">
+                                        03 · Agentic AI
+                                    </span>
+                                    <h4 class="font-heading text-base font-bold text-[#1C1B1A] mb-1.5">AI Assistant for Farmers</h4>
+                                    <p class="text-xs text-[#635F5A] leading-relaxed mb-3">
+                                        Workflow engine delivering crop intelligence, meteorological alerts, and soil management tips through messaging channels.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">n8n Engine</span>
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">Agri-Tech</span>
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">Weather API</span>
+                                    </div>
+                                </div>
+                                <div class="project-attached-dock text-[11px] text-[#635F5A] space-y-1">
+                                    <p>• Multi-source weather & crop prompt aggregation</p>
+                                    <p>• Automated frost & drought warning dispatch</p>
+                                    <p>• Engineered for low-bandwidth mobile UX</p>
+                                </div>
+                            </div>
+
+                            <div class="project-card-unit">
+                                <div class="project-card-body">
+                                    <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-[#F3EFE8] text-[#8C6A3C] border border-[#D8D7D2] mb-2">
+                                        04 · Autonomous Logic
+                                    </span>
+                                    <h4 class="font-heading text-base font-bold text-[#1C1B1A] mb-1.5">Agentic n8n Automation Chatbot</h4>
+                                    <p class="text-xs text-[#635F5A] leading-relaxed mb-3">
+                                        Multi-node execution flow leveraging custom webhook routers, structured memory buffers, and tool calling for automated business operations.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">Tool Calling</span>
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">Router Nodes</span>
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">n8n Pipeline</span>
+                                    </div>
+                                </div>
+                                <div class="project-attached-dock text-[11px] text-[#635F5A] space-y-1">
+                                    <p>• Models trigger databases and invoke external APIs</p>
+                                    <p>• Automatic retry routing when external API is down</p>
+                                    <p>• Stateful context retained across inquiries</p>
+                                </div>
+                            </div>
+
+                            <div class="project-card-unit">
+                                <div class="project-card-body">
+                                    <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-[#F3EFE8] text-[#8C6A3C] border border-[#D8D7D2] mb-2">
+                                        05 · Full-Stack Web
+                                    </span>
+                                    <h4 class="font-heading text-base font-bold text-[#1C1B1A] mb-1.5">Library Management System</h4>
+                                    <p class="text-xs text-[#635F5A] leading-relaxed mb-3">
+                                        Full-stack database web platform featuring administrative catalog controls, student membership lookup, and real-time inventory tracking.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">Database</span>
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">Role Auth</span>
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">Full-Stack</span>
+                                    </div>
+                                </div>
+                                <div class="project-attached-dock text-[11px] text-[#635F5A] space-y-1">
+                                    <p>• Normalized relational database schemas</p>
+                                    <p>• Role-based access for admins & student members</p>
+                                    <p>• Real-time indexed search across large catalogs</p>
+                                </div>
+                            </div>
+
+                            <div class="project-card-unit">
+                                <div class="project-card-body">
+                                    <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-[#F3EFE8] text-[#8C6A3C] border border-[#D8D7D2] mb-2">
+                                        06 · Critical Dispatch
+                                    </span>
+                                    <h4 class="font-heading text-base font-bold text-[#1C1B1A] mb-1.5">Emergency SOS Dispatch Platform</h4>
+                                    <p class="text-xs text-[#635F5A] leading-relaxed mb-3">
+                                        Rapid responder web portal connecting distressed users with emergency drivers, featuring live status streaming and automated notifications.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">Live Dispatch</span>
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">Frontend UI</span>
+                                        <span class="text-[9px] px-2 py-0.5 rounded bg-[#F2EFE9] text-[#635F5A]">Real-Time</span>
+                                    </div>
+                                </div>
+                                <div class="project-attached-dock text-[11px] text-[#635F5A] space-y-1">
+                                    <p>• Low-latency triggers that fire instantly with zero bloat</p>
+                                    <p>• Real-time status feedback displaying driver ETA</p>
+                                    <p>• High-contrast visual hierarchy for rapid action</p>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
 
-                <!-- HOW I BUILD THIS (Process Steps) -->
-                <div class="mt-20 mb-8">
-                    <div class="mb-8 pb-6 border-b border-slate-200">
-                        <span class="text-blue-600 font-semibold text-xs uppercase tracking-wider block mb-2">My Process</span>
-                        <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-slate-900">How I Build This</h2>
+            </div>
+        </section>
+
+
+        <!-- ════════════════════════════════════════════════════════════
+             SECTION 5: HACKATHONS & CREDENTIALS
+             (BUGSLAYER '26, DevForge, Swafinix Top 5, MSME Finalist)
+             ════════════════════════════════════════════════════════════ -->
+        <section id="hackathons" class="py-16 px-4 sm:px-6 border-t border-[#D8D7D2] bg-[#FAF9F6]/60">
+            <div class="max-w-7xl mx-auto">
+                
+                <div class="mb-10 pb-5 border-b border-[#D8D7D2] flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3">
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-[#8C6A3C] block mb-1">
+                            Competitive Milestones
+                        </span>
+                        <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-[#1C1B1A]">
+                            Hackathon Success & Verified Credentials
+                        </h2>
                     </div>
+                    <a href="gallery.html" class="text-xs font-semibold text-[#8C6A3C] hover:underline flex items-center gap-1">
+                        View photographic proof in Moments ↗
+                    </a>
+                </div>
+
+                <!-- 4 Hackathon Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
                     
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <div class="warm-card p-6 border-l-4 border-l-[#8C6A3C]">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-[#8C6A3C] block mb-1">National Level · 24H Sprint</span>
+                        <h3 class="font-heading text-base font-bold text-[#1C1B1A] mb-2">BUGSLAYER '26</h3>
+                        <p class="text-xs text-[#635F5A] leading-relaxed">
+                            Built a low-bandwidth Telemedicine Access Platform across 5 review rounds at Dhanalakshmi Srinivasan College.
+                        </p>
+                    </div>
+
+                    <div class="warm-card p-6 border-l-4 border-l-[#A8A69E]">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-[#8C6A3C] block mb-1">AI Coding Sprint · 24H</span>
+                        <h3 class="font-heading text-base font-bold text-[#1C1B1A] mb-2">DevForge (KPR IET)</h3>
+                        <p class="text-xs text-[#635F5A] leading-relaxed">
+                            Cleared 3 review rounds in a 24-hour sprint. Built the web frontend while stitching backend flows with n8n webhooks.
+                        </p>
+                    </div>
+
+                    <div class="warm-card p-6 border-l-4 border-l-[#8C6A3C]">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-[#8C6A3C] block mb-1">Top 5 Finish · Prototype</span>
+                        <h3 class="font-heading text-base font-bold text-[#1C1B1A] mb-2">AI Agents Hackathon</h3>
+                        <p class="text-xs text-[#635F5A] leading-relaxed">
+                            Secured 5th rank nationally out of 2,300+ teams with Swafinix Technologies for autonomous agent prototyping.
+                        </p>
+                    </div>
+
+                    <div class="warm-card p-6 border-l-4 border-l-[#A8A69E]">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-[#8C6A3C] block mb-1">National Level Finalist</span>
+                        <h3 class="font-heading text-base font-bold text-[#1C1B1A] mb-2">MSME Hackathon 2025</h3>
+                        <p class="text-xs text-[#635F5A] leading-relaxed">
+                            Qualified as a National Finalist in MSME Hackathon 2025, presenting rapid technical innovation and scalable digital solutions.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Verified Credentials Timeline -->
+                <div class="max-w-4xl mx-auto">
+                    <h3 class="font-heading text-lg font-bold text-[#1C1B1A] mb-6 text-center">
+                        Verified Credentials & Technical Certifications
+                    </h3>
+                    
+                    <div class="space-y-5">
                         
-                        <div class="process-step-card bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-blue-200 transition-all flex flex-col justify-between group">
-                            <div>
-                                <span class="process-attached-tag flex items-center gap-2 text-xs font-bold text-slate-900 uppercase tracking-wide mb-4">
-                                    <span class="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-[10px] font-black border border-blue-200">01</span>
-                                    Automations
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="warm-card p-5">
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-[#8C6A3C] block mb-0.5">
+                                    Unstop Hackathon | Swafinix Technologies Pvt. Ltd. (Aug 2025)
                                 </span>
-                                <h3 class="font-heading text-base font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">Autonomous Pipelines</h3>
-                                <p class="text-xs text-slate-500 leading-relaxed">I turn slow manual tasks into smart automated systems using n8n and APIs that run seamlessly in the background.</p>
-                            </div>
-                            <div class="mt-5 pt-4 border-t border-slate-100 text-[11px] text-slate-400 font-semibold uppercase tracking-wider">
-                                Saves hours every day
+                                <h4 class="font-heading text-sm font-bold text-[#1C1B1A] mb-1">
+                                    AI Agents Hackathon — 5th Rank, Prototype Submission
+                                </h4>
+                                <p class="text-xs text-[#635F5A]">
+                                    Secured 5th rank nationally for prototyping autonomous AI workflow systems under intense time constraints.
+                                </p>
                             </div>
                         </div>
 
-                        <div class="process-step-card bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-blue-200 transition-all flex flex-col justify-between group">
-                            <div>
-                                <span class="process-attached-tag flex items-center gap-2 text-xs font-bold text-slate-900 uppercase tracking-wide mb-4">
-                                    <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-[10px] font-black border border-emerald-200">02</span>
-                                    Integration
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="warm-card p-5">
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-[#8C6A3C] block mb-0.5">
+                                    National Level Hackathon (Jan 2026)
                                 </span>
-                                <h3 class="font-heading text-base font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">Connected Apps</h3>
-                                <p class="text-xs text-slate-500 leading-relaxed">I architect APIs and webhooks that stitch disparate software together, unifying your tech stack into one robust machine.</p>
-                            </div>
-                            <div class="mt-5 pt-4 border-t border-slate-100 text-[11px] text-slate-400 font-semibold uppercase tracking-wider">
-                                Zero data silos
+                                <h4 class="font-heading text-sm font-bold text-[#1C1B1A] mb-1">
+                                    BUGSLAYER '26 — Telemedicine Platform
+                                </h4>
+                                <p class="text-xs text-[#635F5A]">
+                                    Participated in building an advanced telemedicine platform at Dhanalakshmi Srinivasan College of Engineering & Technology.
+                                </p>
                             </div>
                         </div>
 
-                        <div class="process-step-card bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-blue-200 transition-all flex flex-col justify-between group">
-                            <div>
-                                <span class="process-attached-tag flex items-center gap-2 text-xs font-bold text-slate-900 uppercase tracking-wide mb-4">
-                                    <span class="w-6 h-6 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-[10px] font-black border border-purple-200">03</span>
-                                    Frontend
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="warm-card p-5">
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-[#8C6A3C] block mb-0.5">
+                                    IIT Madras Workshop (Dec 2023)
                                 </span>
-                                <h3 class="font-heading text-base font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">Web Applications</h3>
-                                <p class="text-xs text-slate-500 leading-relaxed">I develop responsive, blazing-fast web portals that serve as the command center for underlying intelligent logic.</p>
-                            </div>
-                            <div class="mt-5 pt-4 border-t border-slate-100 text-[11px] text-slate-400 font-semibold uppercase tracking-wider">
-                                High performance
+                                <h4 class="font-heading text-sm font-bold text-[#1C1B1A] mb-1">
+                                    IoT using Python & Raspberry Pi Workshop
+                                </h4>
+                                <p class="text-xs text-[#635F5A]">
+                                    Completed practical hardware-software integration training in association with Mechanica 2023 at IIT Madras.
+                                </p>
                             </div>
                         </div>
 
-                        <div class="process-step-card bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-blue-200 transition-all flex flex-col justify-between group">
-                            <div>
-                                <span class="process-attached-tag flex items-center gap-2 text-xs font-bold text-slate-900 uppercase tracking-wide mb-4">
-                                    <span class="w-6 h-6 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-[10px] font-black border border-amber-200">04</span>
-                                    Design
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="warm-card p-5">
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-[#8C6A3C] block mb-0.5">
+                                    National Level Symposium (Dec 2023)
                                 </span>
-                                <h3 class="font-heading text-base font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">User Experience</h3>
-                                <p class="text-xs text-slate-500 leading-relaxed">I prioritize clean, editorial interfaces that remove friction, ensuring complex operations feel effortless to the end user.</p>
-                            </div>
-                            <div class="mt-5 pt-4 border-t border-slate-100 text-[11px] text-slate-400 font-semibold uppercase tracking-wider">
-                                Frictionless UX
+                                <h4 class="font-heading text-sm font-bold text-[#1C1B1A] mb-1">
+                                    Paper Presentation at IGNIS '23
+                                </h4>
+                                <p class="text-xs text-[#635F5A]">
+                                    Presented technological research at Bannari Amman Institute of Technology.
+                                </p>
                             </div>
                         </div>
 
@@ -676,109 +759,349 @@
         </section>
 
 
-        <!-- CONTACT SECTION -->
-        <section id="contact" class="py-24 border-t border-slate-200 relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- ════════════════════════════════════════════════════════════
+             SECTION 6: EXPERIENCE & EDUCATION
+             (Let's Gametech, Dsignz Media, Circor, SNS College, Noble)
+             ════════════════════════════════════════════════════════════ -->
+        <section id="experience" class="py-16 px-4 sm:px-6 border-t border-[#D8D7D2]">
+            <div class="max-w-7xl mx-auto">
                 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     
-                    <!-- Text & Links -->
+                    <!-- Left Column: Professional Experience -->
                     <div>
-                        <span class="text-blue-600 font-semibold text-xs uppercase tracking-wider block mb-3">Initiate Project</span>
-                        <h2 class="font-heading text-4xl sm:text-5xl font-black text-slate-900 mb-6">Let's build <br/><span class="text-blue-600">something robust.</span></h2>
-                        <p class="text-slate-600 text-base mb-10 leading-relaxed max-w-md">
-                            Whether you need a bespoke agentic workflow, an automated data pipeline, or a full-stack web application, I am available for new opportunities. Let's discuss your requirements.
-                        </p>
-                        
-                        <div class="space-y-4">
-                            <a href="mailto:kavish9600@gmail.com" class="flex items-center gap-4 p-4 rounded-xl bg-white border border-slate-200 shadow-sm hover:border-blue-300 hover:shadow-md transition group">
-                                <div class="w-12 h-12 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <div class="mb-8">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-[#8C6A3C] block mb-1">
+                                Career History
+                            </span>
+                            <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-[#1C1B1A]">
+                                Professional Experience
+                            </h2>
+                        </div>
+
+                        <div class="space-y-5">
+                            
+                            <div class="warm-card p-6">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div>
+                                        <h3 class="font-heading text-base font-bold text-[#1C1B1A]">
+                                            Backend Development Intern
+                                        </h3>
+                                        <p class="text-xs text-[#8C6A3C] font-semibold">Let's Gametech, Coimbatore</p>
+                                    </div>
+                                    <span class="text-xs text-[#635F5A] font-medium">2025</span>
                                 </div>
-                                <div>
-                                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-0.5">Email Me</p>
-                                    <p class="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">kavish9600@gmail.com</p>
+                                <p class="text-xs text-[#635F5A] leading-relaxed">
+                                    Explored backend architecture, database schemas, and API integration flows to understand server-side data processing for gaming applications.
+                                </p>
+                            </div>
+
+                            <div class="warm-card p-6">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div>
+                                        <h3 class="font-heading text-base font-bold text-[#1C1B1A]">
+                                            Front End Developer Intern
+                                        </h3>
+                                        <p class="text-xs text-[#8C6A3C] font-semibold">Dsignz Media, Coimbatore</p>
+                                    </div>
+                                    <span class="text-xs text-[#635F5A] font-medium">21-Day Intensive</span>
                                 </div>
-                            </a>
-                            <a href="tel:+916361665427" class="flex items-center gap-4 p-4 rounded-xl bg-white border border-slate-200 shadow-sm hover:border-emerald-300 hover:shadow-md transition group">
-                                <div class="w-12 h-12 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                <p class="text-xs text-[#635F5A] leading-relaxed">
+                                    Completed an intensive internship focused on modern frontend web design, mastering HTML, CSS, JavaScript, and responsive layout patterns.
+                                </p>
+                            </div>
+
+                            <div class="warm-card p-6">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div>
+                                        <h3 class="font-heading text-base font-bold text-[#1C1B1A]">
+                                            IT Development Intern
+                                        </h3>
+                                        <p class="text-xs text-[#8C6A3C] font-semibold">Circor Flow Technology India Private Limited</p>
+                                    </div>
+                                    <span class="text-xs text-[#635F5A] font-medium">Aug 2024</span>
                                 </div>
-                                <div>
-                                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-0.5">Call Me</p>
-                                    <p class="font-semibold text-slate-900 group-hover:text-emerald-600 transition-colors">+91 63616 65427</p>
-                                </div>
-                            </a>
+                                <p class="text-xs text-[#635F5A] leading-relaxed">
+                                    Developed corporate frontend web pages for Circor Flow Technology India Pvt. Ltd., adhering to enterprise design standards and cross-device compatibility.
+                                </p>
+                            </div>
+
                         </div>
                     </div>
-                    
-                    <!-- Form Container -->
-                    <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-lg relative overflow-hidden">
-                        <h3 class="font-heading text-2xl font-bold text-slate-900 mb-6">Send a Direct Inquiry</h3>
-                        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-5">
-                            <input type="hidden" name="access_key" value="00b5220c-c695-46df-9d32-ebda13885b5e">
+
+                    <!-- Right Column: Education -->
+                    <div>
+                        <div class="mb-8">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-[#8C6A3C] block mb-1">
+                                Academic Foundations
+                            </span>
+                            <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-[#1C1B1A]">
+                                Education
+                            </h2>
+                        </div>
+
+                        <div class="space-y-5">
                             
-                            <div>
-                                <label for="name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Your Name</label>
-                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-slate-400 text-sm font-medium" placeholder="John Doe">
+                            <div class="warm-card p-6">
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-[#8C6A3C] block mb-1">
+                                    B.Tech Degree (Undergraduate) · 2023 – 2027
+                                </span>
+                                <h3 class="font-heading text-lg font-bold text-[#1C1B1A] mb-1">
+                                    Information Technology
+                                </h3>
+                                <p class="text-xs text-[#8C6A3C] font-semibold mb-2">
+                                    SNS College of Technology, Coimbatore
+                                </p>
+                                <p class="text-xs text-[#635F5A] leading-relaxed">
+                                    Currently in 4th year / 7th semester. Focused on Autonomous AI, Agentic Workflows, and Advanced Data Architectures.
+                                </p>
                             </div>
-                            
-                            <div>
-                                <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Email Address</label>
-                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-slate-400 text-sm font-medium" placeholder="john@company.com">
+
+                            <div class="warm-card p-6">
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-[#8C6A3C] block mb-1">
+                                    HSC (Higher Secondary) · Passed Dec 2023
+                                </span>
+                                <h3 class="font-heading text-lg font-bold text-[#1C1B1A] mb-1">
+                                    Computer Science & General Academics
+                                </h3>
+                                <p class="text-xs text-[#8C6A3C] font-semibold mb-2">
+                                    Noble Matriculation Higher Secondary School, Virudhunagar
+                                </p>
+                                <p class="text-xs text-[#635F5A] leading-relaxed">
+                                    Centum scorer in Computer Science foundations with strong roots in structured programming and algorithms.
+                                </p>
                             </div>
-                            
-                            <div>
-                                <label for="message" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Project Details</label>
-                                <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-slate-400 text-sm font-medium resize-none" placeholder="Briefly describe your requirements..."></textarea>
-                            </div>
-                            
-                            <button type="submit" class="w-full py-4 rounded-xl bg-blue-600 text-white font-bold text-sm shadow-md hover:shadow-lg hover:bg-blue-700 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
-                                Transmit Message
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                            </button>
-                            <p class="text-center text-[11px] text-slate-400 font-medium mt-4">I typically respond within 24 hours.</p>
-                        </form>
+
+                        </div>
                     </div>
 
                 </div>
+
+            </div>
+        </section>
+
+
+        <!-- ════════════════════════════════════════════════════════════
+             SECTION 7: HOW I BUILD THIS & DIRECT CONTACT
+             (Process step cards + Warm luxury contact box)
+             ════════════════════════════════════════════════════════════ -->
+        <section id="process" class="py-16 px-4 sm:px-6 border-t border-[#D8D7D2] bg-[#FAF9F6]/60">
+            <div class="max-w-7xl mx-auto">
+                
+                <!-- Process Steps -->
+                <div class="mb-16">
+                    <div class="mb-8">
+                        <span class="text-xs font-semibold uppercase tracking-wider text-[#8C6A3C] block mb-1">
+                            Engineering Philosophy
+                        </span>
+                        <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-[#1C1B1A]">
+                            How I Build This
+                        </h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                        
+                        <div class="process-step-card">
+                            <div>
+                                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-[#F3EFE8] text-[#8C6A3C] border border-[#D8D7D2] mb-3">
+                                    Step 01 · Map
+                                </span>
+                                <h3 class="font-heading text-base font-bold text-[#1C1B1A] mb-1.5">
+                                    Autonomous Pipelines
+                                </h3>
+                                <p class="text-xs text-[#635F5A] leading-relaxed">
+                                    Identify manual bottlenecks and model smart background automations that eliminate human intervention.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-[#EAE8E2] text-[11px] text-[#8C6A3C] font-medium">
+                                Hands-free 24/7 runtime
+                            </div>
+                        </div>
+
+                        <div class="process-step-card">
+                            <div>
+                                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-[#F3EFE8] text-[#8C6A3C] border border-[#D8D7D2] mb-3">
+                                    Step 02 · Bridge
+                                </span>
+                                <h3 class="font-heading text-base font-bold text-[#1C1B1A] mb-1.5">
+                                    Connected Apps & Data
+                                </h3>
+                                <p class="text-xs text-[#635F5A] leading-relaxed">
+                                    Securely bridge separate SaaS tools, databases, and webhooks for accurate real-time data sync.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-[#EAE8E2] text-[11px] text-[#8C6A3C] font-medium">
+                                Zero data discrepancies
+                            </div>
+                        </div>
+
+                        <div class="process-step-card">
+                            <div>
+                                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-[#F3EFE8] text-[#8C6A3C] border border-[#D8D7D2] mb-3">
+                                    Step 03 · Engineer
+                                </span>
+                                <h3 class="font-heading text-base font-bold text-[#1C1B1A] mb-1.5">
+                                    Custom Web Applications
+                                </h3>
+                                <p class="text-xs text-[#635F5A] leading-relaxed">
+                                    Engineer bespoke portals and dashboards tailored specifically around operational requirements.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-[#EAE8E2] text-[11px] text-[#8C6A3C] font-medium">
+                                Fast, responsive, reliable
+                            </div>
+                        </div>
+
+                        <div class="process-step-card">
+                            <div>
+                                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-[#F3EFE8] text-[#8C6A3C] border border-[#D8D7D2] mb-3">
+                                    Step 04 · Refine
+                                </span>
+                                <h3 class="font-heading text-base font-bold text-[#1C1B1A] mb-1.5">
+                                    Modern User Experience
+                                </h3>
+                                <p class="text-xs text-[#635F5A] leading-relaxed">
+                                    Refine clarity and kinetic motion so complex operations feel completely effortless to the end user.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-[#EAE8E2] text-[11px] text-[#8C6A3C] font-medium">
+                                Calming, accessible design
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Direct Contact Section -->
+                <div id="contact" class="pt-8 border-t border-[#D8D7D2]">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                        
+                        <!-- Left Info -->
+                        <div class="lg:col-span-5 space-y-5">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-[#8C6A3C] block">
+                                Direct Engagement
+                            </span>
+                            <h2 class="font-heading text-3xl sm:text-4xl font-black text-[#1C1B1A] leading-tight">
+                                Have a project in mind? <br>
+                                <span class="text-[#8C6A3C]">Let's connect.</span>
+                            </h2>
+                            <p class="text-xs sm:text-sm text-[#635F5A] leading-relaxed font-normal">
+                                Available for freelance engineering, full-stack web applications, and autonomous n8n automation pipelines.
+                            </p>
+
+                            <!-- Direct Channels -->
+                            <div class="space-y-3 pt-2">
+                                <a href="mailto:kavishm100@gmail.com" class="p-4 rounded-xl bg-[#FAF9F6] border border-[#D8D7D2] hover:border-[#C5A880] transition flex items-center justify-between group shadow-sm">
+                                    <div class="flex items-center gap-3">
+                                        <div class="h-9 w-9 rounded-lg bg-[#F3EFE8] text-[#8C6A3C] flex items-center justify-center font-bold text-sm">
+                                            ✉️
+                                        </div>
+                                        <div>
+                                            <p class="text-[10px] font-semibold uppercase tracking-wider text-[#635F5A]">Direct Email</p>
+                                            <p class="text-xs sm:text-sm font-bold text-[#1C1B1A] group-hover:text-[#8C6A3C] transition-colors">kavishm100@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-[#635F5A] group-hover:text-[#1C1B1A] transition">Write ↗</span>
+                                </a>
+
+                                <a href="tel:+919865824929" class="p-4 rounded-xl bg-[#FAF9F6] border border-[#D8D7D2] hover:border-[#C5A880] transition flex items-center justify-between group shadow-sm">
+                                    <div class="flex items-center gap-3">
+                                        <div class="h-9 w-9 rounded-lg bg-[#F3EFE8] text-[#8C6A3C] flex items-center justify-center font-bold text-sm">
+                                            📞
+                                        </div>
+                                        <div>
+                                            <p class="text-[10px] font-semibold uppercase tracking-wider text-[#635F5A]">Direct Line / WhatsApp</p>
+                                            <p class="text-xs sm:text-sm font-bold text-[#1C1B1A] group-hover:text-[#8C6A3C] transition-colors">+91 9865824929</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-[#635F5A] group-hover:text-[#1C1B1A] transition">Call ↗</span>
+                                </a>
+                            </div>
+
+                            <div class="pt-2 text-[11px] text-[#635F5A] space-y-1">
+                                <p>• Response SLA: Within 24 hours</p>
+                                <p>• Protected under Digital Personal Data Protection (DPDP) Act 2023</p>
+                            </div>
+                        </div>
+
+                        <!-- Right Form Card -->
+                        <div class="lg:col-span-7 warm-card p-6 sm:p-8">
+                            <h3 class="font-heading text-lg font-bold text-[#1C1B1A] mb-1">Send a Direct Note</h3>
+                            <p class="text-xs text-[#635F5A] mb-5">Delivered straight to my inbox.</p>
+
+                            <form id="embedded-contact-form" action="https://formspree.io/f/xeozngwn" method="POST" onsubmit="handleEmbeddedFormSubmit(event)" class="space-y-4">
+                                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none !important">
+
+                                <div>
+                                    <label for="embedded-email" class="block text-xs font-semibold text-[#1C1B1A] uppercase tracking-wider mb-1.5">Your Email</label>
+                                    <input type="email" id="embedded-email" name="email" placeholder="hiring.manager@company.com" class="w-full bg-[#FAF9F6] border border-[#D8D7D2] p-3 rounded-xl text-[#1C1B1A] text-xs sm:text-sm focus:border-[#C5A880] focus:outline-none transition placeholder:text-[#A8A69E]" required>
+                                </div>
+
+                                <div>
+                                    <label for="embedded-message" class="block text-xs font-semibold text-[#1C1B1A] uppercase tracking-wider mb-1.5">Project Scope / Inquiries</label>
+                                    <textarea id="embedded-message" name="message" placeholder="Hi Kavish, I would like to discuss an automation workflow / web application..." class="w-full bg-[#FAF9F6] border border-[#D8D7D2] p-3 rounded-xl text-[#1C1B1A] text-xs sm:text-sm h-28 focus:border-[#C5A880] focus:outline-none transition leading-relaxed placeholder:text-[#A8A69E]" minlength="10" maxlength="1000" required></textarea>
+                                </div>
+
+                                <div class="flex items-start gap-2 pt-1 text-left">
+                                    <input type="checkbox" id="embedded-dpdp-consent" name="dpdp_consent" class="mt-0.5 rounded border-[#D8D7D2] text-[#8C6A3C] focus:ring-[#C5A880]" required>
+                                    <label for="embedded-dpdp-consent" class="text-[11px] text-[#635F5A] leading-snug">
+                                        I consent to Kavish M processing my email & message solely to respond to this inquiry, under the <button type="button" onclick="openPrivacyModal()" class="text-[#8C6A3C] underline">DPDP Act 2023</button>.
+                                    </label>
+                                </div>
+
+                                <p id="embedded-form-status" class="text-xs font-semibold hidden"></p>
+
+                                <div class="pt-2">
+                                    <button type="submit" id="embedded-submit-btn" class="w-full bg-[#1C1B1A] text-[#FAF9F6] py-3.5 rounded-xl font-heading text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-[#343230] transition shadow-sm">
+                                        Send Message Now
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
         </section>
 
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-white border-t border-slate-200 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2">
-                <div class="w-8 h-8 rounded-lg bg-slate-900 text-white flex items-center justify-center font-heading font-black text-sm">KM</div>
-                <span class="font-heading font-bold text-slate-900">Kavish M.</span>
+    <!-- ════════════════════════════════════════════════════════════
+         FOOTER & DPDP COMPLIANCE
+         ════════════════════════════════════════════════════════════ -->
+    <footer class="border-t border-[#D8D7D2] bg-[#FAF9F6] py-10 px-4 sm:px-6 text-center text-xs text-[#635F5A]">
+        <div class="max-w-7xl mx-auto flex flex-col gap-6">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-2">
+                    <div class="h-7 w-7 bg-[#1C1B1A] rounded-lg flex items-center justify-center font-bold text-[#FAF9F6] text-xs">KM</div>
+                    <span class="font-bold text-[#1C1B1A]">KAVISH M.</span>
+                </div>
+                <p>&copy; 2026 Kavish M. · Built with authentic LinkedIn proof of work.</p>
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/in/kavish-m-" target="_blank" rel="noopener noreferrer" class="hover:text-[#1C1B1A] transition">LinkedIn ↗</a>
+                    <a href="https://github.com/kavishM765" target="_blank" rel="noopener noreferrer" class="hover:text-[#1C1B1A] transition">GitHub ↗</a>
+                </div>
             </div>
             
-            <p class="text-sm text-slate-500 font-medium text-center md:text-left">
-                © 2024 Kavish M. All rights reserved. Built with precision.
-            </p>
-            
-            <div class="flex gap-6">
-                <a href="https://github.com/KAVISH-123" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-600 transition">
-                    <span class="sr-only">GitHub</span>
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/kavish-m-6a0b412b1/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-600 transition">
-                    <span class="sr-only">LinkedIn</span>
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"></path></svg>
-                </a>
+            <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-6 text-[11px] text-[#A8A69E] pt-4 border-t border-[#EAE8E2] w-full">
+                <button onclick="openPrivacyModal()" class="hover:text-[#8C6A3C] transition">Privacy Policy & DPDP</button>
+                <span>•</span>
+                <button onclick="openTermsModal()" class="hover:text-[#8C6A3C] transition">Terms of Service</button>
+                <span>•</span>
+                <button onclick="openGrievanceModal()" class="hover:text-[#8C6A3C] transition">Grievance Redressal</button>
+                <span>•</span>
+                <button onclick="openDeletionModal()" class="hover:text-[#8C6A3C] transition">Data Deletion Request</button>
             </div>
         </div>
     </footer>
 
-    <!-- MODAL BASE SYSTEM -->
-    <div id="project-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300">
-        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm modal-overlay"></div>
-        <div class="bg-white border border-slate-200 rounded-3xl w-full max-w-4xl max-h-[90vh] overflow-y-auto relative z-10 shadow-2xl transform scale-95 transition-transform duration-300" id="modal-content-container">
-            <!-- Modal content injected via JS -->
-        </div>
-    </div>
+    <!-- Modals -->
+    <div id="modal-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] hidden" onclick="closeAllModals()"></div>
+    <div id="email-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[90%] max-w-lg hidden light-modal-card p-6 sm:p-8"></div>
+    <div id="phone-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[90%] max-w-lg hidden light-modal-card p-6 sm:p-8"></div>
+    <div id="privacy-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[90%] max-w-lg hidden light-modal-card p-6 sm:p-8"></div>
+    <div id="terms-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[90%] max-w-lg hidden light-modal-card p-6 sm:p-8"></div>
 
     <!-- Scripts -->
     <script src="./assets/script/living-canvas.js"></script>
