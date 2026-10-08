@@ -1,18 +1,21 @@
 /* ════════════════════════════════════════════════════════════════════
-   Editorial Warm Palette Design System for Kavish M. Portfolio
-   Tones: Warm Ivory/Stone Background (#F5F4F0), Oyster Cards (#FAF9F6),
-   Light Silver Borders (#D8D7D2), Subtle Champagne Gold Accents (#C5A880)
-   Clean, Human, Calming, Non-Glaring, 0% AI aesthetic
+   Editorial Cashmere Stone & Brushed Gold Design System
+   Kavish M. Portfolio
+   Base: Calming Muted Cashmere Stone (#E8E5DF) - Non-glaring, easy on eyes
+   Cards: Warm Oyster Linen (#F3F0EB)
+   Dock / Sub-panels: Muted Sandstone (#E4E0D7)
+   Borders: Soft Warm Platinum Silver (#CAC7BF)
+   Accent: Enhanced Light Champagne / Artisan Brushed Gold (#C5A059 / #9E7B35)
    ════════════════════════════════════════════════════════════════════ */
 
 /* Smooth Scroll */
 html {
     scroll-behavior: smooth;
-    background-color: #F5F4F0;
+    background-color: #E8E5DF;
 }
 
 body {
-    background-color: #F5F4F0;
+    background-color: #E8E5DF;
     color: #1C1B1A;
 }
 
@@ -46,14 +49,14 @@ body {
     height: 6px;
 }
 ::-webkit-scrollbar-track {
-    background: #EAE8E2;
+    background: #DDD9D1;
 }
 ::-webkit-scrollbar-thumb {
-    background: #C8C6BF;
+    background: #BCB8AF;
     border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #AFAEA6;
+    background: #A09C94;
 }
 
 /* Subtle Atmosphere Canvas */
@@ -65,21 +68,20 @@ body {
     height: 100%;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.45;
+    opacity: 0.55;
 }
 
 /* ════════════════════════════════════════════════════════════════════
-   HERO PHOTO: CLEAN NATURAL EDITORIAL FRAME
-   (Zero artificial fade, real photography, light silver & gold border)
+   HERO PHOTO: WARM OYSTER & BRUSHED GOLD FRAME
    ════════════════════════════════════════════════════════════════════ */
 .editorial-portrait-frame {
     position: relative;
     padding: 8px;
-    background: #FAF9F6;
-    border: 1px solid #D8D7D2;
+    background: #F3F0EB;
+    border: 1px solid #CAC7BF;
     border-radius: 2rem;
-    box-shadow: 0 16px 36px -12px rgba(28, 27, 26, 0.08),
-                0 4px 12px -2px rgba(28, 27, 26, 0.04);
+    box-shadow: 0 16px 36px -12px rgba(28, 27, 26, 0.1),
+                0 4px 12px -2px rgba(28, 27, 26, 0.05);
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
                 box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
                 border-color 0.35s ease;
@@ -87,9 +89,9 @@ body {
 
 .editorial-portrait-frame:hover {
     transform: translateY(-3px);
-    border-color: #C5A880;
-    box-shadow: 0 22px 45px -12px rgba(197, 168, 128, 0.22),
-                0 6px 16px -3px rgba(28, 27, 26, 0.06);
+    border-color: #C5A059;
+    box-shadow: 0 22px 45px -12px rgba(197, 160, 89, 0.28),
+                0 6px 16px -3px rgba(28, 27, 26, 0.08);
 }
 
 .hero-photo-natural {
@@ -103,7 +105,7 @@ body {
 }
 
 /* ════════════════════════════════════════════════════════════════════
-   TECH STACK & TOOLS: WARM OYSTER & SILVER MOVING STREAM
+   TECH STACK & TOOLS: MOVING STREAM WITH FADED SIDES
    ════════════════════════════════════════════════════════════════════ */
 .tech-ticker-wrapper {
     position: relative;
@@ -140,16 +142,16 @@ body {
     100% { transform: translateX(0); }
 }
 
-/* Individual Warm Tech Card */
+/* Individual Tech Card */
 .tech-stack-card {
-    background: #FAF9F6;
-    border: 1px solid #D8D7D2;
+    background: #F3F0EB;
+    border: 1px solid #CAC7BF;
     border-radius: 0.85rem;
     padding: 10px 16px;
     display: flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 2px 6px -1px rgba(28, 27, 26, 0.03);
+    box-shadow: 0 2px 6px -1px rgba(28, 27, 26, 0.04);
     transition: all 0.25s ease;
     cursor: default;
     user-select: none;
@@ -158,9 +160,9 @@ body {
 
 .tech-stack-card:hover,
 .tech-stack-card.active-light {
-    border-color: #C5A880;
-    background: #F3EFE8;
-    box-shadow: 0 6px 16px -2px rgba(197, 168, 128, 0.2);
+    border-color: #C5A059;
+    background: #E8E0D0;
+    box-shadow: 0 6px 16px -2px rgba(197, 160, 89, 0.25);
     transform: translateY(-2px);
 }
 
@@ -173,17 +175,17 @@ body {
 
 .tech-stack-card:hover span.tech-name,
 .tech-stack-card.active-light span.tech-name {
-    color: #8C6A3C;
+    color: #8A651E;
 }
 
 /* ════════════════════════════════════════════════════════════════════
    PROJECTS: ALL 6 REAL PROJECTS (FLAGSHIP + SIDE-TO-SIDE STREAM)
    ════════════════════════════════════════════════════════════════════ */
 .flagship-bento-card {
-    background: #FAF9F6;
-    border: 1px solid #D8D7D2;
+    background: #F3F0EB;
+    border: 1px solid #CAC7BF;
     border-radius: 1.5rem;
-    box-shadow: 0 4px 18px -2px rgba(28, 27, 26, 0.04);
+    box-shadow: 0 4px 18px -2px rgba(28, 27, 26, 0.05);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -195,8 +197,8 @@ body {
 
 .flagship-bento-card:hover {
     transform: translateY(-3px);
-    border-color: #C5A880;
-    box-shadow: 0 16px 34px -6px rgba(197, 168, 128, 0.18);
+    border-color: #C5A059;
+    box-shadow: 0 16px 34px -6px rgba(197, 160, 89, 0.24);
 }
 
 .projects-moving-wrapper {
@@ -229,8 +231,8 @@ body {
 .project-card-unit {
     width: 320px;
     flex-shrink: 0;
-    background: #FAF9F6;
-    border: 1px solid #D8D7D2;
+    background: #F3F0EB;
+    border: 1px solid #CAC7BF;
     border-radius: 1.25rem;
     box-shadow: 0 4px 14px -2px rgba(28, 27, 26, 0.04);
     display: flex;
@@ -244,8 +246,8 @@ body {
 
 .project-card-unit:hover {
     transform: translateY(-4px);
-    border-color: #C5A880;
-    box-shadow: 0 14px 28px -6px rgba(197, 168, 128, 0.2);
+    border-color: #C5A059;
+    box-shadow: 0 14px 28px -6px rgba(197, 160, 89, 0.24);
 }
 
 .project-card-body {
@@ -255,19 +257,19 @@ body {
 
 .project-attached-dock {
     padding: 14px 20px;
-    background: #F2EFE9;
-    border-top: 1px solid #E4E1D9;
+    background: #E6E1D7;
+    border-top: 1px solid #D6D1C6;
 }
 
 /* ════════════════════════════════════════════════════════════════════
    HOW I BUILD THIS: ATTACHED PROCESS STEP CARDS
    ════════════════════════════════════════════════════════════════════ */
 .process-step-card {
-    background: #FAF9F6;
-    border: 1px solid #D8D7D2;
+    background: #F3F0EB;
+    border: 1px solid #CAC7BF;
     border-radius: 1.25rem;
     padding: 20px;
-    box-shadow: 0 4px 14px -2px rgba(28, 27, 26, 0.03);
+    box-shadow: 0 4px 14px -2px rgba(28, 27, 26, 0.04);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -275,8 +277,8 @@ body {
 }
 
 .process-step-card:hover {
-    border-color: #C5A880;
-    box-shadow: 0 12px 26px -6px rgba(197, 168, 128, 0.18);
+    border-color: #C5A059;
+    box-shadow: 0 12px 26px -6px rgba(197, 160, 89, 0.22);
     transform: translateY(-3px);
 }
 
@@ -295,7 +297,7 @@ body {
     top: 8px;
     bottom: -24px;
     width: 2px;
-    background: #D8D7D2;
+    background: #CAC7BF;
 }
 
 .timeline-item:last-child::before {
@@ -309,37 +311,37 @@ body {
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: #FAF9F6;
-    border: 3px solid #C5A880;
+    background: #F3F0EB;
+    border: 3px solid #C5A059;
     z-index: 10;
     transition: all 0.25s ease;
 }
 
 .timeline-item:hover .timeline-dot {
-    background: #C5A880;
-    box-shadow: 0 0 10px rgba(197, 168, 128, 0.45);
+    background: #C5A059;
+    box-shadow: 0 0 10px rgba(197, 160, 89, 0.5);
     transform: scale(1.15);
 }
 
 /* General Warm Card */
 .warm-card {
-    background: #FAF9F6;
-    border: 1px solid #D8D7D2;
+    background: #F3F0EB;
+    border: 1px solid #CAC7BF;
     border-radius: 1.25rem;
-    box-shadow: 0 4px 14px -2px rgba(28, 27, 26, 0.03);
+    box-shadow: 0 4px 14px -2px rgba(28, 27, 26, 0.04);
     transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .warm-card:hover {
-    border-color: #C5A880;
-    box-shadow: 0 10px 24px -4px rgba(197, 168, 128, 0.16);
+    border-color: #C5A059;
+    box-shadow: 0 10px 24px -4px rgba(197, 160, 89, 0.2);
     transform: translateY(-2px);
 }
 
 /* Light / Warm Modals */
 .light-modal-card {
-    background: #FAF9F6;
-    border: 1px solid #D8D7D2;
+    background: #F3F0EB;
+    border: 1px solid #CAC7BF;
     border-radius: 1.5rem;
-    box-shadow: 0 25px 50px -12px rgba(28, 27, 26, 0.2);
+    box-shadow: 0 25px 50px -12px rgba(28, 27, 26, 0.25);
 }
