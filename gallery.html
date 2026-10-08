@@ -22,6 +22,20 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        stone: {
+                            base: '#E8E5DF',
+                            card: '#F3F0EB',
+                            dock: '#E6E1D7',
+                            border: '#CAC7BF',
+                            gold: '#C5A059',
+                            goldDark: '#8A651E',
+                            goldLight: '#E8E0D0',
+                            silver: '#A09C94',
+                            text: '#1C1B1A',
+                            muted: '#5C5852'
+                        }
                     }
                 }
             }
@@ -35,28 +49,28 @@
     <!-- Instant Prefetch for Portfolio Home -->
     <link rel="prefetch" href="index.html">
 </head>
-<body class="bg-[#f8fafc] text-slate-800 antialiased selection:bg-blue-500/20 relative min-h-screen flex flex-col justify-between">
+<body class="bg-[#E8E5DF] text-[#1C1B1A] antialiased selection:bg-[#DECFA9] selection:text-[#1C1B1A] relative min-h-screen flex flex-col justify-between">
 
     <!-- Ambient Subtle Atmosphere Canvas -->
     <canvas id="living-canvas"></canvas>
 
     <!-- Top Navigation -->
-    <nav class="sticky top-0 w-full z-50 bg-white/85 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-18 flex justify-between items-center">
+    <nav class="sticky top-0 w-full z-50 bg-[#F3F0EB]/92 backdrop-blur-md border-b border-[#CAC7BF] shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-18 sm:h-20 flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-3 group">
-                <div class="h-9 w-9 sm:h-10 sm:w-10 bg-blue-600 rounded-xl flex items-center justify-center font-bold text-white shadow-md shadow-blue-500/20 text-sm sm:text-base group-hover:scale-105 transition-transform">KM</div>
+                <div class="h-9 w-9 sm:h-10 sm:w-10 bg-[#1C1B1A] rounded-xl flex items-center justify-center font-bold text-[#F3F0EB] shadow-md text-sm sm:text-base group-hover:scale-105 transition-transform">KM</div>
                 <div class="flex flex-col">
-                    <span class="text-base sm:text-lg font-bold tracking-tight text-slate-900">KAVISH M.</span>
-                    <span class="text-[11px] text-blue-600 font-medium tracking-wide">Moments & Proof</span>
+                    <span class="text-base sm:text-lg font-bold tracking-tight text-[#1C1B1A]">KAVISH M.</span>
+                    <span class="text-[11px] text-[#8A651E] font-medium tracking-wide">Moments & Proof</span>
                 </div>
             </a>
             
             <div class="flex items-center gap-3 sm:gap-4">
-                <a href="index.html" class="flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-700 hover:text-blue-600 bg-slate-100 hover:bg-slate-200/80 px-4 py-2 rounded-full border border-slate-200 transition-all">
-                    <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <a href="index.html" class="flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#1C1B1A] hover:text-[#8A651E] bg-[#E8E0D0] hover:bg-[#DDD3BE] px-4 py-2 rounded-full border border-[#CAC7BF] transition-all">
+                    <svg class="w-4 h-4 text-[#8A651E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                     <span>Back to Portfolio</span>
                 </a>
-                <a href="index.html#projects" class="hidden sm:flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-900 transition">
+                <a href="index.html#projects" class="hidden sm:flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#5C5852] hover:text-[#1C1B1A] transition">
                     Projects
                 </a>
             </div>
@@ -64,17 +78,17 @@
     </nav>
 
     <!-- Main Content Area -->
-    <main class="flex-grow pb-20">
+    <main class="flex-grow pb-20 relative z-10">
         
         <!-- Hero Header -->
         <header class="pt-10 sm:pt-14 pb-4 px-6 text-center max-w-3xl mx-auto">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-3">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E8E0D0] border border-[#CAC7BF] text-[#8A651E] text-xs font-semibold uppercase tracking-wider mb-3">
                 Proof of Work & Milestones
             </span>
-            <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-900 mb-3">
-                Moments & Verified <span class="text-blue-600">Milestones</span>
+            <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#1C1B1A] mb-3">
+                Moments & Verified <span class="text-[#8A651E]">Milestones</span>
             </h1>
-            <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl mx-auto font-normal">
+            <p class="text-[#5C5852] text-sm sm:text-base leading-relaxed max-w-xl mx-auto font-normal">
                 Authentic visual records of national hackathons, technical internships, and engineering achievements.
             </p>
         </header>
@@ -96,12 +110,12 @@
         <section class="max-w-7xl mx-auto px-4 sm:px-6">
             
             <!-- Section Header & Filter Controls -->
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-200 mb-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#CAC7BF] mb-8">
                 <div>
-                    <span class="text-blue-600 font-semibold text-xs uppercase tracking-wider block mb-1">
+                    <span class="text-[#8A651E] font-semibold text-xs uppercase tracking-wider block mb-1">
                         Curated Showcase
                     </span>
-                    <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-slate-900">
+                    <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-[#1C1B1A]">
                         All Milestones & Documentation
                     </h2>
                 </div>
@@ -137,45 +151,45 @@
     <!-- ════════════════════════════════════════════════════════════
          LIGHTBOX MODAL (Click-to-Zoom High Resolution Preview)
          ════════════════════════════════════════════════════════════ -->
-    <div id="gallery-lightbox" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-900/80 backdrop-blur-md">
+    <div id="gallery-lightbox" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#1C1B1A]/80 backdrop-blur-md">
         <div class="lightbox-backdrop absolute inset-0"></div>
 
-        <div class="lightbox-content relative z-10 max-w-4xl w-full bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-2xl flex flex-col">
+        <div class="lightbox-content relative z-10 max-w-4xl w-full bg-[#F3F0EB] border border-[#CAC7BF] rounded-2xl overflow-hidden shadow-2xl flex flex-col">
             <!-- Modal Header -->
-            <div class="p-4 sm:p-5 flex justify-between items-center border-b border-slate-100 bg-slate-50/80">
+            <div class="p-4 sm:p-5 flex justify-between items-center border-b border-[#CAC7BF] bg-[#E8E0D0]/80">
                 <div class="flex items-center gap-3">
-                    <span id="lightbox-badge" class="px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-blue-50 text-blue-700 border border-blue-200">
+                    <span id="lightbox-badge" class="px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-[#F3F0EB] text-[#8A651E] border border-[#CAC7BF]">
                         TAG
                     </span>
-                    <span id="lightbox-counter" class="text-xs font-semibold text-slate-500">
+                    <span id="lightbox-counter" class="text-xs font-semibold text-[#5C5852]">
                         1 / 22
                     </span>
                 </div>
                 
-                <button onclick="closeLightbox()" class="text-slate-400 hover:text-slate-700 p-2 rounded-lg hover:bg-slate-100 transition-colors">
+                <button onclick="closeLightbox()" class="text-[#5C5852] hover:text-[#1C1B1A] p-2 rounded-lg hover:bg-[#E8E0D0] transition-colors">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
             </div>
 
             <!-- Modal Image Container -->
-            <div class="relative bg-slate-950 flex items-center justify-center max-h-[65vh] overflow-hidden">
+            <div class="relative bg-[#1C1B1A] flex items-center justify-center max-h-[65vh] overflow-hidden">
                 <img id="lightbox-img" src="" alt="Milestone Photo" class="max-h-[65vh] w-auto object-contain">
                 
                 <!-- Prev / Next Arrow Buttons -->
-                <button onclick="prevLightbox()" class="absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/60 hover:bg-blue-600 text-white transition backdrop-blur-sm border border-white/10">
+                <button onclick="prevLightbox()" class="absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/60 hover:bg-[#8A651E] text-white transition backdrop-blur-sm border border-white/10">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
                 </button>
-                <button onclick="nextLightbox()" class="absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/60 hover:bg-blue-600 text-white transition backdrop-blur-sm border border-white/10">
+                <button onclick="nextLightbox()" class="absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/60 hover:bg-[#8A651E] text-white transition backdrop-blur-sm border border-white/10">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                 </button>
             </div>
 
             <!-- Modal Caption Footer -->
-            <div class="p-5 sm:p-6 bg-white border-t border-slate-100">
-                <h3 id="lightbox-title" class="text-lg sm:text-xl font-bold text-slate-900 mb-1.5">
+            <div class="p-5 sm:p-6 bg-[#F3F0EB] border-t border-[#CAC7BF]">
+                <h3 id="lightbox-title" class="text-lg sm:text-xl font-bold text-[#1C1B1A] mb-1.5">
                     Title
                 </h3>
-                <p id="lightbox-caption" class="text-slate-600 text-sm font-normal leading-relaxed">
+                <p id="lightbox-caption" class="text-[#5C5852] text-sm font-normal leading-relaxed">
                     Caption
                 </p>
             </div>
@@ -183,14 +197,14 @@
     </div>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-200 py-8 text-center text-xs text-slate-500 bg-white">
+    <footer class="border-t border-[#CAC7BF] py-8 text-center text-xs text-[#5C5852] bg-[#F3F0EB]">
         <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
             <span>© 2026 Kavish M. · Built with authentic LinkedIn proof of work.</span>
             <div class="flex items-center gap-4 font-medium">
-                <a href="index.html" class="hover:text-blue-600 transition">Portfolio Home</a>
-                <a href="index.html#projects" class="hover:text-blue-600 transition">Projects</a>
-                <a href="https://www.linkedin.com/in/kavish-m-" target="_blank" class="hover:text-blue-600 transition">LinkedIn ↗</a>
-                <a href="https://github.com/kavishM765" target="_blank" class="hover:text-blue-600 transition">GitHub ↗</a>
+                <a href="index.html" class="hover:text-[#8A651E] transition">Portfolio Home</a>
+                <a href="index.html#projects" class="hover:text-[#8A651E] transition">Projects</a>
+                <a href="https://www.linkedin.com/in/kavish-m-" target="_blank" rel="noopener noreferrer" class="hover:text-[#8A651E] transition">LinkedIn ↗</a>
+                <a href="https://github.com/kavishM765" target="_blank" rel="noopener noreferrer" class="hover:text-[#8A651E] transition">GitHub ↗</a>
             </div>
         </div>
     </footer>
