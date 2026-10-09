@@ -266,8 +266,7 @@ module.exports = async (req, res) => {
         console.error('REZE API Error:', err);
         return res.status(200).json({
             reply: "Something went wrong on my end. You can always reach Kavish directly at kavishm100@gmail.com!",
-            source: 'catch_fallback',
-            debug: err.message
+            source: 'catch_fallback'
         });
     }
 };
