@@ -413,8 +413,28 @@ async function handleEmbeddedFormSubmit(event) {
     } catch (err) {
         status.innerHTML = `❌ Network issue. Please email directly to kavishm100@gmail.com`;
         status.className = "text-red-700 text-xs font-semibold block mt-3 p-3 bg-red-50 rounded-xl border border-red-200";
-        status.classList.remove('hidden');
         submitBtn.innerHTML = originalBtnText;
         submitBtn.disabled = false;
     }
+}
+
+// ════════════════════════════════════════════════════════════════════
+// Floating Bot Popup Fallback Controller (Immediate click response)
+// ════════════════════════════════════════════════════════════════════
+if (typeof window.toggleFloatingBot !== 'function') {
+    window.toggleFloatingBot = function() {
+        var popup = document.getElementById('floating-bot-popup');
+        if (!popup) return;
+        var isHidden = popup.classList.contains('hidden') || popup.style.display === 'none';
+        if (isHidden) {
+            popup.classList.remove('hidden');
+            popup.style.display = 'flex';
+            if (typeof window.initAvatarViewer === 'function') {
+                window.initAvatarViewer();
+            }
+        } else {
+            popup.classList.add('hidden');
+            popup.style.display = 'none';
+        }
+    };
 }
