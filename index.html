@@ -1185,10 +1185,10 @@
     <div id="privacy-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[90%] max-w-lg hidden light-modal-card p-6 sm:p-8"></div>
     <div id="terms-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[90%] max-w-lg hidden light-modal-card p-6 sm:p-8"></div>
 
-    <!-- Three.js Engine & 3D Addons -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <!-- Three.js Engine & 3D Addons (Local vendor files to adhere to CSP 'self') -->
+    <script src="./assets/script/vendor/three.min.js"></script>
+    <script src="./assets/script/vendor/OrbitControls.js"></script>
+    <script src="./assets/script/vendor/GLTFLoader.js"></script>
 
     <!-- Core Interactive Scripts -->
     <script src="./assets/script/living-canvas.js"></script>

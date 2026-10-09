@@ -155,6 +155,7 @@ function loadAvatarModel() {
             avatarModel.position.z = -center.z * scale;
 
             scene.add(avatarModel);
+            onWindowResize();
 
             if (statusText) {
                 statusText.innerHTML = '<span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1 animate-pulse"></span> 3D Model Active · 360° Drag';
