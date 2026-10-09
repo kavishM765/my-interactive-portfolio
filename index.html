@@ -81,6 +81,7 @@
             
             <div class="hidden md:flex items-center gap-6 text-xs lg:text-sm font-semibold text-[#5C5852]">
                 <a href="#about" class="hover:text-[#1C1B1A] transition">About</a>
+                <a href="#avatar-studio" class="hover:text-[#8A651E] text-[#8A651E] transition flex items-center gap-1 font-bold"><span>✦</span> 3D Digital Twin</a>
                 <a href="#practice" class="hover:text-[#1C1B1A] transition">Focus</a>
                 <a href="#projects" class="hover:text-[#1C1B1A] transition">Projects</a>
                 <a href="#hackathons" class="hover:text-[#1C1B1A] transition">Hackathons</a>
@@ -159,6 +160,108 @@
                             </span>
                         </div>
                     </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ════════════════════════════════════════════════════════════
+             3D DIGITAL TWIN & INTERACTIVE AI COPILOT STUDIO
+             (360° Rotating 3D Avatar + Attached Intelligent Knowledge Chat)
+             ════════════════════════════════════════════════════════════ -->
+        <section id="avatar-studio" class="py-14 px-4 sm:px-6 border-t border-[#CAC7BF] bg-[#E3E0D8]/40">
+            <div class="max-w-7xl mx-auto">
+                
+                <div class="mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3">
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-[#8A651E] block mb-1">
+                            Interactive 3D Digital Twin
+                        </span>
+                        <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-[#1C1B1A]">
+                            Kavish 3D Avatar & AI Copilot
+                        </h2>
+                    </div>
+                    <span id="avatar-status-badge" class="inline-flex items-center gap-1.5 text-xs text-[#8A651E] bg-[#E8E0D0] border border-[#CAC7BF] px-3 py-1 rounded-full font-semibold shadow-xs">
+                        <span class="w-2 h-2 rounded-full bg-[#C5A059] animate-pulse"></span> 3D Digital Twin · Drag to Rotate 360°
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    
+                    <!-- Left: 3D Studio Stage (360° Drag & Orbit Controls) -->
+                    <div class="lg:col-span-5 flex flex-col justify-between warm-card p-3 sm:p-4">
+                        <div class="avatar-3d-stage" id="avatar-container">
+                            <canvas id="avatar-canvas"></canvas>
+                        </div>
+                        <div class="pt-3 px-2 flex justify-between items-center text-[11px] text-[#5C5852]">
+                            <span class="flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 text-[#8A651E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                                Left Click & Drag to Orbit 360°
+                            </span>
+                            <span class="font-semibold text-[#8A651E]">.GLB Powered</span>
+                        </div>
+                    </div>
+
+                    <!-- Right: Attached Intelligent AI Copilot Chat -->
+                    <div class="lg:col-span-7 warm-card p-5 sm:p-6 flex flex-col justify-between">
+                        
+                        <!-- Top Header -->
+                        <div>
+                            <div class="flex justify-between items-center pb-3 border-b border-[#CAC7BF] mb-4">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-7 h-7 rounded-lg bg-[#1C1B1A] text-[#F3F0EB] flex items-center justify-center font-bold text-xs">
+                                        AI
+                                    </div>
+                                    <div>
+                                        <h3 class="font-heading text-sm font-bold text-[#1C1B1A]">Portfolio Copilot</h3>
+                                        <p class="text-[10px] text-[#8A651E] font-medium">Synced to Kavish's Full Knowledge Base</p>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] uppercase font-bold text-[#8A651E] bg-[#E8E0D0] px-2.5 py-0.5 rounded border border-[#CAC7BF]">
+                                    Local Intelligence
+                                </span>
+                            </div>
+
+                            <!-- Scrollable Chat Stream -->
+                            <div id="avatar-chat-stream" class="flex flex-col gap-3 max-h-[260px] overflow-y-auto pr-1 text-xs">
+                                <div class="chat-bubble-ai">
+                                    Hello! I am Kavish's 3D Digital Assistant. Ask me about my <strong>6 flagship projects</strong>, my <strong>n8n automation pipelines</strong>, <strong>national hackathon wins</strong>, or my background at <strong>SNS College</strong>.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Controls: Chips + Input Bar -->
+                        <div class="pt-4 border-t border-[#CAC7BF] mt-4 space-y-3">
+                            
+                            <!-- Prompt Quick-Chips -->
+                            <div class="flex flex-wrap gap-1.5">
+                                <button type="button" class="prompt-chip" onclick="askAvatar('Tell me about your projects and n8n automations')">
+                                    ⚡ 6 Flagship Projects
+                                </button>
+                                <button type="button" class="prompt-chip" onclick="askAvatar('What did you achieve in national hackathons?')">
+                                    🏆 Hackathon Wins & Rank 5
+                                </button>
+                                <button type="button" class="prompt-chip" onclick="askAvatar('What is your education and experience?')">
+                                    🎓 SNS College & Experience
+                                </button>
+                                <button type="button" class="prompt-chip" onclick="askAvatar('How can I contact or hire you?')">
+                                    ✉️ Direct Contact Info
+                                </button>
+                            </div>
+
+                            <!-- Input Form -->
+                            <form onsubmit="event.preventDefault(); askAvatar();" class="flex gap-2">
+                                <input type="text" id="avatar-input" placeholder="Ask about projects, hackathons, or hire..." class="flex-grow bg-[#F3F0EB] border border-[#CAC7BF] px-3.5 py-2.5 rounded-xl text-xs text-[#1C1B1A] focus:border-[#C5A059] focus:outline-none transition placeholder:text-[#A09C94]">
+                                <button type="submit" class="px-4 py-2.5 bg-[#1C1B1A] hover:bg-[#343230] text-[#F3F0EB] font-bold text-xs rounded-xl shadow-xs transition flex items-center gap-1.5">
+                                    <span>Send</span>
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                                </button>
+                            </form>
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
@@ -1101,5 +1204,6 @@
     <!-- Scripts -->
     <script src="./assets/script/living-canvas.js"></script>
     <script src="./assets/script/script.js"></script>
+    <script type="module" src="./assets/script/avatar-controller.js"></script>
 </body>
 </html>
