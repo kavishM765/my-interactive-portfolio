@@ -63,7 +63,7 @@ function initRiveCharacter() {
                     riveInstance.resizeDrawingSurfaceToCanvas();
                 }
                 if (statusBadge) {
-                    statusBadge.innerHTML = '<span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1 animate-pulse"></span> Live';
+                    statusBadge.textContent = 'Live';
                 }
             },
             onLoadError: function(err) {
