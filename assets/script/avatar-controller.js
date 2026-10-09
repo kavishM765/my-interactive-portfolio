@@ -201,6 +201,10 @@ function drawFallbackRobotFace(canvas) {
 
 // Local fallback KB (instant, zero-cost fast path)
 var REZE_LOCAL_KB = {
+    identity: {
+        patterns: ['who are you', 'your name', 'reze', 'who is reze', 'what are you', 'introduce', 'about you', 'hello', 'hi'],
+        response: "I am REZE, what I can help with? I am Kavish's personal AI assistant built into this portfolio. Ask me anything about his full-stack projects, agentic AI automations, national hackathons, or how to get in touch!"
+    },
     contact: {
         patterns: ['contact', 'email', 'phone', 'whatsapp', 'reach', 'hire', 'number', 'call'],
         response: "You can reach Kavish directly:\n📧 Email: kavishm100@gmail.com\n📱 WhatsApp / Call: +91 9865824929\n📍 Location: Coimbatore, Tamil Nadu, India"
