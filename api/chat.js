@@ -142,7 +142,11 @@ module.exports = async (req, res) => {
     if (req.method !== 'POST') return res.status(405).json({ error: 'Method Not Allowed' });
 
     try {
-        const { message } = req.body || {};
+        let body = req.body;
+        if (typeof body === 'string') {
+            try { body = JSON.parse(body); } catch(e) {}
+        }
+        const { message } = body || {};
 
         // ── Guard 1: Empty Message ───────────────────────────────
         if (!message || typeof message !== 'string' || message.trim().length === 0) {
@@ -236,7 +240,17 @@ module.exports = async (req, res) => {
             });
         }
 
-        const geminiData = await geminiRes.json();
+        const rawResText = await geminiRes.text();
+        let geminiData;
+        try {
+            geminiData = JSON.parse(rawResText);
+        } catch (e) {
+            console.error('Gemini non-JSON:', rawResText);
+            return res.status(200).json({
+                reply: "I'm having a brief connection issue. In the meantime, you can reach Kavish at kavishm100@gmail.com or +91 9865824929!",
+                source: 'gemini_parse_err'
+            });
+        }
         const reply = geminiData?.candidates?.[0]?.content?.parts?.[0]?.text;
 
         if (!reply) {
