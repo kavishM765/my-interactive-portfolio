@@ -211,7 +211,7 @@ var REZE_LOCAL_KB = {
     },
     projects: {
         patterns: ['project', 'work', 'built', 'portfolio'],
-        response: "Kavish has built 6 flagship systems:\n1. AI Admission Enquiry System — n8n autonomous intake pipeline\n2. Full-Stack AI Admission Chatbot — Conversational lead qualification\n3. AI Assistant for Farmers — Agentic crop intelligence\n4. Agentic n8n Automation Chatbot — Tool-calling multi-node router\n5. Library Management System — Role-based auth & tracking\n6. Emergency SOS Dispatch Platform — Real-time response system\n\nHe also built MK Salon — a production WhatsApp AI Receptionist with Gemini, which powers me!"
+        response: "Kavish has built 6 flagship systems:\n1. AI Admission Enquiry System — n8n autonomous intake pipeline\n2. Full-Stack AI Admission Chatbot — Conversational lead qualification\n3. AI Assistant for Farmers — Agentic crop intelligence\n4. Agentic n8n Automation Chatbot — Tool-calling multi-node router\n5. Library Management System — Role-based auth & tracking\n6. Emergency SOS Dispatch Platform — Real-time response system"
     },
     hackathons: {
         patterns: ['hackathon', 'swafinix', 'bugslayer', 'devforge', 'competition', 'rank'],
