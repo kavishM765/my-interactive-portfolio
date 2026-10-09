@@ -196,16 +196,48 @@ function drawFallbackRobotFace(canvas) {
 }
 
 // ════════════════════════════════════════════════════════════════════
-// Intelligent Copilot Knowledge Handler
+// REZE — Intelligent Copilot (Hybrid: Local Fast Path → Gemini API)
 // ════════════════════════════════════════════════════════════════════
-var KAVISH_KB = {
-    projects: "I have built 6 flagship systems:\n1. AI Admission Enquiry System (n8n autonomous intake with sub-second email confirmations)\n2. Full-Stack AI Admission Chatbot (Conversational lead qualification)\n3. AI Assistant for Farmers (Agentic crop & meteorological alert dispatch)\n4. Agentic n8n Automation Chatbot (Tool-calling multi-node router)\n5. Library Management System (Role-based auth & database tracking)\n6. Emergency SOS Dispatch Platform (Low-latency real-time response)",
-    hackathons: "Key hackathon milestones:\n• BUGSLAYER '26: Built a low-bandwidth Telemedicine Access Platform across 5 intense review rounds.\n• AI Agents Hackathon: Placed Rank 5 nationally out of 2,300+ teams with Swafinix Technologies.\n• DevForge (KPR IET): Cleared 3 review rounds in a 24-hour sprint connecting n8n webhooks.\n• MSME Hackathon 2025: National Finalist.",
-    experience: "My industry experience:\n• Backend Development Intern at Let's Gametech (API schemas & databases)\n• Front End Developer Intern at Dsignz Media (21-day responsive web engineering)\n• IT Development Intern at Circor Flow Technology India Pvt. Ltd. (Corporate web pages)",
-    education: "I am pursuing B.Tech in Information Technology at SNS College of Technology, Coimbatore (2023–2027), currently in my 4th year. Previously completed HSC at Noble Matriculation Higher Secondary School with a centum in Computer Science.",
-    contact: "You can reach me directly via:\n• Email: kavishm100@gmail.com\n• Direct Line / WhatsApp: +91 9865824929\n• Location: Coimbatore, Tamil Nadu, India",
-    default: "I'm Kavish's AI Companion! Ask me about my n8n automations, full-stack projects, national hackathons, or how to collaborate."
+
+// Local fallback KB (instant, zero-cost fast path)
+var REZE_LOCAL_KB = {
+    contact: {
+        patterns: ['contact', 'email', 'phone', 'whatsapp', 'reach', 'hire', 'number', 'call'],
+        response: "You can reach Kavish directly:\n📧 Email: kavishm100@gmail.com\n📱 WhatsApp / Call: +91 9865824929\n📍 Location: Coimbatore, Tamil Nadu, India"
+    },
+    projects: {
+        patterns: ['project', 'work', 'built', 'portfolio'],
+        response: "Kavish has built 6 flagship systems:\n1. AI Admission Enquiry System — n8n autonomous intake pipeline\n2. Full-Stack AI Admission Chatbot — Conversational lead qualification\n3. AI Assistant for Farmers — Agentic crop intelligence\n4. Agentic n8n Automation Chatbot — Tool-calling multi-node router\n5. Library Management System — Role-based auth & tracking\n6. Emergency SOS Dispatch Platform — Real-time response system\n\nHe also built MK Salon — a production WhatsApp AI Receptionist with Gemini, which powers me!"
+    },
+    hackathons: {
+        patterns: ['hackathon', 'swafinix', 'bugslayer', 'devforge', 'competition', 'rank'],
+        response: "Key hackathon achievements:\n🏆 AI Agents Hackathon: Rank 5 nationally out of 2,300+ teams\n🏥 BUGSLAYER '26: Built a Telemedicine Platform across 5 review rounds\n⚡ DevForge (KPR IET): Cleared 3 rounds in a 24-hour sprint\n🏭 MSME Hackathon 2025: National Finalist"
+    },
+    education: {
+        patterns: ['college', 'education', 'sns', 'study', 'degree', 'university', 'school'],
+        response: "Kavish is pursuing B.Tech in Information Technology at SNS College of Technology, Coimbatore (2023–2027). He scored a centum (100/100) in Computer Science during HSC at Noble Matriculation Higher Secondary School."
+    },
+    experience: {
+        patterns: ['experience', 'intern', 'company', 'job'],
+        response: "Kavish's internship experience:\n• Backend Dev Intern — Let's Gametech (API schemas & databases)\n• Frontend Dev Intern — Dsignz Media (21-day responsive web engineering)\n• IT Dev Intern — Circor Flow Technology India Pvt. Ltd. (Corporate web pages)"
+    }
 };
+
+function tryLocalResponse(text) {
+    var lower = text.toLowerCase();
+    for (var key in REZE_LOCAL_KB) {
+        var entry = REZE_LOCAL_KB[key];
+        for (var i = 0; i < entry.patterns.length; i++) {
+            if (lower.indexOf(entry.patterns[i]) !== -1) {
+                return entry.response;
+            }
+        }
+    }
+    return null;
+}
+
+// Message clamping guard
+var MAX_MSG_LENGTH = 300;
 
 function askAvatar(question) {
     var chatStream = document.getElementById('avatar-chat-stream');
@@ -214,8 +246,12 @@ function askAvatar(question) {
 
     var query = question || (input ? input.value.trim() : '');
     if (!query) return;
-
     if (input) input.value = '';
+
+    // Clamp
+    if (query.length > MAX_MSG_LENGTH) {
+        query = query.substring(0, MAX_MSG_LENGTH);
+    }
 
     // User Bubble
     var userBubble = document.createElement('div');
@@ -224,35 +260,48 @@ function askAvatar(question) {
     chatStream.appendChild(userBubble);
     chatStream.scrollTop = chatStream.scrollHeight;
 
-    // AI Bubble
-    setTimeout(function() {
-        var responseText = resolveResponse(query);
-        var aiBubble = document.createElement('div');
-        aiBubble.className = 'chat-bubble-ai text-[11px]';
-        aiBubble.innerHTML = responseText.replace(/\n/g, '<br>');
-        chatStream.appendChild(aiBubble);
-        chatStream.scrollTop = chatStream.scrollHeight;
-    }, 350);
+    // Fast path: Try local KB first (instant, zero cost)
+    var localAnswer = tryLocalResponse(query);
+    if (localAnswer) {
+        setTimeout(function() {
+            appendRezeReply(chatStream, localAnswer);
+        }, 200);
+        return;
+    }
+
+    // Show typing indicator
+    var typingBubble = document.createElement('div');
+    typingBubble.className = 'chat-bubble-ai text-[11px] reze-typing';
+    typingBubble.innerHTML = '<span class="inline-flex gap-1 items-center"><span class="w-1.5 h-1.5 rounded-full bg-[#C5A059] animate-bounce" style="animation-delay:0ms"></span><span class="w-1.5 h-1.5 rounded-full bg-[#C5A059] animate-bounce" style="animation-delay:150ms"></span><span class="w-1.5 h-1.5 rounded-full bg-[#C5A059] animate-bounce" style="animation-delay:300ms"></span></span>';
+    chatStream.appendChild(typingBubble);
+    chatStream.scrollTop = chatStream.scrollHeight;
+
+    // Call REZE API (Gemini-powered)
+    fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: query })
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+        // Remove typing indicator
+        if (typingBubble.parentNode) typingBubble.remove();
+        var reply = (data && data.reply) ? data.reply : "I couldn't process that. Try asking about Kavish's projects, hackathons, or skills!";
+        appendRezeReply(chatStream, reply);
+    })
+    .catch(function(err) {
+        console.warn('REZE API error:', err);
+        if (typingBubble.parentNode) typingBubble.remove();
+        appendRezeReply(chatStream, "I'm having a brief connection issue. You can reach Kavish directly at kavishm100@gmail.com or +91 9865824929!");
+    });
 }
 
-function resolveResponse(q) {
-    var text = q.toLowerCase();
-    if (text.includes('project') || text.includes('work') || text.includes('built')) {
-        return KAVISH_KB.projects;
-    }
-    if (text.includes('hackathon') || text.includes('swafinix') || text.includes('bugslayer') || text.includes('devforge')) {
-        return KAVISH_KB.hackathons;
-    }
-    if (text.includes('experience') || text.includes('intern') || text.includes('company')) {
-        return KAVISH_KB.experience;
-    }
-    if (text.includes('college') || text.includes('education') || text.includes('sns') || text.includes('study')) {
-        return KAVISH_KB.education;
-    }
-    if (text.includes('contact') || text.includes('email') || text.includes('phone') || text.includes('hire') || text.includes('whatsapp')) {
-        return KAVISH_KB.contact;
-    }
-    return KAVISH_KB.default;
+function appendRezeReply(chatStream, text) {
+    var aiBubble = document.createElement('div');
+    aiBubble.className = 'chat-bubble-ai text-[11px]';
+    aiBubble.innerHTML = text.replace(/\n/g, '<br>');
+    chatStream.appendChild(aiBubble);
+    chatStream.scrollTop = chatStream.scrollHeight;
 }
 
 window.askAvatar = askAvatar;
