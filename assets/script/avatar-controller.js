@@ -32,15 +32,17 @@ window.toggleFloatingBot = toggleFloatingBot;
 
 // 2. Initialize Rive Animated Character
 function initRiveCharacter() {
-    if (isRiveInitialized) return;
-
     var canvas = document.getElementById('rive-canvas');
     if (!canvas) return;
 
     var statusBadge = document.getElementById('rive-status-badge');
 
+    // Start instant charming animated robot face immediately (Zero wait time!)
+    if (!isRiveInitialized) {
+        drawFallbackRobotFace(canvas);
+    }
+
     if (typeof rive === 'undefined' || !rive.Rive) {
-        if (statusBadge) statusBadge.textContent = 'Loading...';
         setTimeout(initRiveCharacter, 200);
         return;
     }
@@ -66,7 +68,6 @@ function initRiveCharacter() {
             },
             onLoadError: function(err) {
                 console.warn('Rive state machine fallback:', err);
-                // Fallback to idle animation
                 riveInstance = new rive.Rive({
                     src: './assets/models/8257-15795-happy-little-robot.riv',
                     canvas: canvas,
@@ -81,15 +82,118 @@ function initRiveCharacter() {
         });
 
         window.addEventListener('resize', function() {
-            if (riveInstance) {
+            if (riveInstance && isRiveInitialized) {
                 riveInstance.resizeDrawingSurfaceToCanvas();
             }
         });
     } catch (e) {
-        console.error('Error initializing Rive:', e);
+        console.warn('Rive initialization:', e);
     }
 }
 window.initRiveCharacter = initRiveCharacter;
+
+// Instant 2D Animated Blinking Robot Face Fallback
+function drawFallbackRobotFace(canvas) {
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    var eyeOpen = 1.0;
+    var blinkTarget = 1.0;
+
+    var blinkTimer = setInterval(function() {
+        if (isRiveInitialized) {
+            clearInterval(blinkTimer);
+            return;
+        }
+        blinkTarget = 0.08;
+        setTimeout(function() { blinkTarget = 1.0; }, 160);
+    }, 2800);
+
+    function renderLoop() {
+        if (isRiveInitialized) return;
+        requestAnimationFrame(renderLoop);
+
+        eyeOpen += (blinkTarget - eyeOpen) * 0.25;
+        var w = canvas.width = canvas.clientWidth || 200;
+        var h = canvas.height = canvas.clientHeight || 200;
+
+        ctx.clearRect(0, 0, w, h);
+        var cx = w / 2;
+        var cy = h / 2;
+
+        // Subtle shadow
+        ctx.fillStyle = 'rgba(28, 27, 26, 0.06)';
+        ctx.beginPath();
+        ctx.ellipse(cx, cy + 55, 45, 10, 0, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Antenna
+        ctx.strokeStyle = '#8A651E';
+        ctx.lineWidth = 2.5;
+        ctx.beginPath();
+        ctx.moveTo(cx, cy - 42);
+        ctx.lineTo(cx, cy - 60);
+        ctx.stroke();
+
+        ctx.fillStyle = '#C5A059';
+        ctx.beginPath();
+        ctx.arc(cx, cy - 62, 5, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Robot Head Body (Warm Cashmere)
+        ctx.fillStyle = '#F3F0EB';
+        ctx.beginPath();
+        if (ctx.roundRect) {
+            ctx.roundRect(cx - 52, cy - 42, 104, 84, 22);
+        } else {
+            ctx.rect(cx - 52, cy - 42, 104, 84);
+        }
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = '#CAC7BF';
+        ctx.stroke();
+
+        // Ears / Bolts
+        ctx.fillStyle = '#C5A059';
+        ctx.beginPath();
+        ctx.arc(cx - 53, cy, 5, 0, Math.PI * 2);
+        ctx.arc(cx + 53, cy, 5, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Screen Visor (Charcoal)
+        ctx.fillStyle = '#1C1B1A';
+        ctx.beginPath();
+        if (ctx.roundRect) {
+            ctx.roundRect(cx - 40, cy - 30, 80, 60, 16);
+        } else {
+            ctx.rect(cx - 40, cy - 30, 80, 60);
+        }
+        ctx.fill();
+
+        // Glowing Warm Gold Eyes (Animated Blink)
+        ctx.fillStyle = '#C5A059';
+        var eyeHeight = Math.max(2, 14 * eyeOpen);
+        // Left Eye
+        ctx.beginPath();
+        ctx.ellipse(cx - 16, cy, 6, eyeHeight, 0, 0, Math.PI * 2);
+        ctx.fill();
+        // Right Eye
+        ctx.beginPath();
+        ctx.ellipse(cx + 16, cy, 6, eyeHeight, 0, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Eye Pupil Sparkles
+        if (eyeOpen > 0.6) {
+            ctx.fillStyle = '#FFFFFF';
+            ctx.beginPath();
+            ctx.arc(cx - 14, cy - 4, 2, 0, Math.PI * 2);
+            ctx.arc(cx + 18, cy - 4, 2, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+    renderLoop();
+}
 
 // ════════════════════════════════════════════════════════════════════
 // Intelligent Copilot Knowledge Handler
