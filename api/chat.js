@@ -210,7 +210,7 @@ module.exports = async (req, res) => {
                 temperature: 0.7,
                 topP: 0.9,
                 topK: 40,
-                maxOutputTokens: 350,
+                maxOutputTokens: 1000,
                 responseMimeType: 'text/plain'
             },
             safetySettings: [
