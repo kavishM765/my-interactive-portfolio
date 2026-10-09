@@ -81,7 +81,6 @@
             
             <div class="hidden md:flex items-center gap-6 text-xs lg:text-sm font-semibold text-[#5C5852]">
                 <a href="#about" class="hover:text-[#1C1B1A] transition">About</a>
-                <a href="#avatar-studio" class="hover:text-[#8A651E] text-[#8A651E] transition flex items-center gap-1 font-bold"><span>✦</span> 3D Digital Twin</a>
                 <a href="#practice" class="hover:text-[#1C1B1A] transition">Focus</a>
                 <a href="#projects" class="hover:text-[#1C1B1A] transition">Projects</a>
                 <a href="#hackathons" class="hover:text-[#1C1B1A] transition">Hackathons</a>
@@ -160,108 +159,6 @@
                             </span>
                         </div>
                     </div>
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- ════════════════════════════════════════════════════════════
-             3D DIGITAL TWIN & INTERACTIVE AI COPILOT STUDIO
-             (360° Rotating 3D Avatar + Attached Intelligent Knowledge Chat)
-             ════════════════════════════════════════════════════════════ -->
-        <section id="avatar-studio" class="py-14 px-4 sm:px-6 border-t border-[#CAC7BF] bg-[#E3E0D8]/40">
-            <div class="max-w-7xl mx-auto">
-                
-                <div class="mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3">
-                    <div>
-                        <span class="text-xs font-semibold uppercase tracking-wider text-[#8A651E] block mb-1">
-                            Interactive 3D Digital Twin
-                        </span>
-                        <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-[#1C1B1A]">
-                            Kavish 3D Avatar & AI Copilot
-                        </h2>
-                    </div>
-                    <span id="avatar-status-badge" class="inline-flex items-center gap-1.5 text-xs text-[#8A651E] bg-[#E8E0D0] border border-[#CAC7BF] px-3 py-1 rounded-full font-semibold shadow-xs">
-                        <span class="w-2 h-2 rounded-full bg-[#C5A059] animate-pulse"></span> 3D Digital Twin · Drag to Rotate 360°
-                    </span>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-                    
-                    <!-- Left: 3D Studio Stage (360° Drag & Orbit Controls) -->
-                    <div class="lg:col-span-5 flex flex-col justify-between warm-card p-3 sm:p-4">
-                        <div class="avatar-3d-stage" id="avatar-container">
-                            <canvas id="avatar-canvas"></canvas>
-                        </div>
-                        <div class="pt-3 px-2 flex justify-between items-center text-[11px] text-[#5C5852]">
-                            <span class="flex items-center gap-1">
-                                <svg class="w-3.5 h-3.5 text-[#8A651E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-                                Left Click & Drag to Orbit 360°
-                            </span>
-                            <span class="font-semibold text-[#8A651E]">.GLB Powered</span>
-                        </div>
-                    </div>
-
-                    <!-- Right: Attached Intelligent AI Copilot Chat -->
-                    <div class="lg:col-span-7 warm-card p-5 sm:p-6 flex flex-col justify-between">
-                        
-                        <!-- Top Header -->
-                        <div>
-                            <div class="flex justify-between items-center pb-3 border-b border-[#CAC7BF] mb-4">
-                                <div class="flex items-center gap-2.5">
-                                    <div class="w-7 h-7 rounded-lg bg-[#1C1B1A] text-[#F3F0EB] flex items-center justify-center font-bold text-xs">
-                                        AI
-                                    </div>
-                                    <div>
-                                        <h3 class="font-heading text-sm font-bold text-[#1C1B1A]">Portfolio Copilot</h3>
-                                        <p class="text-[10px] text-[#8A651E] font-medium">Synced to Kavish's Full Knowledge Base</p>
-                                    </div>
-                                </div>
-                                <span class="text-[10px] uppercase font-bold text-[#8A651E] bg-[#E8E0D0] px-2.5 py-0.5 rounded border border-[#CAC7BF]">
-                                    Local Intelligence
-                                </span>
-                            </div>
-
-                            <!-- Scrollable Chat Stream -->
-                            <div id="avatar-chat-stream" class="flex flex-col gap-3 max-h-[260px] overflow-y-auto pr-1 text-xs">
-                                <div class="chat-bubble-ai">
-                                    Hello! I am Kavish's 3D Digital Assistant. Ask me about my <strong>6 flagship projects</strong>, my <strong>n8n automation pipelines</strong>, <strong>national hackathon wins</strong>, or my background at <strong>SNS College</strong>.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Bottom Controls: Chips + Input Bar -->
-                        <div class="pt-4 border-t border-[#CAC7BF] mt-4 space-y-3">
-                            
-                            <!-- Prompt Quick-Chips -->
-                            <div class="flex flex-wrap gap-1.5">
-                                <button type="button" class="prompt-chip" onclick="askAvatar('Tell me about your projects and n8n automations')">
-                                    ⚡ 6 Flagship Projects
-                                </button>
-                                <button type="button" class="prompt-chip" onclick="askAvatar('What did you achieve in national hackathons?')">
-                                    🏆 Hackathon Wins & Rank 5
-                                </button>
-                                <button type="button" class="prompt-chip" onclick="askAvatar('What is your education and experience?')">
-                                    🎓 SNS College & Experience
-                                </button>
-                                <button type="button" class="prompt-chip" onclick="askAvatar('How can I contact or hire you?')">
-                                    ✉️ Direct Contact Info
-                                </button>
-                            </div>
-
-                            <!-- Input Form -->
-                            <form onsubmit="event.preventDefault(); askAvatar();" class="flex gap-2">
-                                <input type="text" id="avatar-input" placeholder="Ask about projects, hackathons, or hire..." class="flex-grow bg-[#F3F0EB] border border-[#CAC7BF] px-3.5 py-2.5 rounded-xl text-xs text-[#1C1B1A] focus:border-[#C5A059] focus:outline-none transition placeholder:text-[#A09C94]">
-                                <button type="submit" class="px-4 py-2.5 bg-[#1C1B1A] hover:bg-[#343230] text-[#F3F0EB] font-bold text-xs rounded-xl shadow-xs transition flex items-center gap-1.5">
-                                    <span>Send</span>
-                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                                </button>
-                            </form>
-                        </div>
-
-                    </div>
-
                 </div>
 
             </div>
@@ -1193,6 +1090,93 @@
             </div>
         </div>
     </footer>
+
+    <!-- ════════════════════════════════════════════════════════════
+         FLOATING 3D BOT LAUNCHER & POPUP COPILOT WIDGET
+         (Bottom-right floating trigger with 3D avatar preview & chat)
+         ════════════════════════════════════════════════════════════ -->
+    <div id="floating-bot-container" class="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-[90]">
+        
+        <!-- Floating Trigger Button -->
+        <button id="floating-bot-trigger" onclick="toggleFloatingBot()" class="group flex items-center gap-2.5 bg-[#1C1B1A] hover:bg-[#343230] text-[#F3F0EB] px-4 py-3 rounded-full shadow-xl border border-[#CAC7BF] transition-all hover:scale-105 active:scale-95" aria-label="Open 3D AI Assistant">
+            <div class="w-8 h-8 rounded-full bg-[#E8E0D0] text-[#8A651E] flex items-center justify-center font-bold text-xs relative overflow-hidden border border-[#C5A059]">
+                <span>🤖</span>
+                <span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-emerald-500 border border-[#1C1B1A]"></span>
+            </div>
+            <div class="text-left hidden sm:block">
+                <span class="text-xs font-bold block leading-none">Chat with My Bot</span>
+                <span class="text-[10px] text-[#C5A059] font-medium leading-none">3D Digital Twin</span>
+            </div>
+        </button>
+
+        <!-- Floating Popup Card (Compact, neat, contains 3D Avatar + Chat) -->
+        <div id="floating-bot-popup" class="hidden absolute bottom-16 right-0 w-[92vw] sm:w-[390px] max-h-[82vh] bg-[#F3F0EB] border border-[#CAC7BF] rounded-3xl shadow-2xl overflow-hidden flex-col transition-all duration-300 transform origin-bottom-right">
+            
+            <!-- Popup Header -->
+            <div class="p-3.5 px-4 bg-[#E8E0D0] border-b border-[#CAC7BF] flex justify-between items-center">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-7 h-7 rounded-xl bg-[#1C1B1A] text-[#F3F0EB] flex items-center justify-center font-bold text-xs">
+                        KM
+                    </div>
+                    <div>
+                        <h4 class="font-heading text-xs font-bold text-[#1C1B1A] leading-tight">Kavish 3D Assistant</h4>
+                        <span id="avatar-status-badge" class="text-[10px] text-[#8A651E] font-medium leading-tight block">Drag 3D model 360°</span>
+                    </div>
+                </div>
+                
+                <button onclick="toggleFloatingBot()" class="text-[#5C5852] hover:text-[#1C1B1A] p-1.5 rounded-lg hover:bg-[#DDD8CE] transition" aria-label="Close Chat">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+
+            <!-- Mini 3D Avatar Viewport -->
+            <div class="relative bg-gradient-to-b from-[#EAE6DF] to-[#E2DDD3] border-b border-[#CAC7BF]">
+                <div class="avatar-3d-stage-mini relative h-[180px] w-full" id="avatar-container">
+                    <canvas id="avatar-canvas" class="w-full h-full block cursor-grab active:cursor-grabbing"></canvas>
+                </div>
+                <div class="absolute bottom-1.5 left-3 right-3 flex justify-between items-center text-[10px] text-[#5C5852] pointer-events-none">
+                    <span class="bg-[#F3F0EB]/85 backdrop-blur-xs px-2 py-0.5 rounded-full border border-[#CAC7BF]/70">Drag to orbit 360°</span>
+                    <span class="bg-[#E8E0D0]/85 px-2 py-0.5 rounded-full border border-[#CAC7BF]/70 font-semibold text-[#8A651E]">.GLB</span>
+                </div>
+            </div>
+
+            <!-- Scrollable Chat Messages -->
+            <div id="avatar-chat-stream" class="p-3.5 flex flex-col gap-2.5 max-h-[200px] overflow-y-auto text-xs flex-grow bg-[#F3F0EB]">
+                <div class="chat-bubble-ai">
+                    Hi! I'm Kavish's 3D Assistant. Ask me about my <strong>projects</strong>, <strong>n8n automations</strong>, <strong>hackathons</strong>, or background.
+                </div>
+            </div>
+
+            <!-- Quick Chips & Input Footer -->
+            <div class="p-3 bg-[#EAE6DF] border-t border-[#CAC7BF] space-y-2">
+                <!-- Prompt Chips -->
+                <div class="flex gap-1 overflow-x-auto pb-1 no-scrollbar">
+                    <button type="button" class="prompt-chip text-[10px] py-1 px-2.5" onclick="askAvatar('Tell me about your projects and n8n automations')">
+                        ⚡ Projects
+                    </button>
+                    <button type="button" class="prompt-chip text-[10px] py-1 px-2.5" onclick="askAvatar('What did you achieve in national hackathons?')">
+                        🏆 Hackathons
+                    </button>
+                    <button type="button" class="prompt-chip text-[10px] py-1 px-2.5" onclick="askAvatar('What is your education and experience?')">
+                        🎓 Education
+                    </button>
+                    <button type="button" class="prompt-chip text-[10px] py-1 px-2.5" onclick="askAvatar('How can I contact or hire you?')">
+                        ✉️ Contact
+                    </button>
+                </div>
+
+                <!-- Input Field -->
+                <form onsubmit="event.preventDefault(); askAvatar();" class="flex gap-1.5">
+                    <input type="text" id="avatar-input" placeholder="Ask anything about Kavish..." class="flex-grow bg-[#F3F0EB] border border-[#CAC7BF] px-3 py-2 rounded-xl text-xs text-[#1C1B1A] focus:border-[#C5A059] focus:outline-none placeholder:text-[#A09C94]">
+                    <button type="submit" class="px-3.5 py-2 bg-[#1C1B1A] hover:bg-[#343230] text-[#F3F0EB] font-bold text-xs rounded-xl shadow-xs transition flex items-center justify-center">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
 
     <!-- Modals -->
     <div id="modal-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] hidden" onclick="closeAllModals()"></div>
