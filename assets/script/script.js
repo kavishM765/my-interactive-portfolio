@@ -429,7 +429,9 @@ if (typeof window.toggleFloatingBot !== 'function') {
         if (isHidden) {
             popup.classList.remove('hidden');
             popup.style.display = 'flex';
-            if (typeof window.initAvatarViewer === 'function') {
+            if (typeof window.initRiveCharacter === 'function') {
+                window.initRiveCharacter();
+            } else if (typeof window.initAvatarViewer === 'function') {
                 window.initAvatarViewer();
             }
         } else {

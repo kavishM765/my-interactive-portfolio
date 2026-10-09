@@ -1109,69 +1109,85 @@
             </div>
         </button>
 
-        <!-- Floating Popup Card (Compact, neat, contains 3D Avatar + Chat) -->
-        <div id="floating-bot-popup" style="display:none;" class="hidden fixed bottom-20 right-4 left-4 sm:left-auto sm:right-0 sm:absolute sm:bottom-16 sm:w-[380px] max-h-[82vh] bg-[#F3F0EB] border border-[#CAC7BF] rounded-3xl shadow-2xl overflow-hidden flex-col transition-all duration-300">
+        <!-- Floating Popup Card: Connected Rive Character (Left) + Attached Spacious Chatbot (Right) -->
+        <div id="floating-bot-popup" style="display:none;" class="hidden fixed bottom-20 right-3 left-3 sm:left-auto sm:right-6 sm:bottom-20 sm:w-[580px] md:w-[620px] h-[520px] max-h-[85vh] bg-[#F3F0EB] border border-[#CAC7BF] rounded-3xl shadow-2xl overflow-hidden flex flex-col sm:flex-row transition-all duration-300">
             
-            <!-- Popup Header -->
-            <div class="p-3.5 px-4 bg-[#E8E0D0] border-b border-[#CAC7BF] flex justify-between items-center">
-                <div class="flex items-center gap-2.5">
-                    <div class="w-7 h-7 rounded-xl bg-[#1C1B1A] text-[#F3F0EB] flex items-center justify-center font-bold text-xs">
-                        KM
+            <!-- LEFT PANEL: Animated Rive Character (Connected, no gap) -->
+            <div class="sm:w-[220px] md:w-[230px] w-full bg-[#EAE5DC] border-b sm:border-b-0 sm:border-r border-[#CAC7BF] flex flex-col justify-between flex-shrink-0">
+                <!-- Companion Top Header -->
+                <div class="p-3.5 px-4 border-b border-[#CAC7BF]/70 flex items-center justify-between bg-[#E4DFD5]/50">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span class="text-[11px] font-bold text-[#1C1B1A] uppercase tracking-wider">AI Companion</span>
                     </div>
-                    <div>
-                        <h4 class="font-heading text-xs font-bold text-[#1C1B1A] leading-tight">Kavish 3D Assistant</h4>
-                        <span id="avatar-status-badge" class="text-[10px] text-[#8A651E] font-medium leading-tight block">Drag 3D model 360°</span>
-                    </div>
+                    <span id="rive-status-badge" class="text-[10px] font-semibold text-[#8A651E] bg-[#E0D9CC] px-2 py-0.5 rounded-full border border-[#C5A059]/40">Live</span>
                 </div>
+
+                <!-- Rive Canvas Display -->
+                <div class="flex-grow flex flex-col items-center justify-center p-3 relative overflow-hidden min-h-[160px] sm:min-h-[220px]">
+                    <canvas id="rive-canvas" class="w-full h-full max-h-[240px] block"></canvas>
+                </div>
+
+                <!-- Companion Bottom Info -->
+                <div class="p-3 text-center border-t border-[#CAC7BF]/70 bg-[#E4DFD5]/80">
+                    <p class="text-[11px] font-bold text-[#1C1B1A] leading-tight">Digital Twin</p>
+                    <p class="text-[10px] text-[#5C5852] mt-0.5 leading-tight">Blinks & interacts live</p>
+                </div>
+            </div>
+
+            <!-- RIGHT PANEL: Attached Chatbot (Spacious inside, connected) -->
+            <div class="flex-grow flex flex-col bg-[#F3F0EB] min-w-0 h-full">
                 
-                <button onclick="toggleFloatingBot()" class="text-[#5C5852] hover:text-[#1C1B1A] p-1.5 rounded-lg hover:bg-[#DDD8CE] transition" aria-label="Close Chat">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-                </button>
-            </div>
-
-            <!-- Mini 3D Avatar Viewport -->
-            <div class="relative bg-gradient-to-b from-[#EAE6DF] to-[#E2DDD3] border-b border-[#CAC7BF]">
-                <div class="avatar-3d-stage-mini relative h-[180px] w-full" id="avatar-container">
-                    <canvas id="avatar-canvas" class="w-full h-full block cursor-grab active:cursor-grabbing"></canvas>
-                </div>
-                <div class="absolute bottom-1.5 left-3 right-3 flex justify-between items-center text-[10px] text-[#5C5852] pointer-events-none">
-                    <span class="bg-[#F3F0EB]/85 backdrop-blur-xs px-2 py-0.5 rounded-full border border-[#CAC7BF]/70">Drag to orbit 360°</span>
-                    <span class="bg-[#E8E0D0]/85 px-2 py-0.5 rounded-full border border-[#CAC7BF]/70 font-semibold text-[#8A651E]">.GLB</span>
-                </div>
-            </div>
-
-            <!-- Scrollable Chat Messages -->
-            <div id="avatar-chat-stream" class="p-3.5 flex flex-col gap-2.5 max-h-[200px] overflow-y-auto text-xs flex-grow bg-[#F3F0EB]">
-                <div class="chat-bubble-ai">
-                    Hi! I'm Kavish's 3D Assistant. Ask me about my <strong>projects</strong>, <strong>n8n automations</strong>, <strong>hackathons</strong>, or background.
-                </div>
-            </div>
-
-            <!-- Quick Chips & Input Footer -->
-            <div class="p-3 bg-[#EAE6DF] border-t border-[#CAC7BF] space-y-2">
-                <!-- Prompt Chips -->
-                <div class="flex gap-1 overflow-x-auto pb-1 no-scrollbar">
-                    <button type="button" class="prompt-chip text-[10px] py-1 px-2.5" onclick="askAvatar('Tell me about your projects and n8n automations')">
-                        ⚡ Projects
-                    </button>
-                    <button type="button" class="prompt-chip text-[10px] py-1 px-2.5" onclick="askAvatar('What did you achieve in national hackathons?')">
-                        🏆 Hackathons
-                    </button>
-                    <button type="button" class="prompt-chip text-[10px] py-1 px-2.5" onclick="askAvatar('What is your education and experience?')">
-                        🎓 Education
-                    </button>
-                    <button type="button" class="prompt-chip text-[10px] py-1 px-2.5" onclick="askAvatar('How can I contact or hire you?')">
-                        ✉️ Contact
+                <!-- Chat Header -->
+                <div class="p-3.5 px-5 border-b border-[#CAC7BF] flex justify-between items-center bg-[#E8E0D0]/80">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-7 h-7 rounded-xl bg-[#1C1B1A] text-[#F3F0EB] flex items-center justify-center font-bold text-xs">
+                            KM
+                        </div>
+                        <div>
+                            <h4 class="font-heading text-xs sm:text-sm font-bold text-[#1C1B1A] leading-tight">Chat with My Bot</h4>
+                            <span class="text-[10px] sm:text-[11px] text-[#8A651E] font-medium leading-tight block">Autonomous portfolio intelligence</span>
+                        </div>
+                    </div>
+                    <button onclick="toggleFloatingBot()" class="text-[#5C5852] hover:text-[#1C1B1A] p-1.5 rounded-xl hover:bg-[#DDD8CE] transition" aria-label="Close Chat">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
                     </button>
                 </div>
 
-                <!-- Input Field -->
-                <form onsubmit="event.preventDefault(); askAvatar();" class="flex gap-1.5">
-                    <input type="text" id="avatar-input" placeholder="Ask anything about Kavish..." class="flex-grow bg-[#F3F0EB] border border-[#CAC7BF] px-3 py-2 rounded-xl text-xs text-[#1C1B1A] focus:border-[#C5A059] focus:outline-none placeholder:text-[#A09C94]">
-                    <button type="submit" class="px-3.5 py-2 bg-[#1C1B1A] hover:bg-[#343230] text-[#F3F0EB] font-bold text-xs rounded-xl shadow-xs transition flex items-center justify-center">
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                    </button>
-                </form>
+                <!-- Chat Messages Stream (Spacious vertical breathing room) -->
+                <div id="avatar-chat-stream" class="flex-grow p-5 space-y-4 overflow-y-auto text-xs bg-[#F3F0EB]">
+                    <div class="chat-bubble-ai">
+                        Hi! I'm Kavish's AI Assistant. Ask me about my <strong>projects</strong>, <strong>n8n automations</strong>, <strong>hackathons</strong>, or background.
+                    </div>
+                </div>
+
+                <!-- Quick Chips & Input Footer -->
+                <div class="p-4 bg-[#EAE6DF] border-t border-[#CAC7BF] space-y-2.5">
+                    <!-- Prompt Chips -->
+                    <div class="flex gap-1.5 overflow-x-auto pb-1 no-scrollbar">
+                        <button type="button" class="prompt-chip text-[10px] py-1 px-3" onclick="askAvatar('Tell me about your projects and n8n automations')">
+                            ⚡ Projects
+                        </button>
+                        <button type="button" class="prompt-chip text-[10px] py-1 px-3" onclick="askAvatar('What did you achieve in national hackathons?')">
+                            🏆 Hackathons
+                        </button>
+                        <button type="button" class="prompt-chip text-[10px] py-1 px-3" onclick="askAvatar('What is your education and experience?')">
+                            🎓 Education
+                        </button>
+                        <button type="button" class="prompt-chip text-[10px] py-1 px-3" onclick="askAvatar('How can I contact or hire you?')">
+                            ✉️ Contact
+                        </button>
+                    </div>
+
+                    <!-- Input Field -->
+                    <form onsubmit="event.preventDefault(); askAvatar();" class="flex gap-2">
+                        <input type="text" id="avatar-input" placeholder="Ask anything about Kavish..." class="flex-grow bg-[#F3F0EB] border border-[#CAC7BF] px-3.5 py-2.5 rounded-xl text-xs text-[#1C1B1A] focus:border-[#C5A059] focus:outline-none placeholder:text-[#A09C94]">
+                        <button type="submit" class="px-4 py-2.5 bg-[#1C1B1A] hover:bg-[#343230] text-[#F3F0EB] font-bold text-xs rounded-xl shadow-xs transition flex items-center justify-center">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </button>
+                    </form>
+                </div>
+
             </div>
 
         </div>
@@ -1185,10 +1201,8 @@
     <div id="privacy-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[90%] max-w-lg hidden light-modal-card p-6 sm:p-8"></div>
     <div id="terms-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[90%] max-w-lg hidden light-modal-card p-6 sm:p-8"></div>
 
-    <!-- Three.js Engine & 3D Addons (Local vendor files to adhere to CSP 'self') -->
-    <script src="./assets/script/vendor/three.min.js"></script>
-    <script src="./assets/script/vendor/OrbitControls.js"></script>
-    <script src="./assets/script/vendor/GLTFLoader.js"></script>
+    <!-- Rive Animated Runtime (Local vendor file for CSP compliance) -->
+    <script src="./assets/script/vendor/rive.js"></script>
 
     <!-- Core Interactive Scripts -->
     <script src="./assets/script/living-canvas.js"></script>
