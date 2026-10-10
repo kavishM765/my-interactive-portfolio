@@ -199,10 +199,10 @@ function drawFallbackRobotFace(canvas) {
 // REZE — Intelligent Copilot (Hybrid: Local Fast Path → Gemini API)
 // ════════════════════════════════════════════════════════════════════
 
-// Local fallback KB (instant, zero-cost fast path)
+// Local fallback KB (used if offline or network connection fails)
 var REZE_LOCAL_KB = {
     identity: {
-        patterns: ['who are you', 'your name', 'reze', 'who is reze', 'what are you', 'introduce', 'about you', 'hello', 'hi'],
+        patterns: ['who are you', 'your name', 'who is reze', 'what are you', 'introduce yourself', 'about reze'],
         response: "I am REZE, what I can help with? I am Kavish's personal AI assistant built into this portfolio. Ask me anything about his full-stack projects, agentic AI automations, national hackathons, or how to get in touch!"
     },
     contact: {
@@ -210,8 +210,8 @@ var REZE_LOCAL_KB = {
         response: "You can reach Kavish directly:\n📧 Email: kavishm100@gmail.com\n📱 WhatsApp / Call: +91 9865824929\n📍 Location: Coimbatore, Tamil Nadu, India"
     },
     projects: {
-        patterns: ['project', 'work', 'built', 'portfolio'],
-        response: "Kavish has built 6 flagship systems:\n1. AI Admission Enquiry System — n8n autonomous intake pipeline\n2. Full-Stack AI Admission Chatbot — Conversational lead qualification\n3. AI Assistant for Farmers — Agentic crop intelligence\n4. Agentic n8n Automation Chatbot — Tool-calling multi-node router\n5. Library Management System — Role-based auth & tracking\n6. Emergency SOS Dispatch Platform — Real-time response system"
+        patterns: ['project', 'work', 'built', 'portfolio', 'system'],
+        response: "Kavish has built 6 flagship systems:\n1. AI Admission Enquiry System — n8n autonomous intake pipeline\n2. Full-Stack AI Admission Chatbot — Conversational lead qualification\n3. AI Assistant for Farmers — Agentic crop intelligence\n4. Agentic n8n Automation Chatbot — Tool-calling multi-node router\n5. Library Management System — Role-based auth & tracking\n6. Emergency SOS Dispatch Platform — Real-time response system\n\nAsk me about any specific project for details!"
     },
     hackathons: {
         patterns: ['hackathon', 'swafinix', 'bugslayer', 'devforge', 'competition', 'rank'],
@@ -228,7 +228,7 @@ var REZE_LOCAL_KB = {
 };
 
 function tryLocalResponse(text) {
-    var lower = text.toLowerCase();
+    var lower = text.toLowerCase().trim();
     for (var key in REZE_LOCAL_KB) {
         var entry = REZE_LOCAL_KB[key];
         for (var i = 0; i < entry.patterns.length; i++) {
@@ -264,15 +264,6 @@ function askAvatar(question) {
     chatStream.appendChild(userBubble);
     chatStream.scrollTop = chatStream.scrollHeight;
 
-    // Fast path: Try local KB first (instant, zero cost)
-    var localAnswer = tryLocalResponse(query);
-    if (localAnswer) {
-        setTimeout(function() {
-            appendRezeReply(chatStream, localAnswer);
-        }, 200);
-        return;
-    }
-
     // Show typing indicator
     var typingBubble = document.createElement('div');
     typingBubble.className = 'chat-bubble-ai text-[11px] reze-typing';
@@ -280,7 +271,7 @@ function askAvatar(question) {
     chatStream.appendChild(typingBubble);
     chatStream.scrollTop = chatStream.scrollHeight;
 
-    // Call REZE API (Gemini-powered)
+    // Call REZE Gemini-powered API
     fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -288,15 +279,18 @@ function askAvatar(question) {
     })
     .then(function(res) { return res.json(); })
     .then(function(data) {
-        // Remove typing indicator
         if (typingBubble.parentNode) typingBubble.remove();
-        var reply = (data && data.reply) ? data.reply : "I couldn't process that. Try asking about Kavish's projects, hackathons, or skills!";
+        var reply = (data && data.reply) ? data.reply : null;
+        if (!reply) {
+            reply = tryLocalResponse(query) || "I am REZE, what I can help with? Ask me anything about Kavish's projects, skills, or experience!";
+        }
         appendRezeReply(chatStream, reply);
     })
     .catch(function(err) {
-        console.warn('REZE API error:', err);
+        console.warn('REZE API error, using fallback:', err);
         if (typingBubble.parentNode) typingBubble.remove();
-        appendRezeReply(chatStream, "I'm having a brief connection issue. You can reach Kavish directly at kavishm100@gmail.com or +91 9865824929!");
+        var fallbackReply = tryLocalResponse(query) || "I'm having a brief connection issue. You can reach Kavish directly at kavishm100@gmail.com or +91 9865824929!";
+        appendRezeReply(chatStream, fallbackReply);
     });
 }
 
