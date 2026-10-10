@@ -294,10 +294,32 @@ function askAvatar(question) {
     });
 }
 
+function formatRezeMarkdown(text) {
+    if (!text) return '';
+    var s = String(text);
+    // Convert markdown links [Label](url) -> clickable <a> tag
+    s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-[#8A651E] font-semibold underline hover:text-[#1C1B1A]">$1</a>');
+    // Convert bold **text** -> <strong>text</strong>
+    s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    // Convert bullet lists (* item or - item) -> clean dot •
+    s = s.replace(/(^|\n)[\*\-]\s+/g, '$1• ');
+    // Remove any remaining stray asterisks
+    s = s.replace(/\*([^*]+)\*/g, '$1');
+    // Convert headers ### Title
+    s = s.replace(/(^|\n)#{1,4}\s+([^\n]+)/g, '$1<strong class="text-[#1C1B1A] block mt-1.5 mb-0.5">$2</strong>');
+    // Convert horizontal rules ---
+    s = s.replace(/(^|\n)---(\n|$)/g, '$1<hr class="border-[#CAC7BF]/60 my-2">$2');
+    // Convert newlines -> <br>
+    s = s.replace(/\n/g, '<br>');
+    // Clean up excessive line breaks
+    s = s.replace(/(<br>){3,}/g, '<br><br>');
+    return s;
+}
+
 function appendRezeReply(chatStream, text) {
     var aiBubble = document.createElement('div');
-    aiBubble.className = 'chat-bubble-ai text-[11px]';
-    aiBubble.innerHTML = text.replace(/\n/g, '<br>');
+    aiBubble.className = 'chat-bubble-ai text-[11px] leading-relaxed';
+    aiBubble.innerHTML = formatRezeMarkdown(text);
     chatStream.appendChild(aiBubble);
     chatStream.scrollTop = chatStream.scrollHeight;
 }

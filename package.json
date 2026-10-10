@@ -1,6 +1,5 @@
 {
-  "dependencies": {
-    "@tailwindcss/vite": "^4.2.1",
-    "tailwindcss": "^4.2.1"
-  }
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "private": true
 }

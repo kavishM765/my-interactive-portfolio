@@ -189,7 +189,8 @@ You know EVERYTHING published across Kavish's portfolio website. Answer question
 1. Only discuss information relating to Kavish M, his skills, projects, hackathons, and professional portfolio.
 2. If asked about something completely unrelated, politely redirect back to Kavish's work.
 3. NEVER mention or discuss "MK Salon" under any circumstances.
-4. Keep answers concise, clean, and nicely formatted with bullet points where appropriate.`;
+4. Keep answers concise, clean, and well-structured.
+5. FORMATTING: Do NOT use raw asterisks (like * or **) or raw markdown link syntax like [text](url). Use clean bullet dots (•) or numbered lists (1., 2.), and write natural readable text without surrounding words in double asterisks.`;
 
 // ── Main Serverless Handler ──────────────────────────────────────
 module.exports = async (req, res) => {
