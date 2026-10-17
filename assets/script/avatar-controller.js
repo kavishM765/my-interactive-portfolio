@@ -8,12 +8,14 @@ var isRiveInitialized = false;
 // 1. Toggle Floating Popup Window
 function toggleFloatingBot() {
     var popup = document.getElementById('floating-bot-popup');
+    var trigger = document.getElementById('floating-bot-trigger');
     if (!popup) return;
 
     var isHidden = popup.classList.contains('hidden') || popup.style.display === 'none' || getComputedStyle(popup).display === 'none';
     if (isHidden) {
         popup.classList.remove('hidden');
         popup.style.display = 'flex';
+        if (trigger) trigger.style.display = 'none';
 
         // Initialize Rive animation once popup opens
         setTimeout(function() {
@@ -26,6 +28,7 @@ function toggleFloatingBot() {
     } else {
         popup.classList.add('hidden');
         popup.style.display = 'none';
+        if (trigger) trigger.style.display = 'flex';
     }
 }
 window.toggleFloatingBot = toggleFloatingBot;

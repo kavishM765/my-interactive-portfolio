@@ -1110,12 +1110,12 @@
         </button>
 
         <!-- Floating Popup Card: Connected Rive Character (Left) + Attached Spacious Chatbot (Right) -->
-        <div id="floating-bot-popup" style="display:none;" class="hidden fixed bottom-20 right-3 left-3 sm:left-auto sm:right-6 sm:bottom-20 sm:w-[580px] md:w-[620px] h-[520px] max-h-[85vh] bg-[#F3F0EB] border border-[#CAC7BF] rounded-3xl shadow-2xl overflow-hidden flex flex-col sm:flex-row transition-all duration-300">
+        <div id="floating-bot-popup" style="display:none;" class="hidden fixed bottom-3 right-3 left-3 sm:left-auto sm:right-6 sm:bottom-20 sm:w-[580px] md:w-[620px] h-[85vh] max-h-[640px] sm:h-[520px] bg-[#F3F0EB] border border-[#CAC7BF] rounded-3xl shadow-2xl overflow-hidden flex flex-col sm:flex-row transition-all duration-300 z-50">
             
             <!-- LEFT PANEL: Animated Rive Character (Connected, no gap) -->
-            <div class="sm:w-[220px] md:w-[230px] w-full bg-[#EAE5DC] border-b sm:border-b-0 sm:border-r border-[#CAC7BF] flex flex-col justify-between flex-shrink-0">
-                <!-- Companion Top Header -->
-                <div class="p-3.5 px-4 border-b border-[#CAC7BF]/70 flex items-center justify-between bg-[#E4DFD5]/50">
+            <div class="w-full sm:w-[220px] md:w-[230px] bg-[#EAE5DC] border-b sm:border-b-0 sm:border-r border-[#CAC7BF] flex flex-col justify-between flex-shrink-0">
+                <!-- Companion Top Header (Desktop only) -->
+                <div class="hidden sm:flex p-3.5 px-4 border-b border-[#CAC7BF]/70 items-center justify-between bg-[#E4DFD5]/50 flex-shrink-0">
                     <div class="flex items-center gap-2">
                         <span class="text-[11px] font-bold text-[#1C1B1A] uppercase tracking-wider">AI Companion</span>
                     </div>
@@ -1123,23 +1123,24 @@
                 </div>
 
                 <!-- Rive Canvas Display -->
-                <div class="flex-grow flex flex-col items-center justify-center p-3 relative overflow-hidden min-h-[160px] sm:min-h-[220px]">
-                    <canvas id="rive-canvas" class="w-full h-full max-h-[240px] block"></canvas>
+                <div class="flex-shrink-0 sm:flex-grow flex items-center justify-center p-2 relative overflow-hidden h-[95px] sm:h-auto sm:min-h-[220px]">
+                    <canvas id="rive-canvas" class="w-full h-full max-h-[90px] sm:max-h-[240px] block object-contain"></canvas>
+                    <span class="sm:hidden absolute top-2 right-3 text-[9px] font-semibold text-[#8A651E] bg-[#E0D9CC]/90 px-2 py-0.5 rounded-full border border-[#C5A059]/40">Live</span>
                 </div>
 
-                <!-- Companion Bottom Info -->
-                <div class="p-3 text-center border-t border-[#CAC7BF]/70 bg-[#E4DFD5]/80">
+                <!-- Companion Bottom Info (Desktop only) -->
+                <div class="hidden sm:block p-3 text-center border-t border-[#CAC7BF]/70 bg-[#E4DFD5]/80 flex-shrink-0">
                     <p class="text-[11px] font-bold text-[#1C1B1A] leading-tight">Reze</p>
                 </div>
             </div>
 
             <!-- RIGHT PANEL: Attached Chatbot (Spacious inside, connected) -->
-            <div class="flex-grow flex flex-col bg-[#F3F0EB] min-w-0 h-full">
+            <div class="flex-1 min-h-0 flex flex-col bg-[#F3F0EB] min-w-0">
                 
                 <!-- Chat Header -->
-                <div class="p-3.5 px-5 border-b border-[#CAC7BF] flex justify-between items-center bg-[#E8E0D0]/80">
+                <div class="flex-shrink-0 p-3 sm:p-3.5 px-4 sm:px-5 border-b border-[#CAC7BF] flex justify-between items-center bg-[#E8E0D0]/80">
                     <div class="flex items-center gap-2.5">
-                        <div class="w-7 h-7 rounded-xl bg-[#1C1B1A] text-[#F3F0EB] flex items-center justify-center font-bold text-xs">
+                        <div class="w-7 h-7 rounded-xl bg-[#1C1B1A] text-[#F3F0EB] flex items-center justify-center font-bold text-xs flex-shrink-0">
                             KM
                         </div>
                         <div>
@@ -1152,27 +1153,27 @@
                     </button>
                 </div>
 
-                <!-- Chat Messages Stream (Spacious vertical breathing room) -->
-                <div id="avatar-chat-stream" class="flex-grow p-5 space-y-4 overflow-y-auto text-xs bg-[#F3F0EB]">
+                <!-- Chat Messages Stream (Spacious vertical breathing room, scrolls inside flex area) -->
+                <div id="avatar-chat-stream" class="flex-1 min-h-0 p-4 sm:p-5 space-y-3 sm:space-y-4 overflow-y-auto text-xs bg-[#F3F0EB]">
                     <div class="chat-bubble-ai">
                         Hi! I am <strong>REZE</strong>, what I can help with? Ask me anything about Kavish's <strong>projects</strong>, <strong>skills</strong>, <strong>hackathons</strong>, or background!
                     </div>
                 </div>
 
-                <!-- Quick Chips & Input Footer -->
-                <div class="p-4 bg-[#EAE6DF] border-t border-[#CAC7BF] space-y-2.5">
+                <!-- Quick Chips & Input Footer (Locked at bottom, never clipped) -->
+                <div class="flex-shrink-0 p-3 sm:p-4 bg-[#EAE6DF] border-t border-[#CAC7BF] space-y-2">
                     <!-- Prompt Chips -->
                     <div class="flex gap-1.5 overflow-x-auto pb-1 no-scrollbar">
-                        <button type="button" class="prompt-chip text-[10px] py-1 px-3" onclick="askAvatar('Tell me about your projects and n8n automations')">
+                        <button type="button" class="prompt-chip text-[10px] py-1 px-3 whitespace-nowrap flex-shrink-0" onclick="askAvatar('Tell me about your projects and n8n automations')">
                             ⚡ Projects
                         </button>
-                        <button type="button" class="prompt-chip text-[10px] py-1 px-3" onclick="askAvatar('What did you achieve in national hackathons?')">
+                        <button type="button" class="prompt-chip text-[10px] py-1 px-3 whitespace-nowrap flex-shrink-0" onclick="askAvatar('What did you achieve in national hackathons?')">
                             🏆 Hackathons
                         </button>
-                        <button type="button" class="prompt-chip text-[10px] py-1 px-3" onclick="askAvatar('What is your education and experience?')">
+                        <button type="button" class="prompt-chip text-[10px] py-1 px-3 whitespace-nowrap flex-shrink-0" onclick="askAvatar('What is your education and experience?')">
                             🎓 Education
                         </button>
-                        <button type="button" class="prompt-chip text-[10px] py-1 px-3" onclick="askAvatar('How can I contact or hire you?')">
+                        <button type="button" class="prompt-chip text-[10px] py-1 px-3 whitespace-nowrap flex-shrink-0" onclick="askAvatar('How can I contact or hire you?')">
                             ✉️ Contact
                         </button>
                     </div>
@@ -1180,7 +1181,7 @@
                     <!-- Input Field -->
                     <form onsubmit="event.preventDefault(); askAvatar();" class="flex gap-2">
                         <input type="text" id="avatar-input" placeholder="Ask anything about Kavish..." class="flex-grow bg-[#F3F0EB] border border-[#CAC7BF] px-3.5 py-2.5 rounded-xl text-xs text-[#1C1B1A] focus:border-[#C5A059] focus:outline-none placeholder:text-[#A09C94]">
-                        <button type="submit" class="px-4 py-2.5 bg-[#1C1B1A] hover:bg-[#343230] text-[#F3F0EB] font-bold text-xs rounded-xl shadow-xs transition flex items-center justify-center">
+                        <button type="submit" class="px-4 py-2.5 bg-[#1C1B1A] hover:bg-[#343230] text-[#F3F0EB] font-bold text-xs rounded-xl shadow-xs transition flex items-center justify-center flex-shrink-0">
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                         </button>
                     </form>

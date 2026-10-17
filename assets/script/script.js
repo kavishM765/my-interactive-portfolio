@@ -424,11 +424,13 @@ async function handleEmbeddedFormSubmit(event) {
 if (typeof window.toggleFloatingBot !== 'function') {
     window.toggleFloatingBot = function() {
         var popup = document.getElementById('floating-bot-popup');
+        var trigger = document.getElementById('floating-bot-trigger');
         if (!popup) return;
         var isHidden = popup.classList.contains('hidden') || popup.style.display === 'none';
         if (isHidden) {
             popup.classList.remove('hidden');
             popup.style.display = 'flex';
+            if (trigger) trigger.style.display = 'none';
             if (typeof window.initRiveCharacter === 'function') {
                 window.initRiveCharacter();
             } else if (typeof window.initAvatarViewer === 'function') {
@@ -437,6 +439,7 @@ if (typeof window.toggleFloatingBot !== 'function') {
         } else {
             popup.classList.add('hidden');
             popup.style.display = 'none';
+            if (trigger) trigger.style.display = 'flex';
         }
     };
 }
