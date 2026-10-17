@@ -213,20 +213,20 @@ var REZE_LOCAL_KB = {
         response: "You can reach Kavish directly:\n📧 Email: kavishm100@gmail.com\n📱 WhatsApp / Call: +91 9865824929\n📍 Location: Coimbatore, Tamil Nadu, India"
     },
     projects: {
-        patterns: ['project', 'work', 'built', 'portfolio', 'system'],
-        response: "Kavish has built 6 flagship systems:\n1. AI Admission Enquiry System — n8n autonomous intake pipeline\n2. Full-Stack AI Admission Chatbot — Conversational lead qualification\n3. AI Assistant for Farmers — Agentic crop intelligence\n4. Agentic n8n Automation Chatbot — Tool-calling multi-node router\n5. Library Management System — Role-based auth & tracking\n6. Emergency SOS Dispatch Platform — Real-time response system\n\nAsk me about any specific project for details!"
+        patterns: ['project', 'work', 'built', 'portfolio', 'system', 'whatsapp'],
+        response: "Kavish has built 7 production & prototype systems:\n1. WhatsApp AI Chatbot for Business Automation — Python, LLMs, auto booking & PDF invoice email dispatch\n2. AI Admission Enquiry System — n8n autonomous intake pipeline\n3. Full-Stack AI Admission Chatbot — Conversational lead qualification\n4. AI Assistant for Farmers — Agentic crop intelligence\n5. Library Management System Full Stack — Admin & student portal\n6. Agentic n8n Automation Chatbot — Tool-calling multi-node router\n7. Emergency SOS Dispatch Platform — Real-time response system\n\nAsk me about any specific project for details!"
     },
     hackathons: {
-        patterns: ['hackathon', 'swafinix', 'bugslayer', 'devforge', 'competition', 'rank'],
-        response: "Key hackathon achievements:\n🏆 AI Agents Hackathon: Rank 5 nationally out of 2,300+ teams\n🏥 BUGSLAYER '26: Built a Telemedicine Platform across 5 review rounds\n⚡ DevForge (KPR IET): Cleared 3 rounds in a 24-hour sprint\n🏭 MSME Hackathon 2025: National Finalist"
+        patterns: ['hackathon', 'swafinix', 'bugslayer', 'devspark', 'devforge', 'competition', 'rank', 'bootcamp'],
+        response: "Key hackathon & leadership achievements:\n🏆 AI Agents Hackathon: Rank 5 nationally out of 2,300+ teams (Swafinix Technologies, Aug 2025)\n⚡ Devspark'25: 24-hour sprint at KPR Institute of Engineering and Technology\n🏥 BUGSLAYER '26: Built a Telemedicine Platform across 5 review rounds\n🏭 MSME Hackathon 2025: National Finalist\n🚀 GoVentures Bootcamp: Conducted team bootcamp at Sri Ramakrishna College of Arts and Science (Mar 2026)\n💡 Intern2Innovate Hackathon & ARP All Rounder Performer Nominee"
     },
     education: {
         patterns: ['college', 'education', 'sns', 'study', 'degree', 'university', 'school'],
-        response: "Kavish is pursuing B.Tech in Information Technology at SNS College of Technology, Coimbatore (2023–2027). He scored a centum (100/100) in Computer Science during HSC at Noble Matriculation Higher Secondary School."
+        response: "Kavish is pursuing B.Tech in Information Technology at SNS College of Technology, Coimbatore (2023–2027, graduating 2027). He scored a centum (100/100) in Computer Science during HSC at Noble Matriculation Higher Secondary School, Virudhunagar."
     },
     experience: {
-        patterns: ['experience', 'intern', 'company', 'job'],
-        response: "Kavish's internship experience:\n• Backend Dev Intern — Let's Gametech (API schemas & databases)\n• Frontend Dev Intern — Dsignz Media (21-day responsive web engineering)\n• IT Dev Intern — Circor Flow Technology India Pvt. Ltd. (Corporate web pages)"
+        patterns: ['experience', 'intern', 'company', 'job', 'freelance'],
+        response: "Kavish's professional experience:\n• Freelance Developer (Active) — Building websites, n8n/Python workflows & WhatsApp business chatbots\n• Java Backend Dev Intern — Let's Gametech (API schemas & databases)\n• Frontend Dev Intern — Dsignz Media (30-day responsive web engineering)\n• IT Dev Intern — Circor Flow Technology India Pvt. Ltd. (14-day internal codes search tool)"
     }
 };
 

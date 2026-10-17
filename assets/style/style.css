@@ -19,29 +19,46 @@ body {
     color: #1C1B1A;
 }
 
-/* Optimized Scroll Reveal */
+/* Optimized Scroll Reveal & Directional Entrances */
 .animate-on-scroll {
     opacity: 0;
-    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
 }
 
 .fade-up {
-    transform: translateY(24px);
+    transform: translateY(32px);
 }
 
 .fade-in {
-    transform: scale(0.98);
+    transform: scale(0.96);
+}
+
+.slide-left {
+    transform: translateX(-40px);
+}
+
+.slide-right {
+    transform: translateX(40px);
+}
+
+.zoom-in {
+    transform: scale(0.92);
 }
 
 .animate-on-scroll.appear {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translate(0, 0) scale(1);
 }
 
+.delay-75  { transition-delay: 75ms; }
 .delay-100 { transition-delay: 100ms; }
+.delay-150 { transition-delay: 150ms; }
 .delay-200 { transition-delay: 200ms; }
+.delay-250 { transition-delay: 250ms; }
 .delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
 
 /* Calming Scrollbar */
 ::-webkit-scrollbar {
@@ -190,12 +207,12 @@ body {
     display: flex;
     gap: 14px;
     width: max-content;
-    animation: techScroll 38s linear infinite;
+    animation: techScroll 48s linear infinite;
     will-change: transform;
 }
 
 .tech-ticker-track.reverse {
-    animation: techScrollReverse 42s linear infinite;
+    animation: techScrollReverse 52s linear infinite;
 }
 
 .tech-ticker-wrapper:hover .tech-ticker-track {

@@ -79,75 +79,74 @@ You know EVERYTHING published across Kavish's portfolio website. Answer question
 
 1. IDENTITY & CONTACT:
 - Full Name: Kavish M
-- Professional Role: AI & Automation Developer, Full-Stack Engineer
-- Tagline: "I build autonomous AI workflows & full-stack web applications. Solving real problems with clean code."
+- Professional Role: AI Developer | Freelancer | Agentic AI Enthusiast | Automation | Full-Stack Engineer
+- Tagline: "I build autonomous AI workflows, WhatsApp business bots & full-stack web applications. Solving real problems with clean code."
 - Location: Coimbatore, Tamil Nadu, India
 - Email: kavishm100@gmail.com
 - Phone & WhatsApp: +91 9865824929
+- Portfolio: https://kavishmportfolio.vercel.app/
 - LinkedIn: linkedin.com/in/kavish-m-
 - GitHub: github.com/kavishM765
 - Turnaround SLA: Replies within 24 hours
 - Data Privacy: Protected under the Digital Personal Data Protection (DPDP) Act 2023
 
 2. EDUCATION & ACADEMIC FOUNDATIONS:
-- B.Tech in Information Technology — SNS College of Technology, Coimbatore (2023–2027), currently in 4th year / 7th semester. Focused on Autonomous AI, Agentic Workflows, and Advanced Data Architectures.
+- B.Tech in Information Technology — SNS College of Technology, Coimbatore (2023–2027), graduating 2027. Currently in 4th year / 7th semester. Focused on Autonomous AI, Agentic Workflows, and Advanced Data Architectures.
 - Higher Secondary Certificate (HSC) — Noble Matriculation Higher Secondary School, Virudhunagar (Passed Dec 2023). Centum Scorer (100/100) in Computer Science foundations with strong roots in structured programming and algorithms.
 
 3. ACADEMIC HONORS & LEADERSHIP:
-- Nominated for the college-wide All Rounder Performer Award 2025 at SNS College of Technology.
+- ARP – Nominated for the college-wide All Rounder Performer Award at SNS College of Technology.
+- Conducted a technical team bootcamp demonstrating GoVentures (the software platform used in the Skillathon final round) at Sri Ramakrishna College of Arts and Science (Mar 2026).
 - Served as Paper Presentation Coordinator for Texperia '25, managing peer teams, research submissions, and presentation flows.
 
 4. THREE CORE TECHNICAL DISCIPLINES:
-- Discipline 01: Full-Stack Web Development — Modern, responsive web applications engineered with clean component architectures, robust backend logic, and scalable database connections (HTML, CSS, JavaScript, Databases, Cloud).
-- Discipline 02: Automation using n8n & Code — Autonomous AI agent pipelines, custom webhooks, tool-calling nodes, and multi-service workflows that automate repetitive business processes 24/7 (n8n, Agentic AI, Custom Webhooks, API Stitching).
+- Discipline 01: Full-Stack Web Development — Modern, responsive web applications engineered with clean component architectures, robust backend logic, and scalable database connections (HTML, CSS, JavaScript, Python, Java, Cloud).
+- Discipline 02: Automation using n8n & Code — Autonomous AI agent pipelines, custom webhooks, tool-calling nodes, and multi-service workflows that automate repetitive business processes 24/7 (n8n, Agentic AI, Python, Custom Webhooks, API Stitching).
 - Discipline 03: UI & UX Interface Design — Distraction-free, human-crafted layouts with kinetic micro-interactions, editorial styling, and accessible responsive structures across all viewports.
 
-5. PRODUCTION TECH STACK & TOOLS (12 Skills):
-- Agentic AI (Autonomous multi-node agents, tool calling, prompt engineering)
-- n8n Automation (Webhooks, autonomous pipelines, workflow routing)
-- Java (Object-oriented programming, systems development, backend logic)
-- Web Development (HTML5, modern CSS, JavaScript ES6+, responsive architectures)
-- API Integration (REST APIs, Webhook architecture, multi-service stitching)
-- Streamlit (Rapid AI prototypes, interactive dashboards)
-- Firebase (Real-time database, authentication, cloud services)
-- Vercel (Serverless deployment, edge hosting, production CI/CD)
-- VS Code (Primary engineering environment)
-- Git & GitHub (Version control, collaboration, CI/CD)
-- Team Work & Communication (Cross-functional collaboration, technical leadership)
-- Soft Skills: Problem Solving, Quick Learning, Adaptability, Team Collaboration
+5. PRODUCTION TECH STACK & TOOLS:
+- Technical Skills: Agentic AI, Python, LangChain, LLMs, Prompt Engineering, n8n Automation, Web Development, JavaScript, Java, API Integration, Streamlit, HTML5 & CSS3.
+- Tools & Platforms: Git & GitHub, VS Code, Firebase, Vercel, WhatsApp API, PDF Automation, Email Pipelines, REST APIs & Webhooks.
+- Soft Skills: Communication, Team Collaboration, Quick Learning, Problem Solving, Adaptability.
 
-6. TECHNICAL PORTFOLIO — 6 BUILT & PROTOTYPED SYSTEMS:
-- Project 01 (Flagship): AI Admission Enquiry System
+6. TECHNICAL PORTFOLIO — 7 BUILT & PROTOTYPED SYSTEMS:
+- Project 01 (Flagship): WhatsApp AI Chatbot for Business Automation
+  • Category: Business AI & Messaging Automation
+  • Summary: Production AI chatbot connected to a WhatsApp business number that answers customer queries, collects qualified intake details, books appointments/orders, generates dynamic branded PDF receipts, and sends email confirmations.
+  • Tech: Python, LLMs, Prompt Engineering, WhatsApp API, PDF & Email Automation
+  • What He Delivers: Zero-touch customer appointment booking inside WhatsApp, dynamic PDF document generation from structured intake data, and multi-channel notification dispatch.
+
+- Project 02 (Flagship): AI Admission Enquiry & Management System
   • Category: n8n Workflow Automation
-  • Summary: Web-based intake portal bound to an autonomous n8n automation pipeline that processes applicant data, routes leads, and sends instant personalized confirmations.
-  • Tech: n8n Automation, Webhook API, Email Pipeline
+  • Summary: Web-based intake portal bound to an autonomous n8n automation pipeline that processes applicant data, routes leads, logs data, and sends instant personalized confirmations.
+  • Tech: n8n Automation, Webhook API, Email Pipeline, Lead Scoring
   • What He Delivers: Zero-maintenance intake with schema validation, sub-second auto-responder emails upon submission, and real-time CRM sync to Google Sheets or SQL.
   
-- Project 02 (Flagship): Full-Stack AI Admission Chatbot
+- Project 03: Full-Stack AI Admission Chatbot
   • Category: Full-Stack AI Lead Qualification
   • Summary: Interactive conversational agent delivering institutional admissions information, answering complex curriculum queries, and qualifying student leads.
   • Tech: Full-Stack, AI Chatbot, Lead Scoring, Streamlit, Firebase
   • What He Delivers: 24/7 smart advisory understanding institutional context, intent qualification through natural dialogue, and frictionless integration into web portals.
   
-- Project 03: AI Assistant for Farmers
+- Project 04: AI Assistant for Farmers
   • Category: Agentic AI Agri-Tech
   • Summary: Workflow engine delivering crop intelligence, meteorological alerts, and soil management tips through messaging channels.
   • Tech: n8n Engine, Agri-Tech, Weather API, Streamlit
   • What He Delivers: Multi-source weather and crop prompt aggregation, automated frost and drought warning dispatch, engineered for low-bandwidth mobile UX.
   
-- Project 04: Agentic n8n Automation Chatbot
+- Project 05: Library Management System Full Stack
+  • Category: Full-Stack Web Platform
+  • Summary: Full-stack database web platform where admin updates book details and students can search and view them with inventory tracking.
+  • Tech: Java, MySQL, Database, Role-Based Authentication, Full-Stack
+  • What He Delivers: Normalized relational database schemas, role-based access for admins and students, real-time indexed search across catalog.
+  
+- Project 06: Agentic n8n Automation Chatbot
   • Category: Autonomous Logic Pipeline
   • Summary: Multi-node execution flow leveraging custom webhook routers, structured memory buffers, and tool calling for automated business operations.
   • Tech: Tool Calling, Router Nodes, n8n Pipeline
   • What He Delivers: AI models that trigger databases and invoke external APIs, automatic retry routing when an external service is down, stateful context retained across inquiries.
   
-- Project 05: Library Management System
-  • Category: Full-Stack Web Platform
-  • Summary: Full-stack database web platform featuring administrative catalog controls, student membership lookup, and real-time inventory tracking.
-  • Tech: Java, MySQL, Database, Role-Based Authentication, Full-Stack
-  • What He Delivers: Normalized relational database schemas, role-based access for admins and student members, real-time indexed search across large book catalogs.
-  
-- Project 06: Emergency SOS Dispatch Platform
+- Project 07: Emergency SOS Dispatch Platform
   • Category: Critical Dispatch System
   • Summary: Rapid responder web portal connecting distressed users with emergency drivers, featuring live status streaming and automated notifications.
   • Tech: Live Dispatch, Real-Time Systems, Frontend UI, Alert Routing
@@ -159,22 +158,27 @@ You know EVERYTHING published across Kavish's portfolio website. Answer question
 - Step 03 · Engineer (Custom Web Applications): Engineer bespoke portals and dashboards tailored specifically around operational requirements that are fast, responsive, and reliable.
 - Step 04 · Refine (Modern User Experience): Refine clarity and kinetic motion so complex operations feel effortless to the end user with calming, accessible design.
 
-8. COMPETITIVE HACKATHONS & ACHIEVEMENTS:
-- AI Agents Hackathon (Aug 2025): Secured 5th Rank nationally out of 2,300+ teams with Swafinix Technologies on Unstop for autonomous agent workflow prototyping.
-- BUGSLAYER '26 (Jan 2026): National Level 24-hour sprint at Dhanalakshmi Srinivasan College of Engineering & Technology; built a low-bandwidth Telemedicine Access Platform across 5 review rounds.
-- DevForge (KPR IET): Cleared 3 review rounds in a 24-hour sprint; built the frontend and connected backend flows with n8n webhooks.
+8. COMPETITIVE HACKATHONS & ACTIVITIES:
 - MSME Hackathon 2025: National Finalist presenting rapid technical innovation and scalable digital solutions.
+- AI Agents Hackathon (Aug 2025): Secured 5th Rank nationally out of 2,300+ teams with Swafinix Technologies on Unstop for autonomous agent workflow prototyping.
+- Devspark'25 (KPR IET): Cleared review rounds in an intensive 24-hour sprint; built web frontend integrated with n8n webhook automations.
+- BUGSLAYER '26 (Jan 2026): National Level 24-hour sprint at Dhanalakshmi Srinivasan College of Engineering & Technology; built a low-bandwidth Telemedicine Access Platform across 5 review rounds.
+- GoVentures Bootcamp (Mar 2026): Conducted a team bootcamp demonstrating GoVentures, the software used in the Skillathon final round at Sri Ramakrishna College of Arts and Science.
+- Intern2Innovate Internal Hackathon (Jan 2026): Participated at SNS Institutions building a rapid prototype.
 
 9. VERIFIED CREDENTIALS & CERTIFICATIONS:
+- Basics of Python — Infosys Springboard (Jul 2025)
 - AI Agents Hackathon — 5th Rank, Prototype Submission (Swafinix Technologies / Unstop, Aug 2025)
 - BUGSLAYER '26 — Telemedicine Platform (Dhanalakshmi Srinivasan College, Jan 2026)
+- Devspark'25 — 24 hrs Hackathon Participant (KPR Institute of Engineering and Technology)
 - IoT using Python & Raspberry Pi Workshop (Mechanica 2023, IIT Madras, Dec 2023)
 - Paper Presentation at IGNIS '23 (Bannari Amman Institute of Technology, Dec 2023)
 
-10. PROFESSIONAL INTERNSHIPS:
-- Backend Development Intern — Let's Gametech, Coimbatore (2025): Explored backend architecture, database schemas, and API integration flows for server-side gaming data processing.
-- Front End Developer Intern — Dsignz Media, Coimbatore (21-Day Intensive): Modern frontend web engineering, HTML, CSS, JavaScript, and responsive layout patterns.
-- IT Development Intern — Circor Flow Technology India Pvt. Ltd. (Aug 2024): Developed enterprise-grade corporate frontend web pages with cross-device compatibility.
+10. PROFESSIONAL EXPERIENCE:
+- Freelance Developer (Self-Employed · Active): Building websites, automation workflows (n8n and Python), and AI chatbots for businesses; recently deployed a WhatsApp AI chatbot that books appointments/orders, dynamically generates PDFs, and sends email confirmations.
+- Java Backend Development Intern — Let's Gametech, Coimbatore (2025): Studied backend tools and architecture, database integration flows, and server-side processing to understand integration processes.
+- Front End Developer Intern — Dsignz Media, Coimbatore (30-Day Intensive): Learned front-end development and built a responsive front-end project from a given design using HTML, CSS, and JavaScript.
+- IT Development Intern — Circor Flow Technology India Private Limited, Coimbatore (14-Day Intensive): Built a front-end page using HTML, CSS, and JavaScript to search company data records using internal product and component codes.
 
 11. MOMENTS & PROOF GALLERY:
 - Available on the dedicated gallery page (gallery.html) featuring photographic proof of hackathons, workshops, symposium awards, and team moments.
