@@ -301,7 +301,8 @@ module.exports = async (req, res) => {
             console.error('Gemini API error:', geminiRes.status, errText);
             return res.status(200).json({
                 reply: "I'm having a brief connection issue. In the meantime — Kavish is an AI & Automation Developer. You can reach him at kavishm100@gmail.com or +91 9865824929!",
-                source: 'error_fallback'
+                source: 'error_fallback',
+                debugError: { status: geminiRes.status, detail: errText.slice(0, 500) }
             });
         }
 
