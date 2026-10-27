@@ -67,6 +67,76 @@ function tryLocalFaq(text) {
     return null;
 }
 
+// ── Smart Local Portfolio Fallback (Zero downtime if LLM quota/spikes occur) ──
+function getSmartPortfolioFallback(text) {
+    const lower = (text || '').toLowerCase();
+    
+    // Greeting / Name
+    if (/^(hi|hello|hey|greetings|who are you|reze)/i.test(lower)) {
+        return "I am REZE, what I can help with? I am Kavish's autonomous AI portfolio companion. Ask me anything about his projects, agentic automations, hackathons, or how to get in touch!";
+    }
+
+    // Projects / Automations / Work
+    if (/project|automation|n8n|work|built|bot|whatsapp|admission|library|sos|system/i.test(lower)) {
+        return "Kavish has built 7 production and prototype systems across Agentic AI, automations, and full-stack web:\n\n" +
+            "1. WhatsApp AI Chatbot for Business Automation — Python, FastAPI, Meta Graph API & Gemini for auto-booking, CRM sync, and PDF invoice email dispatch.\n" +
+            "2. AI Admission Enquiry System — n8n autonomous intake pipeline classifying student queries and syncing Google Sheets & email alerts.\n" +
+            "3. Full-Stack AI Admission Chatbot — Conversational intake assistant with lead qualification and course recommendation engine.\n" +
+            "4. AI Assistant for Farmers — Multi-lingual crop disease detection and soil advisory assistant.\n" +
+            "5. Library Management System Full Stack — Comprehensive portal with role-based access, book cataloging, fine tracking, and analytics.\n" +
+            "6. Agentic n8n Automation Chatbot — Multi-node workflow router with conditional branch handling.\n" +
+            "7. Emergency SOS Dispatch Platform — Rapid geolocation capture and incident dispatch coordinator.\n\n" +
+            "Which project would you like to explore in detail?";
+    }
+
+    // Hackathons / Achievements / Awards
+    if (/hackathon|rank|award|achievement|competition|swafinix|bugslayer|devspark|bootcamp/i.test(lower)) {
+        return "Key hackathon & leadership achievements:\n\n" +
+            "🏆 AI Agents Hackathon: Rank 5 nationally out of 2,300+ teams (Swafinix Technologies, Aug 2025)\n" +
+            "⚡ Devspark'25: 24-hour sprint at KPR Institute of Engineering and Technology\n" +
+            "🏥 BUGSLAYER '26: Built a Telemedicine Platform across 5 review rounds\n" +
+            "🏭 MSME Hackathon 2025: National Finalist\n" +
+            "🚀 GoVentures Bootcamp: Conducted team bootcamp at Sri Ramakrishna College of Arts and Science (Mar 2026)\n" +
+            "💡 Texperia '25: Paper Presentation Coordinator & All Rounder Performer (ARP) Nominee";
+    }
+
+    // Skills / Stack / Technologies
+    if (/skill|stack|tech|tool|language|python|javascript|typescript|react|node|docker/i.test(lower)) {
+        return "Kavish's technical toolkit includes:\n\n" +
+            "• AI & Workflows: Agentic AI, n8n Automation, LLM Integration (Gemini, Claude, OpenAI), LangChain, Prompt Engineering\n" +
+            "• Languages: Python, JavaScript (ES6+), TypeScript, Java, C++, SQL\n" +
+            "• Web & Frameworks: Node.js, Express, React, Next.js, FastAPI, HTML5, CSS3, Tailwind CSS\n" +
+            "• Cloud & DevOps: Docker, Git & GitHub, Vercel, Supabase, Google Cloud Platform, Postman";
+    }
+
+    // Experience / Jobs / Internships
+    if (/experience|intern|job|career|freelance|company/i.test(lower)) {
+        return "Kavish's professional experience:\n\n" +
+            "• Freelance Developer (Active) — Delivering bespoke websites, autonomous n8n workflows, and custom WhatsApp bots.\n" +
+            "• Java Backend Dev Intern — Let's Gametech (API schemas, database structures)\n" +
+            "• Frontend Dev Intern — Dsignz Media (30-day responsive web engineering)\n" +
+            "• IT Dev Intern — Circor Flow Technology India Pvt. Ltd. (14-day internal part code search tool)";
+    }
+
+    // Education / College / Degree
+    if (/education|college|study|degree|university|school|sns/i.test(lower)) {
+        return "Kavish is pursuing B.Tech in Information Technology at SNS College of Technology, Coimbatore (2023–2027). He scored a centum (100/100) in Computer Science during HSC at Noble Matriculation Higher Secondary School, Virudhunagar.";
+    }
+
+    // Contact / Email / Phone / WhatsApp / Hire
+    if (/contact|email|phone|whatsapp|reach|hire|number|call/i.test(lower)) {
+        return "You can reach Kavish directly:\n\n" +
+            "📧 Email: kavishm100@gmail.com\n" +
+            "📱 WhatsApp / Call: +91 9865824929\n" +
+            "📍 Location: Coimbatore, Tamil Nadu, India\n" +
+            "🔗 LinkedIn: linkedin.com/in/kavish-m-\n" +
+            "💻 GitHub: github.com/kavishM765";
+    }
+
+    // Default warm overview
+    return "I am REZE, what I can help with? Kavish is an AI & Automation Developer specializing in Agentic AI, n8n automations, and full-stack engineering. He holds Rank 5 nationally in the AI Agents Hackathon (2,300+ teams) and has built 7 production projects including WhatsApp business bots and admission pipelines.\n\nFeel free to ask me about his projects, hackathons, technical skills, or reach out to him at kavishm100@gmail.com or +91 9865824929!";
+}
+
 // ── Portfolio Knowledge System Prompt ────────────────────────────
 const SYSTEM_PROMPT = `You are REZE — Kavish M's autonomous AI companion embedded directly into his personal portfolio website. 
 You speak in a warm, professional, and knowledgeable tone.
@@ -254,79 +324,87 @@ module.exports = async (req, res) => {
             return res.status(200).json({ reply: localAnswer, source: 'local' });
         }
 
-        // ── Layer 2: Gemini Flash API ────────────────────────────
+        // ── Layer 2: Multi-Model Gemini Waterfall & Resilient Smart Fallback ──
         const apiKey = process.env.GEMINI_API_KEY;
         if (!apiKey) {
             return res.status(200).json({
-                reply: "I am REZE, Kavish's AI assistant. I'm currently in offline mode, but I can tell you the basics!\n\nKavish is an AI & Automation Developer specializing in Agentic AI, n8n automation pipelines, and full-stack web systems. He's ranked 5th nationally in the AI Agents Hackathon out of 2,300+ teams.\n\n📧 kavishm100@gmail.com\n📱 +91 9865824929",
-                source: 'fallback'
+                reply: getSmartPortfolioFallback(cleanMsg),
+                source: 'smart_fallback_no_key'
             });
         }
 
-        const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${apiKey}`;
+        const CANDIDATE_MODELS = [
+            'gemini-1.5-flash',
+            'gemini-2.0-flash',
+            'gemini-1.5-flash-8b'
+        ];
 
-        const geminiPayload = {
-            contents: [
-                {
-                    role: 'user',
-                    parts: [{ text: cleanMsg }]
+        let generatedReply = null;
+        let lastError = null;
+
+        for (const model of CANDIDATE_MODELS) {
+            try {
+                const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+                const geminiPayload = {
+                    contents: [
+                        {
+                            role: 'user',
+                            parts: [{ text: cleanMsg }]
+                        }
+                    ],
+                    systemInstruction: {
+                        parts: [{ text: SYSTEM_PROMPT }]
+                    },
+                    generationConfig: {
+                        temperature: 0.7,
+                        topP: 0.9,
+                        topK: 40,
+                        maxOutputTokens: 1000,
+                        responseMimeType: 'text/plain'
+                    },
+                    safetySettings: [
+                        { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
+                        { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
+                        { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
+                        { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' }
+                    ]
+                };
+
+                const geminiRes = await fetch(geminiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(geminiPayload)
+                });
+
+                if (geminiRes.ok) {
+                    const rawResText = await geminiRes.text();
+                    const geminiData = JSON.parse(rawResText);
+                    const candidateText = geminiData?.candidates?.[0]?.content?.parts?.[0]?.text;
+                    if (candidateText && candidateText.trim().length > 0) {
+                        generatedReply = candidateText.trim();
+                        break; // Successfully generated, break out of model waterfall
+                    }
+                } else {
+                    const errText = await geminiRes.text();
+                    lastError = { model, status: geminiRes.status, detail: errText };
+                    console.warn(`Gemini model ${model} returned ${geminiRes.status}, falling over to next model.`);
                 }
-            ],
-            systemInstruction: {
-                parts: [{ text: SYSTEM_PROMPT }]
-            },
-            generationConfig: {
-                temperature: 0.7,
-                topP: 0.9,
-                topK: 40,
-                maxOutputTokens: 1000,
-                responseMimeType: 'text/plain'
-            },
-            safetySettings: [
-                { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-                { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-                { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-                { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' }
-            ]
-        };
+            } catch (modelErr) {
+                lastError = { model, error: modelErr.message };
+                console.warn(`Gemini model ${model} failed:`, modelErr);
+            }
+        }
 
-        const geminiRes = await fetch(geminiUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(geminiPayload)
+        if (generatedReply) {
+            return res.status(200).json({ reply: generatedReply, source: 'gemini' });
+        }
+
+        // If all Gemini models are exhausted or experiencing Google API spikes, use smart portfolio fallback
+        console.warn('All Gemini models unavailable. Serving smart portfolio fallback. Last error:', lastError);
+        return res.status(200).json({
+            reply: getSmartPortfolioFallback(cleanMsg),
+            source: 'smart_fallback'
         });
-
-        if (!geminiRes.ok) {
-            const errText = await geminiRes.text();
-            console.error('Gemini API error:', geminiRes.status, errText);
-            return res.status(200).json({
-                reply: "I'm having a brief connection issue. In the meantime — Kavish is an AI & Automation Developer. You can reach him at kavishm100@gmail.com or +91 9865824929!",
-                source: 'error_fallback',
-                debugError: { status: geminiRes.status, detail: errText.slice(0, 500) }
-            });
-        }
-
-        const rawResText = await geminiRes.text();
-        let geminiData;
-        try {
-            geminiData = JSON.parse(rawResText);
-        } catch (e) {
-            console.error('Gemini non-JSON:', rawResText);
-            return res.status(200).json({
-                reply: "I'm having a brief connection issue. In the meantime, you can reach Kavish at kavishm100@gmail.com or +91 9865824929!",
-                source: 'gemini_parse_err'
-            });
-        }
-        const reply = geminiData?.candidates?.[0]?.content?.parts?.[0]?.text;
-
-        if (!reply) {
-            return res.status(200).json({
-                reply: "I couldn't generate a response right now. Feel free to ask me about Kavish's projects, hackathons, or skills!",
-                source: 'empty_response'
-            });
-        }
-
-        return res.status(200).json({ reply: reply.trim(), source: 'gemini' });
 
     } catch (err) {
         console.error('REZE API Error:', err);
